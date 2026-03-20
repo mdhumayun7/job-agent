@@ -1,0 +1,61 @@
+name: Daily Job Search
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install packages
+        run: |
+          pip install playwright openpyxl beautifulsoup4 requests openai
+          playwright install chromium
+
+      - name: Make folders
+        run: mkdir -p output logs scrapers/pycache utils/pycache
+
+      - name: Create config
+        env:
+          GITHUB_TOKEN_API: ${{ secrets.GITHUB_TOKEN_API }}
+          EMAIL_ID: ${{ secrets.EMAIL_ID }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        run: |
+          python -c "
+          content = '''
+          SEARCH_KEYWORDS = [\"python developer fresher\", \"machine learning fresher\", \"data scientist fresher\", \"software engineer fresher\"]
+          LOCATION = \"India\"
+          EXPERIENCE_YEARS = 0
+          MAX_JOBS_PER_SITE = 50
+          MIN_SALARY_LPA = 0
+          YOUR_SKILLS = [\"python\", \"tensorflow\", \"opencv\", \"pandas\", \"numpy\", \"react\", \"flask\", \"git\", \"linux\", \"machine learning\"]
+          OUTPUT_FILE = \"output/jobs_found.json\"
+          EXCEL_FILE = \"output/jobs_found.xlsx\"
+          GOVT_SITES = {\"ISRO\": \"https://www.isro.gov.in/Careers.html\", \"DRDO\": \"https://www.drdo.gov.in/jobs\", \"BARC\": \"https://www.barc.gov.in/recruitment/\"}
+          CITIES = [\"Bangalore\", \"Hyderabad\", \"Pune\", \"Mumbai\", \"Chennai\", \"Delhi\", \"Ahmedabad\", \"Remote\"]
+          HEADLESS = True
+          REQUEST_DELAY = 2
+          MAX_RETRIES = 3
+          GITHUB_TOKEN = \"$GITHUB_TOKEN_API\"
+          EMAIL_ID = \"$EMAIL_ID\"
+          EMAIL_PASSWORD = \"$EMAIL_PASSWORD\"
+          NOTIFY_EMAIL = \"$EMAIL_ID\"
+          '''
+          with open('config.py', 'w') as f:
+              f.write(content.strip())
+          print('config created!')
+          "
+
+      - name: Run job search
+        run: python main.py --sites govt indeed
+
+      - name: Send email
+        run: python email_alert.py
