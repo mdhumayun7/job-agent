@@ -25,7 +25,7 @@ jobs:
 
       - name: Create config
         env:
-          GITHUB_TOKEN_API: ${{ secrets.GITHUB_TOKEN_API }}
+          GITHUB_TOKEN_API: ${{ secrets.MY_GITHUB_TOKEN }}
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         run: |
