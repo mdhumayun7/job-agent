@@ -4,7 +4,12 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from config import EMAIL_ID, EMAIL_PASSWORD, JOBS_FILE, NOTIFY_EMAIL
+from config import EMAIL_ID, EMAIL_PASSWORD, NOTIFY_EMAIL
+
+try:
+    from config import JOBS_FILE
+except ImportError:
+    from config import OUTPUT_FILE as JOBS_FILE
 
 
 def send_job_alert(top_n=10):
