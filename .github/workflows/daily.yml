@@ -31,6 +31,7 @@ jobs:
           GITHUB_TOKEN_API: ${{ secrets.MY_GITHUB_TOKEN }}
           EMAIL_ID: ${{ secrets.EMAIL_ID }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
         run: |
           python -c "
           content = '''
@@ -50,11 +51,25 @@ jobs:
           GITHUB_TOKEN = \"$GITHUB_TOKEN_API\"
           EMAIL_ID = \"$EMAIL_ID\"
           EMAIL_PASSWORD = \"$EMAIL_PASSWORD\"
-          NOTIFY_EMAIL = \"$EMAIL_ID\"
+          NOTIFY_EMAIL = \"$NOTIFY_EMAIL\" or \"$EMAIL_ID\"
           '''
           with open('config.py', 'w') as f:
               f.write(content.strip())
           print('config created!')
+          "
+
+      - name: Check email config
+        env:
+          EMAIL_ID: ${{ secrets.EMAIL_ID }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          python -c "
+          import os
+          print(f'EMAIL_ID set: {bool(os.getenv(\"EMAIL_ID\"))}')
+          print(f'EMAIL_PASSWORD set: {bool(os.getenv(\"EMAIL_PASSWORD\"))}')
+          notify = os.getenv('NOTIFY_EMAIL') or os.getenv('EMAIL_ID')
+          print(f'Notify target present: {bool(notify)}')
           "
 
       - name: Run job search
