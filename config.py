@@ -42,6 +42,12 @@ GOVT_SITES = {
     "ISRO": "https://www.isro.gov.in/Careers.html",
     "DRDO": "https://www.drdo.gov.in/jobs",
     "BARC": "https://www.barc.gov.in/recruitment/",
+    "BEL": "https://bel-india.in/recruitment/",
+    "NPCIL": "https://www.npcilcareers.co.in/",
+    "ECIL": "https://www.ecil.co.in/jobs.html",
+    "NIELIT": "https://www.nielit.gov.in/recruitments",
+    "CDAC": "https://careers.cdac.in/",
+    "HAL": "https://hal-india.co.in/career",
 }
 HEADLESS = os.getenv("HEADLESS", "true").lower() == "true"
 REQUEST_DELAY = int(os.getenv("REQUEST_DELAY", "2"))

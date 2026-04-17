@@ -32,7 +32,7 @@ def run_scraper(name):
         return []
 
 
-def print_summary(jobs):
+def print_summary(jobs, top_n=20):
     print("\n" + "="*55)
     print("  JOB SEARCH COMPLETE")
     print("="*55)
@@ -47,8 +47,8 @@ def print_summary(jobs):
     for s, count in sorted(sources.items(), key=lambda x: -x[1]):
         print(f"    {s:<25} {count} jobs")
 
-    print("\n  Top 5 matches:")
-    top = sorted(jobs, key=lambda x: x.get("match_score", 0), reverse=True)[:5]
+    print(f"\n  Top {top_n} matches:")
+    top = sorted(jobs, key=lambda x: x.get("match_score", 0), reverse=True)[:top_n]
     for i, j in enumerate(top, 1):
         print(f"    {i}. [{j.get('match_score',0):>3}/100] {j['title']} @ {j['company']}")
 
@@ -63,6 +63,12 @@ def main():
         "--sites", nargs="+",
         choices=["naukri", "linkedin", "indeed", "angellist", "govt", "all"],
         default=["all"],
+    )
+    parser.add_argument(
+        "--top",
+        type=int,
+        default=20,
+        help="Number of top jobs to show in the final summary",
     )
     args = parser.parse_args()
 
@@ -87,7 +93,7 @@ def main():
 
     unique_jobs = deduplicate(all_jobs)
     save_results(unique_jobs)
-    print_summary(unique_jobs)
+    print_summary(unique_jobs, top_n=max(1, args.top))
 
 
 if __name__ == "__main__":
