@@ -1,6 +1,9 @@
 name: Daily Job Search
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: '30 3 * * *'
   workflow_dispatch:
