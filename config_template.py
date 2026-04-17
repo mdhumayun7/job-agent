@@ -1,5 +1,8 @@
 SEARCH_KEYWORDS = ["python developer fresher", "data scientist fresher"]
 LOCATION = "India"
+EXPERIENCE_YEARS = 0
+MAX_JOBS_PER_SITE = 50
+MIN_SALARY_LPA = 0
 YOUR_SKILLS = ["python", "tensorflow", "react"]
 CITIES = ["Bangalore", "Mumbai", "Delhi"]
 OUTPUT_FILE = "output/jobs_found.json"
@@ -13,3 +16,4 @@ GITHUB_TOKEN = "your_github_token"
 GEMINI_API_KEY = "your_gemini_key"
 EMAIL_ID = "your_email@gmail.com"
 EMAIL_PASSWORD = "your_app_password"
+NOTIFY_EMAIL = EMAIL_ID
