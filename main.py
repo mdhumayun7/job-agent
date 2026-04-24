@@ -3,33 +3,43 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-from utils.helpers import log, deduplicate, save_results
+from utils.helpers import log, save_results
 from config import OUTPUT_FILE, EXCEL_FILE
 
 
-def run_scraper(name):
-    try:
-        if name == "naukri":
-            from scrapers.naukri_scraper import scrape_naukri
-            return scrape_naukri()
-        elif name == "linkedin":
-            from scrapers.linkedin_scraper import scrape_linkedin
-            return scrape_linkedin()
-        elif name == "indeed":
-            from scrapers.indeed_scraper import scrape_indeed
-            return scrape_indeed()
-        elif name == "angellist":
-            from scrapers.angellist_scraper import scrape_angellist
-            return scrape_angellist()
-        elif name == "govt":
-            from scrapers.govt_scraper import scrape_govt_sites
-            return scrape_govt_sites()
-        else:
-            log.warning(f"Unknown scraper: {name}")
-            return []
-    except Exception as e:
-        log.error(f"[{name}] Scraper failed: {e}")
+def _get_scraper(name):
+    if name == "naukri":
+        from scrapers.naukri_scraper import scrape_naukri
+        return scrape_naukri
+    if name == "linkedin":
+        from scrapers.linkedin_scraper import scrape_linkedin
+        return scrape_linkedin
+    if name == "indeed":
+        from scrapers.indeed_scraper import scrape_indeed
+        return scrape_indeed
+    if name == "angellist":
+        from scrapers.angellist_scraper import scrape_angellist
+        return scrape_angellist
+    if name == "govt":
+        from scrapers.govt_scraper import scrape_govt_sites
+        return scrape_govt_sites
+    return None
+
+
+def run_scraper(name, retries=1):
+    scraper = _get_scraper(name)
+    if scraper is None:
+        log.warning(f"Unknown scraper: {name}")
         return []
+
+    for attempt in range(1, retries + 1):
+        try:
+            return scraper()
+        except Exception as e:
+            log.error(f"[{name}] Scraper failed on attempt {attempt}/{retries}: {e}")
+            if attempt == retries:
+                return []
+            log.info(f"[{name}] Retrying scraper...")
 
 
 def print_summary(jobs, top_n=20):
@@ -70,6 +80,12 @@ def main():
         default=20,
         help="Number of top jobs to show in the final summary",
     )
+    parser.add_argument(
+        "--retries",
+        type=int,
+        default=1,
+        help="Number of retry attempts for each scraper",
+    )
     args = parser.parse_args()
 
     all_sites = ["naukri", "linkedin", "indeed", "angellist", "govt"]
@@ -83,7 +99,7 @@ def main():
     all_jobs = []
     for site in sites_to_run:
         log.info(f"Running: {site.upper()}")
-        results = run_scraper(site)
+        results = run_scraper(site, retries=max(1, args.retries))
         all_jobs.extend(results)
         log.info(f"{site}: {len(results)} jobs")
 
@@ -91,9 +107,8 @@ def main():
         log.error("Koi jobs nahi mili.")
         sys.exit(1)
 
-    unique_jobs = deduplicate(all_jobs)
-    save_results(unique_jobs)
-    print_summary(unique_jobs, top_n=max(1, args.top))
+    final_jobs = save_results(all_jobs)
+    print_summary(final_jobs, top_n=max(1, args.top))
 
 
 if __name__ == "__main__":

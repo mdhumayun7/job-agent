@@ -4,9 +4,18 @@ EXPERIENCE_YEARS = 0
 MAX_JOBS_PER_SITE = 50
 MIN_SALARY_LPA = 0
 YOUR_SKILLS = ["python", "tensorflow", "react"]
+FILTER_KEYWORDS = []
 CITIES = ["Bangalore", "Mumbai", "Delhi"]
+PREFERRED_CITIES = CITIES
+PREFERRED_SOURCES = ["LinkedIn", "Indeed", "Naukri", "Wellfound", "Government"]
+ALLOWED_JOB_TYPES = ["Full Time", "Internship"]
+REMOTE_ONLY = False
+MIN_MATCH_SCORE = 0
+MAX_EXCEL_JOBS_PER_SOURCE = 100
 OUTPUT_FILE = "output/jobs_found.json"
 EXCEL_FILE = "output/jobs_found.xlsx"
+DB_FILE = "data/jobs.db"
+TRACKER_FILE = "output/apply_tracker.xlsx"
 GOVT_SITES = {
     "ISRO": "https://www.isro.gov.in/Careers.html",
     "DRDO": "https://www.drdo.gov.in/jobs",

@@ -6,6 +6,7 @@ OUTPUT_DIR = BASE_DIR / "output"
 LOG_DIR = BASE_DIR / "logs"
 RESUME_DIR = BASE_DIR / "resume"
 BROWSER_DATA_DIR = BASE_DIR / "browser_data"
+DATA_DIR = BASE_DIR / "data"
 
 
 def _csv_env(name, default):
@@ -32,12 +33,21 @@ YOUR_SKILLS = _csv_env(
     "YOUR_SKILLS",
     ["python", "tensorflow", "opencv", "pandas", "numpy", "react", "flask", "git", "linux"],
 )
+FILTER_KEYWORDS = _csv_env("FILTER_KEYWORDS", [])
 CITIES = _csv_env(
     "CITIES",
     ["Bangalore", "Hyderabad", "Pune", "Mumbai", "Chennai", "Delhi", "Ahmedabad", "Remote"],
 )
+PREFERRED_CITIES = _csv_env("PREFERRED_CITIES", CITIES)
+PREFERRED_SOURCES = _csv_env("PREFERRED_SOURCES", ["LinkedIn", "Indeed", "Naukri", "Wellfound", "Government"])
+ALLOWED_JOB_TYPES = _csv_env("ALLOWED_JOB_TYPES", ["Full Time", "Internship"])
+REMOTE_ONLY = os.getenv("REMOTE_ONLY", "false").lower() == "true"
+MIN_MATCH_SCORE = int(os.getenv("MIN_MATCH_SCORE", "0"))
+MAX_EXCEL_JOBS_PER_SOURCE = int(os.getenv("MAX_EXCEL_JOBS_PER_SOURCE", "100"))
 OUTPUT_FILE = str(OUTPUT_DIR / "jobs_found.json")
 EXCEL_FILE = str(OUTPUT_DIR / "jobs_found.xlsx")
+DB_FILE = str(DATA_DIR / "jobs.db")
+TRACKER_FILE = str(OUTPUT_DIR / "apply_tracker.xlsx")
 GOVT_SITES = {
     "ISRO": "https://www.isro.gov.in/Careers.html",
     "DRDO": "https://www.drdo.gov.in/jobs",
@@ -76,3 +86,11 @@ JOBS_FILE = str(OUTPUT_DIR / "jobs_found.json")
 APPLY_LOG_FILE = str(OUTPUT_DIR / "apply_log.xlsx")
 LINKEDIN_COOKIE_FILE = str(BROWSER_DATA_DIR / "linkedin_cookies.json")
 LINKEDIN_APPLY_LOG_FILE = str(OUTPUT_DIR / "linkedin_apply_log.json")
+STATUS_COLORS = {
+    "Saved": "E2E8F0",
+    "Applied": "BFDBFE",
+    "Interview": "86EFAC",
+    "Rejected": "FCA5A5",
+    "Offer": "4ADE80",
+    "Follow Up": "FDE68A",
+}

@@ -20,11 +20,11 @@ jobs:
 
       - name: Install packages
         run: |
-          pip install playwright openpyxl beautifulsoup4 requests openai
+          pip install -r requirements.txt
           playwright install chromium
 
       - name: Make folders
-        run: mkdir -p output logs scrapers/pycache utils/pycache
+        run: mkdir -p output logs data scrapers/pycache utils/pycache
 
       - name: Create config
         env:
@@ -41,10 +41,19 @@ jobs:
           MAX_JOBS_PER_SITE = 50
           MIN_SALARY_LPA = 0
           YOUR_SKILLS = [\"python\", \"tensorflow\", \"opencv\", \"pandas\", \"numpy\", \"react\", \"flask\", \"git\", \"linux\", \"machine learning\"]
+          FILTER_KEYWORDS = []
           OUTPUT_FILE = \"output/jobs_found.json\"
           EXCEL_FILE = \"output/jobs_found.xlsx\"
+          DB_FILE = \"data/jobs.db\"
+          TRACKER_FILE = \"output/apply_tracker.xlsx\"
           GOVT_SITES = {\"ISRO\": \"https://www.isro.gov.in/Careers.html\", \"DRDO\": \"https://www.drdo.gov.in/jobs\", \"BARC\": \"https://www.barc.gov.in/recruitment/\", \"BEL\": \"https://bel-india.in/recruitment/\", \"NPCIL\": \"https://www.npcilcareers.co.in/\", \"ECIL\": \"https://www.ecil.co.in/jobs.html\", \"NIELIT\": \"https://www.nielit.gov.in/recruitments\", \"CDAC\": \"https://careers.cdac.in/\", \"HAL\": \"https://hal-india.co.in/career\"}
           CITIES = [\"Bangalore\", \"Hyderabad\", \"Pune\", \"Mumbai\", \"Chennai\", \"Delhi\", \"Ahmedabad\", \"Remote\"]
+          PREFERRED_CITIES = CITIES
+          PREFERRED_SOURCES = [\"LinkedIn\", \"Indeed\", \"Naukri\", \"Wellfound\", \"Government\"]
+          ALLOWED_JOB_TYPES = [\"Full Time\", \"Internship\"]
+          REMOTE_ONLY = False
+          MIN_MATCH_SCORE = 0
+          MAX_EXCEL_JOBS_PER_SOURCE = 100
           HEADLESS = True
           REQUEST_DELAY = 2
           MAX_RETRIES = 3
@@ -73,7 +82,7 @@ jobs:
           "
 
       - name: Run job search
-        run: python main.py --sites all --top 20
+        run: python main.py --sites all --top 20 --retries 2
 
       - name: Send email
         run: python email_alert.py

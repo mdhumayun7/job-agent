@@ -1,64 +1,58 @@
-import openpyxl
-import json
-import os
-from openpyxl.styles import PatternFill, Font, Alignment
+import argparse
 from datetime import datetime
 
-TRACKER_FILE = r"C:\Users\HP\Desktop\job_agent\output\apply_tracker.xlsx"
-JOBS_FILE = r"C:\Users\HP\Desktop\job_agent\output\jobs_found.json"
+from helpers import export_tracker
+from db import fetch_jobs, get_connection
 
-STATUS_COLORS = {"Not Applied":"E2E8F0","Applied":"BFDBFE","Seen":"FEF08A","Interview":"86EFAC","Rejected":"FCA5A5","Offer":"4ADE80","Follow Up":"FDE68A"}
 
-def create_tracker():
-    with open(JOBS_FILE, "r", encoding="utf-8") as jf:
-        jobs = json.load(jf)
+def create_tracker(status=None, source_group=None):
+    jobs = fetch_jobs(status=status, source_group=source_group)
+    export_tracker(jobs)
+    print(f"Tracker updated with {len(jobs)} jobs.")
 
-    if os.path.exists(TRACKER_FILE):
-        wb = openpyxl.load_workbook(TRACKER_FILE)
-        ws = wb.active
-        existing = set()
-        for row in ws.iter_rows(min_row=2, values_only=True):
-            if row[1]: existing.add(str(row[1])[:50])
-    else:
-        wb = openpyxl.Workbook()
-        ws = wb.active
-        ws.title = "Apply Tracker"
-        existing = set()
-        headers = ["Date Added","Job Title","Company","Location","Salary","Source","Status","Applied Date","Interview Date","Follow Up Date","Notes","Apply Link"]
-        hf = PatternFill("solid", fgColor="1E293B")
-        for col, h in enumerate(headers, 1):
-            cell = ws.cell(row=1, column=col, value=h)
-            cell.fill = hf
-            cell.font = Font(color="FFFFFF", bold=True)
-            cell.alignment = Alignment(horizontal="center")
 
-    new_count = 0
-    for job in jobs:
-        title_key = str(job.get("title",""))[:50]
-        if title_key in existing: continue
-        row = ws.max_row + 1
-        ws.cell(row=row, column=1, value=datetime.now().strftime("%d-%m-%Y"))
-        ws.cell(row=row, column=2, value=job.get("title","")[:100])
-        ws.cell(row=row, column=3, value=job.get("company",""))
-        ws.cell(row=row, column=4, value=job.get("location",""))
-        ws.cell(row=row, column=5, value=job.get("salary","Not mentioned"))
-        ws.cell(row=row, column=6, value=job.get("source",""))
-        sc = ws.cell(row=row, column=7, value="Not Applied")
-        sc.fill = PatternFill("solid", fgColor="E2E8F0")
-        ws.cell(row=row, column=8, value="")
-        ws.cell(row=row, column=9, value="")
-        ws.cell(row=row, column=10, value="")
-        ws.cell(row=row, column=11, value="")
-        ws.cell(row=row, column=12, value=job.get("apply_url",""))
-        new_count += 1
+def update_job_status(job_id, status, notes=""):
+    timestamp = datetime.now().strftime("%Y-%m-%d")
+    applied_date = timestamp if status == "Applied" else ""
+    interview_date = timestamp if status == "Interview" else ""
+    follow_up_date = timestamp if status == "Follow Up" else ""
 
-    for col in ws.columns:
-        max_len = max((len(str(c.value or "")) for c in col), default=10)
-        ws.column_dimensions[col[0].column_letter].width = min(max_len+4, 50)
+    with get_connection() as conn:
+        conn.execute(
+            """
+            UPDATE jobs
+            SET status = ?, notes = COALESCE(NULLIF(?, ''), notes),
+                applied_date = CASE WHEN ? != '' THEN ? ELSE applied_date END,
+                interview_date = CASE WHEN ? != '' THEN ? ELSE interview_date END,
+                follow_up_date = CASE WHEN ? != '' THEN ? ELSE follow_up_date END
+            WHERE job_id = ?
+            """,
+            (
+                status,
+                notes,
+                applied_date,
+                applied_date,
+                interview_date,
+                interview_date,
+                follow_up_date,
+                follow_up_date,
+                job_id,
+            ),
+        )
+        conn.commit()
+    print(f"Updated {job_id} -> {status}")
 
-    wb.save(TRACKER_FILE)
-    print(f"Tracker updated! {new_count} new jobs added.")
-    print(f"File: {TRACKER_FILE}")
 
 if __name__ == "__main__":
-    create_tracker()
+    parser = argparse.ArgumentParser(description="Apply tracker utilities")
+    parser.add_argument("--status", help="Filter tracker by status")
+    parser.add_argument("--source", help="Filter tracker by source group")
+    parser.add_argument("--job-id", help="Job ID to update")
+    parser.add_argument("--set-status", help="New status for the given job ID")
+    parser.add_argument("--notes", default="", help="Optional notes while updating a job")
+    args = parser.parse_args()
+
+    if args.job_id and args.set_status:
+        update_job_status(args.job_id, args.set_status, notes=args.notes)
+    else:
+        create_tracker(status=args.status, source_group=args.source)
