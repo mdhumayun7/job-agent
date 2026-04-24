@@ -9,22 +9,37 @@ from datetime import date, datetime, timedelta
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from config import (
-    ALLOWED_JOB_TYPES,
-    DB_FILE,
-    EXCEL_FILE,
-    FILTER_KEYWORDS,
-    JOBS_FILE,
-    MAX_EXCEL_JOBS_PER_SOURCE,
-    MIN_MATCH_SCORE,
-    OUTPUT_FILE,
-    PREFERRED_CITIES,
-    PREFERRED_SOURCES,
-    REMOTE_ONLY,
-    STATUS_COLORS,
-    TRACKER_FILE,
-    YOUR_SKILLS,
+import config as app_config
+
+ALLOWED_JOB_TYPES = getattr(app_config, "ALLOWED_JOB_TYPES", ["Full Time", "Internship"])
+DB_FILE = getattr(app_config, "DB_FILE", "data/jobs.db")
+EXCEL_FILE = getattr(app_config, "EXCEL_FILE", "output/jobs_found.xlsx")
+FILTER_KEYWORDS = getattr(app_config, "FILTER_KEYWORDS", [])
+JOBS_FILE = getattr(app_config, "JOBS_FILE", getattr(app_config, "OUTPUT_FILE", "output/jobs_found.json"))
+MAX_EXCEL_JOBS_PER_SOURCE = getattr(app_config, "MAX_EXCEL_JOBS_PER_SOURCE", 100)
+MIN_MATCH_SCORE = getattr(app_config, "MIN_MATCH_SCORE", 0)
+OUTPUT_FILE = getattr(app_config, "OUTPUT_FILE", "output/jobs_found.json")
+PREFERRED_CITIES = getattr(app_config, "PREFERRED_CITIES", getattr(app_config, "CITIES", []))
+PREFERRED_SOURCES = getattr(
+    app_config,
+    "PREFERRED_SOURCES",
+    ["LinkedIn", "Indeed", "Naukri", "Wellfound", "Government"],
 )
+REMOTE_ONLY = getattr(app_config, "REMOTE_ONLY", False)
+STATUS_COLORS = getattr(
+    app_config,
+    "STATUS_COLORS",
+    {
+        "Saved": "E2E8F0",
+        "Applied": "BFDBFE",
+        "Interview": "86EFAC",
+        "Rejected": "FCA5A5",
+        "Offer": "4ADE80",
+        "Follow Up": "FDE68A",
+    },
+)
+TRACKER_FILE = getattr(app_config, "TRACKER_FILE", "output/apply_tracker.xlsx")
+YOUR_SKILLS = getattr(app_config, "YOUR_SKILLS", [])
 
 LOG_DIR = Path("logs")
 LOG_DIR.mkdir(exist_ok=True)
