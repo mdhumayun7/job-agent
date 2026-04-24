@@ -7,6 +7,12 @@ from utils.helpers import log, save_results
 from config import OUTPUT_FILE, EXCEL_FILE
 
 
+def safe_console_text(value):
+    text = str(value)
+    encoding = getattr(sys.stdout, "encoding", None) or "utf-8"
+    return text.encode(encoding, errors="replace").decode(encoding, errors="replace")
+
+
 def _get_scraper(name):
     if name == "naukri":
         from scrapers.naukri_scraper import scrape_naukri
@@ -60,7 +66,9 @@ def print_summary(jobs, top_n=20):
     print(f"\n  Top {top_n} matches:")
     top = sorted(jobs, key=lambda x: x.get("match_score", 0), reverse=True)[:top_n]
     for i, j in enumerate(top, 1):
-        print(f"    {i}. [{j.get('match_score',0):>3}/100] {j['title']} @ {j['company']}")
+        title = safe_console_text(j.get("title", ""))
+        company = safe_console_text(j.get("company", ""))
+        print(f"    {i}. [{j.get('match_score',0):>3}/100] {title} @ {company}")
 
     print(f"\n  Excel file : {EXCEL_FILE}")
     print(f"  JSON file  : {OUTPUT_FILE}")
