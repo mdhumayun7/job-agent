@@ -1,126 +1,87 @@
-import json
-import re
-import sys
-sys.path.insert(0, r"C:\Users\HP\Desktop\job_agent")
+﻿import json
+from pathlib import Path
+from datetime import datetime
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment
+from config import ENRICHED_OUTPUT_FILE, JOBS_FILE, YOUR_SKILLS, PERSONAL_INFO, PROFILE_SUMMARY
 
-with open(r"C:\Users\HP\Desktop\job_agent\config.py", "r") as cf:
-    _cfg = cf.read()
-_match = re.search(r'GITHUB_TOKEN = "(.+?)"', _cfg)
-GITHUB_TOKEN = _match.group(1) if _match else ""
+def load_jobs():
+    src = Path(ENRICHED_OUTPUT_FILE) if Path(ENRICHED_OUTPUT_FILE).exists() else Path(JOBS_FILE)
+    with open(src,"r",encoding="utf-8") as f: return json.load(f)
 
-OUTPUT_FILE = r"C:\Users\HP\Desktop\job_agent\output\jobs_found.json"
+def tailor_job(job):
+    title   = job.get("title","")
+    company = job.get("company","")
+    matched = job.get("matched_skills",[]) or []
+    missing = job.get("missing_skills",[]) or []
+    top     = matched[:5] or YOUR_SKILLS[:5]
+    name    = PERSONAL_INFO.get("name","Candidate")
+    objective = (
+        f"Motivated {PERSONAL_INFO.get('degree','') or 'engineering'} graduate seeking {title} role at {company}, "
+        f"leveraging expertise in {', '.join(top[:3])} to deliver impactful solutions."
+    )
+    cover = (
+        f"Dear Hiring Manager,\n\n"
+        f"I am writing to express my strong interest in the {title} position at {company}. "
+        f"As a {PROFILE_SUMMARY.split('.')[0].lower()}, I bring hands-on experience in "
+        f"{', '.join(top[:3])}, making me a strong fit for this role.\n\n"
+        f"I am confident in my ability to contribute from day one and am eager to grow "
+        f"with your team. I look forward to discussing how my background aligns with your needs.\n\n"
+        f"Warm regards,\n{name}"
+    )
+    ats_keywords = list(set(top + [s for s in YOUR_SKILLS if s.lower() in job.get('title','').lower()]))[:10]
+    one_liner = f"Passionate {title} candidate with {len(matched)} matching skills including {', '.join(top[:2])}." if top else f"Eager fresher applying for {title} at {company}."
+    return {
+        "objective":      objective,
+        "cover_letter":   cover,
+        "ats_keywords":   ", ".join(ats_keywords),
+        "one_liner":      one_liner,
+        "missing_skills": ", ".join(missing[:5]),
+    }
 
-from openai import OpenAI
-client = OpenAI(
-    base_url="https://models.inference.ai.azure.com",
-    api_key=GITHUB_TOKEN
-)
-
-MY_RESUME = """
-NAME: MD Humayun
-EMAIL: humayunrahi739@gmail.com
-EDUCATION:
-- M.Tech CS (Info Security) - SVNIT, CPI: 8.90
-- B.Tech CS - Bihar Engineering University, CGPA: 8.51
-SKILLS:
-- Python, C++, JavaScript, SQL, HTML, CSS, Bash
-- TensorFlow, Keras, OpenCV, Pandas, NumPy, Scikit-learn
-- React.js, Node.js, Flask, REST APIs, Bootstrap
-- Git, Linux, Google Colab, Salesforce
-PROJECTS:
-- Face Emotion Detection CNN 92% accuracy
-- Plant Disease Prediction ResNet50 95% accuracy
-- Real-Time Sign Language Detection MediaPipe LSTM
-CERTIFICATIONS:
-- Python IIT Bombay, IoT IIT Roorkee, Ethical Hacking IIIT Allahabad
-"""
-
-def tailor_resume(job_title, company, job_description, job_source):
-    print(f"  Tailoring: {job_title} @ {company}")
-    prompt = f"""You are an expert resume writer.
-Job: {job_title} at {company}
-Description: {job_description[:800]}
-My Resume: {MY_RESUME}
-Reply EXACTLY in this format with NO bold or markdown:
-OBJECTIVE: [3 line objective]
-TOP_SKILLS: [skill1, skill2, skill3, skill4, skill5]
-COVER_LETTER: [100 word letter]
-MATCH_SCORE: [number only]
-MISSING_SKILLS: [skill1, skill2, skill3]"""
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=1000
-        )
-        text = response.choices[0].message.content
-        result = {"objective":"","top_skills":"","cover_letter":"","ai_match_score":0,"missing_skills":""}
-        for line in text.split("\n"):
-            line = line.strip()
-            if line.upper().startswith("OBJECTIVE:"): result["objective"] = line.split(":",1)[1].strip()
-            elif line.upper().startswith("TOP_SKILLS:"): result["top_skills"] = line.split(":",1)[1].strip()
-            elif line.upper().startswith("COVER_LETTER:"): result["cover_letter"] = line.split(":",1)[1].strip()
-            elif line.upper().startswith("MATCH_SCORE:"):
-                nums = re.findall(r"\d+", line)
-                result["ai_match_score"] = int(nums[0]) if nums else 0
-            elif line.upper().startswith("MISSING_SKILLS:"): result["missing_skills"] = line.split(":",1)[1].strip()
-        return result
-    except Exception as e:
-        print(f"  Error: {e}")
-        return {"objective":"","top_skills":"","cover_letter":"","ai_match_score":0,"missing_skills":""}
-
-def tailor_top_jobs(top_n=10):
-    with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
-        jobs = json.load(f)
-    top_jobs = sorted(jobs, key=lambda x: x.get("match_score",0), reverse=True)[:top_n]
-    print(f"Top {top_n} jobs ke liye tailor ho raha hai...")
-    results = []
-    for i, job in enumerate(top_jobs, 1):
-        print(f"[{i}/{top_n}]")
-        r = tailor_resume(
-            job.get("title",""),
-            job.get("company",""),
-            job.get("description", job.get("title","")),
-            job.get("source","")
-        )
-        job.update(r)
-        results.append(job)
-    save_tailored_excel(results)
-    return results
-
-def save_tailored_excel(jobs):
-    import openpyxl
-    from openpyxl.styles import PatternFill, Font, Alignment
+def save_excel(jobs, path="output/tailored_jobs.xlsx"):
     wb = openpyxl.Workbook()
     ws = wb.active
-    ws.title = "Tailored Resumes"
-    headers = ["AI Score","Title","Company","Location","Salary","Source","Apply Link","Objective","Top Skills","Cover Letter","Missing Skills"]
-    hf = PatternFill("solid", fgColor="7C3AED")
-    for col, h in enumerate(headers, 1):
-        cell = ws.cell(row=1, column=col, value=h)
-        cell.fill = hf
-        cell.font = Font(color="FFFFFF", bold=True)
-        cell.alignment = Alignment(horizontal="center")
-    for row, job in enumerate(jobs, 2):
-        score = job.get("ai_match_score", 0)
-        sc = ws.cell(row=row, column=1, value=score)
-        if score >= 70: sc.fill = PatternFill("solid", fgColor="86EFAC")
-        elif score >= 50: sc.fill = PatternFill("solid", fgColor="FDE68A")
-        else: sc.fill = PatternFill("solid", fgColor="FCA5A5")
-        ws.cell(row=row, column=2, value=job.get("title",""))
-        ws.cell(row=row, column=3, value=job.get("company",""))
-        ws.cell(row=row, column=4, value=job.get("location",""))
-        ws.cell(row=row, column=5, value=job.get("salary",""))
-        ws.cell(row=row, column=6, value=job.get("source",""))
-        ws.cell(row=row, column=7, value=job.get("apply_url",""))
-        ws.cell(row=row, column=8, value=job.get("objective",""))
-        ws.cell(row=row, column=9, value=job.get("top_skills",""))
-        cl = ws.cell(row=row, column=10, value=job.get("cover_letter",""))
-        cl.alignment = Alignment(wrap_text=True)
-        ws.cell(row=row, column=11, value=job.get("missing_skills",""))
+    ws.title = "Tailored Applications"
+    headers = ["Score","Title","Company","Location","Source","One-Liner","Objective","Cover Letter","ATS Keywords","Missing Skills","Apply Link"]
+    hfill = PatternFill("solid", fgColor="4F46E5")
+    hfont = Font(color="FFFFFF", bold=True)
+    for col,h in enumerate(headers,1):
+        c = ws.cell(row=1,column=col,value=h)
+        c.fill = hfill; c.font = hfont
+        c.alignment = Alignment(horizontal="center")
+    for row,job in enumerate(jobs,2):
+        sc = job.get("ai_match_score",job.get("match_score",0))
+        color = "86EFAC" if sc>=60 else ("FDE68A" if sc>=30 else "FCA5A5")
+        ws.cell(row=row,column=1,value=sc).fill = PatternFill("solid",fgColor=color)
+        ws.cell(row=row,column=2,value=job.get("title",""))
+        ws.cell(row=row,column=3,value=job.get("company",""))
+        ws.cell(row=row,column=4,value=job.get("location",""))
+        ws.cell(row=row,column=5,value=job.get("source_group",job.get("source","")))
+        ws.cell(row=row,column=6,value=job.get("one_liner",""))
+        ws.cell(row=row,column=7,value=job.get("objective","")).alignment = Alignment(wrap_text=True)
+        ws.cell(row=row,column=8,value=job.get("cover_letter","")).alignment = Alignment(wrap_text=True)
+        ws.cell(row=row,column=9,value=job.get("ats_keywords",""))
+        ws.cell(row=row,column=10,value=job.get("missing_skills",""))
+        ws.cell(row=row,column=11,value=job.get("apply_url",""))
     for col in ws.columns:
-        max_len = max((len(str(c.value or "")) for c in col), default=10)
-        ws.column_dimensions[col[0].column_letter].width = min(max_len+4, 60)
-    path = r"C:\Users\HP\Desktop\job_agent\output\tailored_jobs.xlsx"
+        mx = max((len(str(c.value or "")) for c in col),default=10)
+        ws.column_dimensions[col[0].column_letter].width = min(mx+4,60)
+    Path(path).parent.mkdir(exist_ok=True)
     wb.save(path)
-    print(f"Saved: {path}")
+    print(f"  Saved: {path}")
+
+def main():
+    jobs = load_jobs()
+    top  = sorted(jobs, key=lambda j: j.get("ai_match_score",j.get("match_score",0)), reverse=True)[:50]
+    print(f"\nTailoring resumes for top {len(top)} jobs...")
+    tailored = []
+    for i,job in enumerate(top,1):
+        t = tailor_job(job)
+        tailored.append({**job, **t})
+        if i%10==0: print(f"  {i}/{len(top)} done")
+    save_excel(tailored)
+    print(f"Done! {len(tailored)} jobs tailored.")
+
+if __name__ == "__main__":
+    main()

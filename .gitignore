@@ -1,9 +1,36 @@
-browser_data/
+# ── Secrets & local config ──────────────────────────────
+.env
+.env.local
+config_local.py
+*.pem
+*.key
+
+# ── Personal documents ──────────────────────────────────
+resume/
+*.docx
+*.pdf
+
+# ── Generated output ────────────────────────────────────
 output/
 logs/
-resume/
-.venv/
+data/
+browser_data/
+*.db
+*.sqlite3
+*.xlsx
+
+# ── Python ──────────────────────────────────────────────
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
 .ipynb_checkpoints/
 anaconda_projects/
+
+# ── OS / editors ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

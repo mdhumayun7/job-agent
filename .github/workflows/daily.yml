@@ -1,94 +1,129 @@
 name: Daily Job Search
 
 on:
-  push:
-    branches:
-      - main
   schedule:
+    # 03:30 UTC = 09:00 IST, every day
     - cron: '30 3 * * *'
   workflow_dispatch:
+    inputs:
+      sites:
+        description: 'Sites to scrape (space separated, or "all")'
+        required: false
+        default: 'all'
+      top:
+        description: 'How many top matches to print'
+        required: false
+        default: '20'
+
+concurrency:
+  group: daily-job-search
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
   search:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
+
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      # Search / profile settings
+      SEARCH_KEYWORDS: 'python developer fresher,machine learning fresher,data scientist fresher,software engineer fresher'
+      YOUR_SKILLS: 'python,tensorflow,opencv,pandas,numpy,react,flask,git,linux,sql,machine learning'
+      LOCATION: 'India'
+      CITIES: 'Bangalore,Hyderabad,Pune,Mumbai,Chennai,Delhi,Ahmedabad,Remote'
+      ALLOWED_JOB_TYPES: 'Full Time,Internship'
+      PREFERRED_SOURCES: 'LinkedIn,Indeed,Naukri,Wellfound,Unstop,Foundit,Internshala,Shine,Government'
+      MAX_JOBS_PER_SITE: '50'
+      MIN_MATCH_SCORE: '0'
+      REMOTE_ONLY: 'false'
+      HEADLESS: 'true'
+      REQUEST_DELAY: '2'
+      # Secrets (add these under Settings → Secrets and variables → Actions)
+      EMAIL_ID: ${{ secrets.EMAIL_ID }}
+      EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      APPLICANT_NAME: ${{ secrets.APPLICANT_NAME }}
+      APPLICANT_EMAIL: ${{ secrets.APPLICANT_EMAIL }}
+      APPLICANT_PHONE: ${{ secrets.APPLICANT_PHONE }}
+      PYTHONIOENCODING: 'utf-8'
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
+          cache: 'pip'
 
-      - name: Install packages
+      - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
-          playwright install chromium
 
-      - name: Make folders
-        run: mkdir -p output logs data scrapers/pycache utils/pycache
+      - name: Install Playwright browser
+        run: python -m playwright install --with-deps chromium
 
-      - name: Create config
-        env:
-          GITHUB_TOKEN_API: ${{ secrets.MY_GITHUB_TOKEN }}
-          EMAIL_ID: ${{ secrets.EMAIL_ID }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+      - name: Create runtime folders
+        run: mkdir -p output logs data
+
+      - name: Verify configuration loads
         run: |
-          python -c "
-          content = '''
-          SEARCH_KEYWORDS = [\"python developer fresher\", \"machine learning fresher\", \"data scientist fresher\", \"software engineer fresher\"]
-          LOCATION = \"India\"
-          EXPERIENCE_YEARS = 0
-          MAX_JOBS_PER_SITE = 50
-          MIN_SALARY_LPA = 0
-          YOUR_SKILLS = [\"python\", \"tensorflow\", \"opencv\", \"pandas\", \"numpy\", \"react\", \"flask\", \"git\", \"linux\", \"machine learning\"]
-          FILTER_KEYWORDS = []
-          OUTPUT_FILE = \"output/jobs_found.json\"
-          JOBS_FILE = \"output/jobs_found.json\"
-          EXCEL_FILE = \"output/jobs_found.xlsx\"
-          DB_FILE = \"data/jobs.db\"
-          TRACKER_FILE = \"output/apply_tracker.xlsx\"
-          APPLY_LOG_FILE = \"output/apply_log.xlsx\"
-          LINKEDIN_APPLY_LOG_FILE = \"output/linkedin_apply_log.json\"
-          LINKEDIN_COOKIE_FILE = \"browser_data/linkedin_cookies.json\"
-          GOVT_SITES = {\"ISRO\": \"https://www.isro.gov.in/Careers.html\", \"DRDO\": \"https://www.drdo.gov.in/jobs\", \"BARC\": \"https://www.barc.gov.in/recruitment/\", \"BEL\": \"https://bel-india.in/recruitment/\", \"NPCIL\": \"https://www.npcilcareers.co.in/\", \"ECIL\": \"https://www.ecil.co.in/jobs.html\", \"NIELIT\": \"https://www.nielit.gov.in/recruitments\", \"CDAC\": \"https://careers.cdac.in/\", \"HAL\": \"https://hal-india.co.in/career\"}
-          CITIES = [\"Bangalore\", \"Hyderabad\", \"Pune\", \"Mumbai\", \"Chennai\", \"Delhi\", \"Ahmedabad\", \"Remote\"]
-          PREFERRED_CITIES = CITIES
-          PREFERRED_SOURCES = [\"LinkedIn\", \"Indeed\", \"Naukri\", \"Wellfound\", \"Government\"]
-          ALLOWED_JOB_TYPES = [\"Full Time\", \"Internship\"]
-          REMOTE_ONLY = False
-          MIN_MATCH_SCORE = 0
-          MAX_EXCEL_JOBS_PER_SOURCE = 100
-          HEADLESS = True
-          REQUEST_DELAY = 2
-          MAX_RETRIES = 3
-          GITHUB_TOKEN = \"$GITHUB_TOKEN_API\"
-          EMAIL_ID = \"$EMAIL_ID\"
-          EMAIL_PASSWORD = \"$EMAIL_PASSWORD\"
-          NOTIFY_EMAIL = \"$NOTIFY_EMAIL\" or \"$EMAIL_ID\"
-          '''
-          with open('config.py', 'w') as f:
-              f.write(content.strip())
-          print('config created!')
-          "
-
-      - name: Check email config
-        env:
-          EMAIL_ID: ${{ secrets.EMAIL_ID }}
-          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-        run: |
-          python -c "
+          python - << 'PY'
           import os
-          print(f'EMAIL_ID set: {bool(os.getenv(\"EMAIL_ID\"))}')
-          print(f'EMAIL_PASSWORD set: {bool(os.getenv(\"EMAIL_PASSWORD\"))}')
-          notify = os.getenv('NOTIFY_EMAIL') or os.getenv('EMAIL_ID')
-          print(f'Notify target present: {bool(notify)}')
-          "
+          import config
+          print("Keywords :", config.SEARCH_KEYWORDS)
+          print("Cities   :", config.CITIES)
+          print("Email configured  :", bool(os.getenv("EMAIL_ID")) and bool(os.getenv("EMAIL_PASSWORD")))
+          print("Config loaded successfully.")
+          PY
 
       - name: Run job search
-        run: python main.py --sites all --top 20 --retries 2
+        id: scrape
+        continue-on-error: true
+        run: |
+          python main.py \
+            --sites ${{ github.event.inputs.sites || 'all' }} \
+            --top ${{ github.event.inputs.top || '20' }} \
+            --retries 2
 
-      - name: Send email
+      - name: Check results
+        id: results
+        run: |
+          python - << 'PY'
+          import json, os, pathlib
+          count = 0
+          for name in ("output/jobs_enriched.json", "output/jobs_found.json"):
+              path = pathlib.Path(name)
+              if path.exists() and path.stat().st_size:
+                  try:
+                      count = max(count, len(json.loads(path.read_text(encoding="utf-8"))))
+                  except (json.JSONDecodeError, TypeError):
+                      pass
+          found = "true" if count else "false"
+          with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+              fh.write(f"found={found}\n")
+          if count:
+              print(f"{count} jobs collected.")
+          else:
+              print("::warning::No jobs scraped this run (portals may have blocked the runner IP). Skipping email.")
+          PY
+
+      - name: Send email digest
+        if: steps.results.outputs.found == 'true'
         run: python email_alert.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-results-${{ github.run_number }}
+          path: |
+            output/
+            logs/
+          if-no-files-found: ignore
+          retention-days: 14

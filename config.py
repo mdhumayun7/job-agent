@@ -1,12 +1,22 @@
-import os
+﻿import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
-OUTPUT_DIR = BASE_DIR / "output"
-LOG_DIR = BASE_DIR / "logs"
-RESUME_DIR = BASE_DIR / "resume"
+# ── Load .env file if it exists ──────────────────────────────
+_env_file = Path(__file__).resolve().parent / ".env"
+if _env_file.exists():
+    with open(_env_file, encoding="utf-8") as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _k, _v = _line.split("=", 1)
+                os.environ.setdefault(_k.strip(), _v.strip())
+
+BASE_DIR        = Path(__file__).resolve().parent
+OUTPUT_DIR      = BASE_DIR / "output"
+LOG_DIR         = BASE_DIR / "logs"
+RESUME_DIR      = BASE_DIR / "resume"
 BROWSER_DATA_DIR = BASE_DIR / "browser_data"
-DATA_DIR = BASE_DIR / "data"
+DATA_DIR        = BASE_DIR / "data"
 
 
 def _csv_env(name, default):
@@ -16,81 +26,98 @@ def _csv_env(name, default):
     return [item.strip() for item in value.split(",") if item.strip()]
 
 
-SEARCH_KEYWORDS = _csv_env(
-    "SEARCH_KEYWORDS",
-    [
-        "python developer fresher",
-        "machine learning fresher",
-        "data scientist fresher",
-        "software engineer fresher",
-    ],
-)
-LOCATION = os.getenv("LOCATION", "India")
+SEARCH_KEYWORDS  = _csv_env("SEARCH_KEYWORDS", [
+    "python developer fresher",
+    "machine learning fresher",
+    "data scientist fresher",
+    "software engineer fresher",
+])
+LOCATION         = os.getenv("LOCATION", "India")
 EXPERIENCE_YEARS = int(os.getenv("EXPERIENCE_YEARS", "0"))
 MAX_JOBS_PER_SITE = int(os.getenv("MAX_JOBS_PER_SITE", "50"))
-MIN_SALARY_LPA = int(os.getenv("MIN_SALARY_LPA", "0"))
-YOUR_SKILLS = _csv_env(
-    "YOUR_SKILLS",
-    ["python", "tensorflow", "opencv", "pandas", "numpy", "react", "flask", "git", "linux"],
-)
-FILTER_KEYWORDS = _csv_env("FILTER_KEYWORDS", [])
-CITIES = _csv_env(
-    "CITIES",
-    ["Bangalore", "Hyderabad", "Pune", "Mumbai", "Chennai", "Delhi", "Ahmedabad", "Remote"],
-)
-PREFERRED_CITIES = _csv_env("PREFERRED_CITIES", CITIES)
-PREFERRED_SOURCES = _csv_env("PREFERRED_SOURCES", ["LinkedIn", "Indeed", "Naukri", "Wellfound", "Government"])
+MIN_SALARY_LPA   = int(os.getenv("MIN_SALARY_LPA", "0"))
+YOUR_SKILLS      = _csv_env("YOUR_SKILLS", [
+    "python", "tensorflow", "opencv", "pandas", "numpy",
+    "react", "flask", "git", "linux", "sql", "machine learning",
+])
+FILTER_KEYWORDS  = _csv_env("FILTER_KEYWORDS", [])
+CITIES           = _csv_env("CITIES", [
+    "Bangalore", "Hyderabad", "Pune", "Mumbai",
+    "Chennai", "Delhi", "Ahmedabad", "Remote",
+])
+PREFERRED_CITIES  = _csv_env("PREFERRED_CITIES", CITIES)
+PREFERRED_SOURCES = _csv_env("PREFERRED_SOURCES", [
+    "LinkedIn", "Indeed", "Naukri", "Wellfound",
+    "Unstop", "Foundit", "Internshala", "Shine", "Government",
+])
 ALLOWED_JOB_TYPES = _csv_env("ALLOWED_JOB_TYPES", ["Full Time", "Internship"])
-REMOTE_ONLY = os.getenv("REMOTE_ONLY", "false").lower() == "true"
+REMOTE_ONLY       = os.getenv("REMOTE_ONLY", "false").lower() == "true"
+NEGATIVE_KEYWORDS = _csv_env("NEGATIVE_KEYWORDS", ["sales","bpo","telecalling","marketing","hr recruiter","customer support","data entry","content writing","field sales","insurance"])
 MIN_MATCH_SCORE = int(os.getenv("MIN_MATCH_SCORE", "0"))
 MAX_EXCEL_JOBS_PER_SOURCE = int(os.getenv("MAX_EXCEL_JOBS_PER_SOURCE", "100"))
-OUTPUT_FILE = str(OUTPUT_DIR / "jobs_found.json")
-EXCEL_FILE = str(OUTPUT_DIR / "jobs_found.xlsx")
-DB_FILE = str(DATA_DIR / "jobs.db")
-TRACKER_FILE = str(OUTPUT_DIR / "apply_tracker.xlsx")
+
+OUTPUT_FILE           = str(OUTPUT_DIR / "jobs_found.json")
+EXCEL_FILE            = str(OUTPUT_DIR / "jobs_found.xlsx")
+ENRICHED_OUTPUT_FILE  = str(OUTPUT_DIR / "jobs_enriched.json")
+ANALYTICS_OUTPUT_FILE = str(OUTPUT_DIR / "analytics_summary.json")
+TAILORED_JOBS_FILE    = str(OUTPUT_DIR / "tailored_jobs.xlsx")
+INTERVIEW_PREP_FILE   = str(OUTPUT_DIR / "interview_prep.xlsx")
+DB_FILE               = str(DATA_DIR / "jobs.db")
+TRACKER_FILE          = str(OUTPUT_DIR / "apply_tracker.xlsx")
+JOBS_FILE             = OUTPUT_FILE
+
 GOVT_SITES = {
-    "ISRO": "https://www.isro.gov.in/Careers.html",
-    "DRDO": "https://www.drdo.gov.in/jobs",
-    "BARC": "https://www.barc.gov.in/recruitment/",
-    "BEL": "https://bel-india.in/recruitment/",
-    "NPCIL": "https://www.npcilcareers.co.in/",
-    "ECIL": "https://www.ecil.co.in/jobs.html",
+    "ISRO":   "https://www.isro.gov.in/Careers.html",
+    "DRDO":   "https://www.drdo.gov.in/jobs",
+    "BARC":   "https://www.barc.gov.in/recruitment/",
+    "BEL":    "https://bel-india.in/recruitment/",
+    "NPCIL":  "https://www.npcilcareers.co.in/",
+    "ECIL":   "https://www.ecil.co.in/jobs.html",
     "NIELIT": "https://www.nielit.gov.in/recruitments",
-    "CDAC": "https://careers.cdac.in/",
-    "HAL": "https://hal-india.co.in/career",
+    "CDAC":   "https://careers.cdac.in/",
+    "HAL":    "https://hal-india.co.in/career",
 }
-HEADLESS = os.getenv("HEADLESS", "true").lower() == "true"
-REQUEST_DELAY = int(os.getenv("REQUEST_DELAY", "2"))
-MAX_RETRIES = int(os.getenv("MAX_RETRIES", "3"))
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "")
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-EMAIL_ID = os.getenv("EMAIL_ID", "")
-EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "")
-NOTIFY_EMAIL = os.getenv("NOTIFY_EMAIL", EMAIL_ID)
+
+HEADLESS        = os.getenv("HEADLESS", "true").lower() == "true"
+REQUEST_DELAY   = int(os.getenv("REQUEST_DELAY", "2"))
+MAX_RETRIES     = int(os.getenv("MAX_RETRIES", "3"))
+GITHUB_TOKEN    = os.getenv("GITHUB_TOKEN", "")
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+EMAIL_ID        = os.getenv("EMAIL_ID", "")
+EMAIL_PASSWORD  = os.getenv("EMAIL_PASSWORD", "")
+NOTIFY_EMAIL    = os.getenv("NOTIFY_EMAIL", EMAIL_ID)
 
 PERSONAL_INFO = {
-    "name": os.getenv("APPLICANT_NAME", "MD Humayun"),
-    "email": os.getenv("APPLICANT_EMAIL", EMAIL_ID),
-    "phone": os.getenv("APPLICANT_PHONE", ""),
-    "location": os.getenv("APPLICANT_LOCATION", "India"),
-    "college": os.getenv("APPLICANT_COLLEGE", ""),
-    "degree": os.getenv("APPLICANT_DEGREE", ""),
-    "cgpa": os.getenv("APPLICANT_CGPA", ""),
+    "name":       os.getenv("APPLICANT_NAME", "MD Humayun"),
+    "email":      os.getenv("APPLICANT_EMAIL", EMAIL_ID),
+    "phone":      os.getenv("APPLICANT_PHONE", ""),
+    "location":   os.getenv("APPLICANT_LOCATION", "India"),
+    "college":    os.getenv("APPLICANT_COLLEGE", ""),
+    "degree":     os.getenv("APPLICANT_DEGREE", ""),
+    "cgpa":       os.getenv("APPLICANT_CGPA", ""),
     "experience": os.getenv("APPLICANT_EXPERIENCE", "0"),
-    "linkedin": os.getenv("APPLICANT_LINKEDIN", ""),
-    "github": os.getenv("APPLICANT_GITHUB", ""),
+    "linkedin":   os.getenv("APPLICANT_LINKEDIN", ""),
+    "github":     os.getenv("APPLICANT_GITHUB", ""),
 }
 
-RESUME_PATH = str(Path(os.getenv("RESUME_PATH", RESUME_DIR / "resume.pdf")))
-JOBS_FILE = str(OUTPUT_DIR / "jobs_found.json")
-APPLY_LOG_FILE = str(OUTPUT_DIR / "apply_log.xlsx")
-LINKEDIN_COOKIE_FILE = str(BROWSER_DATA_DIR / "linkedin_cookies.json")
-LINKEDIN_APPLY_LOG_FILE = str(OUTPUT_DIR / "linkedin_apply_log.json")
+PROFILE_SUMMARY = os.getenv(
+    "PROFILE_SUMMARY",
+    "M.Tech Computer Science candidate with strong Python, machine learning, "
+    "data analysis, web development, and automation skills.",
+)
+
+RESUME_PATH     = str(Path(os.getenv("RESUME_PATH", str(RESUME_DIR / "resume.pdf"))))
+APPLY_LOG_FILE  = str(OUTPUT_DIR / "apply_log.xlsx")
+LINKEDIN_COOKIE_FILE     = str(BROWSER_DATA_DIR / "linkedin_cookies.json")
+LINKEDIN_APPLY_LOG_FILE  = str(OUTPUT_DIR / "linkedin_apply_log.json")
+
 STATUS_COLORS = {
-    "Saved": "E2E8F0",
-    "Applied": "BFDBFE",
+    "Saved":     "E2E8F0",
+    "Applied":   "BFDBFE",
     "Interview": "86EFAC",
-    "Rejected": "FCA5A5",
-    "Offer": "4ADE80",
+    "Rejected":  "FCA5A5",
+    "Offer":     "4ADE80",
     "Follow Up": "FDE68A",
 }
+

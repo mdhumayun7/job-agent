@@ -1,150 +1,110 @@
-import json
-import re
-import sys
-sys.path.insert(0, r"C:\Users\HP\Desktop\job_agent")
+﻿import json
+from pathlib import Path
+import openpyxl
+from openpyxl.styles import Font, PatternFill, Alignment
+from config import ENRICHED_OUTPUT_FILE, JOBS_FILE, YOUR_SKILLS, PERSONAL_INFO, PROFILE_SUMMARY
 
-with open(r"C:\Users\HP\Desktop\job_agent\config.py", "r") as cf:
-    _cfg = cf.read()
-_match = re.search(r'GITHUB_TOKEN = "(.+?)"', _cfg)
-GITHUB_TOKEN = _match.group(1) if _match else ""
+TECH_QUESTIONS = {
+    "python":         ["Explain Python GIL","List vs Tuple difference","What are decorators?","Explain generators"],
+    "machine learning":["Bias-variance tradeoff","Overfitting solutions","Explain gradient descent","Cross-validation"],
+    "sql":            ["Joins explained","GROUP BY vs HAVING","Indexes and performance","Window functions"],
+    "react":          ["Virtual DOM","useState vs useReducer","useEffect cleanup","Props vs State"],
+    "flask":          ["Flask vs Django","Blueprints","Request context","REST API design"],
+    "deep learning":  ["CNN vs RNN","Backpropagation","Batch normalization","Dropout regularization"],
+    "data analysis":  ["Pandas groupby","Handling missing data","Data normalization","EDA steps"],
+    "git":            ["Git rebase vs merge","Cherry-pick","Git stash","Branch strategies"],
+    "linux":          ["File permissions","Process management","Cron jobs","Shell scripting basics"],
+    "aws":            ["EC2 vs Lambda","S3 storage classes","IAM roles","VPC basics"],
+}
+HR_QUESTIONS = [
+    "Tell me about yourself",
+    "Why do you want to join this company?",
+    "What are your strengths and weaknesses?",
+    "Where do you see yourself in 5 years?",
+    "Describe a challenging project you worked on",
+    "Why should we hire you?",
+]
+CODING_PROBLEMS = [
+    "Reverse a string / linked list",
+    "Find duplicates in array",
+    "Binary search implementation",
+    "Fibonacci with memoization",
+    "Valid parentheses (stack)",
+    "Two sum problem",
+]
 
-from openai import OpenAI
-client = OpenAI(
-    base_url="https://models.inference.ai.azure.com",
-    api_key=GITHUB_TOKEN
-)
+def get_prep(job):
+    text    = f"{job.get('title','')} {job.get('description','')}".lower()
+    matched = job.get("matched_skills",[]) or []
+    topics  = job.get("interview_focus_topics",[]) or matched[:4] or ["DSA","OOPs","SQL","System Design"]
+    tech_qs = []
+    for skill in matched[:4]:
+        qs = TECH_QUESTIONS.get(skill.lower(),[])
+        tech_qs.extend(qs[:2])
+    if not tech_qs:
+        tech_qs = ["Explain your strongest technical skill","Walk me through a project you built","How do you debug complex issues?","Explain OOP concepts with example"]
+    score = job.get("ai_match_score",job.get("match_score",0))
+    diff  = job.get("interview_difficulty","Medium")
+    prep_days = 3 if score>=60 else (5 if score>=30 else 7)
+    tip = f"Focus on {topics[0] if topics else 'core CS fundamentals'} — most likely to be asked for this role."
+    return {
+        "technical_questions":    "\n".join([f"{i+1}. {q}" for i,q in enumerate(tech_qs[:6])]),
+        "hr_questions":           "\n".join([f"{i+1}. {q}" for i,q in enumerate(HR_QUESTIONS[:4])]),
+        "coding_problems":        "\n".join([f"• {p}" for p in CODING_PROBLEMS[:4]]),
+        "topics_to_study":        "\n".join([f"• {t}" for t in topics[:5]]),
+        "prep_days_recommended":  prep_days,
+        "difficulty":             diff,
+        "tips":                   tip,
+    }
 
-MY_PROFILE = """
-Name: MD Humayun
-Education: M.Tech CS (Info Security) SVNIT CPI 8.90, B.Tech CS CGPA 8.51
-Skills: Python, C++, TensorFlow, Keras, OpenCV, React, Flask, SQL, Git, Linux
-Projects: Face Emotion Detection 92%, Plant Disease Prediction 95%, Sign Language Detection
-Experience: Salesforce Intern, Freelance Digital Marketer, YouTube 12k subscribers
-"""
-
-def generate_interview_prep(job_title, company, job_description=""):
-    print(f"Generating interview prep for: {job_title} @ {company}")
-    prompt = f"""You are an expert interview coach.
-
-Candidate Profile:
-{MY_PROFILE}
-
-Job: {job_title} at {company}
-Description: {job_description[:500]}
-
-Generate interview preparation in EXACTLY this format with NO markdown:
-
-TECHNICAL_QUESTIONS:
-1. [question]
-2. [question]
-3. [question]
-4. [question]
-5. [question]
-
-HR_QUESTIONS:
-1. [question]
-2. [question]
-3. [question]
-
-SUGGESTED_ANSWERS:
-Q1: [answer for technical question 1]
-Q2: [answer for technical question 2]
-
-TOPICS_TO_STUDY:
-1. [topic]
-2. [topic]
-3. [topic]
-
-STRENGTHS_TO_HIGHLIGHT:
-1. [strength]
-2. [strength]
-3. [strength]
-
-DIFFICULTY: [Easy/Medium/Hard]
-PREPARATION_DAYS: [number of days needed]
-"""
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=2000
-        )
-        return response.choices[0].message.content
-    except Exception as e:
-        print(f"Error: {e}")
-        return ""
-
-def save_prep_excel(job_title, company, prep_text):
-    import openpyxl
-    from openpyxl.styles import PatternFill, Font, Alignment
+def save_excel(jobs, path="output/interview_prep.xlsx"):
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Interview Prep"
-    ws.column_dimensions["A"].width = 30
-    ws.column_dimensions["B"].width = 80
-
-    header = ws.cell(row=1, column=1, value=f"Interview Prep: {job_title} @ {company}")
-    header.font = Font(bold=True, size=14, color="FFFFFF")
-    header.fill = PatternFill("solid", fgColor="4F46E5")
-    ws.merge_cells("A1:B1")
-
-    sections = {
-        "TECHNICAL_QUESTIONS": ("Technical Questions", "BFDBFE"),
-        "HR_QUESTIONS": ("HR Questions", "BBF7D0"),
-        "SUGGESTED_ANSWERS": ("Suggested Answers", "FEF08A"),
-        "TOPICS_TO_STUDY": ("Topics to Study", "FDE68A"),
-        "STRENGTHS_TO_HIGHLIGHT": ("Strengths to Highlight", "86EFAC"),
-        "DIFFICULTY": ("Difficulty Level", "FCA5A5"),
-        "PREPARATION_DAYS": ("Days Needed", "E9D5FF"),
-    }
-
-    current_row = 2
-    current_section = None
-    section_content = {}
-
-    for line in prep_text.split("\n"):
-        line = line.strip()
-        if not line: continue
-        matched = False
-        for key in sections:
-            if line.startswith(key + ":"):
-                current_section = key
-                section_content[key] = []
-                matched = True
-                break
-            elif line == key:
-                current_section = key
-                section_content[key] = []
-                matched = True
-                break
-        if not matched and current_section:
-            section_content[current_section].append(line)
-
-    for key, (label, color) in sections.items():
-        content = section_content.get(key, [])
-        if not content: continue
-        sec_cell = ws.cell(row=current_row, column=1, value=label)
-        sec_cell.font = Font(bold=True, color="FFFFFF")
-        sec_cell.fill = PatternFill("solid", fgColor="1E293B")
-        ws.merge_cells(f"A{current_row}:B{current_row}")
-        current_row += 1
-        for item in content:
-            ws.cell(row=current_row, column=1, value="")
-            c = ws.cell(row=current_row, column=2, value=item)
-            c.fill = PatternFill("solid", fgColor=color)
-            c.alignment = Alignment(wrap_text=True)
-            ws.row_dimensions[current_row].height = 30
-            current_row += 1
-
-    path = r"C:\Users\HP\Desktop\job_agent\output\interview_prep.xlsx"
+    headers = ["Score","Title","Company","Source","Difficulty","Prep Days","Technical Questions","HR Questions","Coding Problems","Topics to Study","Tips","Apply Link"]
+    hfill = PatternFill("solid",fgColor="1E293B")
+    hfont = Font(color="FFFFFF",bold=True)
+    for col,h in enumerate(headers,1):
+        c = ws.cell(row=1,column=col,value=h)
+        c.fill=hfill; c.font=hfont
+        c.alignment=Alignment(horizontal="center")
+    diff_colors = {"Easy":"86EFAC","Medium":"FDE68A","Hard":"FCA5A5"}
+    for row,job in enumerate(jobs,2):
+        sc = job.get("ai_match_score",job.get("match_score",0))
+        color = "86EFAC" if sc>=60 else ("FDE68A" if sc>=30 else "FCA5A5")
+        ws.cell(row=row,column=1,value=sc).fill=PatternFill("solid",fgColor=color)
+        ws.cell(row=row,column=2,value=job.get("title",""))
+        ws.cell(row=row,column=3,value=job.get("company",""))
+        ws.cell(row=row,column=4,value=job.get("source_group",job.get("source","")))
+        diff=job.get("difficulty","Medium")
+        dc=ws.cell(row=row,column=5,value=diff)
+        dc.fill=PatternFill("solid",fgColor=diff_colors.get(diff,"E2E8F0"))
+        ws.cell(row=row,column=6,value=job.get("prep_days_recommended",5))
+        ws.cell(row=row,column=7,value=job.get("technical_questions","")).alignment=Alignment(wrap_text=True)
+        ws.cell(row=row,column=8,value=job.get("hr_questions","")).alignment=Alignment(wrap_text=True)
+        ws.cell(row=row,column=9,value=job.get("coding_problems","")).alignment=Alignment(wrap_text=True)
+        ws.cell(row=row,column=10,value=job.get("topics_to_study","")).alignment=Alignment(wrap_text=True)
+        ws.cell(row=row,column=11,value=job.get("tips","")).alignment=Alignment(wrap_text=True)
+        ws.cell(row=row,column=12,value=job.get("apply_url",""))
+    for col in ws.columns:
+        mx=max((len(str(c.value or "")) for c in col),default=10)
+        ws.column_dimensions[col[0].column_letter].width=min(mx+4,60)
+    Path(path).parent.mkdir(exist_ok=True)
     wb.save(path)
-    print(f"Saved: {path}")
+    print(f"  Saved: {path}")
 
-def prep_for_job(job_title, company, job_description=""):
-    prep = generate_interview_prep(job_title, company, job_description)
-    print("\n" + prep)
-    save_prep_excel(job_title, company, prep)
+def main():
+    src = Path(ENRICHED_OUTPUT_FILE) if Path(ENRICHED_OUTPUT_FILE).exists() else Path(JOBS_FILE)
+    with open(src,"r",encoding="utf-8") as f: jobs=json.load(f)
+    top = sorted(jobs,key=lambda j:j.get("ai_match_score",j.get("match_score",0)),reverse=True)[:50]
+    print(f"\nGenerating interview prep for top {len(top)} jobs...")
+    prepped=[]
+    for i,job in enumerate(top,1):
+        p=get_prep(job)
+        prepped.append({**job,**p})
+        if i%10==0: print(f"  {i}/{len(top)} done")
+    save_excel(prepped)
+    print(f"Done! {len(prepped)} jobs prepared.")
 
 if __name__ == "__main__":
-    prep_for_job("Scientist/Engineer SC", "ISRO", "M.Tech CS preferred, Python ML required")
+    main()
