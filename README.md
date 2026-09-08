@@ -15,6 +15,28 @@ Automated job-search pipeline for Indian freshers and early-career engineers. It
 Applying as a fresher means checking the same ten portals every morning, re-reading the same irrelevant BPO and telecalling listings, and losing the good openings to a two-day delay. This project turns that routine into a single scheduled job: scrape once a day, rank against your actual skills, drop everything below your threshold, and send the rest to your inbox as a formatted digest.
 
 ---
+---
+
+## What a full run looks like
+
+| | |
+|---|---|
+| Sources ingested | 11 job boards + 9 government portals |
+| Listings persisted | 2,158 |
+| After deduplication and filtering | 793 → 357 ranked matches |
+| Noise reduction | 55% |
+| Manual triggers required | 0 |
+
+Deduplication uses fuzzy matching (`SequenceMatcher`) at a 0.88 similarity
+threshold. That number is the one worth arguing about: lower it and genuinely
+different roles start merging, raise it and near-duplicates survive into the
+digest. It was set by inspecting the collisions on either side of the boundary,
+not by picking something round.
+
+Each scraper retries in isolation, so a portal that breaks overnight degrades
+one source instead of producing an empty run — which is the difference between
+a pipeline you trust and one you end up checking manually anyway.
+---
 
 ## Features
 
@@ -223,6 +245,12 @@ Key `.env` variables:
 ## Disclaimer
 
 Built for personal job-search use. Scraping is rate-limited and respects each site's structure, but you are responsible for complying with the terms of service of any portal you point it at. The auto-apply modules are experimental — review anything before it is submitted on your behalf.
+
+## Author
+
+**MD Humayun** — M.Tech CS (Information Security & Privacy), SVNIT Surat
+[Portfolio](https://mdhumayun7.github.io/MD-HUMAYUN-PORTFOLIO/) ·
+[LinkedIn](https://www.linkedin.com/in/md-humayun-82051521a/)
 
 ## License
 
