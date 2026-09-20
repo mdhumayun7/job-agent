@@ -510,5 +510,17 @@
       "Government"
     ],
     "note": "Already in existing GOVT_SITES config -- keep existing govt_scraper.py logic for this."
+  },
+  {
+    "company": "MakeMyTrip",
+    "career_url": "https://careers.makemytrip.com/",
+    "candidate_slugs": [],
+    "platform": "makemytrip_custom",
+    "enabled": true,
+    "categories": [
+      "Software Engineering",
+      "Product"
+    ],
+    "note": "In-house JSON API at careers.makemytrip.com/api/jobs, confirmed live and public."
   }
 ]

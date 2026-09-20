@@ -28,9 +28,12 @@ def _load_adapters():
     from adapter_greenhouse import fetch_greenhouse_jobs
     from adapter_lever import fetch_lever_jobs
     from adapter_smartrecruiters import fetch_smartrecruiters_jobs
+    from adapter_makemytrip import fetch_makemytrip_jobs
     ADAPTER_MAP["greenhouse"] = fetch_greenhouse_jobs
     ADAPTER_MAP["lever"] = fetch_lever_jobs
     ADAPTER_MAP["smartrecruiters"] = fetch_smartrecruiters_jobs
+    # makemytrip_custom takes no slug -- wrap it to match the (slug, name) signature
+    ADAPTER_MAP["makemytrip_custom"] = lambda slug, name: fetch_makemytrip_jobs(name)
 
 
 def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
@@ -38,7 +41,7 @@ def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, l
     companies = json.loads(Path(companies_path).read_text(encoding="utf-8"))
     enabled = [
         c for c in companies
-        if c.get("enabled") and c.get("platform") in ("greenhouse", "lever", "smartrecruiters")
+        if c.get("enabled") and c.get("platform") in ("greenhouse", "lever", "smartrecruiters", "makemytrip_custom")
     ]
     if company_filter:
         enabled = [c for c in enabled if c["company"].lower() == company_filter.lower()]
