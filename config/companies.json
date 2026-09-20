@@ -1,0 +1,497 @@
+[
+  {
+    "company": "Stripe",
+    "career_url": "https://stripe.com/jobs",
+    "candidate_slugs": [
+      "stripe"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": true,
+    "verified_slug": "stripe"
+  },
+  {
+    "company": "Cloudflare",
+    "career_url": "https://www.cloudflare.com/careers/",
+    "candidate_slugs": [
+      "cloudflare"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Cloud",
+      "Cybersecurity"
+    ],
+    "enabled": true,
+    "verified_slug": "cloudflare"
+  },
+  {
+    "company": "Airbnb",
+    "career_url": "https://careers.airbnb.com/",
+    "candidate_slugs": [
+      "airbnb"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "airbnb"
+  },
+  {
+    "company": "Coinbase",
+    "career_url": "https://www.coinbase.com/careers",
+    "candidate_slugs": [
+      "coinbase"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering",
+      "Blockchain"
+    ],
+    "enabled": true,
+    "verified_slug": "coinbase"
+  },
+  {
+    "company": "Robinhood",
+    "career_url": "https://careers.robinhood.com/",
+    "candidate_slugs": [
+      "robinhood"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "robinhood"
+  },
+  {
+    "company": "Discord",
+    "career_url": "https://discord.com/careers",
+    "candidate_slugs": [
+      "discord"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "discord"
+  },
+  {
+    "company": "Pinterest",
+    "career_url": "https://www.pinterestcareers.com/",
+    "candidate_slugs": [
+      "pinterest"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "pinterest"
+  },
+  {
+    "company": "Lyft",
+    "career_url": "https://www.lyft.com/careers",
+    "candidate_slugs": [
+      "lyft"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "lyft"
+  },
+  {
+    "company": "Instacart",
+    "career_url": "https://instacart.careers/",
+    "candidate_slugs": [
+      "instacart"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "instacart"
+  },
+  {
+    "company": "GitLab",
+    "career_url": "https://about.gitlab.com/jobs/",
+    "candidate_slugs": [
+      "gitlab"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering",
+      "DevOps"
+    ],
+    "enabled": true,
+    "verified_slug": "gitlab"
+  },
+  {
+    "company": "Anthropic",
+    "career_url": "https://www.anthropic.com/careers",
+    "candidate_slugs": [
+      "anthropic"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "AI/ML"
+    ],
+    "enabled": true,
+    "verified_slug": "anthropic"
+  },
+  {
+    "company": "Postman",
+    "career_url": "https://www.postman.com/company/careers/",
+    "candidate_slugs": [
+      "postman"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Razorpay",
+    "career_url": "https://razorpay.com/jobs/",
+    "candidate_slugs": [
+      "razorpay"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "BrowserStack",
+    "career_url": "https://www.browserstack.com/careers",
+    "candidate_slugs": [
+      "browserstack"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Chargebee",
+    "career_url": "https://www.chargebee.com/careers/",
+    "candidate_slugs": [
+      "chargebee"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Freshworks",
+    "career_url": "https://www.freshworks.com/company/careers/",
+    "candidate_slugs": [
+      "freshworks"
+    ],
+    "platform": "smartrecruiters",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "freshworks"
+  },
+  {
+    "company": "Zoho",
+    "career_url": "https://www.zoho.com/careers.html",
+    "candidate_slugs": [
+      "zoho"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "CRED",
+    "career_url": "https://careers.cred.club/",
+    "candidate_slugs": [
+      "cred"
+    ],
+    "platform": "lever",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": true,
+    "verified_slug": "cred"
+  },
+  {
+    "company": "Groww",
+    "career_url": "https://groww.in/careers",
+    "candidate_slugs": [
+      "groww"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": true,
+    "verified_slug": "groww"
+  },
+  {
+    "company": "Zerodha",
+    "career_url": "https://zerodha.com/careers/",
+    "candidate_slugs": [
+      "zerodha"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Juspay",
+    "career_url": "https://juspay.io/careers",
+    "candidate_slugs": [
+      "juspay"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "InMobi",
+    "career_url": "https://www.inmobi.com/company/careers",
+    "candidate_slugs": [
+      "inmobi"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "inmobi"
+  },
+  {
+    "company": "Databricks",
+    "career_url": "https://www.databricks.com/company/careers",
+    "candidate_slugs": [
+      "databricks"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "AI/ML",
+      "Data Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "databricks"
+  },
+  {
+    "company": "Snowflake",
+    "career_url": "https://careers.snowflake.com/",
+    "candidate_slugs": [
+      "snowflake"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Data Engineering",
+      "Cloud"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "MongoDB",
+    "career_url": "https://www.mongodb.com/company/careers",
+    "candidate_slugs": [
+      "mongodb"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Data Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "mongodb"
+  },
+  {
+    "company": "HashiCorp",
+    "career_url": "https://www.hashicorp.com/careers",
+    "candidate_slugs": [
+      "hashicorp"
+    ],
+    "platform": "custom",
+    "categories": [
+      "DevOps",
+      "Cloud"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Elastic",
+    "career_url": "https://www.elastic.co/careers",
+    "candidate_slugs": [
+      "elastic"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "Data Engineering"
+    ],
+    "enabled": true,
+    "verified_slug": "elastic"
+  },
+  {
+    "company": "Confluent",
+    "career_url": "https://careers.confluent.io/",
+    "candidate_slugs": [
+      "confluent"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Data Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Datadog",
+    "career_url": "https://careers.datadoghq.com/",
+    "candidate_slugs": [
+      "datadog"
+    ],
+    "platform": "greenhouse",
+    "categories": [
+      "DevOps",
+      "Cloud"
+    ],
+    "enabled": true,
+    "verified_slug": "datadog"
+  },
+  {
+    "company": "Atlassian",
+    "career_url": "https://www.atlassian.com/company/careers",
+    "candidate_slugs": [
+      "atlassian"
+    ],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Hugging Face",
+    "career_url": "https://apply.workable.com/huggingface/",
+    "candidate_slugs": [
+      "huggingface"
+    ],
+    "platform": "custom",
+    "categories": [
+      "AI/ML"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Microsoft",
+    "career_url": "https://careers.microsoft.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "note": "Custom career portal, bot-protected. No public API. Needs manual/Selenium approach or skip.",
+    "categories": [
+      "Software Engineering",
+      "Cloud",
+      "AI/ML"
+    ]
+  },
+  {
+    "company": "Google",
+    "career_url": "https://careers.google.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "note": "Custom career portal, bot-protected. No public API.",
+    "categories": [
+      "Software Engineering",
+      "AI/ML"
+    ]
+  },
+  {
+    "company": "Amazon",
+    "career_url": "https://www.amazon.jobs/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "note": "Has an unofficial internal JSON search endpoint used by their own site; fragile, breaks without notice.",
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ]
+  },
+  {
+    "company": "TCS",
+    "career_url": "https://www.tcs.com/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "note": "Custom portal (ipeople/similar). No public API found.",
+    "categories": [
+      "IT Services"
+    ]
+  },
+  {
+    "company": "Infosys",
+    "career_url": "https://www.infosys.com/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "note": "Custom portal. No public API found.",
+    "categories": [
+      "IT Services"
+    ]
+  },
+  {
+    "company": "Wipro",
+    "career_url": "https://careers.wipro.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "categories": [
+      "IT Services"
+    ]
+  },
+  {
+    "company": "LinkedIn",
+    "career_url": "https://careers.linkedin.com/",
+    "candidate_slugs": [],
+    "platform": "unsupported",
+    "enabled": false,
+    "note": "robots.txt explicitly disallows automated scraping. Do not build a scraper for this one.",
+    "categories": [
+      "Software Engineering"
+    ]
+  },
+  {
+    "company": "NIELIT",
+    "career_url": "https://www.nielit.gov.in/recruitments",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "enabled": false,
+    "categories": [
+      "Government"
+    ],
+    "note": "Already in existing GOVT_SITES config -- keep existing govt_scraper.py logic for this."
+  }
+]
