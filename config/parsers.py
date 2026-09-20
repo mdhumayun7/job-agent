@@ -68,8 +68,16 @@ BRANCH_KEYWORDS = {
 
 
 def detect_cse_relevance(title: str, description: str):
-    """Returns (is_relevant: bool, evidence: str|None)."""
-    text = f"{title} {description}".lower()
+    """Returns (is_relevant: bool, evidence: str|None).
+
+    Checks the TITLE only, not the full description. Full-text matching
+    was tried first and produced false positives (e.g. "Abuse Investigator"
+    matched because the description mentioned "our engineering team" in
+    unrelated boilerplate). A role's title is what its function actually
+    is; incidental mentions of "engineer" elsewhere in the posting are not
+    evidence the role itself is CSE-relevant.
+    """
+    text = title.lower()
     for kw in CSE_KEYWORDS:
         if kw in text:
             return True, kw
@@ -186,6 +194,10 @@ if __name__ == "__main__":
 
     check("cse: SDE title", detect_cse_relevance("Software Development Engineer", "")[0], True)
     check("cse: sales role", detect_cse_relevance("Regional Sales Manager", "drives revenue")[0], False)
+    check("cse: non-eng title with eng boilerplate in body",
+          detect_cse_relevance("Abuse Investigator",
+                                "You'll partner closely with our engineering team and software platform to review cases.")[0],
+          False)
 
     check("fresher: 0-2 years", detect_fresher_eligible("Looking for candidates with 0-2 years experience")[0], True)
     check("fresher: senior role", detect_fresher_eligible("Minimum 8 years of experience required")[0], False)
