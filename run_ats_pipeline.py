@@ -68,8 +68,6 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
         try:
             jobs = fetch_fn(slug, entry["company"])
             enriched = [enrich_job(j) for j in jobs]
-            for j in enriched:
-                j["status"] = "NEW"  # history/dedup tracking is a later phase
             all_jobs.extend(enriched)
         except Exception as e:
             failures.append((entry["company"], str(e)))
@@ -82,6 +80,14 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
     if not all_jobs:
         print("[ats-pipeline] No jobs collected from any company -- not writing an empty xlsx.")
         return {"total": 0, "failures": failures}
+
+    from history import apply_history, save_history
+    all_jobs, updated_history = apply_history(all_jobs)
+    save_history(updated_history)
+    status_counts = {}
+    for j in all_jobs:
+        status_counts[j["status"]] = status_counts.get(j["status"], 0) + 1
+    print(f"[ats-pipeline] Status breakdown: {status_counts}")
 
     Path("output").mkdir(exist_ok=True)
     result = generate_xlsx(all_jobs, "output/ats_jobs.xlsx")
