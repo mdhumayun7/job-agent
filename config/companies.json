@@ -150,7 +150,9 @@
     "company": "Postman",
     "career_url": "https://www.postman.com/company/careers/",
     "candidate_slugs": [
-      "postman"
+      "postman",
+      "postmaninc",
+      "postmantechnologies"
     ],
     "platform": "custom",
     "categories": [
@@ -162,20 +164,23 @@
     "company": "Razorpay",
     "career_url": "https://razorpay.com/jobs/",
     "candidate_slugs": [
-      "razorpay"
+      "razorpay",
+      "razorpaysoftwareprivatelimited"
     ],
-    "platform": "custom",
+    "platform": "greenhouse",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "razorpaysoftwareprivatelimited"
   },
   {
     "company": "BrowserStack",
     "career_url": "https://www.browserstack.com/careers",
     "candidate_slugs": [
-      "browserstack"
+      "browserstack",
+      "browserstacksoftware"
     ],
     "platform": "custom",
     "categories": [
@@ -187,7 +192,9 @@
     "company": "Chargebee",
     "career_url": "https://www.chargebee.com/careers/",
     "candidate_slugs": [
-      "chargebee"
+      "chargebee",
+      "chargebeeinc",
+      "chargebeetechnologies"
     ],
     "platform": "custom",
     "categories": [
@@ -212,7 +219,9 @@
     "company": "Zoho",
     "career_url": "https://www.zoho.com/careers.html",
     "candidate_slugs": [
-      "zoho"
+      "zoho",
+      "zohocorporation",
+      "zohocorp"
     ],
     "platform": "custom",
     "categories": [
@@ -252,7 +261,8 @@
     "company": "Zerodha",
     "career_url": "https://zerodha.com/careers/",
     "candidate_slugs": [
-      "zerodha"
+      "zerodha",
+      "zerodhabroking"
     ],
     "platform": "custom",
     "categories": [
@@ -265,7 +275,8 @@
     "company": "Juspay",
     "career_url": "https://juspay.io/careers",
     "candidate_slugs": [
-      "juspay"
+      "juspay",
+      "juspaytechnologies"
     ],
     "platform": "custom",
     "categories": [
@@ -305,7 +316,9 @@
     "company": "Snowflake",
     "career_url": "https://careers.snowflake.com/",
     "candidate_slugs": [
-      "snowflake"
+      "snowflake",
+      "snowflakeinc",
+      "snowflakecomputing"
     ],
     "platform": "custom",
     "categories": [
@@ -331,7 +344,8 @@
     "company": "HashiCorp",
     "career_url": "https://www.hashicorp.com/careers",
     "candidate_slugs": [
-      "hashicorp"
+      "hashicorp",
+      "hashicorpinc"
     ],
     "platform": "custom",
     "categories": [
@@ -357,7 +371,8 @@
     "company": "Confluent",
     "career_url": "https://careers.confluent.io/",
     "candidate_slugs": [
-      "confluent"
+      "confluent",
+      "confluentinc"
     ],
     "platform": "custom",
     "categories": [
@@ -383,7 +398,8 @@
     "company": "Atlassian",
     "career_url": "https://www.atlassian.com/company/careers",
     "candidate_slugs": [
-      "atlassian"
+      "atlassian",
+      "atlassiancorp"
     ],
     "platform": "custom",
     "categories": [
@@ -395,7 +411,8 @@
     "company": "Hugging Face",
     "career_url": "https://apply.workable.com/huggingface/",
     "candidate_slugs": [
-      "huggingface"
+      "huggingface",
+      "huggingfaceinc"
     ],
     "platform": "custom",
     "categories": [
