@@ -13,7 +13,8 @@ resume/
 # ── Generated output ────────────────────────────────────
 output/
 logs/
-data/
+data/*
+!data/ats_job_history.json
 browser_data/
 *.db
 *.sqlite3
