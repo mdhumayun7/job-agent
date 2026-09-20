@@ -31,6 +31,12 @@ SEARCH_KEYWORDS  = _csv_env("SEARCH_KEYWORDS", [
     "machine learning fresher",
     "data scientist fresher",
     "software engineer fresher",
+    "software engineer",
+    "software developer",
+    "sde",
+    "backend developer",
+    "full stack developer",
+    "data engineer",
 ])
 LOCATION         = os.getenv("LOCATION", "India")
 EXPERIENCE_YEARS = int(os.getenv("EXPERIENCE_YEARS", "0"))
