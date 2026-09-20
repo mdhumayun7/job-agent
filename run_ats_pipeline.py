@@ -60,6 +60,7 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
 
     all_jobs = []
     failures = []
+    fetched_companies = set()
     for entry in targets:
         platform = entry["platform"]
         slug = entry.get("verified_slug", entry["company"].lower())
@@ -71,9 +72,11 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
             jobs = fetch_fn(slug, entry["company"])
             enriched = [enrich_job(j) for j in jobs]
             all_jobs.extend(enriched)
+            fetched_companies.add(entry["company"].strip().lower())
         except Exception as e:
             failures.append((entry["company"], str(e)))
-            print(f"[ats-pipeline] {entry['company']} FAILED: {e} -- continuing with other companies")
+            print(f"[ats-pipeline] {entry['company']} FAILED: {e} -- continuing with other companies "
+                  f"(its previously-seen jobs will NOT be marked closed this run)")
 
     print(f"\n[ats-pipeline] Companies attempted: {len(targets)} | Succeeded: {len(targets) - len(failures)} | Failed: {len(failures)}")
     for company, reason in failures:
@@ -84,7 +87,7 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
         return {"total": 0, "failures": failures}
 
     from history import apply_history, save_history
-    all_jobs, updated_history = apply_history(all_jobs)
+    all_jobs, updated_history = apply_history(all_jobs, fetched_companies=fetched_companies)
     save_history(updated_history)
     status_counts = {}
     for j in all_jobs:

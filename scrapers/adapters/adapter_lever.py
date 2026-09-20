@@ -39,7 +39,7 @@ def fetch_lever_jobs(company_slug: str, company_display_name: str, max_retries: 
             print(f"[lever] attempt {attempt}/{max_retries} failed for '{company_slug}': {e}")
     else:
         print(f"[lever] giving up on '{company_slug}' after {max_retries} attempts: {last_error}")
-        return []
+        raise RuntimeError(f"lever fetch failed for '{company_slug}' after {max_retries} attempts: {last_error}")
 
     jobs = []
     for raw in data:

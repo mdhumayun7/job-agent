@@ -40,12 +40,20 @@ def save_history(history: dict):
     HISTORY_FILE.write_text(json.dumps(history, indent=2, default=str), encoding="utf-8")
 
 
-def apply_history(jobs: list, history: dict = None) -> list:
+def apply_history(jobs: list, history: dict = None, fetched_companies: set = None) -> list:
     """
     Mutates each job's status/first_seen/last_seen in place based on
     the history file, then returns (possibly extended with CLOSED
     entries for jobs seen yesterday but not today).
-    Also returns the updated history dict the caller should save.
+
+    fetched_companies: set of lowercased company names that were
+    SUCCESSFULLY fetched this run (no exception raised). If provided,
+    a history entry for a company NOT in this set is left completely
+    untouched -- never marked CLOSED -- because its absence from
+    today's jobs might just mean its fetch failed, not that it closed.
+    If None (not provided), falls back to checking every company in
+    history, which is only safe when the caller is certain every
+    company was actually attempted this run.
     """
     if history is None:
         history = load_history()
@@ -76,23 +84,30 @@ def apply_history(jobs: list, history: dict = None) -> list:
             **{f: job.get(f) for f in WATCHED_FIELDS},
         }
 
-    # Anything in history but not seen today = CLOSED
+    # Anything in history but not seen today = CLOSED -- but only for
+    # companies we actually, successfully fetched today. A company
+    # whose fetch failed must not have its jobs silently marked closed.
     closed_jobs = []
     for key, prev in history.items():
-        if key not in seen_today:
-            closed_jobs.append({
-                "company": key.split("::")[0],
-                "job_title": prev.get("job_title", "Not specified"),
-                "location_raw": prev.get("location_raw", "Not specified"),
-                "status": "CLOSED",
-                "first_seen": prev.get("first_seen"),
-                "last_seen": prev.get("last_seen"),
-                "job_id": None, "job_url": "", "apply_url": "",
-                "cse_relevant": None, "fresher_eligible": None, "internship": None,
-            })
-            # Keep CLOSED jobs in history too, so they don't flicker
-            # back to "NEW" if they briefly reappear.
-            new_history[key] = prev
+        if key in seen_today:
+            continue
+        company_part = key.split("::")[0]
+        if fetched_companies is not None and company_part not in fetched_companies:
+            new_history[key] = prev  # leave untouched, don't even re-timestamp
+            continue
+        closed_jobs.append({
+            "company": company_part,
+            "job_title": prev.get("job_title", "Not specified"),
+            "location_raw": prev.get("location_raw", "Not specified"),
+            "status": "CLOSED",
+            "first_seen": prev.get("first_seen"),
+            "last_seen": prev.get("last_seen"),
+            "job_id": None, "job_url": "", "apply_url": "",
+            "cse_relevant": None, "fresher_eligible": None, "internship": None,
+        })
+        # Keep CLOSED jobs in history too, so they don't flicker
+        # back to "NEW" if they briefly reappear.
+        new_history[key] = prev
 
     return jobs + closed_jobs, new_history
 
@@ -137,6 +152,21 @@ if __name__ == "__main__":
 
     assert len(closed) == 1 and closed[0]["job_title"] == "Data Scientist", f"FAIL: expected job 2 to show as CLOSED, got {closed}"
     print("PASS: job missing from today's fetch correctly marked CLOSED")
+
+    # Day 3: simulate Stripe's fetch FAILING this run (e.g. network error).
+    # Day 2 already resolved job 2 as closed; only jobs 1 and 3 remain live in history.
+    # If Stripe is excluded from fetched_companies, none of its jobs should
+    # be marked CLOSED even though day3 has an empty jobs list for it.
+    hist_loaded_2 = load_history()
+    day3 = []  # Stripe's fetch failed -- no jobs came back at all
+    result3, hist3 = apply_history(day3, history=hist_loaded_2, fetched_companies=set())
+    closed_on_failure = [j for j in result3 if j["status"] == "CLOSED"]
+    assert len(closed_on_failure) == 0, f"FAIL: a failed fetch must not mark jobs CLOSED, got {closed_on_failure}"
+    print("PASS: failed fetch (company not in fetched_companies) does NOT mark its jobs closed")
+
+    # Confirm job 1 is still intact in history afterward (not silently dropped)
+    assert "stripe::1" in hist3, "FAIL: job 1 should still be in history after a failed fetch, untouched"
+    print("PASS: history entries for a failed company are preserved untouched")
 
     HISTORY_FILE.unlink(missing_ok=True)
     HISTORY_FILE = original_path

@@ -36,7 +36,7 @@ def fetch_smartrecruiters_jobs(company_slug: str, company_display_name: str, max
             print(f"[smartrecruiters] attempt {attempt}/{max_retries} failed for '{company_slug}': {e}")
     else:
         print(f"[smartrecruiters] giving up on '{company_slug}' after {max_retries} attempts: {last_error}")
-        return []
+        raise RuntimeError(f"smartrecruiters fetch failed for '{company_slug}' after {max_retries} attempts: {last_error}")
 
     jobs = []
     for raw in data.get("content", []):

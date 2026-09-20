@@ -24,8 +24,12 @@ TIMEOUT = 15
 def fetch_greenhouse_jobs(board_token: str, company_display_name: str, max_retries: int = 3) -> list:
     """
     board_token: the slug in boards.greenhouse.io/<slug>
-    Returns a list of Job dicts. Returns [] and logs on failure --
-    never fabricates data if the board_token is wrong or the API is down.
+    Returns a list of Job dicts, or [] if the board_token is confirmed
+    invalid (404 -- the company really has no such board). Raises
+    RuntimeError if every retry attempt failed for a transient reason
+    (network error, timeout, 5xx) -- this is NOT the same as "0 jobs"
+    and callers must not treat it as one, or a temporary network blip
+    gets misread as every job at that company having closed.
     """
     url = f"{API_BASE}/{board_token}/jobs?content=true"
     last_error = None
@@ -47,7 +51,7 @@ def fetch_greenhouse_jobs(board_token: str, company_display_name: str, max_retri
             print(f"[greenhouse] attempt {attempt}/{max_retries} failed for '{board_token}': {e}")
     else:
         print(f"[greenhouse] giving up on '{board_token}' after {max_retries} attempts: {last_error}")
-        return []
+        raise RuntimeError(f"greenhouse fetch failed for '{board_token}' after {max_retries} attempts: {last_error}")
 
     jobs = []
     for raw in data.get("jobs", []):
