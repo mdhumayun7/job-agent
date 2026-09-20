@@ -91,13 +91,19 @@ jobs:
             --top ${{ github.event.inputs.top || '20' }} \
             --retries 2
 
+      - name: Run ATS company pipeline (Greenhouse/Lever)
+        id: ats
+        continue-on-error: true
+        run: |
+          python run_ats_pipeline.py
+
       - name: Check results
         id: results
         run: |
           python - << 'PY'
           import json, os, pathlib
           count = 0
-          for name in ("output/jobs_enriched.json", "output/jobs_found.json"):
+          for name in ("output/jobs_enriched.json", "output/jobs_found.json", "output/ats_jobs.json"):
               path = pathlib.Path(name)
               if path.exists() and path.stat().st_size:
                   try:
