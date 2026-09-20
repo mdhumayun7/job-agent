@@ -81,6 +81,7 @@ def apply_history(jobs: list, history: dict = None, fetched_companies: set = Non
         new_history[key] = {
             "first_seen": job["first_seen"],
             "last_seen": now,
+            "company": job.get("company"),  # preserve real casing for CLOSED-job display later
             **{f: job.get(f) for f in WATCHED_FIELDS},
         }
 
@@ -96,7 +97,7 @@ def apply_history(jobs: list, history: dict = None, fetched_companies: set = Non
             new_history[key] = prev  # leave untouched, don't even re-timestamp
             continue
         closed_jobs.append({
-            "company": company_part,
+            "company": prev.get("company", company_part),  # real casing if we have it, else the lowercase key part
             "job_title": prev.get("job_title", "Not specified"),
             "location_raw": prev.get("location_raw", "Not specified"),
             "status": "CLOSED",
@@ -167,6 +168,21 @@ if __name__ == "__main__":
     # Confirm job 1 is still intact in history afterward (not silently dropped)
     assert "stripe::1" in hist3, "FAIL: job 1 should still be in history after a failed fetch, untouched"
     print("PASS: history entries for a failed company are preserved untouched")
+
+    # Day 4: confirm a CLOSED job shows its real-cased company name,
+    # not the lowercase dedup-key fragment. This was a real bug found
+    # on live data (company count was inflated by duplicate lower/proper
+    # casing entries in the website's Companies page).
+    hist4_seed = {}
+    day_a = [{"company": "MongoDB", "job_id": "9", "job_title": "Backend Engineer", "location_raw": "NYC",
+              "application_deadline": None, "salary_raw": "Not disclosed"}]
+    _, hist_a = apply_history(day_a, history=hist4_seed, fetched_companies={"mongodb"})
+    day_b = []  # MongoDB's one job disappears -- should show as CLOSED with proper casing
+    result_b, _ = apply_history(day_b, history=hist_a, fetched_companies={"mongodb"})
+    closed_b = [j for j in result_b if j["status"] == "CLOSED"]
+    assert len(closed_b) == 1 and closed_b[0]["company"] == "MongoDB", \
+        f"FAIL: closed job should show 'MongoDB' (proper case), got {closed_b[0]['company'] if closed_b else None!r}"
+    print("PASS: CLOSED job displays proper-cased company name, not lowercase dedup key")
 
     HISTORY_FILE.unlink(missing_ok=True)
     HISTORY_FILE = original_path
