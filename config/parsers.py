@@ -139,6 +139,49 @@ def extract_salary(description: str):
     return {"salary_raw": raw, "currency": currency, "salary_min": None, "salary_max": None}
 
 
+DEADLINE_PATTERNS = [
+    r"apply\s+by[:\s]+([A-Za-z]+\s+\d{1,2},?\s+\d{4})",
+    r"application\s+deadline[:\s]+([A-Za-z]+\s+\d{1,2},?\s+\d{4})",
+    r"closing\s+date[:\s]+([A-Za-z]+\s+\d{1,2},?\s+\d{4})",
+    r"apply\s+before[:\s]+([A-Za-z]+\s+\d{1,2},?\s+\d{4})",
+    r"deadline[:\s]+(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})",
+]
+
+DATE_FORMATS = ["%B %d, %Y", "%B %d %Y", "%b %d, %Y", "%b %d %Y", "%d/%m/%Y", "%d-%m-%Y", "%m/%d/%Y"]
+
+
+def extract_deadline(description: str, closing_soon_days: int = 7):
+    """Returns dict: application_deadline (ISO date or None), deadline_status.
+    Never invents a deadline -- only returns one if explicit text matched
+    AND the date string actually parses."""
+    import datetime as dt
+
+    for pattern in DEADLINE_PATTERNS:
+        m = re.search(pattern, description, re.IGNORECASE)
+        if not m:
+            continue
+        raw_date = m.group(1)
+        parsed = None
+        for fmt in DATE_FORMATS:
+            try:
+                parsed = dt.datetime.strptime(raw_date, fmt).date()
+                break
+            except ValueError:
+                continue
+        if parsed is None:
+            continue  # matched the phrase but couldn't parse the date -- don't guess
+
+        today = dt.date.today()
+        days_left = (parsed - today).days
+        if days_left < 0:
+            status = "Deadline Passed"
+        elif days_left <= closing_soon_days:
+            status = "Closing Soon"
+        else:
+            status = "Open"
+        return {"application_deadline": parsed.isoformat(), "deadline_status": status}
+
+    return {"application_deadline": None, "deadline_status": "Deadline Not Specified"}
 def extract_degree(description: str):
     found = []
     for degree, patterns in DEGREE_KEYWORDS.items():
@@ -174,6 +217,7 @@ def enrich_job(job: dict) -> dict:
     job.update(extract_salary(desc))
     job["education_required"] = extract_degree(desc)
     job["branch_required"] = extract_branch(desc)
+    job.update(extract_deadline(desc))
 
     return job
 
@@ -210,5 +254,21 @@ if __name__ == "__main__":
 
     check("degree B.Tech", "B.Tech" in extract_degree("Requires B.Tech or equivalent degree"), True)
     check("branch CSE", "Computer Science" in extract_branch("Computer Science and Engineering preferred"), True)
+
+    import datetime as _dt
+    far_future = (_dt.date.today() + _dt.timedelta(days=60)).strftime("%B %d, %Y")
+    near_future = (_dt.date.today() + _dt.timedelta(days=3)).strftime("%B %d, %Y")
+    past_date = (_dt.date.today() - _dt.timedelta(days=10)).strftime("%B %d, %Y")
+
+    check("deadline: far future -> Open",
+          extract_deadline(f"Apply by: {far_future}")["deadline_status"], "Open")
+    check("deadline: near future -> Closing Soon",
+          extract_deadline(f"Application deadline: {near_future}")["deadline_status"], "Closing Soon")
+    check("deadline: past date -> Deadline Passed",
+          extract_deadline(f"Closing date: {past_date}")["deadline_status"], "Deadline Passed")
+    check("deadline: no deadline text -> Not Specified",
+          extract_deadline("Great team, great benefits, apply now!")["deadline_status"], "Deadline Not Specified")
+    check("deadline: phrase present but unparseable date -> Not Specified (no guessing)",
+          extract_deadline("Apply by: sometime next quarter")["deadline_status"], "Deadline Not Specified")
 
     print(f"\n{tests_passed} passed, {tests_failed} failed")
