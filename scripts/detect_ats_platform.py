@@ -3,7 +3,9 @@ Run this from a machine with real internet access (your laptop, or a
 GitHub Actions job) -- NOT from a sandboxed dev environment.
 
 It takes a list of candidate slugs per company and checks which, if any,
-resolve on Greenhouse / Lever / SmartRecruiters public APIs. It writes
+resolve on Greenhouse / Lever / SmartRecruiters / Ashby / Workable public
+APIs, plus any Workday career sites ("candidate_workday") and known
+company-specific APIs ("candidate_custom", e.g. amazon_jobs). It writes
 verified results back into companies.json. Nothing is marked "enabled"
 until this script has actually confirmed it -- no platform is guessed.
 
@@ -26,13 +28,73 @@ CHECKS = {
     "greenhouse": lambda slug: f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs",
     "lever": lambda slug: f"https://api.lever.co/v0/postings/{slug}?mode=json&limit=1",
     "smartrecruiters": lambda slug: f"https://api.smartrecruiters.com/v1/companies/{slug}/postings",
+    "ashby": lambda slug: f"https://api.ashbyhq.com/posting-api/job-board/{slug}",
+    "workable": lambda slug: f"https://apply.workable.com/api/v1/widget/accounts/{slug}",
 }
+SLUG_PLATFORMS = ("greenhouse", "lever", "smartrecruiters", "ashby", "workable")
+
+# Company-specific public JSON endpoints. Value: (platform name stored in
+# companies.json, url to probe, key holding the job list).
+CUSTOM_CHECKS = {
+    "amazon_jobs": ("amazon_custom",
+                    "https://www.amazon.jobs/en/search.json?normalized_country_code[]=IND&result_limit=1",
+                    "jobs"),
+}
+
+
+def _norm(text):
+    return "".join(ch for ch in (text or "").lower() if ch.isalnum())
+
+
+def greenhouse_name_matches(slug: str, company: str) -> bool:
+    """Guard against slug collisions: a Greenhouse board token like 'ola'
+    could belong to an unrelated company. The board metadata endpoint
+    returns the board's display name; require it to share the company's
+    first word. If the metadata call itself fails, don't block."""
+    try:
+        resp = requests.get(f"https://boards-api.greenhouse.io/v1/boards/{slug}", timeout=TIMEOUT)
+        if resp.status_code != 200:
+            return True
+        board_name = _norm(resp.json().get("name"))
+    except Exception:
+        return True
+    first_word = _norm(company.split()[0]) if company.split() else ""
+    return bool(first_word) and (first_word in board_name or board_name in _norm(company))
+
+
+def check_workday(cand: dict) -> bool:
+    url = f"https://{cand['host']}/wday/cxs/{cand['tenant']}/{cand['site']}/jobs"
+    try:
+        resp = requests.post(url, timeout=TIMEOUT, json={
+            "appliedFacets": {}, "limit": 1, "offset": 0, "searchText": ""})
+        if resp.status_code == 429 or resp.status_code >= 500:
+            return None  # rate-limited / server error: unknown, not "absent"
+        if resp.status_code != 200:
+            return False
+        return len(resp.json().get("jobPostings") or []) > 0
+    except Exception:
+        return None
+
+
+def check_custom(key: str) -> bool:
+    _, url, list_key = CUSTOM_CHECKS[key]
+    try:
+        resp = requests.get(url, timeout=TIMEOUT, headers={"Accept": "application/json"})
+        if resp.status_code == 429 or resp.status_code >= 500:
+            return None  # rate-limited / server error: unknown, not "absent"
+        if resp.status_code != 200:
+            return False
+        return len(resp.json().get(list_key) or []) > 0
+    except Exception:
+        return None
 
 
 def check_slug(platform: str, slug: str) -> bool:
     url = CHECKS[platform](slug)
     try:
         resp = requests.get(url, timeout=TIMEOUT)
+        if resp.status_code == 429 or resp.status_code >= 500:
+            return None  # rate-limited / server error: unknown, not "absent"
         if resp.status_code != 200:
             return False
         data = resp.json()
@@ -51,7 +113,7 @@ def check_slug(platform: str, slug: str) -> bool:
             return False
         return False
     except Exception:
-        return False
+        return None  # network error: unknown, not "absent"
 
 
 def main():
@@ -63,14 +125,41 @@ def main():
             continue  # already checked previously
 
         found = None
+        errored = False
         for slug in entry.get("candidate_slugs", []):
-            for platform in ("greenhouse", "lever", "smartrecruiters"):
-                if check_slug(platform, slug):
+            for platform in SLUG_PLATFORMS:
+                ok = check_slug(platform, slug)
+                errored = errored or ok is None
+                if ok:
+                    if platform == "greenhouse" and not greenhouse_name_matches(slug, entry["company"]):
+                        print(f"[SKIP] {entry['company']}: greenhouse board '{slug}' belongs to a different company")
+                        continue
                     found = (platform, slug)
                     break
             if found:
                 break
             time.sleep(0.5)  # be polite -- these are shared public APIs
+
+        if not found:
+            for cand in entry.get("candidate_workday", []):
+                ok = check_workday(cand)
+                errored = errored or ok is None
+                if ok:
+                    found = ("workday", f"{cand['host']}/{cand['tenant']}/{cand['site']}")
+                    break
+                time.sleep(0.5)
+
+        if not found:
+            for key in entry.get("candidate_custom", []):
+                ok = check_custom(key) if key in CUSTOM_CHECKS else False
+                errored = errored or ok is None
+                if ok:
+                    found = (CUSTOM_CHECKS[key][0], key)
+                    break
+
+        if not found and errored:
+            print(f"[RETRY LATER] {entry['company']}: network errors during detection -- will re-check next run")
+            continue
 
         if found:
             entry["platform"], entry["verified_slug"] = found
@@ -79,6 +168,8 @@ def main():
         else:
             entry["platform"] = "custom"
             entry["enabled"] = False
+            entry.setdefault("note", "Auto-detection found no public ATS/API for this company. "
+                                     "Needs the real JSON endpoint from the careers page (browser DevTools > Network).")
             print(f"[NOT FOUND] {entry['company']}: no known ATS API matched -- "
                   f"needs a custom scraper or manual verification of career_url")
         changed = True
@@ -100,6 +191,9 @@ def selftest():
         result = check_slug(platform, garbage)
         print(f"  {platform}: {'FALSE POSITIVE (bug still present!)' if result else 'correctly returned False'}")
         any_false_positive = any_false_positive or result
+    wd = check_workday({"host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": garbage})
+    print(f"  workday: {'FALSE POSITIVE (bug still present!)' if wd else 'correctly returned False'}")
+    any_false_positive = any_false_positive or wd
     if any_false_positive:
         print("\nSELF-TEST FAILED -- do not trust the results below.")
     else:

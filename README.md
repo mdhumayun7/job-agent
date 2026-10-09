@@ -159,6 +159,20 @@ Each run uploads `output/` and `logs/` as a downloadable artifact, kept for 14 d
 - Job portals routinely block datacentre IPs, so a hosted run will usually return fewer listings than a run from your own machine. The workflow treats an empty scrape as a warning, not a failure, and skips the email rather than sending a blank digest.
 - GitHub disables scheduled workflows in repositories with no activity for 60 days. Push a commit or hit *Run workflow* occasionally to keep the cron alive.
 
+### Company career-site pipeline
+
+`config/companies.json` lists every tracked company (about 130). Each entry has a `platform`:
+
+| platform | Meaning |
+|---|---|
+| `greenhouse`, `lever`, `smartrecruiters`, `ashby`, `workable` | Public ATS job-board API, scraped daily |
+| `workday` | Company's Workday career site (`host/tenant/site`), India-located jobs only |
+| `amazon_custom`, `makemytrip_custom` | Company-specific public JSON endpoint |
+| `null` | Newly added, not yet verified. The workflow's detection step probes the candidate slugs / Workday sites and enables the company only if real jobs come back |
+| `custom` / `unsupported` | No public API found; listed but disabled. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) and a small adapter |
+
+Run detection manually with `python scripts/detect_ats_platform.py`, the pipeline with `python run_ats_pipeline.py`.
+
 ### Local scheduling instead
 
 ```bash

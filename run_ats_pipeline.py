@@ -1,5 +1,6 @@
 """
-Runs the ATS-based company pipeline (Greenhouse/Lever/SmartRecruiters)
+Runs the ATS-based company pipeline (Greenhouse/Lever/SmartRecruiters/
+Ashby/Workable/Workday plus company-specific APIs such as MakeMyTrip, Amazon)
 independently of the existing portal scrapers in main.py. Separate
 schema, separate output file -- does not touch save_results() or
 excel_exporter.py, so nothing existing can break.
@@ -21,6 +22,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "xlsx"))
 
 COMPANIES_PATH = Path(__file__).resolve().parent / "config" / "companies.json"
 
+SUPPORTED_PLATFORMS = ("greenhouse", "lever", "smartrecruiters", "ashby", "workable",
+                       "workday", "makemytrip_custom", "amazon_custom")
+
 ADAPTER_MAP = {}  # populated lazily below so this file can be unit-tested without network
 
 
@@ -29,11 +33,19 @@ def _load_adapters():
     from adapter_lever import fetch_lever_jobs
     from adapter_smartrecruiters import fetch_smartrecruiters_jobs
     from adapter_makemytrip import fetch_makemytrip_jobs
+    from adapter_workday import fetch_workday_jobs
+    from adapter_ashby import fetch_ashby_jobs
+    from adapter_workable import fetch_workable_jobs
+    from adapter_amazon import fetch_amazon_jobs
     ADAPTER_MAP["greenhouse"] = fetch_greenhouse_jobs
     ADAPTER_MAP["lever"] = fetch_lever_jobs
     ADAPTER_MAP["smartrecruiters"] = fetch_smartrecruiters_jobs
     # makemytrip_custom takes no slug -- wrap it to match the (slug, name) signature
     ADAPTER_MAP["makemytrip_custom"] = lambda slug, name: fetch_makemytrip_jobs(name)
+    ADAPTER_MAP["workday"] = fetch_workday_jobs
+    ADAPTER_MAP["ashby"] = fetch_ashby_jobs
+    ADAPTER_MAP["workable"] = fetch_workable_jobs
+    ADAPTER_MAP["amazon_custom"] = lambda slug, name: fetch_amazon_jobs(name)
 
 
 def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
@@ -41,7 +53,7 @@ def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, l
     companies = json.loads(Path(companies_path).read_text(encoding="utf-8"))
     enabled = [
         c for c in companies
-        if c.get("enabled") and c.get("platform") in ("greenhouse", "lever", "smartrecruiters", "makemytrip_custom")
+        if c.get("enabled") and c.get("platform") in SUPPORTED_PLATFORMS
     ]
     if company_filter:
         enabled = [c for c in enabled if c["company"].lower() == company_filter.lower()]

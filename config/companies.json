@@ -151,10 +151,9 @@
     "career_url": "https://www.postman.com/company/careers/",
     "candidate_slugs": [
       "postman",
-      "postmaninc",
-      "postmantechnologies"
+      "postmanlabs"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Software Engineering"
     ],
@@ -179,10 +178,9 @@
     "company": "BrowserStack",
     "career_url": "https://www.browserstack.com/careers",
     "candidate_slugs": [
-      "browserstack",
-      "browserstacksoftware"
+      "browserstack"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Software Engineering"
     ],
@@ -192,11 +190,9 @@
     "company": "Chargebee",
     "career_url": "https://www.chargebee.com/careers/",
     "candidate_slugs": [
-      "chargebee",
-      "chargebeeinc",
-      "chargebeetechnologies"
+      "chargebee"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Software Engineering"
     ],
@@ -278,7 +274,7 @@
       "juspay",
       "juspaytechnologies"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Software Engineering",
       "Fintech"
@@ -317,10 +313,9 @@
     "career_url": "https://careers.snowflake.com/",
     "candidate_slugs": [
       "snowflake",
-      "snowflakeinc",
       "snowflakecomputing"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Data Engineering",
       "Cloud"
@@ -371,10 +366,9 @@
     "company": "Confluent",
     "career_url": "https://careers.confluent.io/",
     "candidate_slugs": [
-      "confluent",
-      "confluentinc"
+      "confluent"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Data Engineering"
     ],
@@ -399,9 +393,9 @@
     "career_url": "https://www.atlassian.com/company/careers",
     "candidate_slugs": [
       "atlassian",
-      "atlassiancorp"
+      "Atlassian"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "Software Engineering"
     ],
@@ -411,10 +405,9 @@
     "company": "Hugging Face",
     "career_url": "https://apply.workable.com/huggingface/",
     "candidate_slugs": [
-      "huggingface",
-      "huggingfaceinc"
+      "huggingface"
     ],
-    "platform": "custom",
+    "platform": null,
     "categories": [
       "AI/ML"
     ],
@@ -431,6 +424,9 @@
       "Software Engineering",
       "Cloud",
       "AI/ML"
+    ],
+    "aliases": [
+      "Microsoft Azure"
     ]
   },
   {
@@ -443,18 +439,28 @@
     "categories": [
       "Software Engineering",
       "AI/ML"
+    ],
+    "aliases": [
+      "Google Cloud"
     ]
   },
   {
     "company": "Amazon",
     "career_url": "https://www.amazon.jobs/",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": null,
     "enabled": false,
-    "note": "Has an unofficial internal JSON search endpoint used by their own site; fragile, breaks without notice.",
+    "note": "amazon.jobs public search JSON, scoped to India.",
     "categories": [
       "Software Engineering",
       "Cloud"
+    ],
+    "candidate_custom": [
+      "amazon_jobs"
+    ],
+    "aliases": [
+      "AWS",
+      "Amazon Web Services"
     ]
   },
   {
@@ -522,5 +528,1375 @@
       "Product"
     ],
     "note": "In-house JSON API at careers.makemytrip.com/api/jobs, confirmed live and public."
+  },
+  {
+    "company": "Apple",
+    "career_url": "https://jobs.apple.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded",
+      "AI/ML"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Meta",
+    "career_url": "https://www.metacareers.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "AI/ML"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "IBM",
+    "career_url": "https://www.ibm.com/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Cloud",
+      "AI/ML",
+      "IT Services"
+    ],
+    "enabled": false,
+    "aliases": [
+      "IBM Cloud",
+      "IBM Consulting"
+    ],
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "NVIDIA",
+    "career_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "AI/ML",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "nvidia.wd5.myworkdayjobs.com",
+        "tenant": "nvidia",
+        "site": "NVIDIAExternalCareerSite"
+      }
+    ]
+  },
+  {
+    "company": "Intel",
+    "career_url": "https://jobs.intel.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "intel.wd1.myworkdayjobs.com",
+        "tenant": "intel",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "AMD",
+    "career_url": "https://careers.amd.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "amd.wd1.myworkdayjobs.com",
+        "tenant": "amd",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "Qualcomm",
+    "career_url": "https://careers.qualcomm.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "qualcomm.wd5.myworkdayjobs.com",
+        "tenant": "qualcomm",
+        "site": "External"
+      },
+      {
+        "host": "qualcomm.wd12.myworkdayjobs.com",
+        "tenant": "qualcomm",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "Cisco",
+    "career_url": "https://jobs.cisco.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Cybersecurity",
+      "Cloud"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "cisco.wd5.myworkdayjobs.com",
+        "tenant": "cisco",
+        "site": "Cisco_Careers"
+      }
+    ]
+  },
+  {
+    "company": "Oracle",
+    "career_url": "https://careers.oracle.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": false,
+    "aliases": [
+      "Oracle Cloud"
+    ],
+    "note": "Uses Oracle Recruiting Cloud (its own HCM REST API), not a supported ATS yet. Needs a dedicated adapter."
+  },
+  {
+    "company": "SAP",
+    "career_url": "https://jobs.sap.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": false,
+    "note": "Uses SAP SuccessFactors career site (server-rendered). Needs a dedicated adapter."
+  },
+  {
+    "company": "Salesforce",
+    "career_url": "https://careers.salesforce.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "salesforce.wd12.myworkdayjobs.com",
+        "tenant": "salesforce",
+        "site": "External_Career_Site"
+      }
+    ]
+  },
+  {
+    "company": "Adobe",
+    "career_url": "https://careers.adobe.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "AI/ML"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "adobe.wd5.myworkdayjobs.com",
+        "tenant": "adobe",
+        "site": "external_experienced"
+      },
+      {
+        "host": "adobe.wd5.myworkdayjobs.com",
+        "tenant": "adobe",
+        "site": "external_university"
+      }
+    ]
+  },
+  {
+    "company": "ServiceNow",
+    "career_url": "https://careers.servicenow.com/",
+    "candidate_slugs": [
+      "ServiceNow"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Broadcom",
+    "career_url": "https://www.broadcom.com/company/careers",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering",
+      "Cloud"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "broadcom.wd1.myworkdayjobs.com",
+        "tenant": "broadcom",
+        "site": "External_Career"
+      }
+    ],
+    "aliases": [
+      "VMware",
+      "VMware / Broadcom"
+    ],
+    "note": "VMware is part of Broadcom; VMware roles are listed on Broadcom's career site."
+  },
+  {
+    "company": "Red Hat",
+    "career_url": "https://www.redhat.com/en/jobs",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Cloud",
+      "DevOps"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "redhat.wd5.myworkdayjobs.com",
+        "tenant": "redhat",
+        "site": "jobs"
+      }
+    ]
+  },
+  {
+    "company": "Dell Technologies",
+    "career_url": "https://jobs.dell.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded",
+      "Cloud"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "dell.wd1.myworkdayjobs.com",
+        "tenant": "dell",
+        "site": "External"
+      }
+    ],
+    "aliases": [
+      "EMC",
+      "Dell EMC"
+    ]
+  },
+  {
+    "company": "Hewlett Packard Enterprise",
+    "career_url": "https://careers.hpe.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Cloud",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "hpe.wd5.myworkdayjobs.com",
+        "tenant": "hpe",
+        "site": "Jobsathpe"
+      },
+      {
+        "host": "hpe.wd5.myworkdayjobs.com",
+        "tenant": "hpe",
+        "site": "ACJobSite"
+      }
+    ],
+    "aliases": [
+      "HPE"
+    ]
+  },
+  {
+    "company": "HP",
+    "career_url": "https://jobs.hp.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "hp.wd5.myworkdayjobs.com",
+        "tenant": "hp",
+        "site": "ExternalCareerSite"
+      }
+    ]
+  },
+  {
+    "company": "Lenovo",
+    "career_url": "https://jobs.lenovo.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Samsung",
+    "career_url": "https://www.samsung.com/us/careers/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "sec.wd3.myworkdayjobs.com",
+        "tenant": "sec",
+        "site": "Samsung_Careers"
+      }
+    ]
+  },
+  {
+    "company": "Sony",
+    "career_url": "https://www.sony.com/en/SonyInfo/Careers/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "sonyglobal.wd1.myworkdayjobs.com",
+        "tenant": "sonyglobal",
+        "site": "SonyGlobalCareers"
+      }
+    ]
+  },
+  {
+    "company": "Siemens",
+    "career_url": "https://jobs.siemens.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Bosch",
+    "career_url": "https://www.bosch.in/careers/",
+    "candidate_slugs": [
+      "BoschGroup"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Ericsson",
+    "career_url": "https://www.ericsson.com/en/careers",
+    "candidate_slugs": [
+      "Ericsson"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "ericsson.wd3.myworkdayjobs.com",
+        "tenant": "ericsson",
+        "site": "Ericsson"
+      }
+    ]
+  },
+  {
+    "company": "Nokia",
+    "career_url": "https://www.nokia.com/about-us/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "note": "Uses an Oracle Recruiting Cloud career site. Needs a dedicated adapter."
+  },
+  {
+    "company": "Motorola Solutions",
+    "career_url": "https://www.motorolasolutions.com/en_us/about/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "motorolasolutions.wd5.myworkdayjobs.com",
+        "tenant": "motorolasolutions",
+        "site": "Careers"
+      }
+    ]
+  },
+  {
+    "company": "PayPal",
+    "career_url": "https://careers.pypl.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "paypal.wd1.myworkdayjobs.com",
+        "tenant": "paypal",
+        "site": "jobs"
+      }
+    ]
+  },
+  {
+    "company": "Visa",
+    "career_url": "https://corporate.visa.com/en/jobs/",
+    "candidate_slugs": [
+      "Visa"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Mastercard",
+    "career_url": "https://careers.mastercard.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "mastercard.wd1.myworkdayjobs.com",
+        "tenant": "mastercard",
+        "site": "CorporateCareers"
+      }
+    ]
+  },
+  {
+    "company": "Uber",
+    "career_url": "https://www.uber.com/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "Custom career site; its search API requires a CSRF token. Not scraped."
+  },
+  {
+    "company": "GitHub",
+    "career_url": "https://www.github.careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering",
+      "DevOps"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "OpenAI",
+    "career_url": "https://openai.com/careers/",
+    "candidate_slugs": [
+      "openai"
+    ],
+    "platform": null,
+    "categories": [
+      "AI/ML",
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "HCLTech",
+    "career_url": "https://www.hcltech.com/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "aliases": [
+      "HCL",
+      "HCL Technologies"
+    ],
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Cognizant",
+    "career_url": "https://careers.cognizant.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "cognizant.wd1.myworkdayjobs.com",
+        "tenant": "cognizant",
+        "site": "Cognizant_Careers"
+      }
+    ]
+  },
+  {
+    "company": "Accenture",
+    "career_url": "https://www.accenture.com/in-en/careers",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "accenture.wd103.myworkdayjobs.com",
+        "tenant": "accenture",
+        "site": "AccentureCareers"
+      }
+    ]
+  },
+  {
+    "company": "Deloitte",
+    "career_url": "https://www2.deloitte.com/in/en/careers.html",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Capgemini",
+    "career_url": "https://www.capgemini.com/in-en/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "CGI",
+    "career_url": "https://www.cgi.com/en/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Uses cgi.njoyn.com (server-rendered). Needs a dedicated adapter."
+  },
+  {
+    "company": "DXC Technology",
+    "career_url": "https://dxc.com/us/en/careers",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "dxctechnology.wd1.myworkdayjobs.com",
+        "tenant": "dxctechnology",
+        "site": "DXCJobs"
+      }
+    ]
+  },
+  {
+    "company": "Tech Mahindra",
+    "career_url": "https://careers.techmahindra.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "LTIMindtree",
+    "career_url": "https://www.ltimindtree.com/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "aliases": [
+      "Mindtree",
+      "LTI"
+    ],
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Mphasis",
+    "career_url": "https://careers.mphasis.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Persistent Systems",
+    "career_url": "https://www.persistent.com/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Hexaware",
+    "career_url": "https://hexaware.com/careers/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Coforge",
+    "career_url": "https://www.coforge.com/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "NTT DATA",
+    "career_url": "https://www.nttdata.com/global/en/careers",
+    "candidate_slugs": [
+      "NTTDATA",
+      "nttdata"
+    ],
+    "platform": null,
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Genpact",
+    "career_url": "https://www.genpact.com/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "EY",
+    "career_url": "https://www.ey.com/en_in/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "KPMG",
+    "career_url": "https://kpmg.com/in/en/home/careers.html",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "PwC",
+    "career_url": "https://www.pwc.in/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "IT Services"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "pwc.wd3.myworkdayjobs.com",
+        "tenant": "pwc",
+        "site": "Global_Experienced_Careers"
+      },
+      {
+        "host": "pwc.wd3.myworkdayjobs.com",
+        "tenant": "pwc",
+        "site": "Global_Campus_Careers"
+      }
+    ]
+  },
+  {
+    "company": "Flipkart",
+    "career_url": "https://www.flipkartcareers.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Walmart Global Tech",
+    "career_url": "https://careers.walmart.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "walmart.wd5.myworkdayjobs.com",
+        "tenant": "walmart",
+        "site": "WalmartExternal"
+      }
+    ]
+  },
+  {
+    "company": "Meesho",
+    "career_url": "https://www.meesho.io/jobs",
+    "candidate_slugs": [
+      "meesho"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "PhonePe",
+    "career_url": "https://www.phonepe.com/careers/",
+    "candidate_slugs": [
+      "phonepe"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Paytm",
+    "career_url": "https://paytm.com/careers/",
+    "candidate_slugs": [
+      "paytm"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Swiggy",
+    "career_url": "https://careers.swiggy.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "JavaScript-rendered careers site. Needs the JSON endpoint from DevTools."
+  },
+  {
+    "company": "Zomato",
+    "career_url": "https://www.zomato.com/careers",
+    "candidate_slugs": [
+      "zomato",
+      "eternal"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Zepto",
+    "career_url": "https://www.zeptonow.com/careers",
+    "candidate_slugs": [
+      "zepto",
+      "zeptonow"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Myntra",
+    "career_url": "https://careers.myntra.com/",
+    "candidate_slugs": [
+      "myntra"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Nykaa",
+    "career_url": "https://www.nykaa.com/careers",
+    "candidate_slugs": [
+      "nykaa"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Dream11",
+    "career_url": "https://www.dreamsports.group/careers",
+    "candidate_slugs": [
+      "dreamsports",
+      "dream11"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "aliases": [
+      "Dream Sports"
+    ]
+  },
+  {
+    "company": "Ola",
+    "career_url": "https://www.olacabs.com/careers",
+    "candidate_slugs": [
+      "olacabs",
+      "ola-cabs"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Ola Electric",
+    "career_url": "https://www.olaelectric.com/careers",
+    "candidate_slugs": [
+      "olaelectric",
+      "ola-electric"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Semiconductor/Embedded"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Delhivery",
+    "career_url": "https://www.delhivery.com/careers",
+    "candidate_slugs": [
+      "delhivery"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Udaan",
+    "career_url": "https://udaan.com/careers",
+    "candidate_slugs": [
+      "udaan"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "ShareChat",
+    "career_url": "https://sharechat.com/careers",
+    "candidate_slugs": [
+      "sharechat",
+      "mohalla-tech"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "AI/ML"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Practo",
+    "career_url": "https://www.practo.com/company/careers",
+    "candidate_slugs": [
+      "practo"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Unacademy",
+    "career_url": "https://unacademy.com/careers",
+    "candidate_slugs": [
+      "unacademy"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "BYJU'S",
+    "career_url": "https://byjus.com/careers/",
+    "candidate_slugs": [
+      "byjus"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Physics Wallah",
+    "career_url": "https://www.pw.live/careers",
+    "candidate_slugs": [
+      "physicswallah"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Upstox",
+    "career_url": "https://upstox.com/careers/",
+    "candidate_slugs": [
+      "upstox"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "CoinDCX",
+    "career_url": "https://coindcx.com/careers",
+    "candidate_slugs": [
+      "coindcx"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Policybazaar",
+    "career_url": "https://www.policybazaar.com/careers/",
+    "candidate_slugs": [
+      "policybazaar",
+      "pbfintech"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Cars24",
+    "career_url": "https://www.cars24.com/careers/",
+    "candidate_slugs": [
+      "cars24"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Urban Company",
+    "career_url": "https://careers.urbancompany.com/",
+    "candidate_slugs": [
+      "urbancompany"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "OYO",
+    "career_url": "https://www.oyorooms.com/careers/",
+    "candidate_slugs": [
+      "oyo",
+      "oyorooms"
+    ],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "MediaTek",
+    "career_url": "https://careers.mediatek.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Texas Instruments",
+    "career_url": "https://careers.ti.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Micron",
+    "career_url": "https://www.micron.com/about/careers",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "micron.wd1.myworkdayjobs.com",
+        "tenant": "micron",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "Arm",
+    "career_url": "https://careers.arm.com/",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "aliases": [
+      "ARM"
+    ],
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "NXP Semiconductors",
+    "career_url": "https://www.nxp.com/company/about-nxp/careers:CAREERS",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "nxp.wd3.myworkdayjobs.com",
+        "tenant": "nxp",
+        "site": "careers"
+      }
+    ]
+  },
+  {
+    "company": "STMicroelectronics",
+    "career_url": "https://www.st.com/content/st_com/en/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "st.wd3.myworkdayjobs.com",
+        "tenant": "st",
+        "site": "STCareers"
+      }
+    ]
+  },
+  {
+    "company": "Analog Devices",
+    "career_url": "https://www.analog.com/en/about-adi/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "analogdevices.wd1.myworkdayjobs.com",
+        "tenant": "analogdevices",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "Infineon Technologies",
+    "career_url": "https://www.infineon.com/careers",
+    "candidate_slugs": [
+      "Infineon",
+      "InfineonTechnologies"
+    ],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "Marvell",
+    "career_url": "https://www.marvell.com/company/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "marvell.wd1.myworkdayjobs.com",
+        "tenant": "marvell",
+        "site": "MarvellCareers"
+      }
+    ]
+  },
+  {
+    "company": "Synopsys",
+    "career_url": "https://careers.synopsys.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "synopsys.wd1.myworkdayjobs.com",
+        "tenant": "synopsys",
+        "site": "Careers"
+      }
+    ]
+  },
+  {
+    "company": "Cadence",
+    "career_url": "https://careers.cadence.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "cadence.wd1.myworkdayjobs.com",
+        "tenant": "cadence",
+        "site": "External_Careers"
+      }
+    ]
+  },
+  {
+    "company": "Applied Materials",
+    "career_url": "https://www.appliedmaterials.com/us/en/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "amat.wd1.myworkdayjobs.com",
+        "tenant": "amat",
+        "site": "External"
+      }
+    ]
+  },
+  {
+    "company": "Lam Research",
+    "career_url": "https://careers.lamresearch.com/",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "lamresearch.wd1.myworkdayjobs.com",
+        "tenant": "lamresearch",
+        "site": "LAM"
+      }
+    ]
+  },
+  {
+    "company": "ASML",
+    "career_url": "https://www.asml.com/en/careers",
+    "candidate_slugs": [],
+    "platform": "custom",
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+  },
+  {
+    "company": "Docker",
+    "career_url": "https://www.docker.com/careers/",
+    "candidate_slugs": [
+      "docker"
+    ],
+    "platform": null,
+    "categories": [
+      "DevOps",
+      "Cloud"
+    ],
+    "enabled": false
+  },
+  {
+    "company": "BMC Software",
+    "career_url": "https://www.bmc.com/careers.html",
+    "candidate_slugs": [],
+    "platform": null,
+    "categories": [
+      "Software Engineering"
+    ],
+    "enabled": false,
+    "candidate_workday": [
+      {
+        "host": "bmc.wd1.myworkdayjobs.com",
+        "tenant": "bmc",
+        "site": "BMC"
+      }
+    ],
+    "aliases": [
+      "BMC"
+    ]
   }
 ]
