@@ -24,7 +24,7 @@ MAX_PAGES = 20
 
 def _date(v):
     try:
-        return datetime.fromtimestamp(int(v), tz=timezone.utc).date().isoformat()
+        return datetime.fromtimestamp(int(float(v)), tz=timezone.utc).date().isoformat()
     except (TypeError, ValueError):
         return v or None
 

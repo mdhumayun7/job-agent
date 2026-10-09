@@ -27,7 +27,7 @@ def _now():
 
 def _epoch_date(v):
     try:
-        return datetime.fromtimestamp(int(v), tz=timezone.utc).date().isoformat()
+        return datetime.fromtimestamp(int(float(v)), tz=timezone.utc).date().isoformat()
     except (TypeError, ValueError):
         return str(v)[:10] if v else None
 
