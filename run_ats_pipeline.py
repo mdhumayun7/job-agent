@@ -23,7 +23,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent / "xlsx"))
 COMPANIES_PATH = Path(__file__).resolve().parent / "config" / "companies.json"
 
 SUPPORTED_PLATFORMS = ("greenhouse", "lever", "smartrecruiters", "ashby", "workable",
-                       "workday", "makemytrip_custom", "amazon_custom")
+                       "workday", "makemytrip_custom", "amazon_custom", "eightfold", "oracle_hcm",
+                       "jibe", "successfactors", "phenom", "darwinbox", "custom_api")
 
 ADAPTER_MAP = {}  # populated lazily below so this file can be unit-tested without network
 
@@ -37,6 +38,13 @@ def _load_adapters():
     from adapter_ashby import fetch_ashby_jobs
     from adapter_workable import fetch_workable_jobs
     from adapter_amazon import fetch_amazon_jobs
+    from adapter_eightfold import fetch_eightfold_jobs
+    from adapter_oracle_hcm import fetch_oracle_hcm_jobs
+    from adapter_jibe import fetch_jibe_jobs
+    from adapter_successfactors import fetch_successfactors_jobs
+    from adapter_phenom import fetch_phenom_jobs
+    from adapter_darwinbox import fetch_darwinbox_jobs
+    from adapter_custom_sites import fetch_custom_api_jobs
     ADAPTER_MAP["greenhouse"] = fetch_greenhouse_jobs
     ADAPTER_MAP["lever"] = fetch_lever_jobs
     ADAPTER_MAP["smartrecruiters"] = fetch_smartrecruiters_jobs
@@ -46,6 +54,13 @@ def _load_adapters():
     ADAPTER_MAP["ashby"] = fetch_ashby_jobs
     ADAPTER_MAP["workable"] = fetch_workable_jobs
     ADAPTER_MAP["amazon_custom"] = lambda slug, name: fetch_amazon_jobs(name)
+    ADAPTER_MAP["eightfold"] = fetch_eightfold_jobs
+    ADAPTER_MAP["oracle_hcm"] = fetch_oracle_hcm_jobs
+    ADAPTER_MAP["jibe"] = fetch_jibe_jobs
+    ADAPTER_MAP["successfactors"] = fetch_successfactors_jobs
+    ADAPTER_MAP["phenom"] = fetch_phenom_jobs
+    ADAPTER_MAP["darwinbox"] = fetch_darwinbox_jobs
+    ADAPTER_MAP["custom_api"] = fetch_custom_api_jobs
 
 
 def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
