@@ -1427,15 +1427,14 @@
     "company": "Zomato",
     "career_url": "https://www.zomato.com/careers",
     "candidate_slugs": [
-      "zomato",
-      "eternal"
+      "zomato"
     ],
-    "platform": "lever",
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": true,
-    "verified_slug": "eternal"
+    "enabled": false,
+    "note": "Lever slug 'eternal' was auto-detected but belongs to an unrelated US company, so it was removed. Zomato (Eternal Ltd) needs the JSON endpoint from its careers page."
   },
   {
     "company": "Zepto",
@@ -1954,21 +1953,14 @@
     "company": "BMC Software",
     "career_url": "https://www.bmc.com/careers.html",
     "candidate_slugs": [],
-    "platform": "workday",
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": true,
-    "candidate_workday": [
-      {
-        "host": "bmc.wd1.myworkdayjobs.com",
-        "tenant": "bmc",
-        "site": "BMC"
-      }
-    ],
+    "enabled": false,
     "aliases": [
       "BMC"
     ],
-    "verified_slug": "bmc.wd1.myworkdayjobs.com/bmc/BMC"
+    "note": "Workday tenant 'bmc' turned out to be Boston Medical Center, not BMC Software, so it was removed. Needs BMC Software's real careers API."
   }
 ]

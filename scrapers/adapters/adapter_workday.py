@@ -47,11 +47,23 @@ def parse_slug(slug: str):
     return parts[0], parts[1], parts[2]
 
 
+INDIA_MARKERS = ("india", "bengaluru", "bangalore", "hyderabad", "pune", "chennai", "mumbai",
+                 "gurgaon", "gurugram", "noida", "new delhi", "kolkata", "ahmedabad", "kochi",
+                 "trivandrum", "thiruvananthapuram", "coimbatore", "mysore", "mysuru", "jaipur",
+                 "chandigarh", "vadodara", "nagpur", "indore", "bhubaneswar", "mohali")
+
+
 def _find_india_facet(facets):
     """Walk Workday's (sometimes nested) facet tree and return
-    (facetParameter, id) for a value whose descriptor is exactly 'India'.
-    Country-level facets are preferred over anything else."""
-    candidates = []
+    (facetParameter, [ids]) selecting India-located jobs.
+
+    1. Prefer a country-level value whose descriptor is exactly 'India'.
+    2. Otherwise many tenants only expose city-level values such as
+       'Bangalore, India' or 'Hyderabad' -- select every location value that
+       names India or a major Indian city, under the location facet with the
+       most matches.
+    Returns None if the site exposes no India location at all."""
+    exact, partial = [], {}
 
     def walk(items, parent_param=None):
         for item in items or []:
@@ -60,14 +72,21 @@ def _find_india_facet(facets):
             if values:
                 walk(values, param)
             desc = (item.get("descriptor") or "").strip().lower()
-            if desc == "india" and item.get("id") and param:
-                candidates.append((param, item["id"]))
+            if not desc or not item.get("id") or not param:
+                continue
+            if desc == "india":
+                exact.append((param, item["id"]))
+            elif "location" in param.lower() and any(m in desc for m in INDIA_MARKERS):
+                partial.setdefault(param, []).append(item["id"])
 
     walk(facets)
-    if not candidates:
-        return None
-    candidates.sort(key=lambda c: 0 if "country" in c[0].lower() else 1)
-    return candidates[0]
+    if exact:
+        exact.sort(key=lambda c: 0 if "country" in c[0].lower() else 1)
+        return exact[0][0], [exact[0][1]]
+    if partial:
+        param = max(partial, key=lambda k: len(partial[k]))
+        return param, partial[param]
+    return None
 
 
 def _posted_on_to_iso(text):
@@ -115,8 +134,8 @@ def fetch_workday_jobs(slug: str, company_display_name: str, india_only: bool = 
     if india_only:
         facet = _find_india_facet(first.get("facets"))
         if facet:
-            applied = {facet[0]: [facet[1]]}
-            print(f"[{tag}] using India location facet ({facet[0]})")
+            applied = {facet[0]: facet[1]}
+            print(f"[{tag}] using India location facet ({facet[0]}, {len(facet[1])} value(s))")
         else:
             print(f"[{tag}] no India facet on this site -- fetching unfiltered (capped at {max_jobs})")
 
@@ -206,8 +225,14 @@ def selftest():
         ]},
         {"facetParameter": "jobFamilyGroup", "values": [{"descriptor": "Engineering", "id": "e1"}]},
     ]
-    assert _find_india_facet(facets) == ("locationCountry", "in1"), _find_india_facet(facets)
+    assert _find_india_facet(facets) == ("locationCountry", ["in1"]), _find_india_facet(facets)
     assert _find_india_facet([]) is None
+    city_facets = [{"facetParameter": "locations", "values": [
+        {"descriptor": "Bangalore, India", "id": "b1"}, {"descriptor": "San Jose, US", "id": "s1"},
+        {"descriptor": "Hyderabad", "id": "h1"}]}]
+    assert _find_india_facet(city_facets) == ("locations", ["b1", "h1"]), _find_india_facet(city_facets)
+    assert _find_india_facet([{"facetParameter": "locations", "values": [
+        {"descriptor": "Tokyo", "id": "t1"}]}]) is None
     assert parse_slug("nvidia.wd5.myworkdayjobs.com/nvidia/NVIDIAExternalCareerSite") == (
         "nvidia.wd5.myworkdayjobs.com", "nvidia", "NVIDIAExternalCareerSite")
     assert _posted_on_to_iso("Posted 30+ Days Ago") is None
