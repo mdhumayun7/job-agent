@@ -642,27 +642,15 @@
   },
   {
     "company": "Qualcomm",
-    "career_url": "https://careers.qualcomm.com/",
+    "career_url": "https://careers.qualcomm.com/careers?location=India",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "eightfold",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
-    "candidate_workday": [
-      {
-        "host": "qualcomm.wd5.myworkdayjobs.com",
-        "tenant": "qualcomm",
-        "site": "External"
-      },
-      {
-        "host": "qualcomm.wd12.myworkdayjobs.com",
-        "tenant": "qualcomm",
-        "site": "External"
-      }
-    ],
-    "note": "Eightfold API (careers.qualcomm.com|qualcomm.com) exists but returns HTTP 429 to GitHub Actions runners."
+    "enabled": true,
+    "verified_slug": "careers.qualcomm.com|qualcomm.com"
   },
   {
     "company": "Cisco",
