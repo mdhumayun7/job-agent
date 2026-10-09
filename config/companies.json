@@ -153,11 +153,12 @@
       "postman",
       "postmanlabs"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Razorpay",
@@ -180,11 +181,12 @@
     "candidate_slugs": [
       "browserstack"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Chargebee",
@@ -192,11 +194,12 @@
     "candidate_slugs": [
       "chargebee"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Freshworks",
@@ -274,12 +277,13 @@
       "juspay",
       "juspaytechnologies"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "InMobi",
@@ -315,12 +319,13 @@
       "snowflake",
       "snowflakecomputing"
     ],
-    "platform": null,
+    "platform": "ashby",
     "categories": [
       "Data Engineering",
       "Cloud"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "snowflake"
   },
   {
     "company": "MongoDB",
@@ -368,11 +373,12 @@
     "candidate_slugs": [
       "confluent"
     ],
-    "platform": null,
+    "platform": "ashby",
     "categories": [
       "Data Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "confluent"
   },
   {
     "company": "Datadog",
@@ -395,11 +401,12 @@
       "atlassian",
       "Atlassian"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Hugging Face",
@@ -407,11 +414,12 @@
     "candidate_slugs": [
       "huggingface"
     ],
-    "platform": null,
+    "platform": "workable",
     "categories": [
       "AI/ML"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "huggingface"
   },
   {
     "company": "Microsoft",
@@ -448,8 +456,8 @@
     "company": "Amazon",
     "career_url": "https://www.amazon.jobs/",
     "candidate_slugs": [],
-    "platform": null,
-    "enabled": false,
+    "platform": "amazon_custom",
+    "enabled": true,
     "note": "amazon.jobs public search JSON, scoped to India.",
     "categories": [
       "Software Engineering",
@@ -461,7 +469,8 @@
     "aliases": [
       "AWS",
       "Amazon Web Services"
-    ]
+    ],
+    "verified_slug": "amazon_jobs"
   },
   {
     "company": "TCS",
@@ -576,44 +585,46 @@
     "company": "NVIDIA",
     "career_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "AI/ML",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "nvidia.wd5.myworkdayjobs.com",
         "tenant": "nvidia",
         "site": "NVIDIAExternalCareerSite"
       }
-    ]
+    ],
+    "verified_slug": "nvidia.wd5.myworkdayjobs.com/nvidia/NVIDIAExternalCareerSite"
   },
   {
     "company": "Intel",
     "career_url": "https://jobs.intel.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "intel.wd1.myworkdayjobs.com",
         "tenant": "intel",
         "site": "External"
       }
-    ]
+    ],
+    "verified_slug": "intel.wd1.myworkdayjobs.com/intel/External"
   },
   {
     "company": "AMD",
     "career_url": "https://careers.amd.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
@@ -625,13 +636,14 @@
         "tenant": "amd",
         "site": "External"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Qualcomm",
     "career_url": "https://careers.qualcomm.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
@@ -648,26 +660,28 @@
         "tenant": "qualcomm",
         "site": "External"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Cisco",
     "career_url": "https://jobs.cisco.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Cybersecurity",
       "Cloud"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "cisco.wd5.myworkdayjobs.com",
         "tenant": "cisco",
         "site": "Cisco_Careers"
       }
-    ]
+    ],
+    "verified_slug": "cisco.wd5.myworkdayjobs.com/cisco/Cisco_Careers"
   },
   {
     "company": "Oracle",
@@ -700,30 +714,31 @@
     "company": "Salesforce",
     "career_url": "https://careers.salesforce.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Cloud"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "salesforce.wd12.myworkdayjobs.com",
         "tenant": "salesforce",
         "site": "External_Career_Site"
       }
-    ]
+    ],
+    "verified_slug": "salesforce.wd12.myworkdayjobs.com/salesforce/External_Career_Site"
   },
   {
     "company": "Adobe",
     "career_url": "https://careers.adobe.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "AI/ML"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "adobe.wd5.myworkdayjobs.com",
@@ -735,7 +750,8 @@
         "tenant": "adobe",
         "site": "external_university"
       }
-    ]
+    ],
+    "verified_slug": "adobe.wd5.myworkdayjobs.com/adobe/external_experienced"
   },
   {
     "company": "ServiceNow",
@@ -743,24 +759,25 @@
     "candidate_slugs": [
       "ServiceNow"
     ],
-    "platform": null,
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering",
       "Cloud"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "ServiceNow"
   },
   {
     "company": "Broadcom",
     "career_url": "https://www.broadcom.com/company/careers",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering",
       "Cloud"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "broadcom.wd1.myworkdayjobs.com",
@@ -772,32 +789,34 @@
       "VMware",
       "VMware / Broadcom"
     ],
-    "note": "VMware is part of Broadcom; VMware roles are listed on Broadcom's career site."
+    "note": "VMware is part of Broadcom; VMware roles are listed on Broadcom's career site.",
+    "verified_slug": "broadcom.wd1.myworkdayjobs.com/broadcom/External_Career"
   },
   {
     "company": "Red Hat",
     "career_url": "https://www.redhat.com/en/jobs",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Cloud",
       "DevOps"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "redhat.wd5.myworkdayjobs.com",
         "tenant": "redhat",
         "site": "jobs"
       }
-    ]
+    ],
+    "verified_slug": "redhat.wd5.myworkdayjobs.com/redhat/jobs"
   },
   {
     "company": "Dell Technologies",
     "career_url": "https://jobs.dell.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded",
@@ -814,19 +833,20 @@
     "aliases": [
       "EMC",
       "Dell EMC"
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Hewlett Packard Enterprise",
     "career_url": "https://careers.hpe.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Cloud",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "hpe.wd5.myworkdayjobs.com",
@@ -841,25 +861,27 @@
     ],
     "aliases": [
       "HPE"
-    ]
+    ],
+    "verified_slug": "hpe.wd5.myworkdayjobs.com/hpe/Jobsathpe"
   },
   {
     "company": "HP",
     "career_url": "https://jobs.hp.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "hp.wd5.myworkdayjobs.com",
         "tenant": "hp",
         "site": "ExternalCareerSite"
       }
-    ]
+    ],
+    "verified_slug": "hp.wd5.myworkdayjobs.com/hp/ExternalCareerSite"
   },
   {
     "company": "Lenovo",
@@ -877,37 +899,39 @@
     "company": "Samsung",
     "career_url": "https://www.samsung.com/us/careers/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "sec.wd3.myworkdayjobs.com",
         "tenant": "sec",
         "site": "Samsung_Careers"
       }
-    ]
+    ],
+    "verified_slug": "sec.wd3.myworkdayjobs.com/sec/Samsung_Careers"
   },
   {
     "company": "Sony",
     "career_url": "https://www.sony.com/en/SonyInfo/Careers/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "sonyglobal.wd1.myworkdayjobs.com",
         "tenant": "sonyglobal",
         "site": "SonyGlobalCareers"
       }
-    ]
+    ],
+    "verified_slug": "sonyglobal.wd1.myworkdayjobs.com/sonyglobal/SonyGlobalCareers"
   },
   {
     "company": "Siemens",
@@ -927,12 +951,13 @@
     "candidate_slugs": [
       "BoschGroup"
     ],
-    "platform": null,
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "BoschGroup"
   },
   {
     "company": "Ericsson",
@@ -940,7 +965,7 @@
     "candidate_slugs": [
       "Ericsson"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
@@ -952,7 +977,8 @@
         "tenant": "ericsson",
         "site": "Ericsson"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Nokia",
@@ -970,37 +996,39 @@
     "company": "Motorola Solutions",
     "career_url": "https://www.motorolasolutions.com/en_us/about/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "motorolasolutions.wd5.myworkdayjobs.com",
         "tenant": "motorolasolutions",
         "site": "Careers"
       }
-    ]
+    ],
+    "verified_slug": "motorolasolutions.wd5.myworkdayjobs.com/motorolasolutions/Careers"
   },
   {
     "company": "PayPal",
     "career_url": "https://careers.pypl.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "paypal.wd1.myworkdayjobs.com",
         "tenant": "paypal",
         "site": "jobs"
       }
-    ]
+    ],
+    "verified_slug": "paypal.wd1.myworkdayjobs.com/paypal/jobs"
   },
   {
     "company": "Visa",
@@ -1008,30 +1036,32 @@
     "candidate_slugs": [
       "Visa"
     ],
-    "platform": null,
-    "categories": [
-      "Software Engineering",
-      "Fintech"
-    ],
-    "enabled": false
-  },
-  {
-    "company": "Mastercard",
-    "career_url": "https://careers.mastercard.com/",
-    "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
     "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+  },
+  {
+    "company": "Mastercard",
+    "career_url": "https://careers.mastercard.com/",
+    "candidate_slugs": [],
+    "platform": "workday",
+    "categories": [
+      "Software Engineering",
+      "Fintech"
+    ],
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "mastercard.wd1.myworkdayjobs.com",
         "tenant": "mastercard",
         "site": "CorporateCareers"
       }
-    ]
+    ],
+    "verified_slug": "mastercard.wd1.myworkdayjobs.com/mastercard/CorporateCareers"
   },
   {
     "company": "Uber",
@@ -1062,12 +1092,13 @@
     "candidate_slugs": [
       "openai"
     ],
-    "platform": null,
+    "platform": "ashby",
     "categories": [
       "AI/ML",
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "openai"
   },
   {
     "company": "HCLTech",
@@ -1088,7 +1119,7 @@
     "company": "Cognizant",
     "career_url": "https://careers.cognizant.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "IT Services"
     ],
@@ -1099,24 +1130,26 @@
         "tenant": "cognizant",
         "site": "Cognizant_Careers"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Accenture",
     "career_url": "https://www.accenture.com/in-en/careers",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "accenture.wd103.myworkdayjobs.com",
         "tenant": "accenture",
         "site": "AccentureCareers"
       }
-    ]
+    ],
+    "verified_slug": "accenture.wd103.myworkdayjobs.com/accenture/AccentureCareers"
   },
   {
     "company": "Deloitte",
@@ -1155,18 +1188,19 @@
     "company": "DXC Technology",
     "career_url": "https://dxc.com/us/en/careers",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "dxctechnology.wd1.myworkdayjobs.com",
         "tenant": "dxctechnology",
         "site": "DXCJobs"
       }
-    ]
+    ],
+    "verified_slug": "dxctechnology.wd1.myworkdayjobs.com/dxctechnology/DXCJobs"
   },
   {
     "company": "Tech Mahindra",
@@ -1245,11 +1279,12 @@
       "NTTDATA",
       "nttdata"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "IT Services"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Genpact",
@@ -1288,11 +1323,11 @@
     "company": "PwC",
     "career_url": "https://www.pwc.in/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "pwc.wd3.myworkdayjobs.com",
@@ -1304,7 +1339,8 @@
         "tenant": "pwc",
         "site": "Global_Campus_Careers"
       }
-    ]
+    ],
+    "verified_slug": "pwc.wd3.myworkdayjobs.com/pwc/Global_Experienced_Careers"
   },
   {
     "company": "Flipkart",
@@ -1321,7 +1357,7 @@
     "company": "Walmart Global Tech",
     "career_url": "https://careers.walmart.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
@@ -1332,7 +1368,8 @@
         "tenant": "walmart",
         "site": "WalmartExternal"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Meesho",
@@ -1340,11 +1377,12 @@
     "candidate_slugs": [
       "meesho"
     ],
-    "platform": null,
+    "platform": "lever",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "meesho"
   },
   {
     "company": "PhonePe",
@@ -1352,12 +1390,13 @@
     "candidate_slugs": [
       "phonepe"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Paytm",
@@ -1365,12 +1404,13 @@
     "candidate_slugs": [
       "paytm"
     ],
-    "platform": null,
+    "platform": "lever",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "paytm"
   },
   {
     "company": "Swiggy",
@@ -1390,11 +1430,12 @@
       "zomato",
       "eternal"
     ],
-    "platform": null,
+    "platform": "lever",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "eternal"
   },
   {
     "company": "Zepto",
@@ -1403,11 +1444,12 @@
       "zepto",
       "zeptonow"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Myntra",
@@ -1415,11 +1457,12 @@
     "candidate_slugs": [
       "myntra"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Nykaa",
@@ -1427,11 +1470,12 @@
     "candidate_slugs": [
       "nykaa"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Dream11",
@@ -1440,14 +1484,15 @@
       "dreamsports",
       "dream11"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
     "enabled": false,
     "aliases": [
       "Dream Sports"
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Ola",
@@ -1456,11 +1501,12 @@
       "olacabs",
       "ola-cabs"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Ola Electric",
@@ -1469,12 +1515,13 @@
       "olaelectric",
       "ola-electric"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Delhivery",
@@ -1482,11 +1529,12 @@
     "candidate_slugs": [
       "delhivery"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Udaan",
@@ -1494,11 +1542,12 @@
     "candidate_slugs": [
       "udaan"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "ShareChat",
@@ -1507,12 +1556,13 @@
       "sharechat",
       "mohalla-tech"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "AI/ML"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Practo",
@@ -1520,11 +1570,12 @@
     "candidate_slugs": [
       "practo"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Unacademy",
@@ -1532,11 +1583,12 @@
     "candidate_slugs": [
       "unacademy"
     ],
-    "platform": null,
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "unacademy"
   },
   {
     "company": "BYJU'S",
@@ -1544,11 +1596,12 @@
     "candidate_slugs": [
       "byjus"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Physics Wallah",
@@ -1556,11 +1609,12 @@
     "candidate_slugs": [
       "physicswallah"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Upstox",
@@ -1568,12 +1622,13 @@
     "candidate_slugs": [
       "upstox"
     ],
-    "platform": null,
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "upstox"
   },
   {
     "company": "CoinDCX",
@@ -1581,12 +1636,13 @@
     "candidate_slugs": [
       "coindcx"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Policybazaar",
@@ -1595,12 +1651,13 @@
       "policybazaar",
       "pbfintech"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Cars24",
@@ -1608,11 +1665,12 @@
     "candidate_slugs": [
       "cars24"
     ],
-    "platform": null,
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "cars24"
   },
   {
     "company": "Urban Company",
@@ -1620,11 +1678,12 @@
     "candidate_slugs": [
       "urbancompany"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "OYO",
@@ -1633,11 +1692,12 @@
       "oyo",
       "oyorooms"
     ],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false
+    "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "MediaTek",
@@ -1667,19 +1727,20 @@
     "company": "Micron",
     "career_url": "https://www.micron.com/about/careers",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "micron.wd1.myworkdayjobs.com",
         "tenant": "micron",
         "site": "External"
       }
-    ]
+    ],
+    "verified_slug": "micron.wd1.myworkdayjobs.com/micron/External"
   },
   {
     "company": "Arm",
@@ -1700,25 +1761,26 @@
     "company": "NXP Semiconductors",
     "career_url": "https://www.nxp.com/company/about-nxp/careers:CAREERS",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "nxp.wd3.myworkdayjobs.com",
         "tenant": "nxp",
         "site": "careers"
       }
-    ]
+    ],
+    "verified_slug": "nxp.wd3.myworkdayjobs.com/nxp/careers"
   },
   {
     "company": "STMicroelectronics",
     "career_url": "https://www.st.com/content/st_com/en/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
@@ -1730,25 +1792,27 @@
         "tenant": "st",
         "site": "STCareers"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Analog Devices",
     "career_url": "https://www.analog.com/en/about-adi/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "analogdevices.wd1.myworkdayjobs.com",
         "tenant": "analogdevices",
         "site": "External"
       }
-    ]
+    ],
+    "verified_slug": "analogdevices.wd1.myworkdayjobs.com/analogdevices/External"
   },
   {
     "company": "Infineon Technologies",
@@ -1757,36 +1821,38 @@
       "Infineon",
       "InfineonTechnologies"
     ],
-    "platform": null,
-    "categories": [
-      "Semiconductor/Embedded",
-      "Software Engineering"
-    ],
-    "enabled": false
-  },
-  {
-    "company": "Marvell",
-    "career_url": "https://www.marvell.com/company/careers.html",
-    "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
     "enabled": false,
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+  },
+  {
+    "company": "Marvell",
+    "career_url": "https://www.marvell.com/company/careers.html",
+    "candidate_slugs": [],
+    "platform": "workday",
+    "categories": [
+      "Semiconductor/Embedded",
+      "Software Engineering"
+    ],
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "marvell.wd1.myworkdayjobs.com",
         "tenant": "marvell",
         "site": "MarvellCareers"
       }
-    ]
+    ],
+    "verified_slug": "marvell.wd1.myworkdayjobs.com/marvell/MarvellCareers"
   },
   {
     "company": "Synopsys",
     "career_url": "https://careers.synopsys.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
@@ -1798,49 +1864,52 @@
         "tenant": "synopsys",
         "site": "Careers"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "Cadence",
     "career_url": "https://careers.cadence.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "cadence.wd1.myworkdayjobs.com",
         "tenant": "cadence",
         "site": "External_Careers"
       }
-    ]
+    ],
+    "verified_slug": "cadence.wd1.myworkdayjobs.com/cadence/External_Careers"
   },
   {
     "company": "Applied Materials",
     "career_url": "https://www.appliedmaterials.com/us/en/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "amat.wd1.myworkdayjobs.com",
         "tenant": "amat",
         "site": "External"
       }
-    ]
+    ],
+    "verified_slug": "amat.wd1.myworkdayjobs.com/amat/External"
   },
   {
     "company": "Lam Research",
     "career_url": "https://careers.lamresearch.com/",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "custom",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
@@ -1852,7 +1921,8 @@
         "tenant": "lamresearch",
         "site": "LAM"
       }
-    ]
+    ],
+    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
   },
   {
     "company": "ASML",
@@ -1872,22 +1942,23 @@
     "candidate_slugs": [
       "docker"
     ],
-    "platform": null,
+    "platform": "ashby",
     "categories": [
       "DevOps",
       "Cloud"
     ],
-    "enabled": false
+    "enabled": true,
+    "verified_slug": "docker"
   },
   {
     "company": "BMC Software",
     "career_url": "https://www.bmc.com/careers.html",
     "candidate_slugs": [],
-    "platform": null,
+    "platform": "workday",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "bmc.wd1.myworkdayjobs.com",
@@ -1897,6 +1968,7 @@
     ],
     "aliases": [
       "BMC"
-    ]
+    ],
+    "verified_slug": "bmc.wd1.myworkdayjobs.com/bmc/BMC"
   }
 ]
