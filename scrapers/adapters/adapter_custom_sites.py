@@ -25,12 +25,19 @@ def _now():
     return datetime.now(timezone.utc).isoformat()
 
 
+def _epoch_date(v):
+    try:
+        return datetime.fromtimestamp(int(v), tz=timezone.utc).date().isoformat()
+    except (TypeError, ValueError):
+        return str(v)[:10] if v else None
+
+
 def _text(v):
     return htmlmod.unescape(re.sub(r"<[^>]+>", " ", v or "")).strip()
 
 
 # ---------------------------------------------------------------- IBM
-def fetch_ibm(name="IBM", max_jobs=600):
+def fetch_ibm(name="IBM", max_jobs=1500):
     """IBM careers search (Elasticsearch-backed), scoped to India."""
     jobs, offset, total = [], 0, None
     while offset < max_jobs:
@@ -150,7 +157,7 @@ def fetch_sharechat(name="ShareChat"):
                 employment_type=j.get("employmentType") or NOT_SPECIFIED,
                 technology_domain=group.get("title") or j.get("orgUnitName") or NOT_SPECIFIED,
                 experience_raw=f"{lo}-{hi} years" if lo is not None and hi is not None else NOT_SPECIFIED,
-                date_posted=(str(j.get("approvedDate") or j.get("createdDate") or ""))[:10] or None,
+                date_posted=_epoch_date(j.get("approvedDate") or j.get("createdDate")),
                 job_description=j.get("jobDescription") or "",
                 source_website="sharechat.com/careers", source_type="sharechat_api", scraped_at=_now(),
             ).to_dict())

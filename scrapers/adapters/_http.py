@@ -31,6 +31,12 @@ def request_json(url, method="GET", json_body=None, params=None, max_retries=3,
                                     headers=headers, timeout=TIMEOUT)
             if resp.status_code == 404:
                 return None
+            if resp.status_code == 429 and attempt < max_retries:
+                wait = resp.headers.get("Retry-After")
+                wait = int(wait) if wait and wait.isdigit() else 10 * attempt
+                print(f"[{tag}] rate limited (429), waiting {min(wait, 60)}s")
+                time.sleep(min(wait, 60))
+                continue
             resp.raise_for_status()
             return resp.json()
         except Exception as e:  # noqa: BLE001 -- we re-raise below after retries

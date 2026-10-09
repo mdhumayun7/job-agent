@@ -22,6 +22,13 @@ LIMIT = 50
 MAX_PAGES = 20
 
 
+def _date(v):
+    try:
+        return datetime.fromtimestamp(int(v), tz=timezone.utc).date().isoformat()
+    except (TypeError, ValueError):
+        return v or None
+
+
 def _join(v):
     if isinstance(v, list):
         return "; ".join(str(x) for x in v if x)
@@ -56,7 +63,7 @@ def fetch_darwinbox_jobs(sub: str, company_display_name: str) -> list:
                 location_raw=_join(j.get("officelocation_show_arr") or j.get("officelocation_arr")) or NOT_SPECIFIED,
                 employment_type=j.get("emp_type") or NOT_SPECIFIED,
                 technology_domain=j.get("department") or j.get("functional_area") or NOT_SPECIFIED,
-                date_posted=j.get("job_posting_on") or j.get("created_on"),
+                date_posted=_date(j.get("job_posting_on") or j.get("created_on")),
                 experience_raw=exp,
                 source_website=host, source_type="darwinbox_api",
                 scraped_at=datetime.now(timezone.utc).isoformat(),

@@ -54,7 +54,15 @@ def fetch_eightfold_jobs(slug: str, company_display_name: str, location: str = "
         start += PAGE
         if not batch or start >= total:
             break
-        time.sleep(0.3)
+        time.sleep(1.0)  # Eightfold rate-limits aggressive clients (HTTP 429)
+
+    if location:
+        # Eightfold's location search is distance-based and can return
+        # nearby-country roles; keep only positions actually in the country.
+        loc_l = location.lower()
+        positions = [p for p in positions
+                     if any(loc_l in (l or "").lower() for l in (p.get("locations") or []))
+                     or (loc_l == "india" and "IN" in (p.get("standardizedLocations") or []))]
 
     jobs, details, seen = [], 0, set()
     for p in positions:
@@ -74,7 +82,7 @@ def fetch_eightfold_jobs(slug: str, company_display_name: str, location: str = "
                 employment = (det.get("efcustomTextEmploymentType") or [NOT_SPECIFIED])[0]
                 url = det.get("publicUrl") or url
                 details += 1
-                time.sleep(0.3)
+                time.sleep(1.0)
             except RuntimeError as e:
                 print(f"[{tag}] detail failed for {pid}: {e}")
         jobs.append(Job(

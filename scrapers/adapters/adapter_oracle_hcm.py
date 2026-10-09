@@ -35,10 +35,25 @@ def fetch_oracle_hcm_jobs(slug: str, company_display_name: str, location: str = 
     host, site = slug.split("|")
     tag = f"oracle:{site}@{host.split('.')[0]}"
     api = f"https://{host}/hcmRestApi/resources/latest"
+    # Prefer the site's own country facet (exact), fall back to the free-text
+    # location search, which on some sites only matches a literal "India".
+    loc_filter = f"location={location}"
+    facet_url = (f"{api}/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet"
+                 f"&finder=findReqs;siteNumber={site},facetsList=LOCATIONS,limit=1")
+    try:
+        fdata = request_json(facet_url, tag=tag, extra_headers=HEADERS) or {}
+        facets = ((fdata.get("items") or [{}])[0].get("locationsFacet")) or []
+        match = [f for f in facets if (f.get("Name") or "").strip().lower() == location.lower()]
+        if match:
+            loc_filter = f"selectedLocationsFacet={match[0]['Id']}"
+            print(f"[{tag}] using location facet {location} ({match[0].get('TotalCount')} jobs)")
+    except RuntimeError as e:
+        print(f"[{tag}] facet lookup failed ({e}); using text location search")
+
     reqs, offset, total = [], 0, None
     while offset < max_jobs:
         finder = (f"findReqs;siteNumber={site},limit={PAGE},offset={offset},"
-                  f"location={location},sortBy=POSTING_DATES_DESC")
+                  f"{loc_filter},sortBy=POSTING_DATES_DESC")
         url = (f"{api}/recruitingCEJobRequisitions?onlyData=true"
                f"&expand=requisitionList.secondaryLocations&finder={finder}")
         data = request_json(url, tag=tag, extra_headers=HEADERS)

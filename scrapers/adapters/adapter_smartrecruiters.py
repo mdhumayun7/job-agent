@@ -62,8 +62,9 @@ def fetch_smartrecruiters_jobs(company_slug: str, company_display_name: str, max
             company=company_display_name,
             job_title=raw.get("name", NOT_SPECIFIED),
             job_id=str(posting_id) if posting_id else None,
-            job_url=raw.get("ref", ""),
-            apply_url=raw.get("applyUrl", raw.get("ref", "")),
+            job_url=f"https://jobs.smartrecruiters.com/{company_slug}/{posting_id}" if posting_id else "",
+            apply_url=(f"https://jobs.smartrecruiters.com/{company_slug}/{posting_id}?oga=true"
+                       if posting_id else ""),
             location_raw=location_str,
             date_posted=raw.get("releasedDate"),
             job_description=description,

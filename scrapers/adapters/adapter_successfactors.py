@@ -27,7 +27,7 @@ from job_schema import Job, NOT_SPECIFIED  # noqa: E402
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/128.0 Safari/537.36")
-MAX_JOBS = 500
+MAX_JOBS = 600
 CSRF_RE = re.compile(r"""(?:CSRFToken|csrfToken|X-CSRF-Token)["']?\s*[:=]\s*["']([\w-]{20,})""")
 
 
@@ -46,7 +46,29 @@ def _clean(text):
     return htmlmod.unescape(re.sub(r"<[^>]+>", " ", text or "")).strip()
 
 
+def _norm_date(v):
+    if not v:
+        return None
+    v = str(v).strip()
+    for fmt in ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d", "%b %d, %Y", "%d %b %Y"):
+        try:
+            return datetime.strptime(v[:10] if fmt == "%Y-%m-%d" else v, fmt).date().isoformat()
+        except ValueError:
+            pass
+    return None
+
+
+def _flat(v):
+    if isinstance(v, list):
+        v = "; ".join(_flat(x) for x in v if x)
+    elif isinstance(v, dict):
+        v = v.get("name") or v.get("label") or v.get("value") or ""
+    return re.sub(r"\s+", " ", _clean(str(v or "")).replace("<br/>", " ")).strip(" ;")
+
+
 def _job(company, title, jid, url, location, date, host):
+    location = _flat(location) if location else None
+    date = _norm_date(date) if date and not re.match(r"\d{4}-\d{2}-\d{2}$", str(date)) else date
     return Job(
         company=company, job_title=title or NOT_SPECIFIED, job_id=str(jid) if jid else None,
         job_url=url, apply_url=url, location_raw=location or NOT_SPECIFIED, date_posted=date,
@@ -74,9 +96,8 @@ def _fetch_new_api(s, host, search_url, token, location, company):
             jid = j.get("id")
             url_title = j.get("urlTitle") or j.get("unifiedUrlTitle") or "job"
             url = f"https://{host}/job/{url_title}/{jid}-en_US/" if jid else search_url
-            loc = j.get("jobLocationShort")
-            if isinstance(loc, list):
-                loc = "; ".join(str(x) for x in loc)
+            loc = (j.get("jobLocationShort") or j.get("sfstd_jobLocation_obj")
+                   or ", ".join(_flat(x) for x in (j.get("jobLocationState"), j.get("jobLocationCountry")) if x))
             date = j.get("unifiedStandardStart") or None
             jobs.append(_job(company, j.get("unifiedStandardTitle") or j.get("title"), jid, url,
                              loc, date, host))
