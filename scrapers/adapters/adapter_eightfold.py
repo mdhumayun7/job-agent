@@ -41,7 +41,7 @@ def fetch_eightfold_jobs(slug: str, company_display_name: str, location: str = "
     base = f"https://{host}/api/pcsx"
     positions, start, total = [], 0, None
     while start < max_jobs:
-        data = request_json(f"{base}/search", tag=tag,
+        data = request_json(f"{base}/search", tag=tag, max_retries=5,
                             params={"domain": domain, "query": "", "location": location, "start": start})
         if data is None:
             print(f"[{tag}] search endpoint not found (404)")
@@ -62,7 +62,10 @@ def fetch_eightfold_jobs(slug: str, company_display_name: str, location: str = "
         loc_l = location.lower()
         positions = [p for p in positions
                      if any(loc_l in (l or "").lower() for l in (p.get("locations") or []))
-                     or (loc_l == "india" and "IN" in (p.get("standardizedLocations") or []))]
+                     or (loc_l == "india" and any(
+                         str(sl).strip().upper() == "IN" or str(sl).strip().upper().endswith(", IN")
+                         or "india" in str(sl).lower()
+                         for sl in (p.get("standardizedLocations") or [])))]
 
     jobs, details, seen = [], 0, set()
     for p in positions:
