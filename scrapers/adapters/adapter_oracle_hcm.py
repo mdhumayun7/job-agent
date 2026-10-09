@@ -24,7 +24,8 @@ from job_schema import Job, NOT_SPECIFIED  # noqa: E402
 from _http import request_json  # noqa: E402
 from adapter_workday import _is_cse_title  # noqa: E402
 
-PAGE = 25
+PAGE = 100
+MAX_SCAN = 4000
 MAX_JOBS = 400
 DETAIL_CAP = 40
 HEADERS = {"Content-Type": "application/vnd.oracle.adf.resourceitem+json;charset=utf-8"}
@@ -35,25 +36,24 @@ def fetch_oracle_hcm_jobs(slug: str, company_display_name: str, location: str = 
     host, site = slug.split("|")
     tag = f"oracle:{site}@{host.split('.')[0]}"
     api = f"https://{host}/hcmRestApi/resources/latest"
-    # Prefer the site's own country facet (exact), fall back to the free-text
-    # location search, which on some sites only matches a literal "India".
-    loc_filter = f"location={location}"
-    facet_url = (f"{api}/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet"
-                 f"&finder=findReqs;siteNumber={site},facetsList=LOCATIONS,limit=1")
-    try:
-        fdata = request_json(facet_url, tag=tag, extra_headers=HEADERS) or {}
-        facets = ((fdata.get("items") or [{}])[0].get("locationsFacet")) or []
-        match = [f for f in facets if (f.get("Name") or "").strip().lower() == location.lower()]
-        if match:
-            loc_filter = f"selectedLocationsFacet={match[0]['Id']}"
-            print(f"[{tag}] using location facet {location} ({match[0].get('TotalCount')} jobs)")
-    except RuntimeError as e:
-        print(f"[{tag}] facet lookup failed ({e}); using text location search")
+    # Oracle's free-text "location=India" search only matches postings whose
+    # location is literally the country on some sites (Oracle: 13 of hundreds).
+    # So scan the whole site, newest first, and keep postings whose primary or
+    # secondary location is in the country. Sites are a few thousand postings
+    # at most, i.e. a few dozen requests.
+    def in_country(r):
+        if not location:
+            return True
+        code = (r.get("PrimaryLocationCountry") or "").upper()
+        if location.lower() == "india" and code == "IN":
+            return True
+        locs = [r.get("PrimaryLocation") or ""] + [str((x or {}).get("Name") or "")
+                                                   for x in (r.get("secondaryLocations") or [])]
+        return any(location.lower() in l.lower() for l in locs)
 
     reqs, offset, total = [], 0, None
-    while offset < max_jobs:
-        finder = (f"findReqs;siteNumber={site},limit={PAGE},offset={offset},"
-                  f"{loc_filter},sortBy=POSTING_DATES_DESC")
+    while offset < MAX_SCAN and len(reqs) < max_jobs:
+        finder = f"findReqs;siteNumber={site},limit={PAGE},offset={offset},sortBy=POSTING_DATES_DESC"
         url = (f"{api}/recruitingCEJobRequisitions?onlyData=true"
                f"&expand=requisitionList.secondaryLocations&finder={finder}")
         data = request_json(url, tag=tag, extra_headers=HEADERS)
@@ -67,11 +67,12 @@ def fetch_oracle_hcm_jobs(slug: str, company_display_name: str, location: str = 
         if total is None:
             total = head.get("TotalJobsCount") or 0
         batch = head.get("requisitionList") or []
-        reqs.extend(batch)
-        offset += PAGE
+        reqs.extend(r for r in batch if in_country(r))
+        offset += len(batch)
         if not batch or offset >= total:
             break
         time.sleep(0.3)
+    reqs = reqs[:max_jobs]
 
     jobs, details, seen = [], 0, set()
     for r in reqs:
@@ -114,7 +115,7 @@ def fetch_oracle_hcm_jobs(slug: str, company_display_name: str, location: str = 
             source_type="oracle_hcm_api",
             scraped_at=datetime.now(timezone.utc).isoformat(),
         ).to_dict())
-    print(f"[{tag}] {company_display_name}: {len(jobs)} jobs fetched ({location}, total={total}, "
+    print(f"[{tag}] {company_display_name}: {len(jobs)} jobs fetched ({location}, scanned {offset} of {total}, "
           f"{details} with full description)")
     return jobs
 
