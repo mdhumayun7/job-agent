@@ -148,17 +148,17 @@
   },
   {
     "company": "Postman",
-    "career_url": "https://www.postman.com/company/careers/",
+    "career_url": "https://www.postman.com/company/careers/open-positions/",
     "candidate_slugs": [
       "postman",
       "postmanlabs"
     ],
-    "platform": "custom",
+    "platform": "workday",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "postman.wd108.myworkdayjobs.com/postman/careers"
   },
   {
     "company": "Razorpay",
@@ -177,16 +177,16 @@
   },
   {
     "company": "BrowserStack",
-    "career_url": "https://www.browserstack.com/careers",
+    "career_url": "https://browserstack.wd3.myworkdayjobs.com/External",
     "candidate_slugs": [
       "browserstack"
     ],
-    "platform": "custom",
+    "platform": "workday",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "browserstack.wd3.myworkdayjobs.com/browserstack/External"
   },
   {
     "company": "Chargebee",
@@ -396,17 +396,17 @@
   },
   {
     "company": "Atlassian",
-    "career_url": "https://www.atlassian.com/company/careers",
+    "career_url": "https://www.atlassian.com/company/careers/all-jobs",
     "candidate_slugs": [
       "atlassian",
       "Atlassian"
     ],
-    "platform": "custom",
+    "platform": "custom_api",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "atlassian"
   },
   {
     "company": "Hugging Face",
@@ -423,11 +423,10 @@
   },
   {
     "company": "Microsoft",
-    "career_url": "https://careers.microsoft.com/",
+    "career_url": "https://apply.careers.microsoft.com/careers?location=India",
     "candidate_slugs": [],
-    "platform": "custom",
-    "enabled": false,
-    "note": "Custom career portal, bot-protected. No public API. Needs manual/Selenium approach or skip.",
+    "platform": "eightfold",
+    "enabled": true,
     "categories": [
       "Software Engineering",
       "Cloud",
@@ -435,7 +434,8 @@
     ],
     "aliases": [
       "Microsoft Azure"
-    ]
+    ],
+    "verified_slug": "apply.careers.microsoft.com|microsoft.com"
   },
   {
     "company": "Google",
@@ -443,7 +443,7 @@
     "candidate_slugs": [],
     "platform": "custom",
     "enabled": false,
-    "note": "Custom career portal, bot-protected. No public API.",
+    "note": "Results are server-rendered HTML (no JSON API).",
     "categories": [
       "Software Engineering",
       "AI/ML"
@@ -478,7 +478,7 @@
     "candidate_slugs": [],
     "platform": "custom",
     "enabled": false,
-    "note": "Custom portal (ipeople/similar). No public API found.",
+    "note": "ibegin.tcs.com did not resolve from GitHub Actions. Needs manual DevTools capture.",
     "categories": [
       "IT Services"
     ]
@@ -489,20 +489,21 @@
     "candidate_slugs": [],
     "platform": "custom",
     "enabled": false,
-    "note": "Custom portal. No public API found.",
+    "note": "career.infosys.com calls intapgateway.infosysapps.com, but the job-list call was not captured (needs interaction). Needs manual DevTools capture of the job list request.",
     "categories": [
       "IT Services"
     ]
   },
   {
     "company": "Wipro",
-    "career_url": "https://careers.wipro.com/",
+    "career_url": "https://careers.wipro.com/search/?q=&locationsearch=India",
     "candidate_slugs": [],
-    "platform": "custom",
-    "enabled": false,
+    "platform": "successfactors",
+    "enabled": true,
     "categories": [
       "IT Services"
-    ]
+    ],
+    "verified_slug": "careers.wipro.com|/search/|India"
   },
   {
     "company": "LinkedIn",
@@ -510,7 +511,7 @@
     "candidate_slugs": [],
     "platform": "unsupported",
     "enabled": false,
-    "note": "robots.txt explicitly disallows automated scraping. Do not build a scraper for this one.",
+    "note": "Not scraped by policy (robots.txt / ToS).",
     "categories": [
       "Software Engineering"
     ]
@@ -549,7 +550,7 @@
       "AI/ML"
     ],
     "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "note": "Search API requires a CSRF session; not captured."
   },
   {
     "company": "Meta",
@@ -561,25 +562,25 @@
       "AI/ML"
     ],
     "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "note": "Uses a GraphQL API with session tokens; not scraped."
   },
   {
     "company": "IBM",
     "career_url": "https://www.ibm.com/careers",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "custom_api",
     "categories": [
       "Software Engineering",
       "Cloud",
       "AI/ML",
       "IT Services"
     ],
-    "enabled": false,
+    "enabled": true,
     "aliases": [
       "IBM Cloud",
       "IBM Consulting"
     ],
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "verified_slug": "ibm"
   },
   {
     "company": "NVIDIA",
@@ -622,14 +623,14 @@
   },
   {
     "company": "AMD",
-    "career_url": "https://careers.amd.com/",
+    "career_url": "https://careers.amd.com/careers-home/jobs?location=India",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "jibe",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "amd.wd1.myworkdayjobs.com",
@@ -637,7 +638,7 @@
         "site": "External"
       }
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "verified_slug": "careers.amd.com|India"
   },
   {
     "company": "Qualcomm",
@@ -661,7 +662,7 @@
         "site": "External"
       }
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Eightfold API (careers.qualcomm.com|qualcomm.com) exists but returns HTTP 429 to GitHub Actions runners."
   },
   {
     "company": "Cisco",
@@ -685,18 +686,18 @@
   },
   {
     "company": "Oracle",
-    "career_url": "https://careers.oracle.com/",
+    "career_url": "https://careers.oracle.com/en/sites/jobsearch/jobs?location=India",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "oracle_hcm",
     "categories": [
       "Software Engineering",
       "Cloud"
     ],
-    "enabled": false,
+    "enabled": true,
     "aliases": [
       "Oracle Cloud"
     ],
-    "note": "Uses Oracle Recruiting Cloud (its own HCM REST API), not a supported ATS yet. Needs a dedicated adapter."
+    "verified_slug": "eeho.fa.us2.oraclecloud.com|CX_45001"
   },
   {
     "company": "SAP",
@@ -708,7 +709,7 @@
       "Cloud"
     ],
     "enabled": false,
-    "note": "Uses SAP SuccessFactors career site (server-rendered). Needs a dedicated adapter."
+    "note": "Careers site is behind a Cloudflare bot challenge."
   },
   {
     "company": "Salesforce",
@@ -814,15 +815,15 @@
   },
   {
     "company": "Dell Technologies",
-    "career_url": "https://jobs.dell.com/",
+    "career_url": "https://enterpriseplatform.dell.com/hcmUI/CandidateExperience/en/sites/careers/jobs",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "oracle_hcm",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded",
       "Cloud"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "dell.wd1.myworkdayjobs.com",
@@ -834,7 +835,7 @@
       "EMC",
       "Dell EMC"
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "verified_slug": "enterpriseplatform.dell.com|CX_1001"
   },
   {
     "company": "Hewlett Packard Enterprise",
@@ -961,16 +962,16 @@
   },
   {
     "company": "Ericsson",
-    "career_url": "https://www.ericsson.com/en/careers",
+    "career_url": "https://jobs.ericsson.com/careers?location=India",
     "candidate_slugs": [
       "Ericsson"
     ],
-    "platform": "custom",
+    "platform": "eightfold",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
+    "enabled": true,
     "candidate_workday": [
       {
         "host": "ericsson.wd3.myworkdayjobs.com",
@@ -978,19 +979,19 @@
         "site": "Ericsson"
       }
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "verified_slug": "jobs.ericsson.com|ericsson.com"
   },
   {
     "company": "Nokia",
-    "career_url": "https://www.nokia.com/about-us/careers/",
+    "career_url": "https://jobs.nokia.com/en/sites/CX_1",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "oracle_hcm",
     "categories": [
       "Software Engineering",
       "Semiconductor/Embedded"
     ],
-    "enabled": false,
-    "note": "Uses an Oracle Recruiting Cloud career site. Needs a dedicated adapter."
+    "enabled": true,
+    "verified_slug": "fa-evmr-saasfaprod1.fa.ocs.oraclecloud.com|CX_1"
   },
   {
     "company": "Motorola Solutions",
@@ -1032,17 +1033,17 @@
   },
   {
     "company": "Visa",
-    "career_url": "https://corporate.visa.com/en/jobs/",
+    "career_url": "https://visa.wd5.myworkdayjobs.com/Visa",
     "candidate_slugs": [
       "Visa"
     ],
-    "platform": "custom",
+    "platform": "workday",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "visa.wd5.myworkdayjobs.com/visa/Visa"
   },
   {
     "company": "Mastercard",
@@ -1072,19 +1073,19 @@
       "Software Engineering"
     ],
     "enabled": false,
-    "note": "Custom career site; its search API requires a CSRF token. Not scraped."
+    "note": "Careers site is behind a Cloudflare bot challenge."
   },
   {
     "company": "GitHub",
-    "career_url": "https://www.github.careers/",
+    "career_url": "https://www.github.careers/careers-home/jobs",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "jibe",
     "categories": [
       "Software Engineering",
       "DevOps"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "www.github.careers"
   },
   {
     "company": "OpenAI",
@@ -1102,18 +1103,18 @@
   },
   {
     "company": "HCLTech",
-    "career_url": "https://www.hcltech.com/careers",
+    "career_url": "https://careers.hcltech.com/",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "successfactors",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
+    "enabled": true,
     "aliases": [
       "HCL",
       "HCL Technologies"
     ],
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "verified_slug": "careers.hcltech.com|/search/|"
   },
   {
     "company": "Cognizant",
@@ -1131,7 +1132,7 @@
         "site": "Cognizant_Careers"
       }
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Careers site is behind a Cloudflare bot challenge; no API reachable from automation."
   },
   {
     "company": "Accenture",
@@ -1166,12 +1167,12 @@
     "company": "Capgemini",
     "career_url": "https://www.capgemini.com/in-en/careers/",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "custom_api",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "capgemini"
   },
   {
     "company": "CGI",
@@ -1259,7 +1260,7 @@
       "IT Services"
     ],
     "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "note": "Careers site returns 403 to automation."
   },
   {
     "company": "Coforge",
@@ -1274,50 +1275,50 @@
   },
   {
     "company": "NTT DATA",
-    "career_url": "https://www.nttdata.com/global/en/careers",
+    "career_url": "https://careers.nttdata.com/global/en",
     "candidate_slugs": [
       "NTTDATA",
       "nttdata"
     ],
-    "platform": "custom",
+    "platform": "phenom",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "careers.nttdata.com|en_global|global|/global/en/job/"
   },
   {
     "company": "Genpact",
-    "career_url": "https://www.genpact.com/careers",
+    "career_url": "https://genpact.wd108.myworkdayjobs.com/External_Careers",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "workday",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "genpact.wd108.myworkdayjobs.com/genpact/External_Careers"
   },
   {
     "company": "EY",
-    "career_url": "https://www.ey.com/en_in/careers",
+    "career_url": "https://careers.ey.com/ey/search/?q=&locationsearch=India",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "successfactors",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "careers.ey.com|/ey/search/|India"
   },
   {
     "company": "KPMG",
-    "career_url": "https://kpmg.com/in/en/home/careers.html",
+    "career_url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "oracle_hcm",
     "categories": [
       "IT Services"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "ejgk.fa.em2.oraclecloud.com|CX_3"
   },
   {
     "company": "PwC",
@@ -1369,7 +1370,7 @@
         "site": "WalmartExternal"
       }
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Workday tenant rejects API requests (HTTP 422); careers.walmart.com uses an AI-assistant GraphQL API."
   },
   {
     "company": "Meesho",
@@ -1386,17 +1387,17 @@
   },
   {
     "company": "PhonePe",
-    "career_url": "https://www.phonepe.com/careers/",
+    "career_url": "https://www.phonepe.com/careers/job-openings/",
     "candidate_slugs": [
       "phonepe"
     ],
-    "platform": "custom",
+    "platform": "smartrecruiters",
     "categories": [
       "Software Engineering",
       "Fintech"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "PHONEPELIMITED"
   },
   {
     "company": "Paytm",
@@ -1491,7 +1492,7 @@
     "aliases": [
       "Dream Sports"
     ],
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Lever board 'dreamsports' currently has no postings (404)."
   },
   {
     "company": "Ola",
@@ -1524,16 +1525,16 @@
   },
   {
     "company": "Delhivery",
-    "career_url": "https://www.delhivery.com/careers",
+    "career_url": "https://delhivery.darwinbox.in/ms/candidate/careers",
     "candidate_slugs": [
       "delhivery"
     ],
-    "platform": "custom",
+    "platform": "darwinbox",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "delhivery"
   },
   {
     "company": "Udaan",
@@ -1555,13 +1556,13 @@
       "sharechat",
       "mohalla-tech"
     ],
-    "platform": "custom",
+    "platform": "custom_api",
     "categories": [
       "Software Engineering",
       "AI/ML"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "sharechat"
   },
   {
     "company": "Practo",
@@ -1574,7 +1575,7 @@
       "Software Engineering"
     ],
     "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Careers site is behind a bot challenge."
   },
   {
     "company": "Unacademy",
@@ -1641,7 +1642,7 @@
       "Fintech"
     ],
     "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Careers site is behind a Cloudflare bot challenge."
   },
   {
     "company": "Policybazaar",
@@ -1656,7 +1657,7 @@
       "Fintech"
     ],
     "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "note": "Careers site returns Access Denied to automation."
   },
   {
     "company": "Cars24",
@@ -1677,12 +1678,12 @@
     "candidate_slugs": [
       "urbancompany"
     ],
-    "platform": "custom",
+    "platform": "custom_api",
     "categories": [
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "urbancompany"
   },
   {
     "company": "OYO",
@@ -1712,15 +1713,15 @@
   },
   {
     "company": "Texas Instruments",
-    "career_url": "https://careers.ti.com/",
+    "career_url": "https://careers.ti.com/en/sites/CX/jobs?location=India",
     "candidate_slugs": [],
-    "platform": "custom",
+    "platform": "oracle_hcm",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Own career portal with no public ATS/API found. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) before it can be scraped."
+    "enabled": true,
+    "verified_slug": "edbz.fa.us2.oraclecloud.com|CX"
   },
   {
     "company": "Micron",
@@ -1815,18 +1816,18 @@
   },
   {
     "company": "Infineon Technologies",
-    "career_url": "https://www.infineon.com/careers",
+    "career_url": "https://jobs.infineon.com/careers?location=India",
     "candidate_slugs": [
       "Infineon",
       "InfineonTechnologies"
     ],
-    "platform": "custom",
+    "platform": "eightfold",
     "categories": [
       "Semiconductor/Embedded",
       "Software Engineering"
     ],
-    "enabled": false,
-    "note": "Auto-detection found no public ATS/API for this company. Needs the real JSON endpoint from the careers page (browser DevTools > Network)."
+    "enabled": true,
+    "verified_slug": "jobs.infineon.com|infineon.com"
   },
   {
     "company": "Marvell",

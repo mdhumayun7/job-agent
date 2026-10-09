@@ -27,8 +27,11 @@ def _now():
 
 def _epoch_date(v):
     try:
-        return datetime.fromtimestamp(int(float(v)), tz=timezone.utc).date().isoformat()
-    except (TypeError, ValueError):
+        n = float(v)
+        if n > 1e11:  # milliseconds
+            n /= 1000
+        return datetime.fromtimestamp(int(n), tz=timezone.utc).date().isoformat()
+    except (TypeError, ValueError, OverflowError, OSError):
         return str(v)[:10] if v else None
 
 

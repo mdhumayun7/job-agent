@@ -167,11 +167,14 @@ Each run uploads `output/` and `logs/` as a downloadable artifact, kept for 14 d
 |---|---|
 | `greenhouse`, `lever`, `smartrecruiters`, `ashby`, `workable` | Public ATS job-board API, scraped daily |
 | `workday` | Company's Workday career site (`host/tenant/site`), India-located jobs only |
-| `amazon_custom`, `makemytrip_custom` | Company-specific public JSON endpoint |
+| `eightfold`, `oracle_hcm`, `jibe`, `successfactors`, `phenom`, `darwinbox` | Career-site platforms used by large companies (Microsoft, Oracle, Nokia, AMD, Wipro, EY, NTT DATA, ...), scoped to India where the site allows |
+| `amazon_custom`, `makemytrip_custom`, `custom_api` | Company-specific public JSON endpoint (Amazon, MakeMyTrip, IBM, Atlassian, Capgemini, ShareChat, Urban Company) |
 | `null` | Newly added, not yet verified. The workflow's detection step probes the candidate slugs / Workday sites and enables the company only if real jobs come back |
 | `custom` / `unsupported` | No public API found; listed but disabled. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) and a small adapter |
 
 Run detection manually with `python scripts/detect_ats_platform.py`, the pipeline with `python run_ats_pipeline.py`.
+
+To find the API behind a new careers page, run the *Probe career sites* workflow (Actions tab). It opens each page in a headless browser, records the JSON requests it makes, and pushes the findings to the `probe-results` branch. `mode=adapters` runs the adapters in `scripts/test_new_adapters.py` live and records job counts.
 
 ### Local scheduling instead
 
