@@ -1,0 +1,47 @@
+name: Probe career sites
+
+# Manual-only helper: opens each unsupported company's careers page in a
+# headless browser and records the JSON APIs it calls. Results are pushed
+# to the `probe-results` branch (never to main).
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated company names (empty = all)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Probe
+        continue-on-error: true
+        run: python scripts/probe_career_sites.py --only "${{ github.event.inputs.only }}"
+      - name: Push results to probe-results branch
+        if: always()
+        run: |
+          [ -f probe_results.json ] || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          mv probe_results.json /tmp/probe_results.json
+          git checkout --orphan probe-results
+          git rm -rf --cached . > /dev/null
+          cp /tmp/probe_results.json probe_results.json
+          git add -f probe_results.json
+          git commit -m "probe results run ${{ github.run_number }}"
+          git push -f origin probe-results
