@@ -161,20 +161,42 @@ Each run uploads `output/` and `logs/` as a downloadable artifact, kept for 14 d
 
 ### Company career-site pipeline
 
-`config/companies.json` lists every tracked company (about 130). Each entry has a `platform`:
+`config/companies.json` lists every tracked company (133; 85 enabled). Each entry has a `platform`:
 
 | platform | Meaning |
 |---|---|
 | `greenhouse`, `lever`, `smartrecruiters`, `ashby`, `workable` | Public ATS job-board API, scraped daily |
 | `workday` | Company's Workday career site (`host/tenant/site`), India-located jobs only |
 | `eightfold`, `oracle_hcm`, `jibe`, `successfactors`, `phenom`, `darwinbox` | Career-site platforms used by large companies (Microsoft, Oracle, Nokia, AMD, Wipro, EY, NTT DATA, ...), scoped to India where the site allows |
-| `amazon_custom`, `makemytrip_custom`, `custom_api` | Company-specific public JSON endpoint (Amazon, MakeMyTrip, IBM, Atlassian, Capgemini, ShareChat, Urban Company) |
+| `amazon_custom`, `makemytrip_custom`, `custom_api` | Company-specific public JSON endpoint (Amazon, MakeMyTrip, Infosys, IBM, Atlassian, Capgemini, ShareChat, Urban Company) |
+| `govt_notices` | Government / research recruitment notices parsed from the official page (C-DAC) |
 | `null` | Newly added, not yet verified. The workflow's detection step probes the candidate slugs / Workday sites and enables the company only if real jobs come back |
 | `custom` / `unsupported` | No public API found; listed but disabled. Needs the JSON endpoint the careers page calls (browser DevTools > Network > Fetch/XHR) and a small adapter |
 
 Run detection manually with `python scripts/detect_ats_platform.py`, the pipeline with `python run_ats_pipeline.py`.
 
 To find the API behind a new careers page, run the *Probe career sites* workflow (Actions tab). It opens each page in a headless browser, records the JSON requests it makes, and pushes the findings to the `probe-results` branch. `mode=adapters` runs the adapters in `scripts/test_new_adapters.py` live and records job counts.
+
+### What each run does
+
+| Step | Output |
+|---|---|
+| Fetch all enabled companies, 8 in parallel | `output/company_run_stats.json` |
+| Enrich and classify every job: region (India / Remote-India / Remote / Abroad), seniority, fresher eligibility with the evidence, skills | fields on each job |
+| Score each job 0-100 against `config/profile.json` (CSE role, target role, skills, fresher level, India, recency) | `output/top_matches.json`, *Top Matches* sheet |
+| Track history (NEW / UPDATED / UNCHANGED / CLOSED) | `data/ats_job_history.json` (committed) |
+| Health check per company (FAILING, ZERO, DROP, SLOW) | `data/company_health.json`, run summary, a *Scraper health alert* issue |
+| Build and publish the job board | GitHub Pages (`/site/`) |
+| Alerts | Telegram for new top matches, email digest once a day |
+| Run report | `run-reports` branch: step logs, health report, top 100 matches |
+
+The 03:30 UTC run does everything; the 09:30, 15:30 and 21:30 UTC runs refresh company sites only (no portal scraping, no email).
+
+### One-time setup
+
+1. **Website:** Settings > Pages > Build and deployment > Source: **GitHub Actions**. The next run publishes the board at `https://<user>.github.io/job-agent/site/`.
+2. **Telegram (optional):** create a bot with @BotFather, send it a message, read your chat id from `https://api.telegram.org/bot<TOKEN>/getUpdates`, then add repository secrets `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
+3. **Your profile:** edit `config/profile.json` (target roles, weighted skills, locations, threshold) to change what counts as a top match.
 
 ### Local scheduling instead
 
@@ -252,10 +274,11 @@ Key `.env` variables:
 
 ## Roadmap
 
-- [ ] Telegram / WhatsApp notifications
-- [ ] Company-level deduplication across runs
+- [x] Telegram notifications
+- [x] Hosted job board (GitHub Pages)
+- [x] Personal match scoring and scraper health monitoring
+- [ ] WhatsApp notifications
 - [ ] Referral-contact lookup per listing
-- [ ] Hosted dashboard
 
 ---
 
