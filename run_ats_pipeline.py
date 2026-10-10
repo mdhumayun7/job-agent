@@ -26,7 +26,7 @@ COMPANIES_PATH = Path(__file__).resolve().parent / "config" / "companies.json"
 
 SUPPORTED_PLATFORMS = ("greenhouse", "lever", "smartrecruiters", "ashby", "workable",
                        "workday", "makemytrip_custom", "amazon_custom", "eightfold", "oracle_hcm",
-                       "jibe", "successfactors", "phenom", "darwinbox", "custom_api")
+                       "jibe", "successfactors", "phenom", "darwinbox", "custom_api", "govt_notices")
 
 ADAPTER_MAP = {}  # populated lazily below so this file can be unit-tested without network
 
@@ -47,6 +47,7 @@ def _load_adapters():
     from adapter_phenom import fetch_phenom_jobs
     from adapter_darwinbox import fetch_darwinbox_jobs
     from adapter_custom_sites import fetch_custom_api_jobs
+    from adapter_govt_notices import fetch_govt_notices
     ADAPTER_MAP["greenhouse"] = fetch_greenhouse_jobs
     ADAPTER_MAP["lever"] = fetch_lever_jobs
     ADAPTER_MAP["smartrecruiters"] = fetch_smartrecruiters_jobs
@@ -63,6 +64,7 @@ def _load_adapters():
     ADAPTER_MAP["phenom"] = fetch_phenom_jobs
     ADAPTER_MAP["darwinbox"] = fetch_darwinbox_jobs
     ADAPTER_MAP["custom_api"] = fetch_custom_api_jobs
+    ADAPTER_MAP["govt_notices"] = fetch_govt_notices
 
 
 def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, limit=None):

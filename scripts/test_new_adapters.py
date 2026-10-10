@@ -16,6 +16,9 @@ sys.path.insert(0, str(ROOT))
 import run_ats_pipeline as rp  # noqa: E402
 
 CANDIDATES = [
+    ("C-DAC", "govt_notices", "cdac"),
+    ("ISRO", "govt_notices", "isro"),
+    ("IISc", "govt_notices", "iisc"),
     ("Microsoft", "eightfold", "apply.careers.microsoft.com|microsoft.com"),
     ("Qualcomm", "eightfold", "careers.qualcomm.com|qualcomm.com"),
     ("Ericsson", "eightfold", "jobs.ericsson.com|ericsson.com"),
@@ -67,6 +70,8 @@ def main():
                                ("job_title", "job_id", "location_raw", "job_url", "date_posted",
                                 "employment_type", "technology_domain")} for j in jobs[:3]]
             described = [j for j in jobs if j.get("job_description")]
+            rec["all_titles"] = [(j.get("job_title"), j.get("application_deadline"), j.get("job_url"))
+                                 for j in jobs] if platform == "govt_notices" else None
             rec["desc_sample"] = [(j.get("job_title"), (j.get("job_description") or "")[:300]) for j in described[:2]]
         except Exception as e:  # noqa: BLE001
             rec["error"] = f"{type(e).__name__}: {e}"[:500]
