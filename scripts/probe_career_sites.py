@@ -22,8 +22,9 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 TARGETS = {
-    "TCS": ["https://ibegin.tcs.com/iBegin/jobs/search"],
-    "Infosys": ["https://career.infosys.com/joblist"],
+    "TCS": ["https://ibegin.tcs.com/iBegin/jobs/search", "https://www.tcs.com/careers/india",
+            "https://www.tcs.com/careers/india/experienced-professionals", "https://nextstep.tcs.com/campus/"],
+    "Infosys": ["https://career.infosys.com/joblist", "https://career.infosys.com/jobs?companyhiringtype=IL&countrycode=IN"],
     "Wipro": ["https://careers.wipro.com/search/?q=&locationsearch=India"],
     "HCLTech": ["https://careers.hcltech.com/", "https://www.hcltech.com/careers/careers-in-india"],
     "Cognizant": ["https://careers.cognizant.com/global-en/jobs/?location=India"],
@@ -171,6 +172,20 @@ def probe(page, company, url):
         for _ in range(3):
             page.mouse.wheel(0, 4000)
             time.sleep(1.5)
+        # Some sites only request the job list after a search click.
+        for label in ("Search", "Find Jobs", "Search Jobs", "View All Jobs", "View all", "Explore jobs", "Apply"):
+            try:
+                btn = page.get_by_role("button", name=re.compile(label, re.I)).first
+                if btn.count() and btn.is_visible():
+                    btn.click(timeout=3000)
+                    time.sleep(4)
+                    break
+            except Exception:
+                pass
+        try:
+            page.wait_for_load_state("networkidle", timeout=10000)
+        except Exception:
+            pass
         html = page.content()
         result["final_url"] = page.url
         result["title"] = page.title()[:200]
