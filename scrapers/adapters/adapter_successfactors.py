@@ -156,6 +156,58 @@ def _fetch_classic(s, host, path, location, company):
     return jobs, total
 
 
+DETAIL_CAP = 60
+LDJSON_RE = re.compile(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', re.S | re.I)
+DESC_PATTERNS = [
+    re.compile(r'itemprop="description"[^>]*>(.*?)</(?:span|div)>\s*</(?:span|div)>', re.S | re.I),
+    re.compile(r'class="jobdescription"[^>]*>(.*?)</span>\s*</', re.S | re.I),
+    re.compile(r'itemprop="description"[^>]*>(.*?)</span>', re.S | re.I),
+]
+
+
+def extract_description(page_html: str) -> str:
+    """Job description from a CSB job page: schema.org JobPosting JSON-LD
+    first, then the microdata / classic description containers."""
+    import json as _json
+    for block in LDJSON_RE.findall(page_html):
+        try:
+            data = _json.loads(block.strip())
+        except ValueError:
+            continue
+        for item in data if isinstance(data, list) else [data]:
+            if isinstance(item, dict) and item.get("@type") == "JobPosting" and item.get("description"):
+                return _clean(item["description"])
+    for rx in DESC_PATTERNS:
+        m = rx.search(page_html)
+        if m and len(_clean(m.group(1))) > 80:
+            return _clean(m.group(1))
+    return ""
+
+
+def _add_descriptions(s, jobs, cap=DETAIL_CAP):
+    """Descriptions need one page fetch per job, so only CSE-relevant titles
+    get one (the ones the matcher and fresher filter actually need)."""
+    try:
+        from parsers import detect_cse_relevance
+    except ImportError:
+        return 0
+    done = 0
+    for j in jobs:
+        if done >= cap:
+            break
+        if not detect_cse_relevance(j.get("job_title") or "", "")[0] or not j.get("job_url", "").startswith("http"):
+            continue
+        try:
+            r = _request(s, "GET", j["job_url"])
+            if r.status_code == 200:
+                j["job_description"] = extract_description(r.text)
+                done += 1 if j["job_description"] else 0
+        except RuntimeError:
+            pass
+        time.sleep(0.3)
+    return done
+
+
 def fetch_successfactors_jobs(slug: str, company_display_name: str) -> list:
     host, path, location = (slug.split("|") + ["", ""])[:3]
     path = path or "/search/"
@@ -177,7 +229,9 @@ def fetch_successfactors_jobs(slug: str, company_display_name: str) -> list:
         result = _fetch_classic(s, host, path, location, company_display_name)
         mode = "html"
     jobs, total = result
-    print(f"[successfactors] {company_display_name}: {len(jobs)} jobs fetched ({mode}, location={location or 'all'}, total={total})")
+    with_desc = _add_descriptions(s, jobs)
+    print(f"[successfactors] {company_display_name}: {len(jobs)} jobs fetched ({mode}, location={location or 'all'}, "
+          f"total={total}, {with_desc} with description)")
     return jobs
 
 
@@ -199,6 +253,12 @@ def selftest():
     j = jobs[0]
     assert j["job_id"] == "1434300833" and j["location_raw"] == "Chennai, TN, IN"
     assert j["date_posted"] == "2026-10-08" and j["job_title"] == "RC FS Senior"
+    ld = ('<script type="application/ld+json">{"@type":"JobPosting","title":"x",'
+          '"description":"<p>Build services in Python. 0-2 years.</p>"}</script>')
+    assert extract_description(ld) == "Build services in Python. 0-2 years.", extract_description(ld)
+    micro = '<span itemprop="description"><span>' + "We need a backend engineer. " * 5 + '</span></span>'
+    assert extract_description(micro).startswith("We need a backend engineer"), extract_description(micro)
+    assert extract_description("<html>nothing</html>") == ""
     print("adapter_successfactors self-test passed")
 
 

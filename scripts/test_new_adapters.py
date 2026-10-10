@@ -66,6 +66,8 @@ def main():
             rec["samples"] = [{k: (str(j.get(k))[:160]) for k in
                                ("job_title", "job_id", "location_raw", "job_url", "date_posted",
                                 "employment_type", "technology_domain")} for j in jobs[:3]]
+            described = [j for j in jobs if j.get("job_description")]
+            rec["desc_sample"] = [(j.get("job_title"), (j.get("job_description") or "")[:300]) for j in described[:2]]
         except Exception as e:  # noqa: BLE001
             rec["error"] = f"{type(e).__name__}: {e}"[:500]
             rec["trace"] = traceback.format_exc()[-1200:]
