@@ -34,7 +34,7 @@ def make_job_key(job: dict) -> str:
     /jobs/company-title-id URL pattern (section 45)."""
     company = slugify(job.get("company", "company"))
     title = slugify(job.get("job_title", "role"))[:60].strip("-")
-    job_id = job.get("job_id") or "0"
+    job_id = slugify(str(job.get("job_id") or "0"))[-40:]  # ids can contain '/' (Workday paths)
     return f"{company}-{title}-{job_id}"
 
 
@@ -47,7 +47,7 @@ def build_index(jobs: list) -> list:
         skills = job.get("skills_required") or []
         if skills:
             entry["skills_required"] = skills[:6]
-        entry["key"] = make_job_key(job)
+        entry["key"] = job.get("_key") or make_job_key(job)
         index.append(entry)
     return index
 
@@ -56,7 +56,7 @@ def write_job_details(jobs: list, jobs_dir: Path):
     jobs_dir.mkdir(parents=True, exist_ok=True)
     written = 0
     for job in jobs:
-        key = make_job_key(job)
+        key = job.get("_key") or make_job_key(job)
         (jobs_dir / f"{key}.json").write_text(
             json.dumps(job, indent=2, default=str), encoding="utf-8"
         )
@@ -110,6 +110,11 @@ def generate(jobs_json_path="output/ats_jobs.json", output_dir=OUTPUT_DIR):
     # The public site lists only open postings; closed ones are counted in stats.
     jobs = [j for j in all_jobs if j.get("status") != "CLOSED"]
     closed = len(all_jobs) - len(jobs)
+    used = {}
+    for job in jobs:  # one unique, filesystem-safe key per job, shared by index and detail file
+        key = make_job_key(job)
+        used[key] = used.get(key, 0) + 1
+        job["_key"] = key if used[key] == 1 else f"{key}-{used[key]}"
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True)
 

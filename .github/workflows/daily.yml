@@ -59,6 +59,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -113,7 +115,8 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-          python scripts/company_health.py
+          mkdir -p output/step_logs
+          python scripts/company_health.py 2>&1 | tee output/step_logs/health.log; test ${PIPESTATUS[0]} -eq 0
           [ -f output/health_report.md ] && cat output/health_report.md >> "$GITHUB_STEP_SUMMARY" || true
 
       - name: Open, update or close the health alert issue
@@ -142,6 +145,9 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
+          mkdir -p output/step_logs
+          exec > >(tee output/step_logs/website.log) 2>&1
+          set -x
           [ -f output/ats_jobs.json ] || { echo "No ATS output, skipping website build"; exit 1; }
           python generate_website_data.py --input output/ats_jobs.json --out website-data
           rm -rf _site && mkdir -p _site/site
@@ -161,16 +167,25 @@ jobs:
       - name: Persist ATS job history and verified companies
         if: always()
         run: |
+          mkdir -p output/step_logs
+          exec > >(tee output/step_logs/persist.log) 2>&1
+          set -x
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ats_job_history.json config/companies.json data/company_health.json
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update ATS job history"
-            git pull --rebase --autostash origin main || true
-            git push
-          else
+          for f in data/ats_job_history.json config/companies.json data/company_health.json; do
+            [ -f "$f" ] && git add -- "$f"
+          done
+          if git diff --cached --quiet; then
             echo "No history changes to commit."
+            exit 0
           fi
+          git commit -m "chore: update ATS job history"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 10))
+          done
+          exit 1
 
       - name: Check results
         id: results
@@ -205,6 +220,20 @@ jobs:
       - name: Send email digest
         if: steps.results.outputs.found == 'true' && github.event.schedule != '30 9,15,21 * * *'
         run: python email_alert.py
+
+      - name: Publish run report (run-reports branch)
+        if: always()
+        continue-on-error: true
+        run: |
+          mkdir -p /tmp/report
+          cp -r output/step_logs /tmp/report/ 2>/dev/null || true
+          for f in output/health_report.md output/company_run_stats.json; do [ -f "$f" ] && cp "$f" /tmp/report/; done
+          [ -f output/top_matches.json ] && python -c "import json;t=json.load(open('output/top_matches.json'));json.dump([{k:j.get(k) for k in ('match_score','company','job_title','location_raw','status','apply_url')} for j in t[:100]],open('/tmp/report/top_matches_top100.json','w'),indent=1)"
+          echo "run ${{ github.run_number }} at $(date -u +%FT%TZ), event ${{ github.event_name }} ${{ github.event.schedule }}" > /tmp/report/RUN.txt
+          cd /tmp/report && git init -q && git checkout -q -b run-reports
+          git config user.name "github-actions[bot]" && git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "run ${{ github.run_number }} report"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" run-reports
 
       - name: Upload results
         if: always()
