@@ -1,4 +1,4 @@
-﻿import json, smtplib, os
+import json, smtplib, os
 from pathlib import Path
 from datetime import datetime
 from email.mime.multipart import MIMEMultipart
@@ -20,9 +20,41 @@ NOTIFY_EMAIL   = os.getenv("NOTIFY_EMAIL", EMAIL_ID)
 ENRICHED_FILE  = "output/jobs_enriched.json"
 JOBS_FILE      = "output/jobs_found.json"
 
+TOP_MATCHES_FILE = "output/top_matches.json"
+
 def load_jobs():
     src = ENRICHED_FILE if Path(ENRICHED_FILE).exists() else JOBS_FILE
+    if not Path(src).exists():
+        return []
     with open(src,"r",encoding="utf-8") as f: return json.load(f)
+
+def load_new_top_matches(limit=20):
+    """New jobs from company career sites that score at or above the profile threshold."""
+    if not Path(TOP_MATCHES_FILE).exists():
+        return []
+    with open(TOP_MATCHES_FILE,"r",encoding="utf-8") as f:
+        top = json.load(f)
+    return [j for j in top if j.get("status") == "NEW"][:limit]
+
+def esc(v):
+    import html as _h
+    return _h.escape(str(v or ""))
+
+def ats_cards(jobs):
+    out = ""
+    for i, j in enumerate(jobs, 1):
+        sc = j.get("match_score", 0)
+        col = score_color(sc)
+        url = j.get("apply_url") or j.get("job_url") or ""
+        why = " · ".join(j.get("match_reasons") or [])
+        out += f"""
+<div style="background:#1e293b;border-left:4px solid {col};border-radius:8px;padding:16px;margin-bottom:12px">
+  <div style="font-size:1rem;font-weight:700;color:#e2e8f0">{i}. {esc(j.get('job_title'))} <span style="color:{col}">({sc})</span></div>
+  <div style="color:#94a3b8;font-size:0.85rem;margin-top:4px">{esc(j.get('company'))} &bull; {esc(j.get('location_raw'))}</div>
+  {f'<div style="color:#94a3b8;font-size:0.8rem;margin-top:6px">{esc(why)}</div>' if why else ''}
+  {f'<a href="{esc(url)}" style="display:inline-block;margin-top:10px;background:#6366f1;color:white;padding:6px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;font-weight:600">Apply</a>' if url.startswith('http') else ''}
+</div>"""
+    return out
 
 def score_color(s):
     if s>=60: return "#22c55e"
@@ -37,6 +69,10 @@ def send_alert(top_n=15):
         return
 
     jobs = load_jobs()
+    new_top = load_new_top_matches()
+    if not jobs and not new_top:
+        print("Nothing to send: no portal results and no new top matches.")
+        return
     top  = sorted(jobs, key=lambda j: j.get("ai_match_score",j.get("match_score",0)), reverse=True)[:top_n]
     today = datetime.now().strftime("%d %B %Y")
     name  = os.getenv("APPLICANT_NAME","Candidate")
@@ -85,8 +121,8 @@ def send_alert(top_n=15):
     <div style="color:#64748b;font-size:0.85rem">Platforms</div>
   </div>
 </div>
-<h2 style="font-size:1.1rem;font-weight:700;border-left:4px solid #6366f1;padding-left:12px;margin-bottom:16px">Top {top_n} Matches</h2>
-{cards}
+{f'<h2 style="font-size:1.1rem;font-weight:700;border-left:4px solid #22c55e;padding-left:12px;margin-bottom:16px">New top matches from company career sites ({len(new_top)})</h2>' + ats_cards(new_top) if new_top else ''}
+{f'<h2 style="font-size:1.1rem;font-weight:700;border-left:4px solid #6366f1;padding-left:12px;margin-bottom:16px">Top {top_n} Matches (job portals)</h2>' + cards if cards else ''}
 <h2 style="font-size:1rem;font-weight:700;border-left:4px solid #8b5cf6;padding-left:12px;margin:24px 0 12px">Platform Summary</h2>
 <table style="width:100%;background:#1e293b;border-radius:10px;border-collapse:collapse">
   <tr style="background:#334155"><th style="padding:8px 12px;text-align:left;color:#94a3b8">Platform</th><th style="padding:8px 12px;text-align:left;color:#94a3b8">Jobs</th></tr>
@@ -98,7 +134,7 @@ def send_alert(top_n=15):
 </body></html>"""
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"Job Alert {today} — {len(jobs)} jobs, top score {top[0].get('ai_match_score',top[0].get('match_score',0)) if top else 0}/100"
+    msg["Subject"] = f"Job Alert {today} — {len(new_top)} new top matches, {len(jobs)} portal jobs"
     msg["From"]    = EMAIL_ID
     msg["To"]      = NOTIFY_EMAIL
     msg.attach(MIMEText(html,"html"))
