@@ -16,6 +16,7 @@ sys.path.insert(0, str(ROOT))
 import run_ats_pipeline as rp  # noqa: E402
 
 CANDIDATES = [
+    ("Infosys", "custom_api", "infosys"),
     ("C-DAC", "govt_notices", "cdac"),
     ("ISRO", "govt_notices", "isro"),
     ("IISc", "govt_notices", "iisc"),

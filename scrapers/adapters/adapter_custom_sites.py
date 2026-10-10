@@ -191,7 +191,46 @@ def fetch_urbancompany(name="Urban Company"):
     return jobs
 
 
+# ---------------------------------------------------------------- Infosys
+def fetch_infosys(name="Infosys"):
+    """career.infosys.com job search API (all Infosys / Infosys BPM openings, India-heavy)."""
+    data = request_json("https://intapgateway.infosysapps.com/careersci/search/intapjbsrch/getCareerSearchJobs",
+                        tag="infosys", params={"sourceId": "1,21", "searchText": "ALL"})
+    if data is None:
+        raise RuntimeError("Infosys getCareerSearchJobs returned 404")
+    jobs = []
+    for j in data:
+        ref = j.get("referenceCode") or str(j.get("postingId") or "")
+        url = (f"https://career.infosys.com/jobdesc?jobReferenceCode={ref}&sourceId={j.get('sourceId', 1)}"
+               if ref else "https://career.infosys.com/joblist")
+        lo, hi = j.get("minExperienceLevel"), j.get("maxExperienceLevel")
+        desc = "\n\n".join(x for x in (
+            j.get("postingDescription"), j.get("rolesResponsibilities"),
+            ("Technical requirements:\n" + j["technicalRequirement"]) if j.get("technicalRequirement") else "",
+            ("Additional:\n" + j["additionalResponsibility"]) if j.get("additionalResponsibility") else "",
+            ("Preferred skills: " + j["preferredSkills"]) if j.get("preferredSkills") else "",
+            ("Education: " + j["educationalRequirement"]) if j.get("educationalRequirement") else "",
+            ("Entity: " + j["company"]) if j.get("company") else "") if x)
+        jobs.append(Job(
+            company=name, job_title=j.get("postingTitle") or j.get("roleDesignation") or NOT_SPECIFIED,
+            job_id=ref or None, requisition_id=str(j.get("requisitionId") or "") or None,
+            job_url=url, apply_url=url,
+            location_raw=f"{(j.get('location') or '').title()}, {j.get('country') or 'India'}".strip(", "),
+            country=j.get("country"),
+            technology_domain=j.get("functionalArea") or j.get("unit") or NOT_SPECIFIED,
+            experience_raw=f"{lo}-{hi} years" if lo is not None and hi is not None else NOT_SPECIFIED,
+            experience_min=lo, experience_max=hi,
+            date_posted=(j.get("createdOn") or "")[:10] or None,
+            application_deadline=(j.get("expiryDate") or "")[:10] or None,
+            job_description=desc,
+            source_website="career.infosys.com", source_type="infosys_api", scraped_at=_now(),
+        ).to_dict())
+    print(f"[infosys] {name}: {len(jobs)} jobs fetched")
+    return jobs
+
+
 CUSTOM_FETCHERS = {
+    "infosys": fetch_infosys,
     "ibm": fetch_ibm,
     "atlassian": fetch_atlassian,
     "capgemini": fetch_capgemini,
