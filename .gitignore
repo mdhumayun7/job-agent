@@ -40,3 +40,4 @@ Thumbs.db
 
 website-data/
 _site/
+tests/e2e/.fixture_ats_jobs.json

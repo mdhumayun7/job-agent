@@ -145,18 +145,26 @@ jobs:
         id: site
         if: always()
         continue-on-error: true
+        env:
+          # Public values (Settings > Secrets and variables > Actions > Variables)
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          # Secret, used only here in CI to sync automated notices and read published records
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           mkdir -p output/step_logs
           exec > >(tee output/step_logs/website.log) 2>&1
           set -x
-          [ -f output/ats_jobs.json ] || { echo "No ATS output, skipping website build"; exit 1; }
-          python generate_website_data.py --input output/ats_jobs.json --out website-data
-          rm -rf _site && mkdir -p _site/site
-          cp site/index.html _site/site/index.html
-          cp -r website-data _site/website-data
-          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>CSE JobBoard</title>' \
-            '<meta http-equiv="refresh" content="0; url=site/">' '<a href="site/">Open the job board</a>' > _site/index.html
-          touch _site/.nojekyll
+          if [ -f output/ats_jobs.json ]; then
+            python generate_website_data.py --input output/ats_jobs.json --out website-data
+          else
+            echo "::warning::No ATS output this run; company listings will be missing from the site"
+            mkdir -p website-data
+          fi
+          python scripts/validate_govt_jobs.py
+          python scripts/build_govt_data.py
+          python scripts/build_site.py --out _site
           du -sh _site
 
       - name: Upload website artifact
@@ -217,6 +225,23 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/telegram_alert.py
+
+      - name: Check official links on government records
+        if: always() && steps.site.outcome == 'success' && github.event.schedule != '30 9,15,21 * * *'
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/check_links.py 2>&1 | tee output/step_logs/links.log
+
+      - name: Send user email alerts (opted-in accounts)
+        if: always() && steps.site.outcome == 'success' && github.event.schedule != '30 9,15,21 * * *'
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: python scripts/send_user_alerts.py 2>&1 | tee output/step_logs/user_alerts.log
 
       - name: Send email digest
         if: steps.results.outputs.found == 'true' && github.event.schedule != '30 9,15,21 * * *'

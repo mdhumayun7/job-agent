@@ -12,6 +12,8 @@ from playwright.sync_api import sync_playwright, expect
 
 BASE = os.getenv("BASE", "http://127.0.0.1:8811/site/index.html")
 failures = []
+# Real PDF / DOCX parsing loads pdf.js and mammoth from cdnjs; enable where the CDN is reachable.
+CDN = os.getenv("E2E_CDN") == "1"
 
 
 def check(name, fn):
@@ -21,6 +23,23 @@ def check(name, fn):
     except Exception as e:  # noqa: BLE001
         failures.append(name)
         print(f"FAIL {name}: {str(e).splitlines()[0][:300]}")
+
+
+def make_pdf(path, lines):
+    """Smallest valid one-page PDF with the given text lines (Helvetica)."""
+    text = "BT /F1 11 Tf 50 750 Td 14 TL " + " ".join(f"({l.replace('(', '').replace(')', '')}) Tj T*" for l in lines) + " ET"
+    objs = ["<< /Type /Catalog /Pages 2 0 R >>", "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+            "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>",
+            f"<< /Length {len(text)} >>\nstream\n{text}\nendstream", "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>"]
+    out, offs = "%PDF-1.4\n", []
+    for i, o in enumerate(objs, 1):
+        offs.append(len(out.encode()))
+        out += f"{i} 0 obj\n{o}\nendobj\n"
+    xref = len(out.encode())
+    out += f"xref\n0 {len(objs) + 1}\n0000000000 65535 f \n" + "".join(f"{o:010d} 00000 n \n" for o in offs)
+    out += f"trailer\n<< /Size {len(objs) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n"
+    with open(path, "wb") as f:
+        f.write(out.encode())
 
 
 def main():
@@ -94,6 +113,32 @@ def main():
             page.wait_for_timeout(400)
             expect(page.locator("#fileStatus")).to_contain_text("not a valid PDF")
         check("profile: invalid PDF is rejected with a clear message", bad_file)
+
+        def pdf_resume():
+            go("#/profile")
+            if page.locator("#back").count():
+                page.click("#back")
+            path = os.path.join(tempfile.gettempdir(), "resume.pdf")
+            make_pdf(path, ["EDUCATION", "B.Tech, Mechanical Engineering, 2022, 74%", "SKILLS", "AutoCAD, SolidWorks, Python"])
+            page.set_input_files("#file", path)
+            expect(page.locator("#reviewForm")).to_be_visible(timeout=20000)
+            assert "mechanical" in page.locator('[data-k="discipline"]').first.input_value()
+        def docx_resume():
+            import docx
+            go("#/profile")
+            if page.locator("#back").count():
+                page.click("#back")
+            path = os.path.join(tempfile.gettempdir(), "resume.docx")
+            d = docx.Document()
+            for line in ["EDUCATION", "Diploma in Electrical Engineering, 2021, 70%", "SKILLS", "PLC, AutoCAD"]:
+                d.add_paragraph(line)
+            d.save(path)
+            page.set_input_files("#file", path)
+            expect(page.locator("#reviewForm")).to_be_visible(timeout=20000)
+            assert page.locator('[data-k="level"]').first.input_value() == "diploma"
+        if CDN:
+            check("profile: PDF resume is parsed (pdf.js)", pdf_resume)
+            check("profile: DOCX resume is parsed (mammoth)", docx_resume)
 
         def checklist():
             go("#/govt/ssc-chsl-2026")

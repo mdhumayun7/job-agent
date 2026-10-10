@@ -1,0 +1,53 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+    paths: ['site/**', 'scripts/**', 'supabase/**', 'data/govt_jobs.json', 'tests/**', 'package.json', '.github/workflows/tests.yml']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Python packages
+        run: pip install requests python-docx playwright==1.44.0 && python -m playwright install --with-deps chromium
+
+      - name: Validate government records
+        run: python scripts/validate_govt_jobs.py
+
+      - name: Seed SQL is up to date with data/govt_jobs.json
+        run: python scripts/make_seed_sql.py && git diff --exit-code supabase/seed.sql
+
+      - name: Unit tests (eligibility engine, resume parser)
+        run: npm test
+
+      - name: Database row level security tests (PostgreSQL 16)
+        run: sudo bash tests/sql/run_rls_tests.sh
+
+      - name: Build test data and site
+        run: |
+          python tests/e2e/make_fixture.py
+          python scripts/build_govt_data.py
+          python scripts/build_site.py --out _site
+
+      - name: Browser tests (Playwright)
+        run: |
+          python -m http.server 8811 >/dev/null 2>&1 &
+          sleep 2
+          E2E_CDN=1 BASE=http://127.0.0.1:8811/site/index.html python tests/e2e/test_site.py

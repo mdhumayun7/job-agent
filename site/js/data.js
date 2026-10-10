@@ -19,7 +19,7 @@ async function getJSON(path) {
   return p;
 }
 
-function finalize(jobs, generatedAt, source) {
+export function finalize(jobs, generatedAt, source) {
   const now = new Date();
   for (const j of jobs) {
     j.status = recruitmentStatus(j, now);

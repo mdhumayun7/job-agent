@@ -1,6 +1,6 @@
 # Job Agent
 
-Automated job-search pipeline for Indian freshers and early-career engineers. It scrapes eleven job boards, scores every listing against your profile, filters out the noise, and emails you a ranked daily digest — either on your own machine or entirely on GitHub Actions.
+Automated job-search pipeline for Indian freshers and early-career engineers. It scrapes eleven job boards, scores every listing against your profile, filters out the noise, and emails you a ranked daily digest, either on your own machine or entirely on GitHub Actions.
 
 <p>
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-blue">
@@ -40,18 +40,24 @@ a pipeline you trust and one you end up checking manually anyway.
 
 ## Features
 
-| | Feature | Detail |
-|---|---|---|
-| 🌐 | **11 sources** | Naukri, LinkedIn, Indeed, Wellfound, Unstop, Foundit, Internshala, Shine, TimesJobs, HackerEarth, and 9 government portals (ISRO, DRDO, BARC, BEL, NPCIL, ECIL, NIELIT, C-DAC, HAL) |
-| 🎯 | **Match scoring** | Every job scored 0–100 against your skills, target roles, and preferred cities |
-| 🧹 | **Smart filters** | Drops expired postings, negative-keyword roles (sales, BPO, telecalling), duplicate companies, and blacklisted employers |
-| 🤖 | **Optional LLM enrichment** | Uses a Groq-hosted model to re-score and summarise listings when `GROQ_API_KEY` is set; falls back to the rule-based scorer otherwise — no API key required to run |
-| 📧 | **Email digest** | Styled HTML email with your top matches, grouped by platform |
-| 📊 | **Streamlit dashboard** | Local UI with charts, filters, and an application tracker |
-| 🗃️ | **Persistence** | SQLite for dedupe and history, Excel exports for tracking, HTML daily reports |
-| 📄 | **Resume tooling** | Parses your resume (PDF/DOCX) and tailors bullet emphasis per job |
-| 🎤 | **Interview prep** | Generates role-specific technical and HR question sheets |
-| ⏰ | **Fully automated** | GitHub Actions cron, or a local scheduler / Windows Task Scheduler script |
+| Feature | Detail |
+|---|---|
+| **11 sources** | Naukri, LinkedIn, Indeed, Wellfound, Unstop, Foundit, Internshala, Shine, TimesJobs, HackerEarth, and 9 government portals (ISRO, DRDO, BARC, BEL, NPCIL, ECIL, NIELIT, C-DAC, HAL) |
+| **Match scoring** | Every job scored 0–100 against your skills, target roles, and preferred cities |
+| **Smart filters** | Drops expired postings, negative-keyword roles (sales, BPO, telecalling), duplicate companies, and blacklisted employers |
+| **Optional LLM enrichment** | Uses a Groq-hosted model to re-score and summarise listings when `GROQ_API_KEY` is set; falls back to the rule-based scorer otherwise, so no API key is required to run |
+| **Email digest** | Styled HTML email with your top matches, grouped by platform |
+| **Streamlit dashboard** | Local UI with charts, filters, and an application tracker |
+| **Persistence** | SQLite for dedupe and history, Excel exports for tracking, HTML daily reports |
+| **Resume tooling** | Parses your resume (PDF/DOCX) and tailors bullet emphasis per job |
+| **Interview prep** | Generates role-specific technical and HR question sheets |
+| **Fully automated** | GitHub Actions cron, or a local scheduler / Windows Task Scheduler script |
+
+---
+
+## Website
+
+The published site combines government recruitments read from official notices with the company jobs collected by the pipeline: filters, eligibility checks against your own profile (resume upload is read in the browser and never uploaded), saved jobs and searches, deadline reminders, comparison, a deadline timeline, a career explorer, an admin dashboard with audit history, and crawlable pages for search engines. Setup, data rules, tests and limitations: [docs/WEBSITE.md](docs/WEBSITE.md).
 
 ---
 
@@ -186,7 +192,8 @@ To find the API behind a new careers page, run the *Probe career sites* workflow
 | Score each job 0-100 against `config/profile.json` (CSE role, target role, skills, fresher level, India, recency) | `output/top_matches.json`, *Top Matches* sheet |
 | Track history (NEW / UPDATED / UNCHANGED / CLOSED) | `data/ats_job_history.json` (committed) |
 | Health check per company (FAILING, ZERO, DROP, SLOW) | `data/company_health.json`, run summary, a *Scraper health alert* issue |
-| Build and publish the job board | GitHub Pages (`/site/`) |
+| Build and publish the website (government and company jobs, SEO pages, sitemap) | GitHub Pages (`/site/`, `/govt/`) |
+| Check official links, email opted-in users (09:00 IST run) | `link_checks` and `email_log` tables |
 | Alerts | Telegram for new top matches, email digest once a day |
 | Run report | `run-reports` branch: step logs, health report, top 100 matches |
 
@@ -194,7 +201,7 @@ The 03:30 UTC run does everything; the 09:30, 15:30 and 21:30 UTC runs refresh c
 
 ### One-time setup
 
-1. **Website:** Settings > Pages > Build and deployment > Source: **GitHub Actions**. The next run publishes the board at `https://<user>.github.io/job-agent/site/`.
+1. **Website:** Settings > Pages > Build and deployment > Source: **GitHub Actions**. The next run publishes the site at `https://<user>.github.io/job-agent/site/`. Accounts, admin editing and email alerts need Supabase; see [docs/WEBSITE.md](docs/WEBSITE.md).
 2. **Telegram (optional):** create a bot with @BotFather, send it a message, read your chat id from `https://api.telegram.org/bot<TOKEN>/getUpdates`, then add repository secrets `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`.
 3. **Your profile:** edit `config/profile.json` (target roles, weighted skills, locations, threshold) to change what counts as a top match.
 
