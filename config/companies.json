@@ -478,21 +478,22 @@
     "candidate_slugs": [],
     "platform": "custom",
     "enabled": false,
-    "note": "ibegin.tcs.com did not resolve from GitHub Actions. Needs manual DevTools capture.",
+    "note": "TCS careers pages return Access Denied to automated clients and ibegin.tcs.com / nextstep.tcs.com do not resolve from GitHub Actions. Not scraped.",
     "categories": [
       "IT Services"
     ]
   },
   {
     "company": "Infosys",
-    "career_url": "https://www.infosys.com/careers/",
+    "career_url": "https://career.infosys.com/joblist",
     "candidate_slugs": [],
-    "platform": "custom",
-    "enabled": false,
-    "note": "career.infosys.com calls intapgateway.infosysapps.com, but the job-list call was not captured (needs interaction). Needs manual DevTools capture of the job list request.",
+    "platform": "custom_api",
+    "enabled": true,
+    "note": "Job links open career.infosys.com, which asks candidates to sign in before showing or applying to a posting.",
     "categories": [
       "IT Services"
-    ]
+    ],
+    "verified_slug": "infosys"
   },
   {
     "company": "Wipro",
