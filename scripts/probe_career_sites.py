@@ -25,6 +25,7 @@ TARGETS = {
     "TCS": ["https://ibegin.tcs.com/iBegin/jobs/search", "https://www.tcs.com/careers/india",
             "https://www.tcs.com/careers/india/experienced-professionals", "https://nextstep.tcs.com/campus/"],
     "Infosys": ["https://career.infosys.com/joblist", "https://career.infosys.com/jobs?companyhiringtype=IL&countrycode=IN"],
+    "Infosys job page": ["https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-255051&sourceId=1"],
     "Wipro": ["https://careers.wipro.com/search/?q=&locationsearch=India"],
     "HCLTech": ["https://careers.hcltech.com/", "https://www.hcltech.com/careers/careers-in-india"],
     "Cognizant": ["https://careers.cognizant.com/global-en/jobs/?location=India"],
