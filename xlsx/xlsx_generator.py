@@ -1,7 +1,7 @@
 """
 Multi-sheet professional XLSX generator.
-Sheets: All Jobs, New Jobs, Fresher Jobs, Internships, CSE Jobs,
-Closing Soon, Statistics.
+Sheets: Top Matches, India Jobs, All Jobs, New Jobs, Fresher Jobs,
+Internships, CSE Jobs, Closing Soon, Statistics.
 
 Consumes a list of enriched Job dicts (output of parsers.enrich_job).
 Never invents data -- every cell either comes from the job dict or is
@@ -19,8 +19,10 @@ NEW_FILL = PatternFill(start_color="D1FAE5", end_color="D1FAE5", fill_type="soli
 CLOSING_FILL = PatternFill(start_color="FED7AA", end_color="FED7AA", fill_type="solid")
 
 COLUMNS = [
-    ("company", "Company"), ("job_title", "Job Title"), ("job_id", "Job ID"),
-    ("location_raw", "Location"), ("work_mode", "Work Mode"),
+    ("match_score", "Match Score"), ("company", "Company"), ("job_title", "Job Title"),
+    ("location_raw", "Location"), ("country_scope", "Region"), ("seniority", "Seniority"),
+    ("skills_required", "Skills"), ("match_reasons", "Why Matched"), ("job_id", "Job ID"),
+    ("work_mode", "Work Mode"),
     ("employment_type", "Employment Type"), ("experience_raw", "Experience"),
     ("education_required", "Degree"), ("branch_required", "Branch"),
     ("salary_raw", "Salary / CTC"), ("currency", "Currency"),
@@ -70,6 +72,8 @@ def _write_stats_sheet(ws, jobs):
         ("Total Jobs", len(jobs)),
         ("New Jobs", sum(1 for j in jobs if j.get("status") == "NEW")),
         ("Companies Found", len(set(j.get("company") for j in jobs))),
+        ("India / Remote-India Jobs", sum(1 for j in jobs if j.get("country_scope") in ("India", "Remote-India"))),
+        ("Top Matches", sum(1 for j in jobs if (j.get("match_score") or 0) >= 55 and j.get("status") != "CLOSED")),
         ("Fresher Jobs", sum(1 for j in jobs if j.get("fresher_eligible"))),
         ("Internships", sum(1 for j in jobs if j.get("internship"))),
         ("CSE Jobs", sum(1 for j in jobs if j.get("cse_relevant"))),
@@ -99,8 +103,18 @@ def generate_xlsx(jobs: list, output_path: str):
     if not jobs:
         raise ValueError("generate_xlsx called with an empty job list -- refusing to write an empty workbook silently")
 
+    try:
+        from matching import top_matches
+        best = top_matches(jobs)
+    except ImportError:
+        best = sorted((j for j in jobs if j.get("match_score")), key=lambda j: -j["match_score"])
     wb = Workbook()
-    _write_sheet(wb.active, jobs, "All Jobs")
+    _write_sheet(wb.active, best, "Top Matches")
+
+    india = [j for j in jobs if j.get("country_scope") in ("India", "Remote-India") and j.get("status") != "CLOSED"]
+    _write_sheet(wb.create_sheet(), india, "India Jobs")
+
+    _write_sheet(wb.create_sheet(), jobs, "All Jobs")
 
     new_jobs = [j for j in jobs if j.get("status") == "NEW"]
     _write_sheet(wb.create_sheet(), new_jobs, "New Jobs")
@@ -121,7 +135,7 @@ def generate_xlsx(jobs: list, output_path: str):
 
     wb.save(output_path)
     return {
-        "total": len(jobs), "new": len(new_jobs), "fresher": len(fresher_jobs),
+        "total": len(jobs), "top_matches": len(best), "india": len(india), "new": len(new_jobs), "fresher": len(fresher_jobs),
         "internships": len(internships), "cse": len(cse_jobs), "closing_soon": len(closing_soon),
     }
 
@@ -151,7 +165,7 @@ if __name__ == "__main__":
     assert os.path.exists(out_path), "FAIL: file was not created"
     from openpyxl import load_workbook
     wb = load_workbook(out_path)
-    expected_sheets = {"All Jobs", "New Jobs", "Fresher Jobs", "Internships", "CSE Jobs", "Closing Soon", "Statistics"}
+    expected_sheets = {"Top Matches", "India Jobs", "All Jobs", "New Jobs", "Fresher Jobs", "Internships", "CSE Jobs", "Closing Soon", "Statistics"}
     actual_sheets = set(wb.sheetnames)
     assert actual_sheets == expected_sheets, f"FAIL: sheet mismatch. got {actual_sheets}"
     assert wb["All Jobs"].max_row == 4, f"FAIL: expected 4 rows (1 header + 3 jobs), got {wb['All Jobs'].max_row}"

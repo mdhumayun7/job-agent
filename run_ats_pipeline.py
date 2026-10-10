@@ -14,6 +14,8 @@ Usage:
 import argparse
 import json
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "config"))
@@ -77,7 +79,7 @@ def load_enabled_companies(companies_path=COMPANIES_PATH, company_filter=None, l
     return enabled
 
 
-def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
+def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None, workers=8):
     _load_adapters()
     from parsers import enrich_job
     from xlsx_generator import generate_xlsx
@@ -91,22 +93,39 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
     all_jobs = []
     failures = []
     fetched_companies = set()
-    for entry in targets:
+    run_stats = {}
+
+    def fetch_one(entry):
         platform = entry["platform"]
         slug = entry.get("verified_slug", entry["company"].lower())
         fetch_fn = ADAPTER_MAP.get(platform)
+        t0 = time.time()
         if not fetch_fn:
-            failures.append((entry["company"], f"no adapter for platform '{platform}'"))
-            continue
+            return entry, None, f"no adapter for platform '{platform}'", 0.0
         try:
-            jobs = fetch_fn(slug, entry["company"])
-            enriched = [enrich_job(j) for j in jobs]
-            all_jobs.extend(enriched)
-            fetched_companies.add(entry["company"].strip().lower())
-        except Exception as e:
-            failures.append((entry["company"], str(e)))
-            print(f"[ats-pipeline] {entry['company']} FAILED: {e} -- continuing with other companies "
-                  f"(its previously-seen jobs will NOT be marked closed this run)")
+            return entry, fetch_fn(slug, entry["company"]), None, time.time() - t0
+        except Exception as e:  # noqa: BLE001 -- one company must never stop the others
+            return entry, None, str(e), time.time() - t0
+
+    # Companies are fetched in parallel: each is a different host, so this
+    # does not increase load on any single site, and it cuts the run time.
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for entry, jobs, error, secs in pool.map(fetch_one, targets):
+            name = entry["company"]
+            if error is not None:
+                failures.append((name, error))
+                run_stats[name] = {"ok": False, "count": 0, "seconds": round(secs, 1), "error": error[:300],
+                                   "platform": entry["platform"]}
+                print(f"[ats-pipeline] {name} FAILED: {error} -- continuing with other companies "
+                      f"(its previously-seen jobs will NOT be marked closed this run)")
+                continue
+            all_jobs.extend(enrich_job(j) for j in jobs)
+            fetched_companies.add(name.strip().lower())
+            run_stats[name] = {"ok": True, "count": len(jobs), "seconds": round(secs, 1),
+                               "platform": entry["platform"]}
+
+    Path("output").mkdir(exist_ok=True)
+    Path("output/company_run_stats.json").write_text(json.dumps(run_stats, indent=2), encoding="utf-8")
 
     print(f"\n[ats-pipeline] Companies attempted: {len(targets)} | Succeeded: {len(targets) - len(failures)} | Failed: {len(failures)}")
     for company, reason in failures:
@@ -119,6 +138,17 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None):
     from history import apply_history, save_history
     all_jobs, updated_history = apply_history(all_jobs, fetched_companies=fetched_companies)
     save_history(updated_history)
+    from matching import apply_matching, top_matches
+    for j in all_jobs:
+        apply_matching(j)
+    best = top_matches(all_jobs)
+    Path("output").mkdir(exist_ok=True)
+    Path("output/top_matches.json").write_text(json.dumps(best, indent=2, default=str), encoding="utf-8")
+    india = sum(1 for j in all_jobs if j.get("country_scope") in ("India", "Remote-India"))
+    print(f"[ats-pipeline] India/Remote-India jobs: {india} | Top matches (score >= threshold): {len(best)}")
+    for j in best[:10]:
+        print(f"    {j['match_score']:3d}  {j['company']}: {j['job_title']} ({j.get('location_raw')})")
+
     status_counts = {}
     for j in all_jobs:
         status_counts[j["status"]] = status_counts.get(j["status"], 0) + 1
@@ -137,5 +167,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--company", default=None, help="Run only this one company (for testing)")
     parser.add_argument("--limit", type=int, default=None, help="Only run the first N enabled companies")
+    parser.add_argument("--workers", type=int, default=8, help="Companies fetched in parallel")
     args = parser.parse_args()
-    run(company_filter=args.company, limit=args.limit)
+    t0 = time.time()
+    run(company_filter=args.company, limit=args.limit, workers=args.workers)
+    print(f"[ats-pipeline] finished in {time.time() - t0:.0f}s")

@@ -12,7 +12,7 @@ on:
         required: false
         default: ''
       mode:
-        description: 'sites = browser network capture, endpoints = dump known endpoints, adapters = run adapter tests'
+        description: 'sites = browser network capture, endpoints = dump known endpoints, adapters = run adapter tests, pipeline = full ATS run + report'
         required: false
         default: 'sites'
 
@@ -39,6 +39,7 @@ jobs:
           case "${{ github.event.inputs.mode }}" in
             endpoints) python scripts/dump_endpoints.py && mv endpoint_dump.json probe_results.json ;;
             adapters) python scripts/test_new_adapters.py --only "${{ github.event.inputs.only }}" ;;
+            pipeline) python run_ats_pipeline.py && python scripts/pipeline_report.py ;;
             *) python scripts/probe_career_sites.py --only "${{ github.event.inputs.only }}" ;;
           esac
       - name: Push results to probe-results branch

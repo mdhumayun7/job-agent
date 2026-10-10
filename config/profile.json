@@ -1,0 +1,28 @@
+{
+  "_comment": "Candidate profile used to rank jobs (config/matching.py). Edit freely: skills are matched against job title + description, target_roles against the title only. Weights are points added per matched skill.",
+  "name": "MD Humayun",
+  "target_roles": [
+    "software engineer", "software developer", "sde", "backend", "python developer",
+    "machine learning", "ml engineer", "ai engineer", "data scientist", "applied scientist",
+    "research engineer", "deep learning", "computer vision", "generative ai",
+    "security engineer", "security analyst", "cybersecurity", "information security",
+    "soc analyst", "network security", "devops", "cloud engineer"
+  ],
+  "skills": {
+    "python": 4, "machine learning": 4, "deep learning": 4, "pytorch": 3, "tensorflow": 3,
+    "scikit-learn": 2, "computer vision": 3, "opencv": 2, "nlp": 2, "llm": 3,
+    "pandas": 2, "numpy": 2, "sql": 2, "flask": 2, "react": 1, "javascript": 1,
+    "linux": 2, "git": 1, "docker": 2, "kubernetes": 1, "aws": 1,
+    "network security": 3, "intrusion detection": 4, "cybersecurity": 3, "networking": 2,
+    "c++": 1, "data structures": 2, "algorithms": 2
+  },
+  "preferred_locations": ["India", "Remote-India"],
+  "accept_internships": true,
+  "max_experience_years": 2,
+  "exclude_title_keywords": [
+    "sales", "account executive", "account manager", "recruiter", "talent acquisition",
+    "marketing", "finance", "accountant", "legal", "counsel", "hr ", "human resources",
+    "customer success", "business development", "procurement", "payroll"
+  ],
+  "top_match_threshold": 55
+}
