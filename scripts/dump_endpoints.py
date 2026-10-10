@@ -17,6 +17,7 @@ ORACLE_Q = ("onlyData=true&expand=requisitionList.secondaryLocations&finder=find
             "facetsList=LOCATIONS,limit=5,location=India,sortBy=POSTING_DATES_DESC")
 
 CALLS = [
+    ("html-isro-current", "GET", "https://www.isro.gov.in/CurrentOpportunities.html", None),
     ("infosys", "GET", "https://intapgateway.infosysapps.com/careersci/search/intapjbsrch/getCareerSearchJobs?sourceId=1,21&searchText=ALL", None),
     ("oracle-facet-oracle", "GET", "https://eeho.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet&finder=findReqs;siteNumber=CX_45001,facetsList=LOCATIONS,limit=1", None),
     ("oracle-facet-dell", "GET", "https://enterpriseplatform.dell.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet&finder=findReqs;siteNumber=CX_1001,facetsList=LOCATIONS,limit=1", None),
@@ -109,7 +110,7 @@ def main():
                     rl = items[0].get("requisitionList") if items else []
                     ora_first = rl[0]["Id"] if rl else None
             except Exception:
-                entry["text"] = r.text[:600]
+                entry["text"] = r.text[:60000] if name.startswith("html-") else r.text[:600]
         except Exception as e:
             entry = {"error": str(e)[:300]}
         out[name] = entry
