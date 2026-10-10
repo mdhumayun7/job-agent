@@ -31,9 +31,13 @@ INDIA_CITIES = [
 INDIA_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in INDIA_CITIES) + r")\b|(?-i:\bIND\b)", re.I)
 REMOTE_RE = re.compile(r"\bremote\b|\bwork from home\b|\banywhere\b", re.I)
 
-SENIOR_RE = re.compile(r"\b(senior|sr\.?|staff|principal|lead|manager|director|head|vp|vice president|"
+SENIOR_RE = re.compile(r"\b(senior|sr\.?|staff|principal|principle|lead|manager|director|head|vp|vice president|"
                        r"architect|distinguished|fellow|expert|specialist ii+|engineer i{2,}|iii|iv|"
                        r"l[5-9]\b|ic[4-9]\b|level [3-9])\b", re.I)
+STRONG_ENTRY_RE = re.compile(r"\b(new grad(uate)?s?|graduate|fresher|freshers|trainee|apprentice|campus|"
+                             r"university grad|entry[\s-]level|early career|career accelerator)\b", re.I)
+MID_RE = re.compile(r"\b(sde|engineer|developer|scientist|analyst|consultant|specialist)[\s-]*(ii|2)\b|"
+                    r"\b(level|grade)\s*2\b|\bmid[\s-]level\b", re.I)
 ENTRY_RE = re.compile(r"\b(junior|jr\.?|associate|graduate|new grad|fresher|trainee|apprentice|entry[\s-]level|"
                       r"engineer i\b|sde[\s-]?(i|1)\b|developer i\b|analyst i\b|early career|campus|"
                       r"career accelerator|university)\b", re.I)
@@ -78,6 +82,10 @@ def _strip_html(text):
     return re.sub(r"<[^>]+>", " ", text or "")
 
 
+GLOBAL_REMOTE_RE = re.compile(r"\b(anywhere|global|worldwide|apac|asia)\b", re.I)
+N_LOCATIONS_RE = re.compile(r"^\s*\d+\s+locations?\s*$", re.I)
+
+
 def classify_location(job):
     loc = " ".join(str(job.get(k) or "") for k in ("location_raw", "city", "state_region", "country"))
     work_mode = str(job.get("work_mode") or "")
@@ -87,19 +95,28 @@ def classify_location(job):
         return "Remote-India"
     if india:
         return "India"
+    raw = str(job.get("location_raw") or "").strip()
     if remote:
-        return "Remote"
-    if loc.strip() and loc.strip().lower() not in ("not specified", "none"):
+        # "United States - Remote" is remote *within another country*.
+        rest = re.sub(r"remote|work from home|[-,;/()|\s]+", " ", raw, flags=re.I).strip()
+        if not rest or GLOBAL_REMOTE_RE.search(rest):
+            return "Remote"
         return "Abroad"
-    return "Unknown"
+    if not raw or raw.lower() in ("not specified", "none") or N_LOCATIONS_RE.match(raw):
+        return "Unknown"
+    return "Abroad"
 
 
 def classify_seniority(title):
     t = title or ""
     if INTERN_RE.search(t):
         return "Intern"
-    if SENIOR_RE.search(t):  # before ENTRY so "Associate Director" is not entry-level
+    if STRONG_ENTRY_RE.search(t):  # "Associate Product Manager (New Grad)" is entry-level
+        return "Entry"
+    if SENIOR_RE.search(t):  # before weak entry words so "Associate Director" is senior
         return "Senior"
+    if MID_RE.search(t):
+        return "Mid"
     if ENTRY_RE.search(t):
         return "Entry"
     return "Unknown"
@@ -113,17 +130,20 @@ def extract_skills(title, description):
 def refine_fresher(job, seniority):
     """Returns (value, evidence). True only with explicit evidence; False
     when the title or stated experience rules a fresher out; else None."""
-    if job.get("fresher_eligible"):
-        return True, "fresher wording in description"
+    # The title states what the role is; it outranks incidental description text.
     if seniority in ("Intern", "Entry"):
         return True, f"{seniority.lower()}-level title"
-    exp_min, exp_max = job.get("experience_min"), job.get("experience_max")
-    if exp_min is not None and exp_min <= 1 and (exp_max is None or exp_max <= 3):
-        return True, f"experience {job.get('experience_raw')}"
     if seniority == "Senior":
         return False, "senior-level title"
+    if seniority == "Mid":
+        return False, "level II / mid-level title"
+    exp_min, exp_max = job.get("experience_min"), job.get("experience_max")
     if exp_min is not None and exp_min >= 3:
         return False, f"requires {exp_min}+ years"
+    if job.get("fresher_eligible"):
+        return True, "fresher wording in description"
+    if exp_min is not None and exp_min <= 1 and (exp_max is None or exp_max <= 3):
+        return True, f"experience {job.get('experience_raw')}"
     return None, None
 
 
@@ -171,6 +191,9 @@ def score_job(job, profile=None):
     elif job.get("fresher_eligible") is True:
         score += 15
         reasons.append("fresher / entry level")
+    elif seniority == "Mid":
+        score -= 15
+        reasons.append("mid-level (II) role")
     elif job.get("fresher_eligible") is False or seniority == "Senior":
         score -= 30
         reasons.append("needs experience")
@@ -199,10 +222,20 @@ def apply_matching(job, profile=None):
     desc = job.get("job_description") or ""
     job["country_scope"] = classify_location(job)
     job["seniority"] = classify_seniority(title)
+    if job.get("experience_min") is None:
+        try:
+            from parsers import extract_experience
+            exp = extract_experience(title)
+            if exp.get("experience_min") is not None:
+                job.update(exp)
+        except ImportError:
+            pass
+    # Internship is decided by the title / employment type only; a description
+    # that merely mentions an internship programme does not make a role one.
+    job["internship"] = bool(job["seniority"] == "Intern"
+                             or re.search(r"intern", str(job.get("employment_type") or ""), re.I)) or None
     if not job.get("skills_required"):
         job["skills_required"] = extract_skills(title, desc)
-    if job["seniority"] == "Intern" or re.search(r"intern", str(job.get("employment_type") or ""), re.I):
-        job["internship"] = True
     fresher, evidence = refine_fresher(job, job["seniority"])
     job["fresher_eligible"] = fresher
     job["fresher_evidence"] = evidence
@@ -250,6 +283,23 @@ def selftest():
     assert classify_seniority("Associate Software Engineer") == "Entry"
     assert extract_skills("Golang dev", "good communication") == ["golang"]
     assert "java" not in extract_skills("", "JavaScript only")
+    assert classify_seniority("Associate Product Manager (New Grad)") == "Entry"
+    assert classify_seniority("SDE II, Amazon Ads") == "Mid"
+    assert classify_seniority("Data Scientist II-3") == "Mid"
+    assert classify_seniority("Principle AI Research Engineer") == "Senior"
+    assert classify_location({"location_raw": "United States - Remote"}) == "Abroad"
+    assert classify_location({"location_raw": "Remote"}) == "Remote"
+    assert classify_location({"location_raw": "2 Locations"}) == "Unknown"
+    assert classify_location({"location_raw": "2 Locations", "country": "India"}) == "India"
+    m = apply_matching({**base, "job_title": "Manager II, Risk", "location_raw": "Pune",
+                        "job_description": "freshers welcome", "fresher_eligible": True}, profile)
+    assert m["fresher_eligible"] is False, m
+    t = apply_matching({**base, "job_title": "Software Engineer (5-7 years, Firmware)", "location_raw": "Pune",
+                        "job_description": ""}, profile)
+    assert t["experience_min"] == 5 and t["fresher_eligible"] is False, t
+    d = apply_matching({**base, "job_title": "SDE", "location_raw": "Pune", "employment_type": "Full-time",
+                        "job_description": "We also run an internship programme.", "internship": True}, profile)
+    assert not d["internship"], d
     print("matching self-test passed")
 
 

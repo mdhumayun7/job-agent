@@ -19,8 +19,8 @@ OUTPUT_DIR = Path("website-data")
 INDEX_FIELDS = [
     "company", "job_title", "job_id", "location_raw", "work_mode",
     "employment_type", "experience_raw", "salary_raw", "deadline_status",
-    "application_deadline", "date_posted", "fresher_eligible", "internship",
-    "cse_relevant", "status",
+    "application_deadline", "date_posted", "first_seen", "fresher_eligible", "internship",
+    "cse_relevant", "status", "apply_url", "match_score", "country_scope", "seniority",
 ]
 
 
@@ -33,7 +33,7 @@ def make_job_key(job: dict) -> str:
     """URL-safe unique key: company-title-jobid, matching spec's
     /jobs/company-title-id URL pattern (section 45)."""
     company = slugify(job.get("company", "company"))
-    title = slugify(job.get("job_title", "role"))
+    title = slugify(job.get("job_title", "role"))[:60].strip("-")
     job_id = job.get("job_id") or "0"
     return f"{company}-{title}-{job_id}"
 
@@ -41,7 +41,12 @@ def make_job_key(job: dict) -> str:
 def build_index(jobs: list) -> list:
     index = []
     for job in jobs:
-        entry = {f: job.get(f) for f in INDEX_FIELDS}
+        entry = {f: job.get(f) for f in INDEX_FIELDS if job.get(f) not in (None, "", [])}
+        if not entry.get("apply_url") and job.get("job_url"):
+            entry["apply_url"] = job["job_url"]
+        skills = job.get("skills_required") or []
+        if skills:
+            entry["skills_required"] = skills[:6]
         entry["key"] = make_job_key(job)
         index.append(entry)
     return index
@@ -59,9 +64,14 @@ def write_job_details(jobs: list, jobs_dir: Path):
     return written
 
 
-def build_stats(jobs: list) -> dict:
+def build_stats(jobs: list, closed: int = 0) -> dict:
+    from datetime import datetime, timezone
     return {
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "total_jobs": len(jobs),
+        "closed_since_last_run": closed,
+        "india_jobs": sum(1 for j in jobs if j.get("country_scope") in ("India", "Remote-India")),
+        "top_matches": sum(1 for j in jobs if (j.get("match_score") or 0) >= 55),
         "new_jobs": sum(1 for j in jobs if j.get("status") == "NEW"),
         "companies": len(set(j.get("company") for j in jobs)),
         "fresher_opportunities": sum(1 for j in jobs if j.get("fresher_eligible")),
@@ -95,7 +105,10 @@ def build_companies(jobs: list) -> list:
 
 
 def generate(jobs_json_path="output/ats_jobs.json", output_dir=OUTPUT_DIR):
-    jobs = json.loads(Path(jobs_json_path).read_text(encoding="utf-8"))
+    all_jobs = json.loads(Path(jobs_json_path).read_text(encoding="utf-8"))
+    # The public site lists only open postings; closed ones are counted in stats.
+    jobs = [j for j in all_jobs if j.get("status") != "CLOSED"]
+    closed = len(all_jobs) - len(jobs)
     output_dir = Path(output_dir)
     output_dir.mkdir(exist_ok=True)
 
@@ -104,7 +117,7 @@ def generate(jobs_json_path="output/ats_jobs.json", output_dir=OUTPUT_DIR):
 
     detail_count = write_job_details(jobs, output_dir / "jobs")
 
-    stats = build_stats(jobs)
+    stats = build_stats(jobs, closed)
     (output_dir / "stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
 
     companies = build_companies(jobs)
@@ -118,7 +131,7 @@ def generate(jobs_json_path="output/ats_jobs.json", output_dir=OUTPUT_DIR):
     }
 
 
-if __name__ == "__main__":
+def _selftest():
     import tempfile
     import shutil
 
@@ -176,3 +189,17 @@ if __name__ == "__main__":
 
     shutil.rmtree(tmp_dir)
     print("\nALL SELF-TESTS PASSED")
+
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser(description="Build website-data/ from the ATS pipeline output.")
+    ap.add_argument("--input", default="output/ats_jobs.json")
+    ap.add_argument("--out", default=str(OUTPUT_DIR))
+    ap.add_argument("--selftest", action="store_true", help="run self-tests on synthetic data instead")
+    args = ap.parse_args()
+    if args.selftest:
+        _selftest()
+    else:
+        summary = generate(args.input, args.out)
+        print(json.dumps({k: v for k, v in summary.items()}, indent=2, default=str))

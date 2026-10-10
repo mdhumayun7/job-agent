@@ -21,6 +21,8 @@ concurrency:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   search:
@@ -102,6 +104,27 @@ jobs:
         run: |
           python run_ats_pipeline.py
 
+      - name: Build website
+        id: site
+        if: always()
+        continue-on-error: true
+        run: |
+          [ -f output/ats_jobs.json ] || { echo "No ATS output, skipping website build"; exit 1; }
+          python generate_website_data.py --input output/ats_jobs.json --out website-data
+          rm -rf _site && mkdir -p _site/site
+          cp site/index.html _site/site/index.html
+          cp -r website-data _site/website-data
+          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>CSE JobBoard</title>' \
+            '<meta http-equiv="refresh" content="0; url=site/">' '<a href="site/">Open the job board</a>' > _site/index.html
+          touch _site/.nojekyll
+          du -sh _site
+
+      - name: Upload website artifact
+        if: steps.site.outcome == 'success'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
       - name: Persist ATS job history and verified companies
         if: always()
         run: |
@@ -152,3 +175,18 @@ jobs:
             logs/
           if-no-files-found: ignore
           retention-days: 14
+
+  deploy-site:
+    # Publishes the job board to GitHub Pages. One-time setup in the repo:
+    # Settings > Pages > Build and deployment > Source: GitHub Actions.
+    needs: search
+    if: always() && needs.search.result == 'success'
+    runs-on: ubuntu-22.04
+    continue-on-error: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -83,6 +83,12 @@
   .badge.cse { background: rgba(251,146,60,0.15); color: var(--orange); }
   .badge.closing { background: rgba(248,113,113,0.15); color: var(--red); }
   .badge.new { background: rgba(52,211,153,0.15); color: var(--green); }
+  .badge.region { background: var(--surface2); color: var(--text-dim); border: 1px solid var(--border); }
+  .score { font-size: 0.78rem; font-weight: 800; padding: 4px 9px; border-radius: 8px; white-space: nowrap; border: 1px solid var(--border); }
+  .score.hi { color: var(--green); border-color: var(--green); }
+  .score.mid { color: var(--yellow); border-color: var(--yellow); }
+  .score.lo { color: var(--text-dim); }
+  .why { font-size: 0.78rem; color: var(--text-dim); margin-top: 8px; }
   .card-actions { display: flex; gap: 8px; margin-top: 14px; }
   .btn-apply, .btn-details { padding: 9px 16px; border-radius: 8px; font-size: 0.83rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border); }
   .btn-apply { background: var(--accent); color: white; border-color: var(--accent); }
@@ -135,7 +141,7 @@
 
 <div id="app"></div>
 
-<footer>Job listings sourced directly from official company career sites. Always apply through the official application link.</footer>
+<footer>Job listings sourced directly from official company career sites. Always apply through the official application link.<div id="updatedAt" style="margin-top:6px"></div></footer>
 
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="modalContent"></div>
@@ -149,10 +155,13 @@ let searchQuery = '';
 let currentPage = 1;
 let sortMode = 'newest';
 let companyFilterValue = '';
-let checkboxState = { fresher: false, internship: false, cse: false, closing: false };
+let checkboxState = { fresher: false, internship: false, cse: false, closing: false, nosenior: false };
+let regionFilterValue = 'india';
 
 const ROUTES = [
   { path: '#/', label: 'Home' },
+  { path: '#/top-matches', label: 'Top Matches' },
+  { path: '#/india', label: 'India Jobs' },
   { path: '#/fresher-jobs', label: 'Fresher Jobs' },
   { path: '#/internships', label: 'Internships' },
   { path: '#/cse-jobs', label: 'CSE Jobs' },
@@ -172,10 +181,11 @@ async function boot() {
     stats = await statsRes.json();
   } catch (err) {
     document.getElementById('app').innerHTML =
-      '<div class="empty-state">Could not load job data. Run generate_website_data.py, and make sure you are viewing this through a local server (python -m http.server), not by opening the file directly.</div>';
+      '<div class="empty-state">Could not load job data. Locally: run generate_website_data.py and serve the repo root with python -m http.server, then open /site/index.html.</div>';
     console.error(err);
     return;
   }
+  if (stats.generated_at) document.getElementById('updatedAt').textContent = `Last updated ${new Date(stats.generated_at).toLocaleString()}`;
   window.addEventListener('hashchange', route);
   route();
 
@@ -199,10 +209,13 @@ function setActiveNav(path) {
 function route() {
   const hash = location.hash || '#/';
   currentPage = 1;
+  closeModal();
   setActiveNav(hash);
   window.scrollTo(0, 0);
 
   if (hash === '#/companies') return renderCompaniesPage();
+  if (hash === '#/top-matches') { sortMode = 'match'; return renderJobsPage('Top Matches', 'Open roles that score highest against the candidate profile (config/profile.json): CSE role, skills, fresher level and location.', j => (j.match_score || 0) >= 55); }
+  if (hash === '#/india') return renderJobsPage('India Jobs', 'Openings located in India or remote within India.', j => j.country_scope === 'India' || j.country_scope === 'Remote-India');
   if (hash === '#/fresher-jobs') return renderJobsPage('Fresher Jobs', 'Roles explicitly open to freshers and recent graduates.', j => j.fresher_eligible);
   if (hash === '#/internships') return renderJobsPage('Internships', 'Internship opportunities across all tracked companies.', j => j.internship);
   if (hash === '#/cse-jobs') return renderJobsPage('CSE / IT Jobs', 'Software, data, cloud, and other CSE-relevant roles.', j => j.cse_relevant);
@@ -219,6 +232,8 @@ function renderHomePage() {
       <p>Jobs, internships and fresher openings from official company career pages — updated automatically, every day.</p>
       <div class="search-bar"><input type="text" id="searchInput" placeholder="Search jobs, companies, skills, locations..."></div>
       <div class="quick-links">
+        <a href="#/top-matches">Top Matches</a>
+        <a href="#/india">India Jobs</a>
         <a href="#/fresher-jobs">Fresher Jobs</a>
         <a href="#/internships">Internships</a>
         <a href="#/cse-jobs">CSE Jobs</a>
@@ -278,6 +293,17 @@ function filterSidebarHtml(hidePrimary) {
         <label><input type="checkbox" id="filterClosing"> Closing Soon</label>
       </div>`}
       <div class="filter-group">
+        <label><input type="checkbox" id="filterNosenior"> Hide senior roles</label>
+      </div>
+      <div class="filter-group">
+        <div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:6px;">Region</div>
+        <select id="filterRegion">
+          <option value="india" ${regionFilterValue === 'india' ? 'selected' : ''}>India + Remote India</option>
+          <option value="remote" ${regionFilterValue === 'remote' ? 'selected' : ''}>Remote (any)</option>
+          <option value="" ${regionFilterValue === '' ? 'selected' : ''}>All regions</option>
+        </select>
+      </div>
+      <div class="filter-group">
         <div style="font-size:0.8rem;color:var(--text-dim);margin-bottom:6px;">Company</div>
         <select id="filterCompany"><option value="">All Companies</option>
           ${companies.map(c => `<option value="${escapeHtml(c)}" ${c === companyFilterValue ? 'selected' : ''}>${escapeHtml(c)}</option>`).join('')}
@@ -294,6 +320,7 @@ function resultsBarHtml() {
       <span class="count" id="resultsCount">Loading...</span>
       <select id="sortSelect">
         <option value="newest">Sort: Newest</option>
+        <option value="match">Sort: Best match</option>
         <option value="company">Sort: Company A-Z</option>
         <option value="title">Sort: Job Title A-Z</option>
       </select>
@@ -304,14 +331,15 @@ function resultsBarHtml() {
 function renderStats() {
   const items = [
     [stats.total_jobs, 'Active Jobs'],
+    [stats.india_jobs, 'In India'],
+    [stats.top_matches, 'Top Matches'],
     [stats.companies, 'Companies'],
     [stats.fresher_opportunities, 'Fresher Roles'],
     [stats.internships, 'Internships'],
     [stats.cse_jobs, 'CSE / Tech Jobs'],
-    [stats.closing_soon, 'Closing Soon'],
   ];
   document.getElementById('statsBar').innerHTML = items.map(([num, label]) =>
-    `<div class="stat"><div class="num">${(num || 0).toLocaleString()}+</div><div class="label">${label}</div></div>`
+    `<div class="stat"><div class="num">${(num || 0).toLocaleString()}</div><div class="label">${label}</div></div>`
   ).join('');
 }
 
@@ -325,10 +353,13 @@ function wireSearchAndFilters(baseFilter) {
   sortSelect.value = sortMode;
   sortSelect.addEventListener('change', () => { sortMode = sortSelect.value; applyFilters(baseFilter); });
 
+  const regionSelect = document.getElementById('filterRegion');
+  regionSelect.addEventListener('change', () => { regionFilterValue = regionSelect.value; applyFilters(baseFilter); });
+
   const companySelect = document.getElementById('filterCompany');
   companySelect.addEventListener('change', () => { companyFilterValue = companySelect.value; applyFilters(baseFilter); });
 
-  ['filterFresher', 'filterInternship', 'filterCSE', 'filterClosing'].forEach(id => {
+  ['filterFresher', 'filterInternship', 'filterCSE', 'filterClosing', 'filterNosenior'].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
       const key = id.replace('filter', '').toLowerCase();
@@ -339,10 +370,11 @@ function wireSearchAndFilters(baseFilter) {
 
   document.getElementById('clearFilters').addEventListener('click', () => {
     searchQuery = ''; companyFilterValue = '';
-    checkboxState = { fresher: false, internship: false, cse: false, closing: false };
+    checkboxState = { fresher: false, internship: false, cse: false, closing: false, nosenior: false };
+    regionFilterValue = ''; regionSelect.value = '';
     if (searchInput) searchInput.value = '';
     companySelect.value = '';
-    ['filterFresher', 'filterInternship', 'filterCSE', 'filterClosing'].forEach(id => {
+    ['filterFresher', 'filterInternship', 'filterCSE', 'filterClosing', 'filterNosenior'].forEach(id => {
       const el = document.getElementById(id); if (el) el.checked = false;
     });
     applyFilters(baseFilter);
@@ -362,6 +394,9 @@ function applyFilters(baseFilter) {
     if (checkboxState.cse && !j.cse_relevant) return false;
     if (checkboxState.closing && j.deadline_status !== 'Closing Soon') return false;
     if (companyFilterValue && j.company !== companyFilterValue) return false;
+    if (checkboxState.nosenior && j.seniority === 'Senior') return false;
+    if (regionFilterValue === 'india' && !(j.country_scope === 'India' || j.country_scope === 'Remote-India')) return false;
+    if (regionFilterValue === 'remote' && !(j.country_scope === 'Remote' || j.country_scope === 'Remote-India')) return false;
     return true;
   });
 
@@ -374,6 +409,7 @@ function sortJobs(jobs) {
   const copy = [...jobs];
   if (sortMode === 'company') copy.sort((a, b) => (a.company || '').localeCompare(b.company || ''));
   else if (sortMode === 'title') copy.sort((a, b) => (a.job_title || '').localeCompare(b.job_title || ''));
+  else if (sortMode === 'match') copy.sort((a, b) => (b.match_score || 0) - (a.match_score || 0));
   else copy.sort((a, b) => new Date(b.date_posted || b.first_seen || 0) - new Date(a.date_posted || a.first_seen || 0));
   return copy;
 }
@@ -405,13 +441,16 @@ function jobCardHtml(j) {
 
   return `
     <div class="job-card">
-      <div class="top-row" onclick="openJob('${j.key}')">
+      <div class="top-row" data-key="${escapeAttr(j.key)}" onclick="openJob(this.dataset.key)">
         <div class="avatar">${initials}</div>
         <div class="title-block">
           <h3>${escapeHtml(j.job_title || 'Not specified')}</h3>
           <div class="company">${escapeHtml(j.company || '')} · ${escapeHtml(j.location_raw || 'Not specified')}</div>
         </div>
-        <div class="posted">${posted}</div>
+        <div style="text-align:right">
+          ${j.match_score ? `<div class="score ${j.match_score >= 70 ? 'hi' : j.match_score >= 55 ? 'mid' : 'lo'}" title="Match score against the candidate profile">${j.match_score}</div>` : ''}
+          <div class="posted" style="margin-top:6px">${posted}</div>
+        </div>
       </div>
       <div class="meta">
         <span>Experience: ${escapeHtml(j.experience_raw || 'Not specified')}</span>
@@ -426,10 +465,12 @@ function jobCardHtml(j) {
         ${j.internship ? '<span class="badge intern">Internship</span>' : ''}
         ${j.cse_relevant ? '<span class="badge cse">CSE</span>' : ''}
         ${j.deadline_status === 'Closing Soon' ? '<span class="badge closing">Closing Soon</span>' : ''}
+        ${j.country_scope && j.country_scope !== 'Unknown' ? `<span class="badge region">${escapeHtml(j.country_scope)}</span>` : ''}
+        ${j.seniority === 'Senior' ? '<span class="badge region">Senior</span>' : ''}
       </div>
       <div class="card-actions">
-        <a class="btn-apply" href="${j.apply_url || j.job_url || '#'}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Apply Now</a>
-        <button class="btn-details" onclick="openJob('${j.key}')">View Details</button>
+        <a class="btn-apply" href="${safeUrl(j.apply_url || j.job_url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Apply Now</a>
+        <button class="btn-details" data-key="${escapeAttr(j.key)}" onclick="openJob(this.dataset.key)">View Details</button>
       </div>
     </div>
   `;
@@ -466,7 +507,7 @@ function renderCompaniesPage() {
   `;
   fetch('../website-data/companies.json').then(r => r.json()).then(companies => {
     document.getElementById('companyGrid').innerHTML = companies.map(c => `
-      <div class="company-card" onclick="filterByCompany('${escapeHtml(c.company)}')">
+      <div class="company-card" data-company="${escapeAttr(c.company)}" onclick="filterByCompany(this.dataset.company)">
         <h3>${escapeHtml(c.company)}</h3>
         <div class="row"><span>Active Jobs</span><b>${c.active_jobs}</b></div>
         <div class="row"><span>Fresher Jobs</span><b>${c.fresher_jobs}</b></div>
@@ -490,7 +531,7 @@ async function openJob(key) {
   content.innerHTML = '<p style="color:var(--text-dim)">Loading...</p>';
   overlay.classList.add('open');
   try {
-    const res = await fetch(`../website-data/jobs/${key}.json`);
+    const res = await fetch(`../website-data/jobs/${encodeURIComponent(key)}.json`);
     const job = await res.json();
     const daysLeft = daysRemaining(job.application_deadline);
     content.innerHTML = `
@@ -505,7 +546,9 @@ async function openJob(key) {
         ${job.deadline_status === 'Closing Soon' ? '<span class="badge closing">Closing Soon</span>' : ''}
       </div>
 
-      <div class="modal-grid">
+      ${(job.match_reasons || []).length ? `<div class="why">Match ${job.match_score}/100: ${escapeHtml(job.match_reasons.join(' · '))}</div>` : ''}
+
+      <div class="modal-grid" style="margin-top:14px">
         <div class="field"><div class="k">Work Mode</div><div class="v">${escapeHtml(job.work_mode || 'Not specified')}</div></div>
         <div class="field"><div class="k">Employment Type</div><div class="v">${escapeHtml(job.employment_type || 'Not specified')}</div></div>
         <div class="field"><div class="k">Experience</div><div class="v">${escapeHtml(job.experience_raw || 'Not specified')}</div></div>
@@ -528,7 +571,7 @@ async function openJob(key) {
       <div class="section-heading">Job Description</div>
       <div class="desc-box">${escapeHtml(stripHtml(job.job_description || 'Not specified')).slice(0, 4000)}</div>
 
-      <a class="apply-btn" href="${job.apply_url || job.job_url || '#'}" target="_blank" rel="noopener">Apply on Official Website</a>
+      <a class="apply-btn" href="${safeUrl(job.apply_url || job.job_url)}" target="_blank" rel="noopener noreferrer">Apply on Official Website</a>
       <div class="source-note">Source: ${escapeHtml(job.source_website || 'Not specified')}</div>
     `;
   } catch (err) {
@@ -575,6 +618,14 @@ function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str == null ? '' : String(str);
   return div.innerHTML;
+}
+function escapeAttr(str) {
+  return String(str == null ? '' : str).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+// Job data comes from third-party career sites: only allow http(s) links.
+function safeUrl(url) {
+  return /^https?:\/\//i.test(url || '') ? escapeAttr(url) : '#';
 }
 function debounce(fn, ms) {
   let t;

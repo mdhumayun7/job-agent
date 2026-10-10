@@ -200,6 +200,7 @@ def fetch_workday_jobs(slug: str, company_display_name: str, india_only: bool = 
             job_url=public_url,
             apply_url=public_url,
             location_raw=location,
+            country="India" if applied else None,
             employment_type=employment_type,
             date_posted=date_posted,
             job_description=description,
