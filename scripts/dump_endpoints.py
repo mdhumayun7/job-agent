@@ -17,6 +17,7 @@ ORACLE_Q = ("onlyData=true&expand=requisitionList.secondaryLocations&finder=find
             "facetsList=LOCATIONS,limit=5,location=India,sortBy=POSTING_DATES_DESC")
 
 CALLS = [
+    ("infosys", "GET", "https://intapgateway.infosysapps.com/careersci/search/intapjbsrch/getCareerSearchJobs?sourceId=1,21&searchText=ALL", None),
     ("oracle-facet-oracle", "GET", "https://eeho.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet&finder=findReqs;siteNumber=CX_45001,facetsList=LOCATIONS,limit=1", None),
     ("oracle-facet-dell", "GET", "https://enterpriseplatform.dell.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=locationsFacet&finder=findReqs;siteNumber=CX_1001,facetsList=LOCATIONS,limit=1", None),
     ("eightfold-microsoft", "GET", "https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=India&start=0", None),
@@ -70,7 +71,7 @@ def shape(obj, depth=0):
     if depth > 5:
         return "..."
     if isinstance(obj, dict):
-        return {k: shape(v, depth + 1) for k, v in list(obj.items())[:40]}
+        return {k: shape(v, depth + 1) for k, v in list(obj.items())[:80]}
     if isinstance(obj, list):
         india = [shape(x, depth + 1) for x in obj if "india" in json.dumps(x).lower()][:5]
         return [f"list[{len(obj)}]", shape(obj[0], depth + 1) if obj else None, {"india_items": india}]
