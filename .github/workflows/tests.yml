@@ -26,7 +26,7 @@ jobs:
           node-version: '20'
 
       - name: Install Python packages
-        run: pip install requests python-docx playwright==1.44.0 && python -m playwright install --with-deps chromium
+        run: pip install requests python-docx "playwright>=1.49" && python -m playwright install --with-deps chromium
 
       - name: Validate government records
         run: python scripts/validate_govt_jobs.py
