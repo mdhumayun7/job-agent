@@ -107,13 +107,19 @@ def classify_location(job):
     return "Abroad"
 
 
+LEVEL_SENIOR_RE = re.compile(r"\b(engineer|developer|scientist|analyst|consultant|specialist|architect)"
+                             r"[\s-]*([3-9]|iii|iv|v)[a-z]?\b", re.I)
+
+
 def classify_seniority(title):
-    t = title or ""
+    # "IN_Senior Associate_Data Scientist": underscores are word characters
+    # for regex \b, so normalise separators first.
+    t = re.sub(r"[_|/]+", " ", title or "")
     if INTERN_RE.search(t):
         return "Intern"
     if STRONG_ENTRY_RE.search(t):  # "Associate Product Manager (New Grad)" is entry-level
         return "Entry"
-    if SENIOR_RE.search(t):  # before weak entry words so "Associate Director" is senior
+    if SENIOR_RE.search(t) or LEVEL_SENIOR_RE.search(t):  # before weak entry words ("Associate Director")
         return "Senior"
     if MID_RE.search(t):
         return "Mid"
@@ -287,6 +293,12 @@ def selftest():
     assert classify_seniority("SDE II, Amazon Ads") == "Mid"
     assert classify_seniority("Data Scientist II-3") == "Mid"
     assert classify_seniority("Principle AI Research Engineer") == "Senior"
+    assert classify_seniority("IN_Senior Associate_Data Scientist _D&A") == "Senior"
+    assert classify_seniority("IN_Manager_AI Data Scientist Engineer") == "Senior"
+    assert classify_seniority("Machine Learning Engineer 3") == "Senior"
+    assert classify_seniority("AI Engineer 4A") == "Senior"
+    assert classify_seniority("Software Engineer 2") == "Mid"
+    assert classify_seniority("Software Engineer") == "Unknown"
     assert classify_location({"location_raw": "United States - Remote"}) == "Abroad"
     assert classify_location({"location_raw": "Remote"}) == "Remote"
     assert classify_location({"location_raw": "2 Locations"}) == "Unknown"
