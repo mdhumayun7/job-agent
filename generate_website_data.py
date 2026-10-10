@@ -20,7 +20,7 @@ INDEX_FIELDS = [
     "company", "job_title", "job_id", "location_raw", "work_mode",
     "employment_type", "experience_raw", "salary_raw", "deadline_status",
     "application_deadline", "date_posted", "first_seen", "fresher_eligible", "internship",
-    "cse_relevant", "status", "apply_url", "match_score", "country_scope", "seniority",
+    "cse_relevant", "status", "apply_url", "match_score", "country_scope", "seniority", "source_type",
 ]
 
 
@@ -70,6 +70,7 @@ def build_stats(jobs: list, closed: int = 0) -> dict:
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="minutes"),
         "total_jobs": len(jobs),
         "closed_since_last_run": closed,
+        "govt_notices": sum(1 for j in jobs if j.get("source_type") == "govt_notice"),
         "india_jobs": sum(1 for j in jobs if j.get("country_scope") in ("India", "Remote-India")),
         "top_matches": sum(1 for j in jobs if (j.get("match_score") or 0) >= 55),
         "new_jobs": sum(1 for j in jobs if j.get("status") == "NEW"),

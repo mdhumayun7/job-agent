@@ -1951,5 +1951,21 @@
       "BMC"
     ],
     "note": "Workday tenant 'bmc' turned out to be Boston Medical Center, not BMC Software, so it was removed. Needs BMC Software's real careers API."
+  },
+  {
+    "company": "C-DAC",
+    "career_url": "https://www.cdac.in/index.aspx?id=current_jobs",
+    "candidate_slugs": [],
+    "platform": "govt_notices",
+    "verified_slug": "cdac",
+    "enabled": true,
+    "categories": [
+      "Government",
+      "Research"
+    ],
+    "aliases": [
+      "CDAC",
+      "Centre for Development of Advanced Computing"
+    ]
   }
 ]

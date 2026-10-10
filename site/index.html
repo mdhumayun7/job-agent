@@ -162,6 +162,7 @@ const ROUTES = [
   { path: '#/', label: 'Home' },
   { path: '#/top-matches', label: 'Top Matches' },
   { path: '#/india', label: 'India Jobs' },
+  { path: '#/govt', label: 'Govt / Research' },
   { path: '#/fresher-jobs', label: 'Fresher Jobs' },
   { path: '#/internships', label: 'Internships' },
   { path: '#/cse-jobs', label: 'CSE Jobs' },
@@ -215,6 +216,7 @@ function route() {
 
   if (hash === '#/companies') return renderCompaniesPage();
   if (hash === '#/top-matches') { sortMode = 'match'; return renderJobsPage('Top Matches', 'Open roles that score highest against the candidate profile (config/profile.json): CSE role, skills, fresher level and location.', j => (j.match_score || 0) >= 55); }
+  if (hash === '#/govt') { regionFilterValue = ''; return renderJobsPage('Government & Research', 'Recruitment notices from government and research organisations (currently C-DAC). Always read the official notice for eligibility and last date.', j => j.source_type === 'govt_notice'); }
   if (hash === '#/india') return renderJobsPage('India Jobs', 'Openings located in India or remote within India.', j => j.country_scope === 'India' || j.country_scope === 'Remote-India');
   if (hash === '#/fresher-jobs') return renderJobsPage('Fresher Jobs', 'Roles explicitly open to freshers and recent graduates.', j => j.fresher_eligible);
   if (hash === '#/internships') return renderJobsPage('Internships', 'Internship opportunities across all tracked companies.', j => j.internship);

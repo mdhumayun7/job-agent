@@ -40,12 +40,11 @@ FOLLOWUP_RE = re.compile(r"result|select(ed|ion)? list|selected candidates?|list
                          r"provisional|waiting list|joining|instructions|syllabus|faq|career progression|read more",
                          re.I)
 
+# Only sources whose static HTML was verified (scripts/probe_govt_sites.py)
+# to list real openings are enabled. ISRO and IISc pages were probed but
+# their static HTML yields navigation links / old exam notices, not openings.
 SOURCES = {
     "cdac": {"org": "C-DAC", "urls": ["https://www.cdac.in/index.aspx?id=current_jobs"], "title_from": "row"},
-    "isro": {"org": "ISRO", "urls": ["https://www.isro.gov.in/Careers.html"], "title_from": "anchor"},
-    "iisc": {"org": "IISc", "urls": ["https://www.iisc.ac.in/careers/contractual-positions/",
-                                     "https://www.iisc.ac.in/careers/contract-project-staff/"],
-             "title_from": "row"},
 }
 
 DATE = r"(\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9},?\s+\d{4})"
@@ -119,7 +118,7 @@ def extract_notices(html: str, base_url: str, title_from: str = "row") -> list:
             continue
         if FOLLOWUP_RE.search(title[:120]):
             continue
-        key = (title.lower()[:150], href)
+        key = title.lower()[:150]  # several documents (ad, form) can share one notice row
         if key in seen:
             continue
         seen.add(key)
