@@ -131,7 +131,7 @@ def extract_salary(description: str):
     raw = m.group(0)
     currency = "INR" if any(c in raw for c in ("₹", "Rs", "INR", "LPA", "lakh")) else "USD"
     numbers = re.findall(r"[\d,]+(?:\.\d+)?", raw)
-    numbers = [float(n.replace(",", "")) for n in numbers]
+    numbers = [float(n.replace(",", "")) for n in numbers if n.replace(",", "")]  # "," alone is not a number
     if len(numbers) >= 2:
         return {"salary_raw": raw, "currency": currency, "salary_min": min(numbers), "salary_max": max(numbers)}
     if len(numbers) == 1:
@@ -250,6 +250,7 @@ if __name__ == "__main__":
           {"experience_min": 2, "experience_max": 4, "experience_raw": "2-4 years"})
 
     check("salary LPA", extract_salary("Compensation: ₹6-10 LPA")["currency"], "INR")
+    check("salary: stray comma does not crash", extract_salary("Pay: INR , LPA")["currency"], "INR")
     check("salary not disclosed", extract_salary("Great team culture and benefits")["salary_raw"], NOT_DISCLOSED)
 
     check("degree B.Tech", "B.Tech" in extract_degree("Requires B.Tech or equivalent degree"), True)
