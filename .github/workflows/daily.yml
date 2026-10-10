@@ -23,6 +23,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write
 
 jobs:
   search:
@@ -104,6 +105,34 @@ jobs:
         run: |
           python run_ats_pipeline.py
 
+      - name: Company health check
+        if: always()
+        continue-on-error: true
+        run: |
+          python scripts/company_health.py
+          [ -f output/health_report.md ] && cat output/health_report.md >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Open, update or close the health alert issue
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f output/health_alert_count ] || exit 0
+          COUNT=$(cat output/health_alert_count)
+          TITLE="Scraper health alert"
+          gh label create scraper-health --color D93F0B --description "Automated scraper health alerts" 2>/dev/null || true
+          ISSUE=$(gh issue list --label scraper-health --state open --json number -q '.[0].number')
+          if [ "$COUNT" -gt 0 ]; then
+            if [ -n "$ISSUE" ]; then
+              gh issue comment "$ISSUE" --body-file output/health_report.md
+            else
+              gh issue create --title "$TITLE" --label scraper-health --body-file output/health_report.md
+            fi
+          elif [ -n "$ISSUE" ]; then
+            gh issue close "$ISSUE" --comment "All company scrapers healthy again in run ${{ github.run_number }}."
+          fi
+
       - name: Build website
         id: site
         if: always()
@@ -130,7 +159,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ats_job_history.json config/companies.json
+          git add data/ats_job_history.json config/companies.json data/company_health.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: update ATS job history"
             git pull --rebase --autostash origin main || true

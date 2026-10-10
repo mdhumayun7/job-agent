@@ -15,6 +15,7 @@ output/
 logs/
 data/*
 !data/ats_job_history.json
+!data/company_health.json
 browser_data/
 *.db
 *.sqlite3
@@ -37,3 +38,4 @@ Thumbs.db
 .idea/
 
 website-data/
+_site/
