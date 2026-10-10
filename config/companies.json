@@ -1968,5 +1968,20 @@
       "CDAC",
       "Centre for Development of Advanced Computing"
     ]
+  },
+  {
+    "company": "ISRO",
+    "career_url": "https://www.isro.gov.in/CurrentOpportunities.html",
+    "candidate_slugs": [],
+    "platform": "govt_notices",
+    "verified_slug": "isro",
+    "enabled": true,
+    "categories": [
+      "Government",
+      "Research"
+    ],
+    "aliases": [
+      "Indian Space Research Organisation"
+    ]
   }
 ]

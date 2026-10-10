@@ -45,7 +45,40 @@ FOLLOWUP_RE = re.compile(r"result|select(ed|ion)? list|selected candidates?|list
 # their static HTML yields navigation links / old exam notices, not openings.
 SOURCES = {
     "cdac": {"org": "C-DAC", "urls": ["https://www.cdac.in/index.aspx?id=current_jobs"], "title_from": "row"},
+    # ISRO publishes a structured list (post / advertisement no. / opening date / last date).
+    "isro": {"org": "ISRO", "urls": ["https://www.isro.gov.in/CurrentOpportunities.html"], "parser": "isro_table"},
 }
+
+ISRO_CENTRES = {"ICRB": "ISRO Centralised Recruitment Board", "DOS": "Department of Space", "HSFC": "Human Space Flight Centre",
+                "IIST": "Indian Institute of Space Science and Technology", "IPRC": "ISRO Propulsion Complex",
+                "ISTRAC": "ISRO Telemetry, Tracking and Command Network", "URSC": "U R Rao Satellite Centre",
+                "LPSC": "Liquid Propulsion Systems Centre", "NARL": "National Atmospheric Research Laboratory",
+                "NRSC": "National Remote Sensing Centre", "NESAC": "North Eastern Space Applications Centre",
+                "PRL": "Physical Research Laboratory", "SDSC": "Satish Dhawan Space Centre SHAR",
+                "SAC": "Space Applications Centre", "VSSC": "Vikram Sarabhai Space Centre", "NSIL": "NewSpace India Limited"}
+
+
+def _span(cls, block):
+    m = re.search(r'class="' + cls + r'"[^>]*>(.*?)</span>', block, re.S)
+    return " ".join(re.sub(r"<[^>]+>", " ", m.group(1)).split()) if m else None
+
+
+def parse_isro_table(html: str, base_url: str) -> list:
+    rows = []
+    for block in re.split(r'<div\s+class="row list"', html)[1:]:
+        post = _span("post", block)
+        advt = _span("advtNum", block)
+        link = re.search(r'class="Details"[^>]*>\s*<a href="([^"]+)"', block)
+        if not post or not link:
+            continue
+        href = urljoin(base_url, link.group(1))
+        centre_code = re.match(r"([A-Za-z\-]+?)_?Recruitment", link.group(1).split("/")[-1])
+        code = (centre_code.group(1).replace("-", "").upper() if centre_code else "ISRO")
+        rows.append({"title": post, "url": href, "advt": advt,
+                     "opened": _parse_date(_span("opendate", block) or ""),
+                     "last_date": _parse_date(_span("closedate", block) or ""),
+                     "centre": ISRO_CENTRES.get(code, code)})
+    return rows
 
 DATE = r"(\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\d{1,2}(?:st|nd|rd|th)?\s+[A-Za-z]{3,9},?\s+\d{4})"
 LAST_DATE_RE = re.compile(r"(last date|closing date|on or before|till|upto|up to)[^0-9]{0,60}" + DATE, re.I)
@@ -94,9 +127,9 @@ class _Collector(HTMLParser):
 
 
 def _parse_date(text):
-    text = re.sub(r"(st|nd|rd|th)\b", "", text.strip())
+    text = re.sub(r"(?<=\d)(st|nd|rd|th)\b", "", text.strip())  # "1st" -> "1", but keep "August"
     for fmt in ("%d.%m.%Y", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%y", "%d/%m/%y", "%d %B %Y", "%d %b %Y",
-                "%d %B, %Y", "%d %b, %Y"):
+                "%d %B, %Y", "%d %b, %Y", "%B %d, %Y", "%b %d, %Y", "%B %d %Y"):
         try:
             return datetime.strptime(text, fmt).date().isoformat()
         except ValueError:
@@ -145,6 +178,19 @@ def fetch_govt_notices(key: str, company_display_name: str) -> list:
             print(f"[govt:{key}] {url} returned HTTP {r.status_code}")
             continue
         ok_pages += 1
+        if src.get("parser") == "isro_table":
+            for n in parse_isro_table(r.text, url):
+                jobs.append(Job(
+                    company=company_display_name, job_title=n["title"],
+                    job_id=n["advt"] or hashlib.sha1(n["url"].encode()).hexdigest()[:12],
+                    requisition_id=n["advt"], job_url=n["url"], apply_url=n["url"],
+                    location_raw="India", country="India", employment_type="Government / Institute notice",
+                    technology_domain=n["centre"], date_posted=n["opened"], application_deadline=n["last_date"],
+                    deadline_status="Open" if n["last_date"] else "Deadline Not Specified",
+                    job_description=f"{n['title']} ({n['centre']}). Advertisement {n['advt'] or 'number not listed'}.",
+                    source_website=url, source_type="govt_notice", scraped_at=datetime.now(timezone.utc).isoformat(),
+                ).to_dict())
+            continue
         for n in extract_notices(r.text, url, src.get("title_from", "row")):
             nid = hashlib.sha1(n["url"].encode()).hexdigest()[:12]
             jobs.append(Job(
@@ -182,6 +228,15 @@ def selftest():
     assert len(n) == 1, n
     assert n[0]["url"] == "https://www.cdac.in/a.pdf" and n[0]["last_date"] == "2026-10-20", n
     assert n[0]["dated"] == "2026-10-01" and n[0]["city"] == "Pune", n
+    isro = """<div class="row list"><span class="slno"> 1 </span><span class="post"> Recruitment to the post of
+      Scientist/Engineer 'SC' </span><span class="advtNum"> ISRO:ICRB:03(EMC):2026 </span>
+      <span class="opendate"> August 27,
+         2026 </span><span class="closedate"> September 16, 2026 </span>
+      <span class="Details"> <a href="ICRB_Recruitment13.html" class="fa"></a></span></div>"""
+    r = parse_isro_table(isro, "https://www.isro.gov.in/CurrentOpportunities.html")
+    assert r == [{"title": "Recruitment to the post of Scientist/Engineer 'SC'", "url": "https://www.isro.gov.in/ICRB_Recruitment13.html",
+                  "advt": "ISRO:ICRB:03(EMC):2026", "opened": "2026-08-27", "last_date": "2026-09-16",
+                  "centre": "ISRO Centralised Recruitment Board"}], r
     print("adapter_govt_notices self-test passed")
 
 
