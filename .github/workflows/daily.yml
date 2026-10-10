@@ -109,7 +109,8 @@ jobs:
         id: ats
         continue-on-error: true
         run: |
-          python run_ats_pipeline.py
+          mkdir -p output/step_logs
+          python run_ats_pipeline.py 2>&1 | tee output/step_logs/pipeline.log; test ${PIPESTATUS[0]} -eq 0
 
       - name: Company health check
         if: always()

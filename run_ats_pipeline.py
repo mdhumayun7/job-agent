@@ -121,7 +121,12 @@ def run(companies_path=COMPANIES_PATH, company_filter=None, limit=None, workers=
                 print(f"[ats-pipeline] {name} FAILED: {error} -- continuing with other companies "
                       f"(its previously-seen jobs will NOT be marked closed this run)")
                 continue
-            all_jobs.extend(enrich_job(j) for j in jobs)
+            for j in jobs:
+                try:
+                    all_jobs.append(enrich_job(j))
+                except Exception as e:  # noqa: BLE001 -- keep the raw job rather than lose the run
+                    print(f"[ats-pipeline] enrich failed for {name}: {j.get('job_title')!r}: {e}")
+                    all_jobs.append(j)
             fetched_companies.add(name.strip().lower())
             run_stats[name] = {"ok": True, "count": len(jobs), "seconds": round(secs, 1),
                                "platform": entry["platform"]}
