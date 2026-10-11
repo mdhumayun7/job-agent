@@ -1,0 +1,142 @@
+[greenhouse] Discord: 49 jobs fetched
+[greenhouse] Lyft: 187 jobs fetched
+[greenhouse] Airbnb: 160 jobs fetched
+[greenhouse] Robinhood: 182 jobs fetched
+[greenhouse] Coinbase: 222 jobs fetched
+[greenhouse] Pinterest: 180 jobs fetched
+[greenhouse] Instacart: 119 jobs fetched
+[greenhouse] Cloudflare: 424 jobs fetched
+[greenhouse] Razorpay: 26 jobs fetched
+[greenhouse] GitLab: 221 jobs fetched
+[greenhouse] Stripe: 728 jobs fetched
+[greenhouse] Groww: 9 jobs fetched
+[workday:postman] using India location facet (locations, 1 value(s))
+[workday:browserstack] using India location facet (locations, 3 value(s))
+[greenhouse] InMobi: 72 jobs fetched
+[lever] CRED: 8 jobs fetched
+[ashby] Snowflake: 359 jobs fetched
+[greenhouse] MongoDB: 392 jobs fetched
+[greenhouse] Anthropic: 645 jobs fetched
+[workday:browserstack] BrowserStack: 32 jobs fetched (India, 0 with full description)
+[greenhouse] Elastic: 409 jobs fetched
+[greenhouse] Databricks: 892 jobs fetched
+[workable] Hugging Face: 6 jobs fetched
+[ashby] Confluent: 17 jobs fetched
+[workday:postman] Postman: 10 jobs fetched (India, 5 with full description)
+[atlassian] Atlassian: 354 jobs fetched
+[makemytrip] MakeMyTrip: 30 jobs fetched
+[greenhouse] Datadog: 435 jobs fetched
+[infosys] Infosys: 1623 jobs fetched
+[workday:nvidia] using India location facet (locationHierarchy1, 1 value(s))
+[workday:intel] using India location facet (locations, 2 value(s))
+[amazon] Amazon: 600 jobs fetched (country=IND, total available=2335)
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[ibm] IBM: 1248 jobs fetched (India, total=1248)
+[workday:cisco] using India location facet (locations, 11 value(s))
+[workday:intel] Intel: 59 jobs fetched (India, 10 with full description)
+[jibe:careers.amd.com] AMD: 221 jobs fetched (location=India, total=221)
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:salesforce] using India location facet (CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended, 1 value(s))
+[workday:salesforce] Salesforce: 115 jobs fetched (India, 8 with full description)
+[workday:adobe] using India location facet (locationCountry, 1 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:adobe] Adobe: 64 jobs fetched (India, 9 with full description)
+[smartrecruiters] Freshworks: 100 jobs fetched
+[eightfold:microsoft.com] attempt 2/2 failed for https://apply.careers.microsoft.com/api/pcsx/position_details: 429 Client Error: Too Many Requests for url: https://apply.careers.microsoft.com/api/pcsx/position_details?position_id=1970393556955803&domain=microsoft.com&hl=en
+[eightfold:microsoft.com] detail failed for 1970393556955803: eightfold:microsoft.com request failed after 2 attempts: https://apply.careers.microsoft.com/api/pcsx/position_details -- 429 Client Error: Too Many Requests for url: https://apply.careers.microsoft.com/api/pcsx/position_details?position_id=1970393556955803&domain=microsoft.com&hl=en
+[workday:broadcom] using India location facet (locations, 5 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:nvidia] NVIDIA: 241 jobs fetched (India, 60 with full description)
+[workday:redhat] using India location facet (a, 1 value(s))
+[workday:redhat] Red Hat: 6 jobs fetched (India, 1 with full description)
+[workday:cisco] Cisco: 296 jobs fetched (India, 60 with full description)
+[workday:broadcom] Broadcom: 60 jobs fetched (India, 12 with full description)
+[workday:hpe] using India location facet (locations, 39 value(s))
+[workday:hp] using India location facet (Location_Country, 1 value(s))
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[oracle:CX_1001@enterpriseplatform] Dell Technologies: 17 jobs fetched (India, scanned 442 of 442, 4 with full description)
+[workday:sec] using India location facet (Location_Country, 1 value(s))
+[workday:hp] HP: 83 jobs fetched (India, 8 with full description)
+[oracle:CX_45001@eeho] Oracle: 18 jobs fetched (India, scanned 2332 of 2334, 5 with full description)
+[workday:sonyglobal] no India facet on this site -- fetching unfiltered (capped at 400)
+[workday:sec] Samsung: 31 jobs fetched (India, 1 with full description)
+[workday:sonyglobal] Sony: 111 jobs fetched (all locations, 8 with full description)
+[successfactors] Wipro: 600 jobs fetched (api, location=India, total=4719, 50 with description)
+[workday:motorolasolutions] using India location facet (locationCountry, 1 value(s))
+[smartrecruiters] ServiceNow: 100 jobs fetched
+[workday:paypal] using India location facet (locations, 2 value(s))
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:paypal] PayPal: 7 jobs fetched (India, 3 with full description)
+[eightfold:ericsson.com] Ericsson: 91 jobs fetched (India, 9 with description)
+[workday:visa] using India location facet (locationCountry, 1 value(s))
+[workday:mastercard] using India location facet (locations, 10 value(s))
+[workday:motorolasolutions] Motorola Solutions: 44 jobs fetched (India, 28 with full description)
+[eightfold:microsoft.com] Microsoft: 215 jobs fetched (India, 40 with description)
+[jibe:www.github.careers] GitHub: 73 jobs fetched (location=all, total=73)
+[ashby] OpenAI: 815 jobs fetched
+[oracle:CX_1@fa-evmr-saasfaprod1] Nokia: 176 jobs fetched (India, scanned 617 of 617, 28 with full description)
+[workday:accenture] using India location facet (locationCountry, 1 value(s))
+[workday:hpe] Hewlett Packard Enterprise: 339 jobs fetched (India, 60 with full description)
+[workday:dxctechnology] using India location facet (locationCountry, 1 value(s))
+[capgemini] Capgemini: 761 jobs fetched (India, total=761)
+[smartrecruiters] Bosch: 100 jobs fetched
+[workday:genpact] using India location facet (locations, 60 value(s))
+[phenom:careers.nttdata.com] NTT DATA: 500 jobs fetched (India, total=1085)
+[workday:visa] Visa: 89 jobs fetched (India, 46 with full description)
+[oracle:CX_3@ejgk] KPMG: 400 jobs fetched (India, scanned 400 of 576, 5 with full description)
+[workday:pwc] using India location facet (locations, 28 value(s))
+[eightfold:qualcomm.com] Qualcomm: 398 jobs fetched (India, 40 with description)
+[lever] Meesho: 59 jobs fetched
+[workday:dxctechnology] DXC Technology: 151 jobs fetched (India, 51 with full description)
+[workday:genpact] Genpact: 400 jobs fetched (India, 36 with full description)
+[lever] Paytm: 180 jobs fetched
+[darwinbox:delhivery] Delhivery: 7 jobs fetched (total=7)
+[sharechat] ShareChat: 6 jobs fetched
+[workday:mastercard] Mastercard: 244 jobs fetched (India, 60 with full description)
+[smartrecruiters] Upstox: 1 jobs fetched
+[smartrecruiters] Unacademy: 3 jobs fetched
+[smartrecruiters] Cars24: 1 jobs fetched
+[urbancompany] Urban Company: 10 jobs fetched
+[workday:micron] using India location facet (locations, 7 value(s))
+[workday:nxp] using India location facet (Location_Country, 1 value(s))
+[successfactors] EY: 600 jobs fetched (html, location=India, total=2658, 11 with description)
+[workday:analogdevices] using India location facet (locationCountry, 1 value(s))
+[successfactors] HCLTech: 600 jobs fetched (api, location=all, total=14694, 24 with description)
+[workday:analogdevices] Analog Devices: 103 jobs fetched (India, 11 with full description)
+[workday:marvell] using India location facet (Country, 1 value(s))
+[workday:marvell] Marvell: 24 jobs fetched (India, 4 with full description)
+[workday:cadence] using India location facet (Location_Country, 1 value(s))
+[workday:micron] Micron: 309 jobs fetched (India, 18 with full description)
+[oracle:CX@edbz] Texas Instruments: 139 jobs fetched (India, scanned 839 of 839, 18 with full description)
+[ashby] Docker: 62 jobs fetched
+[workday:amat] using India location facet (Country, 1 value(s))
+[govt:cdac] C-DAC: 7 notices
+[govt:isro] ISRO: 117 notices
+[workday:nxp] NXP Semiconductors: 190 jobs fetched (India, 33 with full description)
+[workday:amat] Applied Materials: 170 jobs fetched (India, 21 with full description)
+[eightfold:infineon.com] Infineon Technologies: 162 jobs fetched (India, 16 with description)
+[workday:pwc] PwC: 400 jobs fetched (India, 54 with full description)
+[workday:cadence] Cadence: 198 jobs fetched (India, 48 with full description)
+[smartrecruiters] PhonePe: 96 jobs fetched
+[workday:accenture] Accenture: 400 jobs fetched (India, 34 with full description)
+
+[ats-pipeline] Companies attempted: 86 | Succeeded: 86 | Failed: 0
+[ats-pipeline] India/Remote-India jobs: 14481 | Top matches (score >= threshold): 382
+     93  Cisco: Software Engineer (Bangalore, India)
+     93  Cisco: Software Engineer (Bangalore, India)
+     93  PwC: IN_Associate_ AI Engineer_GCC_Advisory_Mumbai (Mumbai Shivaji Park)
+     91  Infosys: AI Engineer (Bangalore, India)
+     85  Infosys: AI/ML/GEN AI Engineer (Bangalore, India)
+     85  Infosys: AI/ML/GEN AI Engineer (Bangalore, India)
+     84  Infosys: Python ML_GenAI Engineers (Chennai, India)
+     84  Infosys: Computer Vision (Bangalore, India)
+     84  Mastercard: Data Scientist I (Pune, India)
+     84  Mastercard: Data Scientist (Data Visualisation) (Gurgaon, India)
+[ats-pipeline] Status breakdown: {'UNCHANGED': 20118, 'NEW': 278, 'UPDATED': 12, 'CLOSED': 3637}
+
+[ats-pipeline] {'total': 24045, 'top_matches': 382, 'india': 12837, 'new': 278, 'fresher': 1242, 'internships': 192, 'cse': 4013, 'closing_soon': 0}
+[ats-pipeline] Written: output/ats_jobs.xlsx, output/ats_jobs.json
+[ats-pipeline] finished in 427s
