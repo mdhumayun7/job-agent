@@ -77,6 +77,12 @@
    "count": 218,
    "ok": true,
    "seconds": 19.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 219,
+   "ok": true,
+   "seconds": 19.6
   }
  ],
  "Accenture": [
@@ -157,6 +163,12 @@
    "count": 399,
    "ok": true,
    "seconds": 332.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 266.7
   }
  ],
  "Adobe": [
@@ -237,6 +249,12 @@
    "count": 59,
    "ok": true,
    "seconds": 7.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 59,
+   "ok": true,
+   "seconds": 7.9
   }
  ],
  "Airbnb": [
@@ -314,6 +332,12 @@
   },
   {
    "at": "2026-10-14T09:13+00:00",
+   "count": 165,
+   "ok": true,
+   "seconds": 0.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
    "count": 165,
    "ok": true,
    "seconds": 0.4
@@ -397,6 +421,12 @@
    "count": 600,
    "ok": true,
    "seconds": 11.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 10.8
   }
  ],
  "Analog Devices": [
@@ -477,6 +507,12 @@
    "count": 104,
    "ok": true,
    "seconds": 17.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 104,
+   "ok": true,
+   "seconds": 23.0
   }
  ],
  "Anthropic": [
@@ -557,6 +593,12 @@
    "count": 648,
    "ok": true,
    "seconds": 7.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 649,
+   "ok": true,
+   "seconds": 5.9
   }
  ],
  "Applied Materials": [
@@ -637,6 +679,12 @@
    "count": 176,
    "ok": true,
    "seconds": 31.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 176,
+   "ok": true,
+   "seconds": 50.9
   }
  ],
  "Atlassian": [
@@ -717,6 +765,12 @@
    "count": 334,
    "ok": true,
    "seconds": 1.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 334,
+   "ok": true,
+   "seconds": 1.9
   }
  ],
  "Bosch": [
@@ -797,6 +851,12 @@
    "count": 100,
    "ok": true,
    "seconds": 49.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 51.0
   }
  ],
  "Broadcom": [
@@ -877,6 +937,12 @@
    "count": 59,
    "ok": true,
    "seconds": 10.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 58,
+   "ok": true,
+   "seconds": 53.8
   }
  ],
  "BrowserStack": [
@@ -957,6 +1023,12 @@
    "count": 29,
    "ok": true,
    "seconds": 2.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 29,
+   "ok": true,
+   "seconds": 3.3
   }
  ],
  "C-DAC": [
@@ -1037,6 +1109,12 @@
    "count": 7,
    "ok": true,
    "seconds": 4.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 2.8
   }
  ],
  "CRED": [
@@ -1117,6 +1195,12 @@
    "count": 7,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Cadence": [
@@ -1197,6 +1281,12 @@
    "count": 198,
    "ok": true,
    "seconds": 44.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 198,
+   "ok": true,
+   "seconds": 49.9
   }
  ],
  "Capgemini": [
@@ -1278,6 +1368,12 @@
    "error": "capgemini request failed after 3 attempts: https://cg-jobstream-api.azurewebsites.net/api/job-search -- HTTPSConnectionPool(host='cg-jobstream-api.azurewebsites.net', port=443): Read timed out. (read timeout=20)",
    "ok": false,
    "seconds": 64.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 743,
+   "ok": true,
+   "seconds": 8.6
   }
  ],
  "Cars24": [
@@ -1358,6 +1454,12 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 1.0
   }
  ],
  "Cisco": [
@@ -1438,6 +1540,12 @@
    "count": 307,
    "ok": true,
    "seconds": 60.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 310,
+   "ok": true,
+   "seconds": 54.5
   }
  ],
  "Cloudflare": [
@@ -1518,6 +1626,12 @@
    "count": 446,
    "ok": true,
    "seconds": 2.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 447,
+   "ok": true,
+   "seconds": 2.7
   }
  ],
  "Coinbase": [
@@ -1598,6 +1712,12 @@
    "count": 226,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 226,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Confluent": [
@@ -1675,6 +1795,12 @@
   },
   {
    "at": "2026-10-14T09:13+00:00",
+   "count": 0,
+   "ok": true,
+   "seconds": 0.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
    "count": 0,
    "ok": true,
    "seconds": 0.1
@@ -1758,6 +1884,12 @@
    "count": 157,
    "ok": true,
    "seconds": 42.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 158,
+   "ok": true,
+   "seconds": 50.9
   }
  ],
  "Databricks": [
@@ -1838,6 +1970,12 @@
    "count": 895,
    "ok": true,
    "seconds": 9.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 896,
+   "ok": true,
+   "seconds": 6.7
   }
  ],
  "Datadog": [
@@ -1916,6 +2054,12 @@
   {
    "at": "2026-10-14T09:13+00:00",
    "count": 439,
+   "ok": true,
+   "seconds": 5.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 440,
    "ok": true,
    "seconds": 5.0
   }
@@ -1998,6 +2142,12 @@
    "count": 7,
    "ok": true,
    "seconds": 1.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Dell Technologies": [
@@ -2078,6 +2228,12 @@
    "count": 21,
    "ok": true,
    "seconds": 12.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 24,
+   "ok": true,
+   "seconds": 10.8
   }
  ],
  "Discord": [
@@ -2155,6 +2311,12 @@
   },
   {
    "at": "2026-10-14T09:13+00:00",
+   "count": 48,
+   "ok": true,
+   "seconds": 0.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
    "count": 48,
    "ok": true,
    "seconds": 0.2
@@ -2238,6 +2400,12 @@
    "count": 62,
    "ok": true,
    "seconds": 1.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 65,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "EY": [
@@ -2318,6 +2486,12 @@
    "count": 600,
    "ok": true,
    "seconds": 40.5
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 46.0
   }
  ],
  "Elastic": [
@@ -2396,6 +2570,12 @@
   {
    "at": "2026-10-14T09:13+00:00",
    "count": 374,
+   "ok": true,
+   "seconds": 6.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 373,
    "ok": true,
    "seconds": 6.6
   }
@@ -2478,6 +2658,12 @@
    "count": 130,
    "ok": true,
    "seconds": 42.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 137,
+   "ok": true,
+   "seconds": 47.4
   }
  ],
  "Freshworks": [
@@ -2558,6 +2744,12 @@
    "count": 100,
    "ok": true,
    "seconds": 50.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 53.1
   }
  ],
  "Genpact": [
@@ -2638,6 +2830,12 @@
    "count": 400,
    "ok": true,
    "seconds": 40.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 46.1
   }
  ],
  "GitHub": [
@@ -2718,6 +2916,12 @@
    "count": 72,
    "ok": true,
    "seconds": 3.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 72,
+   "ok": true,
+   "seconds": 5.3
   }
  ],
  "GitLab": [
@@ -2798,6 +3002,12 @@
    "count": 215,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 215,
+   "ok": true,
+   "seconds": 1.6
   }
  ],
  "Groww": [
@@ -2875,6 +3085,12 @@
   },
   {
    "at": "2026-10-14T09:13+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 0.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
    "count": 10,
    "ok": true,
    "seconds": 0.2
@@ -2958,6 +3174,12 @@
    "count": 600,
    "ok": true,
    "seconds": 50.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 59.6
   }
  ],
  "HP": [
@@ -3038,6 +3260,12 @@
    "count": 83,
    "ok": true,
    "seconds": 11.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 85,
+   "ok": true,
+   "seconds": 12.8
   }
  ],
  "Hewlett Packard Enterprise": [
@@ -3118,6 +3346,12 @@
    "count": 347,
    "ok": true,
    "seconds": 72.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 346,
+   "ok": true,
+   "seconds": 109.1
   }
  ],
  "Hugging Face": [
@@ -3198,6 +3432,12 @@
    "count": 6,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "IBM": [
@@ -3278,6 +3518,12 @@
    "count": 1380,
    "ok": true,
    "seconds": 10.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 1380,
+   "ok": true,
+   "seconds": 10.9
   }
  ],
  "ISRO": [
@@ -3352,6 +3598,12 @@
    "count": 117,
    "ok": true,
    "seconds": 1.5
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 117,
+   "ok": true,
+   "seconds": 2.1
   }
  ],
  "InMobi": [
@@ -3430,6 +3682,12 @@
   {
    "at": "2026-10-14T09:13+00:00",
    "count": 76,
+   "ok": true,
+   "seconds": 1.5
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 77,
    "ok": true,
    "seconds": 1.5
   }
@@ -3512,6 +3770,12 @@
    "count": 167,
    "ok": true,
    "seconds": 42.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 168,
+   "ok": true,
+   "seconds": 43.3
   }
  ],
  "Infosys": [
@@ -3592,6 +3856,12 @@
    "count": 1678,
    "ok": true,
    "seconds": 5.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 1691,
+   "ok": true,
+   "seconds": 5.5
   }
  ],
  "Instacart": [
@@ -3672,6 +3942,12 @@
    "count": 121,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 123,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Intel": [
@@ -3752,6 +4028,12 @@
    "count": 64,
    "ok": true,
    "seconds": 12.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 63,
+   "ok": true,
+   "seconds": 12.7
   }
  ],
  "KPMG": [
@@ -3832,6 +4114,12 @@
    "count": 400,
    "ok": true,
    "seconds": 8.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 399,
+   "ok": true,
+   "seconds": 6.6
   }
  ],
  "Lyft": [
@@ -3909,6 +4197,12 @@
   },
   {
    "at": "2026-10-14T09:13+00:00",
+   "count": 177,
+   "ok": true,
+   "seconds": 0.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
    "count": 177,
    "ok": true,
    "seconds": 0.3
@@ -3992,6 +4286,12 @@
    "count": 30,
    "ok": true,
    "seconds": 2.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 30,
+   "ok": true,
+   "seconds": 2.7
   }
  ],
  "Marvell": [
@@ -4072,6 +4372,12 @@
    "count": 27,
    "ok": true,
    "seconds": 4.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 31,
+   "ok": true,
+   "seconds": 6.6
   }
  ],
  "Mastercard": [
@@ -4152,6 +4458,12 @@
    "count": 261,
    "ok": true,
    "seconds": 66.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 265,
+   "ok": true,
+   "seconds": 83.4
   }
  ],
  "Meesho": [
@@ -4232,6 +4544,12 @@
    "count": 59,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 58,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Micron": [
@@ -4312,6 +4630,12 @@
    "count": 307,
    "ok": true,
    "seconds": 21.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 305,
+   "ok": true,
+   "seconds": 25.1
   }
  ],
  "Microsoft": [
@@ -4392,6 +4716,12 @@
    "count": 247,
    "ok": true,
    "seconds": 220.5
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 262,
+   "ok": true,
+   "seconds": 295.6
   }
  ],
  "MongoDB": [
@@ -4472,6 +4802,12 @@
    "count": 393,
    "ok": true,
    "seconds": 4.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 396,
+   "ok": true,
+   "seconds": 1.8
   }
  ],
  "Motorola Solutions": [
@@ -4552,6 +4888,12 @@
    "count": 43,
    "ok": true,
    "seconds": 24.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 43,
+   "ok": true,
+   "seconds": 23.0
   }
  ],
  "NTT DATA": [
@@ -4632,6 +4974,12 @@
    "count": 500,
    "ok": true,
    "seconds": 9.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 500,
+   "ok": true,
+   "seconds": 14.3
   }
  ],
  "NVIDIA": [
@@ -4712,6 +5060,12 @@
    "count": 250,
    "ok": true,
    "seconds": 65.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 251,
+   "ok": true,
+   "seconds": 65.9
   }
  ],
  "NXP Semiconductors": [
@@ -4792,6 +5146,12 @@
    "count": 196,
    "ok": true,
    "seconds": 42.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 195,
+   "ok": true,
+   "seconds": 51.3
   }
  ],
  "Nokia": [
@@ -4872,6 +5232,12 @@
    "count": 159,
    "ok": true,
    "seconds": 27.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 165,
+   "ok": true,
+   "seconds": 29.4
   }
  ],
  "OpenAI": [
@@ -4952,6 +5318,12 @@
    "count": 807,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 805,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Oracle": [
@@ -5032,6 +5404,12 @@
    "count": 20,
    "ok": true,
    "seconds": 70.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 19,
+   "ok": true,
+   "seconds": 69.6
   }
  ],
  "PayPal": [
@@ -5112,6 +5490,12 @@
    "count": 17,
    "ok": true,
    "seconds": 5.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 17,
+   "ok": true,
+   "seconds": 7.8
   }
  ],
  "Paytm": [
@@ -5192,6 +5576,12 @@
    "count": 181,
    "ok": true,
    "seconds": 1.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 181,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "PhonePe": [
@@ -5272,6 +5662,12 @@
    "count": 99,
    "ok": true,
    "seconds": 92.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 99,
+   "ok": true,
+   "seconds": 97.0
   }
  ],
  "Pinterest": [
@@ -5352,6 +5748,12 @@
    "count": 156,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 153,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Postman": [
@@ -5432,6 +5834,12 @@
    "count": 10,
    "ok": true,
    "seconds": 4.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 4.8
   }
  ],
  "PwC": [
@@ -5512,6 +5920,12 @@
    "count": 398,
    "ok": true,
    "seconds": 65.5
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 78.8
   }
  ],
  "Qualcomm": [
@@ -5592,6 +6006,12 @@
    "count": 400,
    "ok": true,
    "seconds": 145.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 397,
+   "ok": true,
+   "seconds": 126.9
   }
  ],
  "Razorpay": [
@@ -5672,6 +6092,12 @@
    "count": 28,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 28,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Red Hat": [
@@ -5752,6 +6178,12 @@
    "count": 7,
    "ok": true,
    "seconds": 2.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 1.8
   }
  ],
  "Robinhood": [
@@ -5832,6 +6264,12 @@
    "count": 153,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 153,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Salesforce": [
@@ -5912,6 +6350,12 @@
    "count": 113,
    "ok": true,
    "seconds": 12.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 114,
+   "ok": true,
+   "seconds": 11.7
   }
  ],
  "Samsung": [
@@ -5992,6 +6436,12 @@
    "count": 31,
    "ok": true,
    "seconds": 5.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 31,
+   "ok": true,
+   "seconds": 5.3
   }
  ],
  "ServiceNow": [
@@ -6072,6 +6522,12 @@
    "count": 100,
    "ok": true,
    "seconds": 50.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 54.4
   }
  ],
  "ShareChat": [
@@ -6152,6 +6608,12 @@
    "count": 8,
    "ok": true,
    "seconds": 1.3
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 8,
+   "ok": true,
+   "seconds": 1.2
   }
  ],
  "Snowflake": [
@@ -6232,6 +6694,12 @@
    "count": 358,
    "ok": true,
    "seconds": 3.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 356,
+   "ok": true,
+   "seconds": 1.2
   }
  ],
  "Sony": [
@@ -6312,6 +6780,12 @@
    "count": 114,
    "ok": true,
    "seconds": 10.1
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 114,
+   "ok": true,
+   "seconds": 17.2
   }
  ],
  "Stripe": [
@@ -6392,6 +6866,12 @@
    "count": 722,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 724,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Texas Instruments": [
@@ -6472,6 +6952,12 @@
    "count": 138,
    "ok": true,
    "seconds": 24.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 138,
+   "ok": true,
+   "seconds": 23.5
   }
  ],
  "Unacademy": [
@@ -6552,6 +7038,12 @@
    "count": 3,
    "ok": true,
    "seconds": 1.8
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 3,
+   "ok": true,
+   "seconds": 1.9
   }
  ],
  "Upstox": [
@@ -6632,6 +7124,12 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 1.0
   }
  ],
  "Urban Company": [
@@ -6712,6 +7210,12 @@
    "count": 11,
    "ok": true,
    "seconds": 1.0
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 12,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Visa": [
@@ -6792,6 +7296,12 @@
    "count": 91,
    "ok": true,
    "seconds": 46.4
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 93,
+   "ok": true,
+   "seconds": 37.3
   }
  ],
  "Wipro": [
@@ -6872,6 +7382,12 @@
    "count": 600,
    "ok": true,
    "seconds": 79.7
+  },
+  {
+   "at": "2026-10-14T14:44+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 94.6
   }
  ]
 }
