@@ -1,0 +1,24 @@
++ git config user.name 'github-actions[bot]'
++ git config user.email 'github-actions[bot]@users.noreply.github.com'
++ for f in data/ats_job_history.json config/companies.json data/company_health.json
++ '[' -f data/ats_job_history.json ']'
++ git add -- data/ats_job_history.json
++ for f in data/ats_job_history.json config/companies.json data/company_health.json
++ '[' -f config/companies.json ']'
++ git add -- config/companies.json
++ for f in data/ats_job_history.json config/companies.json data/company_health.json
++ '[' -f data/company_health.json ']'
++ git add -- data/company_health.json
++ git diff --cached --quiet
++ git commit -m 'chore: update ATS job history'
+[main 9820423] chore: update ATS job history
+ 2 files changed, 21215 insertions(+), 20909 deletions(-)
++ for attempt in 1 2 3
++ git pull --rebase origin main
+From https://github.com/mdhumayun7/job-agent
+ * branch            main       -> FETCH_HEAD
+Current branch main is up to date.
++ git push origin HEAD:main
+To https://github.com/mdhumayun7/job-agent
+   0818462..9820423  HEAD -> main
++ exit 0
