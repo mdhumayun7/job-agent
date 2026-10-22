@@ -1,12 +1,6 @@
 {
  "AMD": [
   {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 218,
-   "ok": true,
-   "seconds": 15.9
-  },
-  {
    "at": "2026-10-18T18:23+00:00",
    "count": 218,
    "ok": true,
@@ -83,15 +77,15 @@
    "count": 215,
    "ok": true,
    "seconds": 18.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 215,
+   "ok": true,
+   "seconds": 19.2
   }
  ],
  "Accenture": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 317.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 400,
@@ -177,15 +171,16 @@
    "error": "workday:accenture request failed after 3 attempts: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs -- 429 Client Error: Too Many Requests for url: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs",
    "ok": false,
    "seconds": 39.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 0,
+   "error": "workday:accenture request failed after 3 attempts: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs -- 429 Client Error: Too Many Requests for url: https://accenture.wd103.myworkdayjobs.com/wday/cxs/accenture/AccentureCareers/jobs",
+   "ok": false,
+   "seconds": 73.9
   }
  ],
  "Adobe": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 50,
-   "ok": true,
-   "seconds": 7.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 50,
@@ -263,15 +258,15 @@
    "count": 46,
    "ok": true,
    "seconds": 7.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 43,
+   "ok": true,
+   "seconds": 6.2
   }
  ],
  "Airbnb": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 174,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 174,
@@ -349,15 +344,15 @@
    "count": 194,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 194,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Amazon": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 10.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 600,
@@ -435,15 +430,15 @@
    "count": 600,
    "ok": true,
    "seconds": 8.7
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 9.1
   }
  ],
  "Analog Devices": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 98,
-   "ok": true,
-   "seconds": 13.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 98,
@@ -521,15 +516,15 @@
    "count": 101,
    "ok": true,
    "seconds": 16.9
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 16.7
   }
  ],
  "Anthropic": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 655,
-   "ok": true,
-   "seconds": 5.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 656,
@@ -607,15 +602,15 @@
    "count": 675,
    "ok": true,
    "seconds": 2.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 678,
+   "ok": true,
+   "seconds": 2.6
   }
  ],
  "Applied Materials": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 178,
-   "ok": true,
-   "seconds": 25.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 178,
@@ -693,15 +688,15 @@
    "count": 180,
    "ok": true,
    "seconds": 31.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 181,
+   "ok": true,
+   "seconds": 31.5
   }
  ],
  "Atlassian": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 349,
-   "ok": true,
-   "seconds": 1.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 348,
@@ -779,15 +774,15 @@
    "count": 362,
    "ok": true,
    "seconds": 0.7
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 361,
+   "ok": true,
+   "seconds": 1.3
   }
  ],
  "Bosch": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 44.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 100,
@@ -865,15 +860,15 @@
    "count": 100,
    "ok": true,
    "seconds": 52.9
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 53.4
   }
  ],
  "Broadcom": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 56,
-   "ok": true,
-   "seconds": 9.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 56,
@@ -951,15 +946,15 @@
    "count": 55,
    "ok": true,
    "seconds": 11.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 54,
+   "ok": true,
+   "seconds": 11.3
   }
  ],
  "BrowserStack": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 25,
-   "ok": true,
-   "seconds": 2.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 25,
@@ -1037,15 +1032,15 @@
    "count": 25,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 25,
+   "ok": true,
+   "seconds": 3.1
   }
  ],
  "C-DAC": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 3.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 7,
@@ -1123,15 +1118,15 @@
    "count": 7,
    "ok": true,
    "seconds": 6.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 6.3
   }
  ],
  "CRED": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 7,
@@ -1209,15 +1204,15 @@
    "count": 9,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 9,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Cadence": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 198,
-   "ok": true,
-   "seconds": 45.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 198,
@@ -1295,15 +1290,15 @@
    "count": 196,
    "ok": true,
    "seconds": 46.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 196,
+   "ok": true,
+   "seconds": 51.5
   }
  ],
  "Capgemini": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 718,
-   "ok": true,
-   "seconds": 3.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 720,
@@ -1381,15 +1376,15 @@
    "count": 726,
    "ok": true,
    "seconds": 7.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 732,
+   "ok": true,
+   "seconds": 7.1
   }
  ],
  "Cars24": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 1,
@@ -1467,15 +1462,15 @@
    "count": 1,
    "ok": true,
    "seconds": 1.0
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 1.0
   }
  ],
  "Cisco": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 319,
-   "ok": true,
-   "seconds": 54.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 321,
@@ -1553,15 +1548,15 @@
    "count": 324,
    "ok": true,
    "seconds": 57.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 323,
+   "ok": true,
+   "seconds": 69.9
   }
  ],
  "Cloudflare": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 435,
-   "ok": true,
-   "seconds": 1.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 433,
@@ -1639,16 +1634,16 @@
    "count": 443,
    "ok": true,
    "seconds": 0.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 442,
+   "ok": true,
+   "seconds": 1.7
   }
  ],
  "Coinbase": [
   {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 226,
-   "ok": true,
-   "seconds": 0.3
-  },
-  {
    "at": "2026-10-18T18:23+00:00",
    "count": 226,
    "ok": true,
@@ -1725,16 +1720,16 @@
    "count": 227,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 228,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Confluent": [
   {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 0.1
-  },
-  {
    "at": "2026-10-18T18:23+00:00",
    "count": 0,
    "ok": true,
@@ -1808,18 +1803,18 @@
   },
   {
    "at": "2026-10-22T00:12+00:00",
+   "count": 0,
+   "ok": true,
+   "seconds": 0.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
    "count": 0,
    "ok": true,
    "seconds": 0.2
   }
  ],
  "DXC Technology": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 153,
-   "ok": true,
-   "seconds": 36.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 153,
@@ -1897,15 +1892,15 @@
    "count": 149,
    "ok": true,
    "seconds": 40.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 147,
+   "ok": true,
+   "seconds": 40.7
   }
  ],
  "Databricks": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 898,
-   "ok": true,
-   "seconds": 7.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 898,
@@ -1983,15 +1978,15 @@
    "count": 897,
    "ok": true,
    "seconds": 2.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 898,
+   "ok": true,
+   "seconds": 3.0
   }
  ],
  "Datadog": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 433,
-   "ok": true,
-   "seconds": 4.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 433,
@@ -2069,15 +2064,15 @@
    "count": 439,
    "ok": true,
    "seconds": 1.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 440,
+   "ok": true,
+   "seconds": 1.6
   }
  ],
  "Delhivery": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 7,
@@ -2155,15 +2150,15 @@
    "count": 7,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Dell Technologies": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 24,
-   "ok": true,
-   "seconds": 13.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 22,
@@ -2241,15 +2236,15 @@
    "count": 21,
    "ok": true,
    "seconds": 13.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 23,
+   "ok": true,
+   "seconds": 13.9
   }
  ],
  "Discord": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 47,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 47,
@@ -2327,15 +2322,15 @@
    "count": 44,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 44,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Docker": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 68,
-   "ok": true,
-   "seconds": 1.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 68,
@@ -2413,15 +2408,15 @@
    "count": 71,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 70,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "EY": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 31.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 600,
@@ -2499,15 +2494,15 @@
    "count": 600,
    "ok": true,
    "seconds": 36.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 31.9
   }
  ],
  "Elastic": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 380,
-   "ok": true,
-   "seconds": 4.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 380,
@@ -2585,15 +2580,15 @@
    "count": 378,
    "ok": true,
    "seconds": 1.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 379,
+   "ok": true,
+   "seconds": 1.8
   }
  ],
  "Ericsson": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 104,
-   "ok": true,
-   "seconds": 41.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 104,
@@ -2671,15 +2666,15 @@
    "count": 112,
    "ok": true,
    "seconds": 40.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 114,
+   "ok": true,
+   "seconds": 40.7
   }
  ],
  "Freshworks": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 47.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 100,
@@ -2757,15 +2752,15 @@
    "count": 100,
    "ok": true,
    "seconds": 55.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 55.9
   }
  ],
  "Genpact": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 48.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 400,
@@ -2843,15 +2838,15 @@
    "count": 400,
    "ok": true,
    "seconds": 66.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 64.8
   }
  ],
  "GitHub": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 73,
-   "ok": true,
-   "seconds": 4.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 73,
@@ -2929,15 +2924,15 @@
    "count": 70,
    "ok": true,
    "seconds": 4.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 70,
+   "ok": true,
+   "seconds": 4.5
   }
  ],
  "GitLab": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 232,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 232,
@@ -3015,15 +3010,15 @@
    "count": 229,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 232,
+   "ok": true,
+   "seconds": 1.1
   }
  ],
  "Groww": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 10,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 10,
@@ -3101,15 +3096,15 @@
    "count": 10,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "HCLTech": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 48.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 600,
@@ -3187,15 +3182,15 @@
    "count": 600,
    "ok": true,
    "seconds": 56.0
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 61.3
   }
  ],
  "HP": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 74,
-   "ok": true,
-   "seconds": 12.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 74,
@@ -3273,15 +3268,15 @@
    "count": 71,
    "ok": true,
    "seconds": 11.9
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 68,
+   "ok": true,
+   "seconds": 12.9
   }
  ],
  "Hewlett Packard Enterprise": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 329,
-   "ok": true,
-   "seconds": 67.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 329,
@@ -3359,15 +3354,15 @@
    "count": 341,
    "ok": true,
    "seconds": 76.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 341,
+   "ok": true,
+   "seconds": 80.9
   }
  ],
  "Hugging Face": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 6,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 6,
@@ -3445,15 +3440,15 @@
    "count": 6,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "IBM": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 1329,
-   "ok": true,
-   "seconds": 12.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 1324,
@@ -3531,15 +3526,15 @@
    "count": 1175,
    "ok": true,
    "seconds": 11.9
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 1146,
+   "ok": true,
+   "seconds": 12.8
   }
  ],
  "ISRO": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 117,
-   "ok": true,
-   "seconds": 1.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 117,
@@ -3617,15 +3612,15 @@
    "count": 118,
    "ok": true,
    "seconds": 1.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 118,
+   "ok": true,
+   "seconds": 3.0
   }
  ],
  "InMobi": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 79,
-   "ok": true,
-   "seconds": 1.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 79,
@@ -3703,15 +3698,15 @@
    "count": 81,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 81,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Infineon Technologies": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 162,
-   "ok": true,
-   "seconds": 41.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 162,
@@ -3789,15 +3784,15 @@
    "count": 162,
    "ok": true,
    "seconds": 42.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 161,
+   "ok": true,
+   "seconds": 43.1
   }
  ],
  "Infosys": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 1699,
-   "ok": true,
-   "seconds": 4.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 1699,
@@ -3875,15 +3870,15 @@
    "count": 1729,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 1724,
+   "ok": true,
+   "seconds": 1.8
   }
  ],
  "Instacart": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 126,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 126,
@@ -3961,15 +3956,15 @@
    "count": 124,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 124,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Intel": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 67,
-   "ok": true,
-   "seconds": 12.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 67,
@@ -4047,15 +4042,15 @@
    "count": 73,
    "ok": true,
    "seconds": 14.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 80,
+   "ok": true,
+   "seconds": 15.8
   }
  ],
  "KPMG": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 11.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 400,
@@ -4133,15 +4128,15 @@
    "count": 400,
    "ok": true,
    "seconds": 13.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 13.2
   }
  ],
  "Lyft": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 183,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 183,
@@ -4219,15 +4214,15 @@
    "count": 176,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 175,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "MakeMyTrip": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 27,
-   "ok": true,
-   "seconds": 2.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 27,
@@ -4305,15 +4300,15 @@
    "count": 28,
    "ok": true,
    "seconds": 2.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 30,
+   "ok": true,
+   "seconds": 2.1
   }
  ],
  "Marvell": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 32,
-   "ok": true,
-   "seconds": 5.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 32,
@@ -4391,15 +4386,15 @@
    "count": 32,
    "ok": true,
    "seconds": 5.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 32,
+   "ok": true,
+   "seconds": 6.7
   }
  ],
  "Mastercard": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 251,
-   "ok": true,
-   "seconds": 55.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 251,
@@ -4477,15 +4472,15 @@
    "count": 257,
    "ok": true,
    "seconds": 70.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 274,
+   "ok": true,
+   "seconds": 75.4
   }
  ],
  "Meesho": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 59,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 59,
@@ -4563,15 +4558,15 @@
    "count": 59,
    "ok": true,
    "seconds": 0.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 59,
+   "ok": true,
+   "seconds": 1.0
   }
  ],
  "Micron": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 312,
-   "ok": true,
-   "seconds": 20.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 311,
@@ -4649,15 +4644,15 @@
    "count": 314,
    "ok": true,
    "seconds": 25.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 313,
+   "ok": true,
+   "seconds": 25.4
   }
  ],
  "Microsoft": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 235,
-   "ok": true,
-   "seconds": 193.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 235,
@@ -4736,15 +4731,15 @@
    "error": "eightfold:microsoft.com request failed after 5 attempts: https://apply.careers.microsoft.com/api/pcsx/search -- 429 Client Error: Too Many Requests for url: https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=India&start=40",
    "ok": false,
    "seconds": 167.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 238,
+   "ok": true,
+   "seconds": 167.6
   }
  ],
  "MongoDB": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 401,
-   "ok": true,
-   "seconds": 3.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 401,
@@ -4822,15 +4817,15 @@
    "count": 393,
    "ok": true,
    "seconds": 1.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 386,
+   "ok": true,
+   "seconds": 1.6
   }
  ],
  "Motorola Solutions": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 43,
-   "ok": true,
-   "seconds": 24.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 43,
@@ -4908,15 +4903,15 @@
    "count": 42,
    "ok": true,
    "seconds": 21.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 40,
+   "ok": true,
+   "seconds": 22.8
   }
  ],
  "NTT DATA": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 500,
-   "ok": true,
-   "seconds": 8.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 500,
@@ -4994,15 +4989,15 @@
    "count": 500,
    "ok": true,
    "seconds": 11.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 500,
+   "ok": true,
+   "seconds": 17.4
   }
  ],
  "NVIDIA": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 250,
-   "ok": true,
-   "seconds": 63.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 250,
@@ -5080,15 +5075,15 @@
    "count": 240,
    "ok": true,
    "seconds": 60.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 240,
+   "ok": true,
+   "seconds": 61.4
   }
  ],
  "NXP Semiconductors": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 200,
-   "ok": true,
-   "seconds": 40.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 200,
@@ -5166,15 +5161,15 @@
    "count": 203,
    "ok": true,
    "seconds": 54.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 201,
+   "ok": true,
+   "seconds": 52.0
   }
  ],
  "Nokia": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 154,
-   "ok": true,
-   "seconds": 29.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 154,
@@ -5252,15 +5247,15 @@
    "count": 136,
    "ok": true,
    "seconds": 29.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 135,
+   "ok": true,
+   "seconds": 36.6
   }
  ],
  "OpenAI": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 813,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 813,
@@ -5338,15 +5333,15 @@
    "count": 811,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 812,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Oracle": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 59.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 7,
@@ -5424,15 +5419,15 @@
    "count": 20,
    "ok": true,
    "seconds": 71.9
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 22,
+   "ok": true,
+   "seconds": 67.9
   }
  ],
  "PayPal": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 15,
-   "ok": true,
-   "seconds": 5.9
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 15,
@@ -5510,15 +5505,15 @@
    "count": 14,
    "ok": true,
    "seconds": 6.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 14,
+   "ok": true,
+   "seconds": 6.5
   }
  ],
  "Paytm": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 182,
-   "ok": true,
-   "seconds": 1.0
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 182,
@@ -5596,15 +5591,15 @@
    "count": 193,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 195,
+   "ok": true,
+   "seconds": 7.1
   }
  ],
  "PhonePe": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 95.5
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 100,
@@ -5682,15 +5677,15 @@
    "count": 100,
    "ok": true,
    "seconds": 101.5
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 102.0
   }
  ],
  "Pinterest": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 156,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 156,
@@ -5768,15 +5763,15 @@
    "count": 161,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 165,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Postman": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 4.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 9,
@@ -5854,15 +5849,15 @@
    "count": 9,
    "ok": true,
    "seconds": 5.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 9,
+   "ok": true,
+   "seconds": 5.2
   }
  ],
  "PwC": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 70.6
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 400,
@@ -5940,15 +5935,15 @@
    "count": 400,
    "ok": true,
    "seconds": 77.6
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 80.6
   }
  ],
  "Qualcomm": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 359,
-   "ok": true,
-   "seconds": 102.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 394,
@@ -6026,15 +6021,15 @@
    "count": 400,
    "ok": true,
    "seconds": 370.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 394,
+   "ok": true,
+   "seconds": 211.6
   }
  ],
  "Razorpay": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 25,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 25,
@@ -6112,15 +6107,15 @@
    "count": 26,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 26,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Red Hat": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 2.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 7,
@@ -6198,15 +6193,15 @@
    "count": 9,
    "ok": true,
    "seconds": 3.0
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 9,
+   "ok": true,
+   "seconds": 3.1
   }
  ],
  "Robinhood": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 152,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 152,
@@ -6284,15 +6279,15 @@
    "count": 152,
    "ok": true,
    "seconds": 1.3
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 154,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Salesforce": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 118,
-   "ok": true,
-   "seconds": 14.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 121,
@@ -6374,15 +6369,15 @@
    "count": 113,
    "ok": true,
    "seconds": 13.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 114,
+   "ok": true,
+   "seconds": 14.0
   }
  ],
  "Samsung": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 30,
-   "ok": true,
-   "seconds": 4.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 30,
@@ -6460,15 +6455,15 @@
    "count": 30,
    "ok": true,
    "seconds": 5.4
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 30,
+   "ok": true,
+   "seconds": 5.0
   }
  ],
  "ServiceNow": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 48.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 100,
@@ -6546,15 +6541,15 @@
    "count": 100,
    "ok": true,
    "seconds": 56.1
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 55.8
   }
  ],
  "ShareChat": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 1.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 9,
@@ -6632,15 +6627,15 @@
    "count": 10,
    "ok": true,
    "seconds": 1.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 1.9
   }
  ],
  "Snowflake": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 359,
-   "ok": true,
-   "seconds": 2.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 359,
@@ -6718,15 +6713,15 @@
    "count": 356,
    "ok": true,
    "seconds": 1.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 358,
+   "ok": true,
+   "seconds": 1.2
   }
  ],
  "Sony": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 118,
-   "ok": true,
-   "seconds": 9.1
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 118,
@@ -6804,15 +6799,15 @@
    "count": 125,
    "ok": true,
    "seconds": 14.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 125,
+   "ok": true,
+   "seconds": 12.9
   }
  ],
  "Stripe": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 731,
-   "ok": true,
-   "seconds": 0.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 731,
@@ -6890,15 +6885,15 @@
    "count": 727,
    "ok": true,
    "seconds": 0.7
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 725,
+   "ok": true,
+   "seconds": 0.9
   }
  ],
  "Texas Instruments": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 140,
-   "ok": true,
-   "seconds": 25.4
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 140,
@@ -6976,15 +6971,15 @@
    "count": 145,
    "ok": true,
    "seconds": 25.8
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 146,
+   "ok": true,
+   "seconds": 28.8
   }
  ],
  "Unacademy": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 3,
-   "ok": true,
-   "seconds": 1.7
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 3,
@@ -7062,15 +7057,15 @@
    "count": 3,
    "ok": true,
    "seconds": 2.0
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 3,
+   "ok": true,
+   "seconds": 2.2
   }
  ],
  "Upstox": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 1,
@@ -7148,15 +7143,15 @@
    "count": 1,
    "ok": true,
    "seconds": 1.0
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 1.1
   }
  ],
  "Urban Company": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 12,
-   "ok": true,
-   "seconds": 0.8
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 12,
@@ -7234,15 +7229,15 @@
    "count": 12,
    "ok": true,
    "seconds": 0.7
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 13,
+   "ok": true,
+   "seconds": 1.6
   }
  ],
  "Visa": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 96,
-   "ok": true,
-   "seconds": 39.2
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 96,
@@ -7320,15 +7315,15 @@
    "count": 98,
    "ok": true,
    "seconds": 40.7
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 47.2
   }
  ],
  "Wipro": [
-  {
-   "at": "2026-10-18T13:34+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 86.3
-  },
   {
    "at": "2026-10-18T18:23+00:00",
    "count": 600,
@@ -7406,6 +7401,12 @@
    "count": 600,
    "ok": true,
    "seconds": 104.2
+  },
+  {
+   "at": "2026-10-22T09:05+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 101.0
   }
  ]
 }
