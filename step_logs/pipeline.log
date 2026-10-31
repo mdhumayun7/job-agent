@@ -1,0 +1,137 @@
+[greenhouse] Robinhood: 160 jobs fetched
+[greenhouse] Discord: 41 jobs fetched
+[greenhouse] Lyft: 170 jobs fetched
+[greenhouse] Pinterest: 170 jobs fetched
+[greenhouse] Coinbase: 250 jobs fetched
+[greenhouse] Airbnb: 202 jobs fetched
+[greenhouse] Instacart: 96 jobs fetched
+[greenhouse] Razorpay: 31 jobs fetched
+[greenhouse] GitLab: 238 jobs fetched
+[greenhouse] Stripe: 746 jobs fetched
+[workday:postman] using India location facet (locations, 1 value(s))
+[greenhouse] Groww: 9 jobs fetched
+[workday:browserstack] using India location facet (locations, 3 value(s))
+[lever] CRED: 14 jobs fetched
+[greenhouse] InMobi: 80 jobs fetched
+[greenhouse] Cloudflare: 464 jobs fetched
+[workday:browserstack] BrowserStack: 28 jobs fetched (India, 0 with full description)
+[ashby] Confluent: 0 jobs fetched
+[workday:postman] Postman: 9 jobs fetched (India, 4 with full description)
+[ashby] Snowflake: 366 jobs fetched
+[workable] Hugging Face: 6 jobs fetched
+[greenhouse] MongoDB: 366 jobs fetched
+[atlassian] Atlassian: 356 jobs fetched
+[greenhouse] Datadog: 397 jobs fetched
+[greenhouse] Anthropic: 675 jobs fetched
+[greenhouse] Databricks: 901 jobs fetched
+[greenhouse] Elastic: 407 jobs fetched
+[workday:nvidia] using India location facet (locationHierarchy1, 1 value(s))
+[infosys] Infosys: 1808 jobs fetched
+[makemytrip] MakeMyTrip: 37 jobs fetched
+[workday:intel] using India location facet (locations, 2 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[amazon] Amazon: 600 jobs fetched (country=IND, total available=2122)
+[ibm] IBM: 1248 jobs fetched (India, total=1248)
+[workday:cisco] using India location facet (locations, 10 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[workday:intel] Intel: 91 jobs fetched (India, 13 with full description)
+[jibe:careers.amd.com] AMD: 213 jobs fetched (location=India, total=213)
+[workday:salesforce] using India location facet (CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended, 1 value(s))
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:salesforce] Salesforce: 93 jobs fetched (India, 14 with full description)
+[workday:adobe] using India location facet (locationCountry, 1 value(s))
+[workday:adobe] Adobe: 38 jobs fetched (India, 2 with full description)
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[smartrecruiters] Freshworks: 100 jobs fetched
+[eightfold:qualcomm.com] rate limited (429), waiting 10s
+[workday:broadcom] using India location facet (locations, 5 value(s))
+[workday:broadcom] Broadcom: 51 jobs fetched (India, 4 with full description)
+[workday:redhat] using India location facet (a, 1 value(s))
+[workday:redhat] Red Hat: 5 jobs fetched (India, 1 with full description)
+[workday:nvidia] NVIDIA: 238 jobs fetched (India, 60 with full description)
+[workday:hpe] using India location facet (locations, 46 value(s))
+[oracle:CX_1001@enterpriseplatform] Dell Technologies: 27 jobs fetched (India, scanned 455 of 455, 12 with full description)
+[workday:hp] using India location facet (Location_Country, 1 value(s))
+[workday:cisco] Cisco: 324 jobs fetched (India, 60 with full description)
+[workday:sec] using India location facet (Location_Country, 1 value(s))
+[workday:sec] Samsung: 30 jobs fetched (India, 1 with full description)
+[workday:sonyglobal] no India facet on this site -- fetching unfiltered (capped at 400)
+[successfactors] Wipro: 600 jobs fetched (api, location=India, total=5425, 45 with description)
+[workday:hp] HP: 82 jobs fetched (India, 9 with full description)
+[smartrecruiters] ServiceNow: 100 jobs fetched
+[workday:sonyglobal] Sony: 116 jobs fetched (all locations, 8 with full description)
+[workday:motorolasolutions] using India location facet (locationCountry, 1 value(s))
+[eightfold:ericsson.com] Ericsson: 89 jobs fetched (India, 9 with description)
+[workday:motorolasolutions] Motorola Solutions: 44 jobs fetched (India, 23 with full description)
+[workday:paypal] using India location facet (locations, 6 value(s))
+[workday:visa] using India location facet (locationCountry, 1 value(s))
+[oracle:CX_45001@eeho] Oracle: 322 jobs fetched (India, scanned 2749 of 2751, 40 with full description)
+[workday:paypal] PayPal: 19 jobs fetched (India, 11 with full description)
+[workday:mastercard] using India location facet (locations, 10 value(s))
+[oracle:CX_1@fa-evmr-saasfaprod1] Nokia: 121 jobs fetched (India, scanned 558 of 558, 22 with full description)
+[ashby] OpenAI: 812 jobs fetched
+[eightfold:microsoft.com] Microsoft: 210 jobs fetched (India, 40 with description)
+[jibe:www.github.careers] GitHub: 91 jobs fetched (location=all, total=91)
+[workday:accenture] using India location facet (locationCountry, 1 value(s))
+[smartrecruiters] Bosch: 100 jobs fetched
+[workday:dxctechnology] using India location facet (locationCountry, 1 value(s))
+[capgemini] Capgemini: 753 jobs fetched (India, total=753)
+[eightfold:qualcomm.com] Qualcomm: 400 jobs fetched (India, 40 with description)
+[workday:genpact] using India location facet (locations, 57 value(s))
+[phenom:careers.nttdata.com] NTT DATA: 500 jobs fetched (India, total=1072)
+[workday:hpe] Hewlett Packard Enterprise: 379 jobs fetched (India, 60 with full description)
+[workday:visa] Visa: 95 jobs fetched (India, 46 with full description)
+[workday:pwc] using India location facet (locations, 28 value(s))
+[oracle:CX_3@ejgk] KPMG: 399 jobs fetched (India, scanned 499 of 516, 5 with full description)
+[successfactors] HCLTech: 600 jobs fetched (api, location=all, total=15361, 12 with description)
+[lever] Meesho: 49 jobs fetched
+[workday:dxctechnology] DXC Technology: 161 jobs fetched (India, 51 with full description)
+[darwinbox:delhivery] Delhivery: 7 jobs fetched (total=7)
+[sharechat] ShareChat: 11 jobs fetched
+[smartrecruiters] Unacademy: 3 jobs fetched
+[workday:mastercard] Mastercard: 230 jobs fetched (India, 60 with full description)
+[smartrecruiters] Upstox: 1 jobs fetched
+[smartrecruiters] Cars24: 1 jobs fetched
+[urbancompany] Urban Company: 10 jobs fetched
+[workday:micron] using India location facet (locations, 7 value(s))
+[lever] attempt 1/3 failed for 'paytm': HTTPSConnectionPool(host='api.lever.co', port=443): Read timed out. (read timeout=15)
+[successfactors] EY: 600 jobs fetched (html, location=India, total=2865, 18 with description)
+[workday:genpact] Genpact: 400 jobs fetched (India, 38 with full description)
+[lever] Paytm: 201 jobs fetched
+[workday:analogdevices] using India location facet (locationCountry, 1 value(s))
+[workday:nxp] using India location facet (Location_Country, 1 value(s))
+[workday:analogdevices] Analog Devices: 99 jobs fetched (India, 12 with full description)
+[workday:marvell] using India location facet (Country, 1 value(s))
+[workday:marvell] Marvell: 38 jobs fetched (India, 6 with full description)
+[workday:micron] Micron: 313 jobs fetched (India, 18 with full description)
+[workday:cadence] using India location facet (Location_Country, 1 value(s))
+[workday:amat] using India location facet (Country, 1 value(s))
+[oracle:CX@edbz] Texas Instruments: 118 jobs fetched (India, scanned 871 of 871, 19 with full description)
+[ashby] Docker: 54 jobs fetched
+[govt:cdac] C-DAC: 7 notices
+[govt:isro] ISRO: 118 notices
+[workday:amat] Applied Materials: 165 jobs fetched (India, 21 with full description)
+[workday:nxp] NXP Semiconductors: 208 jobs fetched (India, 35 with full description)
+[eightfold:infineon.com] Infineon Technologies: 179 jobs fetched (India, 16 with description)
+[workday:pwc] PwC: 400 jobs fetched (India, 53 with full description)
+[workday:cadence] Cadence: 196 jobs fetched (India, 46 with full description)
+[smartrecruiters] PhonePe: 100 jobs fetched
+[workday:accenture] Accenture: 397 jobs fetched (India, 60 with full description)
+
+[ats-pipeline] Companies attempted: 86 | Succeeded: 86 | Failed: 0
+[ats-pipeline] India/Remote-India jobs: 25871 | Top matches (score >= threshold): 416
+    100  Cisco: Software Engineer (Bangalore, India)
+    100  Cisco: Software Engineer (Bangalore, India)
+     95  Infosys: AI ML Engineer (Bangalore, India)
+     91  Infosys: AI Engineer (Bangalore, India)
+     89  Cisco: Software Engineer (Bangalore, India)
+     85  Infineon Technologies: Junior Software Developer (Contract) (Bangalore)
+     84  Infosys: Python ML_GenAI Engineers (Chennai, India)
+     84  Infosys: Computer Vision (Bangalore, India)
+     82  Cisco: Cloud Engineer (Bangalore, India)
+     81  Cisco: Software Engineer (Bangalore, India)
+[ats-pipeline] Status breakdown: {'UNCHANGED': 20846, 'NEW': 64, 'UPDATED': 73, 'CLOSED': 26564}
+
+[ats-pipeline] {'total': 47547, 'top_matches': 416, 'india': 13350, 'new': 64, 'fresher': 3615, 'internships': 457, 'cse': 4447, 'closing_soon': 0}
+[ats-pipeline] Written: output/ats_jobs.xlsx, output/ats_jobs.json
+[ats-pipeline] finished in 476s
