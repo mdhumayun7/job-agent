@@ -1,0 +1,31 @@
++ '[' -f output/ats_jobs.json ']'
++ python generate_website_data.py --input output/ats_jobs.json --out website-data
+{
+  "index_entries": 21364,
+  "detail_files": 21364,
+  "stats": {
+    "generated_at": "2026-11-07T10:49+00:00",
+    "total_jobs": 21364,
+    "closed_since_last_run": 33599,
+    "govt_notices": 125,
+    "india_jobs": 13611,
+    "top_matches": 418,
+    "new_jobs": 32,
+    "companies": 85,
+    "fresher_opportunities": 931,
+    "internships": 177,
+    "cse_jobs": 4621,
+    "closing_soon": 0,
+    "jobs_with_salary_disclosed": 3445
+  },
+  "companies": 85
+}
++ python scripts/validate_govt_jobs.py
+8 records, 0 errors, 0 warnings
++ python scripts/build_govt_data.py
+govt data: 8 records from supabase (8 published, 125 automated drafts offered for review); 0 dropped -> website-data/govt.json
++ python scripts/build_site.py --out _site
+config.js: accounts enabled
+built _site: 8 govt pages (0 with JobPosting data), 3 sitemap URLs, generated 2026-11-07T10:49:12+00:00
++ du -sh _site
+188M	_site
