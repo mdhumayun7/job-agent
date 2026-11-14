@@ -1,0 +1,167 @@
+[greenhouse] Discord: 26 jobs fetched
+[greenhouse] Pinterest: 163 jobs fetched
+[greenhouse] Robinhood: 165 jobs fetched
+[greenhouse] Lyft: 148 jobs fetched
+[greenhouse] Coinbase: 265 jobs fetched
+[greenhouse] Airbnb: 214 jobs fetched
+[greenhouse] Stripe: 786 jobs fetched
+[workday:postman] using India location facet (locations, 2 value(s))
+[greenhouse] Razorpay: 25 jobs fetched
+[lever] CRED: 15 jobs fetched
+[greenhouse] Instacart: 85 jobs fetched
+[greenhouse] Groww: 9 jobs fetched
+[workday:browserstack] using India location facet (locations, 4 value(s))
+[greenhouse] Cloudflare: 479 jobs fetched
+[greenhouse] InMobi: 74 jobs fetched
+[greenhouse] GitLab: 251 jobs fetched
+[workday:browserstack] BrowserStack: 30 jobs fetched (India, 0 with full description)
+[ashby] Confluent: 0 jobs fetched
+[workday:postman] Postman: 17 jobs fetched (India, 4 with full description)
+[ashby] Snowflake: 376 jobs fetched
+[greenhouse] MongoDB: 391 jobs fetched
+[greenhouse] Datadog: 384 jobs fetched
+[workable] Hugging Face: 6 jobs fetched
+[greenhouse] Databricks: 896 jobs fetched
+[greenhouse] Elastic: 400 jobs fetched
+[greenhouse] Anthropic: 669 jobs fetched
+[atlassian] Atlassian: 288 jobs fetched
+[workday:nvidia] attempt 1/3 failed for https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[makemytrip] MakeMyTrip: 39 jobs fetched
+[workday:intel] attempt 1/3 failed for https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:nvidia] attempt 2/3 failed for https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[infosys] Infosys: 1606 jobs fetched
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[workday:nvidia] attempt 3/3 failed for https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:intel] attempt 2/3 failed for https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs: Expecting value: line 1 column 1 (char 0)
+[amazon] Amazon: 600 jobs fetched (country=IND, total available=2084)
+[workday:cisco] using India location facet (locations, 10 value(s))
+[workday:intel] attempt 3/3 failed for https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs: Expecting value: line 1 column 1 (char 0)
+[ibm] IBM: 1500 jobs fetched (India, total=2524)
+[workday:salesforce] using India location facet (CF_-_REC_-_LRV_-_Job_Posting_Anchor_-_Country_from_Job_Posting_Location_Extended, 1 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[workday:salesforce] Salesforce: 103 jobs fetched (India, 11 with full description)
+[jibe:careers.amd.com] AMD: 216 jobs fetched (location=India, total=216)
+[workday:adobe] using India location facet (locationCountry, 1 value(s))
+[workday:adobe] Adobe: 35 jobs fetched (India, 2 with full description)
+[workday:broadcom] using India location facet (locations, 5 value(s))
+[workday:broadcom] Broadcom: 62 jobs fetched (India, 2 with full description)
+[workday:redhat] using India location facet (a, 1 value(s))
+[workday:redhat] Red Hat: 7 jobs fetched (India, 0 with full description)
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[smartrecruiters] Freshworks: 100 jobs fetched
+[workday:hpe] attempt 1/3 failed for https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:hpe] attempt 2/3 failed for https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs: Expecting value: line 1 column 1 (char 0)
+[eightfold:microsoft.com] rate limited (429), waiting 20s
+[workday:hpe] attempt 3/3 failed for https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:hp] attempt 1/3 failed for https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:hp] attempt 2/3 failed for https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:hp] attempt 3/3 failed for https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs: Expecting value: line 1 column 1 (char 0)
+[oracle:CX_1001@enterpriseplatform] Dell Technologies: 83 jobs fetched (India, scanned 577 of 577, 14 with full description)
+[workday:sec] using India location facet (Location_Country, 1 value(s))
+[workday:sonyglobal] no India facet on this site -- fetching unfiltered (capped at 400)
+[workday:sec] Samsung: 31 jobs fetched (India, 1 with full description)
+[workday:cisco] Cisco: 322 jobs fetched (India, 60 with full description)
+[workday:sonyglobal] Sony: 128 jobs fetched (all locations, 9 with full description)
+[eightfold:microsoft.com] rate limited (429), waiting 10s
+[smartrecruiters] ServiceNow: 100 jobs fetched
+[workday:motorolasolutions] using India location facet (locationCountry, 1 value(s))
+[eightfold:microsoft.com] rate limited (429), waiting 20s
+[eightfold:ericsson.com] Ericsson: 107 jobs fetched (India, 11 with description)
+[workday:paypal] attempt 1/3 failed for https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs: Expecting value: line 1 column 1 (char 0)
+[successfactors] Wipro: 600 jobs fetched (api, location=India, total=5541, 47 with description)
+[workday:visa] using India location facet (locationCountry, 1 value(s))
+[workday:paypal] attempt 2/3 failed for https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:motorolasolutions] Motorola Solutions: 40 jobs fetched (India, 22 with full description)
+[workday:mastercard] attempt 1/3 failed for https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:mastercard] attempt 2/3 failed for https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs: Expecting value: line 1 column 1 (char 0)
+[oracle:CX_1@fa-evmr-saasfaprod1] Nokia: 133 jobs fetched (India, scanned 563 of 563, 16 with full description)
+[workday:paypal] attempt 3/3 failed for https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs: Expecting value: line 1 column 1 (char 0)
+[ashby] OpenAI: 838 jobs fetched
+[oracle:CX_45001@eeho] Oracle: 341 jobs fetched (India, scanned 2853 of 2855, 40 with full description)
+[workday:mastercard] attempt 3/3 failed for https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:accenture] using India location facet (locationCountry, 1 value(s))
+[eightfold:qualcomm.com] Qualcomm: 398 jobs fetched (India, 40 with description)
+[workday:dxctechnology] attempt 1/3 failed for https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs: Expecting value: line 1 column 1 (char 0)
+[jibe:www.github.careers] GitHub: 100 jobs fetched (location=all, total=100)
+[workday:dxctechnology] attempt 2/3 failed for https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs: Expecting value: line 1 column 1 (char 0)
+[capgemini] Capgemini: 708 jobs fetched (India, total=708)
+[workday:dxctechnology] attempt 3/3 failed for https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:genpact] using India location facet (locations, 56 value(s))
+[smartrecruiters] Bosch: 100 jobs fetched
+[phenom:careers.nttdata.com] NTT DATA: 500 jobs fetched (India, total=1018)
+[workday:pwc] using India location facet (locations, 28 value(s))
+[oracle:CX_3@ejgk] KPMG: 400 jobs fetched (India, scanned 400 of 514, 10 with full description)
+[lever] Meesho: 49 jobs fetched
+[workday:visa] Visa: 92 jobs fetched (India, 39 with full description)
+[lever] Paytm: 202 jobs fetched
+[darwinbox:delhivery] Delhivery: 7 jobs fetched (total=7)
+[sharechat] ShareChat: 9 jobs fetched
+[smartrecruiters] Unacademy: 3 jobs fetched
+[smartrecruiters] Upstox: 1 jobs fetched
+[smartrecruiters] Cars24: 1 jobs fetched
+[urbancompany] Urban Company: 10 jobs fetched
+[successfactors] HCLTech: 600 jobs fetched (api, location=all, total=14722, 13 with description)
+[workday:micron] attempt 1/3 failed for https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:micron] attempt 2/3 failed for https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs: Expecting value: line 1 column 1 (char 0)
+[successfactors] EY: 600 jobs fetched (html, location=India, total=2826, 16 with description)
+[workday:genpact] Genpact: 400 jobs fetched (India, 50 with full description)
+[workday:nxp] attempt 1/3 failed for https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs: 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs
+[workday:analogdevices] using India location facet (locationCountry, 1 value(s))
+[workday:micron] attempt 3/3 failed for https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:nxp] attempt 2/3 failed for https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs: 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs
+[oracle:CX@edbz] Texas Instruments: 117 jobs fetched (India, scanned 915 of 915, 21 with full description)
+[eightfold:microsoft.com] Microsoft: 214 jobs fetched (India, 40 with description)
+[workday:marvell] using India location facet (Country, 1 value(s))
+[workday:cadence] using India location facet (Location_Country, 1 value(s))
+[workday:nxp] attempt 3/3 failed for https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs: 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs
+[workday:amat] attempt 1/3 failed for https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs: Expecting value: line 1 column 1 (char 0)
+[workday:amat] attempt 2/3 failed for https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs: Expecting value: line 1 column 1 (char 0)
+[ats-pipeline] NVIDIA FAILED: workday:nvidia request failed after 3 attempts: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] Intel FAILED: workday:intel request failed after 3 attempts: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] Hewlett Packard Enterprise FAILED: workday:hpe request failed after 3 attempts: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] HP FAILED: workday:hp request failed after 3 attempts: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[workday:marvell] Marvell: 41 jobs fetched (India, 6 with full description)
+[ats-pipeline] PayPal FAILED: workday:paypal request failed after 3 attempts: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[workday:amat] attempt 3/3 failed for https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs: Expecting value: line 1 column 1 (char 0)
+[ats-pipeline] Mastercard FAILED: workday:mastercard request failed after 3 attempts: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ashby] Docker: 53 jobs fetched
+[workday:analogdevices] Analog Devices: 80 jobs fetched (India, 9 with full description)
+[govt:cdac] C-DAC: 7 notices
+[govt:isro] ISRO: 118 notices
+[workday:pwc] PwC: 400 jobs fetched (India, 37 with full description)
+[workday:cadence] Cadence: 200 jobs fetched (India, 46 with full description)
+[eightfold:infineon.com] Infineon Technologies: 185 jobs fetched (India, 15 with description)
+[smartrecruiters] PhonePe: 100 jobs fetched
+[workday:accenture] Accenture: 397 jobs fetched (India, 60 with full description)
+[ats-pipeline] DXC Technology FAILED: workday:dxctechnology request failed after 3 attempts: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] Micron FAILED: workday:micron request failed after 3 attempts: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] NXP Semiconductors FAILED: workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+[ats-pipeline] Applied Materials FAILED: workday:amat request failed after 3 attempts: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs -- Expecting value: line 1 column 1 (char 0) -- continuing with other companies (its previously-seen jobs will NOT be marked closed this run)
+
+[ats-pipeline] Companies attempted: 86 | Succeeded: 76 | Failed: 10
+  FAILED: NVIDIA -- workday:nvidia request failed after 3 attempts: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: Intel -- workday:intel request failed after 3 attempts: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: Hewlett Packard Enterprise -- workday:hpe request failed after 3 attempts: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: HP -- workday:hp request failed after 3 attempts: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: PayPal -- workday:paypal request failed after 3 attempts: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: Mastercard -- workday:mastercard request failed after 3 attempts: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: DXC Technology -- workday:dxctechnology request failed after 3 attempts: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: Micron -- workday:micron request failed after 3 attempts: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs -- Expecting value: line 1 column 1 (char 0)
+  FAILED: NXP Semiconductors -- workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs
+  FAILED: Applied Materials -- workday:amat request failed after 3 attempts: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs -- Expecting value: line 1 column 1 (char 0)
+[ats-pipeline] India/Remote-India jobs: 29450 | Top matches (score >= threshold): 428
+     94  Cisco: IT Software Engineer (Bangalore, India)
+     91  Infosys: AI Engineer (Bangalore, India)
+     90  PwC: IN_Associate_ AI Engineer_GCC_Advisory_Bangalore (Bengaluru Millenia)
+     89  Cisco: Software Engineer (Bangalore, India)
+     87  Amazon: Applied Scientist I, International Seller Services (Bengaluru, Karnataka, IND)
+     85  KPMG: Canada D&A A2 AI Engineer (Bangalore, Karnataka, India)
+     84  Infosys: Python ML_GenAI Engineers (Chennai, India)
+     84  Infosys: Python ML_GenAI Engineers (Chennai, India)
+     84  Infosys: Computer Vision (Bangalore, India)
+     83  Motorola Solutions: AI Engineer / Developer (Cloud & Communications) (Bangalore, India)
+[ats-pipeline] Status breakdown: {'UNCHANGED': 19126, 'UPDATED': 56, 'NEW': 63, 'CLOSED': 39268}
+
+[ats-pipeline] {'total': 58513, 'top_matches': 428, 'india': 11545, 'new': 63, 'fresher': 4623, 'internships': 591, 'cse': 4066, 'closing_soon': 0}
+[ats-pipeline] Written: output/ats_jobs.xlsx, output/ats_jobs.json
+[ats-pipeline] finished in 532s

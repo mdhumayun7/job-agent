@@ -1,0 +1,528 @@
+{
+  "Stripe": {
+    "ok": true,
+    "count": 786,
+    "seconds": 0.6,
+    "platform": "greenhouse"
+  },
+  "Cloudflare": {
+    "ok": true,
+    "count": 479,
+    "seconds": 1.7,
+    "platform": "greenhouse"
+  },
+  "Airbnb": {
+    "ok": true,
+    "count": 214,
+    "seconds": 0.5,
+    "platform": "greenhouse"
+  },
+  "Coinbase": {
+    "ok": true,
+    "count": 265,
+    "seconds": 0.4,
+    "platform": "greenhouse"
+  },
+  "Robinhood": {
+    "ok": true,
+    "count": 165,
+    "seconds": 0.3,
+    "platform": "greenhouse"
+  },
+  "Discord": {
+    "ok": true,
+    "count": 26,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "Pinterest": {
+    "ok": true,
+    "count": 163,
+    "seconds": 0.3,
+    "platform": "greenhouse"
+  },
+  "Lyft": {
+    "ok": true,
+    "count": 148,
+    "seconds": 0.4,
+    "platform": "greenhouse"
+  },
+  "Instacart": {
+    "ok": true,
+    "count": 85,
+    "seconds": 1.1,
+    "platform": "greenhouse"
+  },
+  "GitLab": {
+    "ok": true,
+    "count": 251,
+    "seconds": 3.2,
+    "platform": "greenhouse"
+  },
+  "Anthropic": {
+    "ok": true,
+    "count": 669,
+    "seconds": 4.7,
+    "platform": "greenhouse"
+  },
+  "Postman": {
+    "ok": true,
+    "count": 17,
+    "seconds": 3.4,
+    "platform": "workday"
+  },
+  "Razorpay": {
+    "ok": true,
+    "count": 25,
+    "seconds": 0.4,
+    "platform": "greenhouse"
+  },
+  "BrowserStack": {
+    "ok": true,
+    "count": 30,
+    "seconds": 3.1,
+    "platform": "workday"
+  },
+  "Freshworks": {
+    "ok": true,
+    "count": 100,
+    "seconds": 51.3,
+    "platform": "smartrecruiters"
+  },
+  "CRED": {
+    "ok": true,
+    "count": 15,
+    "seconds": 0.3,
+    "platform": "lever"
+  },
+  "Groww": {
+    "ok": true,
+    "count": 9,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "InMobi": {
+    "ok": true,
+    "count": 74,
+    "seconds": 1.0,
+    "platform": "greenhouse"
+  },
+  "Databricks": {
+    "ok": true,
+    "count": 896,
+    "seconds": 3.4,
+    "platform": "greenhouse"
+  },
+  "Snowflake": {
+    "ok": true,
+    "count": 376,
+    "seconds": 2.7,
+    "platform": "ashby"
+  },
+  "MongoDB": {
+    "ok": true,
+    "count": 391,
+    "seconds": 2.2,
+    "platform": "greenhouse"
+  },
+  "Elastic": {
+    "ok": true,
+    "count": 400,
+    "seconds": 1.5,
+    "platform": "greenhouse"
+  },
+  "Confluent": {
+    "ok": true,
+    "count": 0,
+    "seconds": 0.1,
+    "platform": "ashby"
+  },
+  "Datadog": {
+    "ok": true,
+    "count": 384,
+    "seconds": 0.9,
+    "platform": "greenhouse"
+  },
+  "Atlassian": {
+    "ok": true,
+    "count": 288,
+    "seconds": 1.2,
+    "platform": "custom_api"
+  },
+  "Hugging Face": {
+    "ok": true,
+    "count": 6,
+    "seconds": 0.2,
+    "platform": "workable"
+  },
+  "Microsoft": {
+    "ok": true,
+    "count": 214,
+    "seconds": 162.0,
+    "platform": "eightfold"
+  },
+  "Amazon": {
+    "ok": true,
+    "count": 600,
+    "seconds": 10.2,
+    "platform": "amazon_custom"
+  },
+  "Infosys": {
+    "ok": true,
+    "count": 1606,
+    "seconds": 5.4,
+    "platform": "custom_api"
+  },
+  "Wipro": {
+    "ok": true,
+    "count": 600,
+    "seconds": 95.3,
+    "platform": "successfactors"
+  },
+  "MakeMyTrip": {
+    "ok": true,
+    "count": 39,
+    "seconds": 2.1,
+    "platform": "makemytrip_custom"
+  },
+  "IBM": {
+    "ok": true,
+    "count": 1500,
+    "seconds": 18.4,
+    "platform": "custom_api"
+  },
+  "NVIDIA": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.9,
+    "error": "workday:nvidia request failed after 3 attempts: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "Intel": {
+    "ok": false,
+    "count": 0,
+    "seconds": 8.5,
+    "error": "workday:intel request failed after 3 attempts: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "AMD": {
+    "ok": true,
+    "count": 216,
+    "seconds": 22.7,
+    "platform": "jibe"
+  },
+  "Qualcomm": {
+    "ok": true,
+    "count": 398,
+    "seconds": 98.5,
+    "platform": "eightfold"
+  },
+  "Cisco": {
+    "ok": true,
+    "count": 322,
+    "seconds": 55.1,
+    "platform": "workday"
+  },
+  "Oracle": {
+    "ok": true,
+    "count": 341,
+    "seconds": 90.7,
+    "platform": "oracle_hcm"
+  },
+  "Salesforce": {
+    "ok": true,
+    "count": 103,
+    "seconds": 9.3,
+    "platform": "workday"
+  },
+  "Adobe": {
+    "ok": true,
+    "count": 35,
+    "seconds": 4.3,
+    "platform": "workday"
+  },
+  "ServiceNow": {
+    "ok": true,
+    "count": 100,
+    "seconds": 51.1,
+    "platform": "smartrecruiters"
+  },
+  "Broadcom": {
+    "ok": true,
+    "count": 62,
+    "seconds": 4.4,
+    "platform": "workday"
+  },
+  "Red Hat": {
+    "ok": true,
+    "count": 7,
+    "seconds": 0.9,
+    "platform": "workday"
+  },
+  "Dell Technologies": {
+    "ok": true,
+    "count": 83,
+    "seconds": 22.7,
+    "platform": "oracle_hcm"
+  },
+  "Hewlett Packard Enterprise": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.7,
+    "error": "workday:hpe request failed after 3 attempts: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "HP": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.7,
+    "error": "workday:hp request failed after 3 attempts: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "Samsung": {
+    "ok": true,
+    "count": 31,
+    "seconds": 5.8,
+    "platform": "workday"
+  },
+  "Sony": {
+    "ok": true,
+    "count": 128,
+    "seconds": 15.6,
+    "platform": "workday"
+  },
+  "Bosch": {
+    "ok": true,
+    "count": 100,
+    "seconds": 48.2,
+    "platform": "smartrecruiters"
+  },
+  "Ericsson": {
+    "ok": true,
+    "count": 107,
+    "seconds": 29.1,
+    "platform": "eightfold"
+  },
+  "Nokia": {
+    "ok": true,
+    "count": 133,
+    "seconds": 23.0,
+    "platform": "oracle_hcm"
+  },
+  "Motorola Solutions": {
+    "ok": true,
+    "count": 40,
+    "seconds": 17.6,
+    "platform": "workday"
+  },
+  "PayPal": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.3,
+    "error": "workday:paypal request failed after 3 attempts: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "Visa": {
+    "ok": true,
+    "count": 92,
+    "seconds": 31.9,
+    "platform": "workday"
+  },
+  "Mastercard": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.4,
+    "error": "workday:mastercard request failed after 3 attempts: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "GitHub": {
+    "ok": true,
+    "count": 100,
+    "seconds": 7.1,
+    "platform": "jibe"
+  },
+  "OpenAI": {
+    "ok": true,
+    "count": 838,
+    "seconds": 0.6,
+    "platform": "ashby"
+  },
+  "HCLTech": {
+    "ok": true,
+    "count": 600,
+    "seconds": 54.4,
+    "platform": "successfactors"
+  },
+  "Accenture": {
+    "ok": true,
+    "count": 397,
+    "seconds": 279.1,
+    "platform": "workday"
+  },
+  "Capgemini": {
+    "ok": true,
+    "count": 708,
+    "seconds": 8.2,
+    "platform": "custom_api"
+  },
+  "DXC Technology": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.5,
+    "error": "workday:dxctechnology request failed after 3 attempts: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "NTT DATA": {
+    "ok": true,
+    "count": 500,
+    "seconds": 11.6,
+    "platform": "phenom"
+  },
+  "Genpact": {
+    "ok": true,
+    "count": 400,
+    "seconds": 48.1,
+    "platform": "workday"
+  },
+  "EY": {
+    "ok": true,
+    "count": 600,
+    "seconds": 47.7,
+    "platform": "successfactors"
+  },
+  "KPMG": {
+    "ok": true,
+    "count": 400,
+    "seconds": 13.6,
+    "platform": "oracle_hcm"
+  },
+  "PwC": {
+    "ok": true,
+    "count": 400,
+    "seconds": 74.1,
+    "platform": "workday"
+  },
+  "Meesho": {
+    "ok": true,
+    "count": 49,
+    "seconds": 0.3,
+    "platform": "lever"
+  },
+  "PhonePe": {
+    "ok": true,
+    "count": 100,
+    "seconds": 100.2,
+    "platform": "smartrecruiters"
+  },
+  "Paytm": {
+    "ok": true,
+    "count": 202,
+    "seconds": 0.4,
+    "platform": "lever"
+  },
+  "Delhivery": {
+    "ok": true,
+    "count": 7,
+    "seconds": 0.5,
+    "platform": "darwinbox"
+  },
+  "ShareChat": {
+    "ok": true,
+    "count": 9,
+    "seconds": 1.2,
+    "platform": "custom_api"
+  },
+  "Unacademy": {
+    "ok": true,
+    "count": 3,
+    "seconds": 1.9,
+    "platform": "smartrecruiters"
+  },
+  "Upstox": {
+    "ok": true,
+    "count": 1,
+    "seconds": 1.0,
+    "platform": "smartrecruiters"
+  },
+  "Cars24": {
+    "ok": true,
+    "count": 1,
+    "seconds": 0.9,
+    "platform": "smartrecruiters"
+  },
+  "Urban Company": {
+    "ok": true,
+    "count": 10,
+    "seconds": 0.7,
+    "platform": "custom_api"
+  },
+  "Texas Instruments": {
+    "ok": true,
+    "count": 117,
+    "seconds": 27.9,
+    "platform": "oracle_hcm"
+  },
+  "Micron": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.3,
+    "error": "workday:micron request failed after 3 attempts: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "NXP Semiconductors": {
+    "ok": false,
+    "count": 0,
+    "seconds": 6.4,
+    "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
+    "platform": "workday"
+  },
+  "Analog Devices": {
+    "ok": true,
+    "count": 80,
+    "seconds": 13.5,
+    "platform": "workday"
+  },
+  "Infineon Technologies": {
+    "ok": true,
+    "count": 185,
+    "seconds": 47.3,
+    "platform": "eightfold"
+  },
+  "Marvell": {
+    "ok": true,
+    "count": 41,
+    "seconds": 8.1,
+    "platform": "workday"
+  },
+  "Cadence": {
+    "ok": true,
+    "count": 200,
+    "seconds": 44.5,
+    "platform": "workday"
+  },
+  "Applied Materials": {
+    "ok": false,
+    "count": 0,
+    "seconds": 5.8,
+    "error": "workday:amat request failed after 3 attempts: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs -- Expecting value: line 1 column 1 (char 0)",
+    "platform": "workday"
+  },
+  "Docker": {
+    "ok": true,
+    "count": 53,
+    "seconds": 1.4,
+    "platform": "ashby"
+  },
+  "C-DAC": {
+    "ok": true,
+    "count": 7,
+    "seconds": 2.3,
+    "platform": "govt_notices"
+  },
+  "ISRO": {
+    "ok": true,
+    "count": 118,
+    "seconds": 1.5,
+    "platform": "govt_notices"
+  }
+}
