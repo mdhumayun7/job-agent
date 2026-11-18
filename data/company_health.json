@@ -1,12 +1,6 @@
 {
  "AMD": [
   {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 216,
-   "ok": true,
-   "seconds": 16.3
-  },
-  {
    "at": "2026-11-14T11:00+00:00",
    "count": 216,
    "ok": true,
@@ -83,15 +77,15 @@
    "count": 217,
    "ok": true,
    "seconds": 16.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 217,
+   "ok": true,
+   "seconds": 16.3
   }
  ],
  "Accenture": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 397,
-   "ok": true,
-   "seconds": 242.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 397,
@@ -169,16 +163,15 @@
    "count": 385,
    "ok": true,
    "seconds": 141.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 394,
+   "ok": true,
+   "seconds": 148.9
   }
  ],
  "Adobe": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:adobe request failed after 3 attempts: https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external_experienced/jobs -- 521 Server Error: <none> for url: https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external_experienced/jobs",
-   "ok": false,
-   "seconds": 5.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -257,15 +250,15 @@
    "count": 37,
    "ok": true,
    "seconds": 4.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 36,
+   "ok": true,
+   "seconds": 3.7
   }
  ],
  "Airbnb": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 215,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 214,
@@ -343,15 +336,15 @@
    "count": 199,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 202,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Amazon": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 10.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 600,
@@ -429,16 +422,15 @@
    "count": 600,
    "ok": true,
    "seconds": 10.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 11.6
   }
  ],
  "Analog Devices": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:analogdevices request failed after 3 attempts: https://analogdevices.wd1.myworkdayjobs.com/wday/cxs/analogdevices/External/jobs -- 521 Server Error: <none> for url: https://analogdevices.wd1.myworkdayjobs.com/wday/cxs/analogdevices/External/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -517,15 +509,15 @@
    "count": 81,
    "ok": true,
    "seconds": 11.7
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 78,
+   "ok": true,
+   "seconds": 11.6
   }
  ],
  "Anthropic": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 668,
-   "ok": true,
-   "seconds": 5.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 670,
@@ -603,16 +595,15 @@
    "count": 657,
    "ok": true,
    "seconds": 5.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 650,
+   "ok": true,
+   "seconds": 5.5
   }
  ],
  "Applied Materials": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:amat request failed after 3 attempts: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs -- 521 Server Error: <none> for url: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -692,15 +683,15 @@
    "count": 169,
    "ok": true,
    "seconds": 25.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 169,
+   "ok": true,
+   "seconds": 23.5
   }
  ],
  "Atlassian": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 261,
-   "ok": true,
-   "seconds": 1.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 260,
@@ -778,15 +769,15 @@
    "count": 267,
    "ok": true,
    "seconds": 1.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 262,
+   "ok": true,
+   "seconds": 1.5
   }
  ],
  "Bosch": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 47.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 100,
@@ -864,16 +855,15 @@
    "count": 100,
    "ok": true,
    "seconds": 46.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 43.9
   }
  ],
  "Broadcom": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:broadcom request failed after 3 attempts: https://broadcom.wd1.myworkdayjobs.com/wday/cxs/broadcom/External_Career/jobs -- 521 Server Error: <none> for url: https://broadcom.wd1.myworkdayjobs.com/wday/cxs/broadcom/External_Career/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -952,15 +942,15 @@
    "count": 68,
    "ok": true,
    "seconds": 4.7
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 68,
+   "ok": true,
+   "seconds": 5.5
   }
  ],
  "BrowserStack": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 30,
-   "ok": true,
-   "seconds": 2.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 30,
@@ -1038,15 +1028,15 @@
    "count": 29,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 29,
+   "ok": true,
+   "seconds": 2.8
   }
  ],
  "C-DAC": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 2.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 7,
@@ -1124,15 +1114,15 @@
    "count": 7,
    "ok": true,
    "seconds": 5.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 2.1
   }
  ],
  "CRED": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 15,
-   "ok": true,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 15,
@@ -1210,16 +1200,15 @@
    "count": 13,
    "ok": true,
    "seconds": 0.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 13,
+   "ok": true,
+   "seconds": 4.8
   }
  ],
  "Cadence": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:cadence request failed after 3 attempts: https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/External_Careers/jobs -- 521 Server Error: <none> for url: https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/External_Careers/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -1298,15 +1287,15 @@
    "count": 201,
    "ok": true,
    "seconds": 42.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 201,
+   "ok": true,
+   "seconds": 49.1
   }
  ],
  "Capgemini": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 708,
-   "ok": true,
-   "seconds": 5.5
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 708,
@@ -1384,15 +1373,15 @@
    "count": 763,
    "ok": true,
    "seconds": 3.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 775,
+   "ok": true,
+   "seconds": 3.6
   }
  ],
  "Cars24": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 1,
@@ -1470,16 +1459,15 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 0.9
   }
  ],
  "Cisco": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:cisco request failed after 3 attempts: https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers/jobs -- 521 Server Error: <none> for url: https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers/jobs",
-   "ok": false,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -1558,15 +1546,15 @@
    "count": 326,
    "ok": true,
    "seconds": 57.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 328,
+   "ok": true,
+   "seconds": 60.8
   }
  ],
  "Cloudflare": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 479,
-   "ok": true,
-   "seconds": 2.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 479,
@@ -1644,15 +1632,15 @@
    "count": 487,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 495,
+   "ok": true,
+   "seconds": 1.9
   }
  ],
  "Coinbase": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 265,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 265,
@@ -1730,15 +1718,15 @@
    "count": 256,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 256,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Confluent": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -1816,16 +1804,15 @@
    "count": 0,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 0,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "DXC Technology": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:dxctechnology request failed after 3 attempts: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs -- 521 Server Error: <none> for url: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -1905,15 +1892,15 @@
    "count": 221,
    "ok": true,
    "seconds": 50.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 220,
+   "ok": true,
+   "seconds": 53.8
   }
  ],
  "Databricks": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 896,
-   "ok": true,
-   "seconds": 2.7
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 896,
@@ -1991,15 +1978,15 @@
    "count": 896,
    "ok": true,
    "seconds": 7.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 896,
+   "ok": true,
+   "seconds": 6.9
   }
  ],
  "Datadog": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 384,
-   "ok": true,
-   "seconds": 3.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 384,
@@ -2077,15 +2064,15 @@
    "count": 381,
    "ok": true,
    "seconds": 3.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 383,
+   "ok": true,
+   "seconds": 3.2
   }
  ],
  "Delhivery": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 0.7
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 7,
@@ -2163,15 +2150,15 @@
    "count": 7,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Dell Technologies": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 83,
-   "ok": true,
-   "seconds": 19.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 83,
@@ -2249,15 +2236,15 @@
    "count": 82,
    "ok": true,
    "seconds": 22.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 84,
+   "ok": true,
+   "seconds": 21.2
   }
  ],
  "Discord": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 26,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 26,
@@ -2335,15 +2322,15 @@
    "count": 26,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 26,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Docker": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 53,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 53,
@@ -2421,15 +2408,15 @@
    "count": 51,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 52,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "EY": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 1.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 600,
@@ -2508,15 +2495,15 @@
    "count": 600,
    "ok": true,
    "seconds": 31.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 31.0
   }
  ],
  "Elastic": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 400,
@@ -2594,15 +2581,15 @@
    "count": 379,
    "ok": true,
    "seconds": 4.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 376,
+   "ok": true,
+   "seconds": 5.3
   }
  ],
  "Ericsson": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 105,
-   "ok": true,
-   "seconds": 29.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 105,
@@ -2680,15 +2667,15 @@
    "count": 119,
    "ok": true,
    "seconds": 29.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 122,
+   "ok": true,
+   "seconds": 30.4
   }
  ],
  "Freshworks": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 47.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 100,
@@ -2766,15 +2753,15 @@
    "count": 100,
    "ok": true,
    "seconds": 49.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 47.7
   }
  ],
  "Genpact": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 48.7
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 400,
@@ -2852,15 +2839,15 @@
    "count": 400,
    "ok": true,
    "seconds": 51.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 61.8
   }
  ],
  "GitHub": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 6.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 100,
@@ -2938,15 +2925,15 @@
    "count": 102,
    "ok": true,
    "seconds": 5.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 102,
+   "ok": true,
+   "seconds": 4.9
   }
  ],
  "GitLab": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 251,
-   "ok": true,
-   "seconds": 2.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 251,
@@ -3024,15 +3011,15 @@
    "count": 250,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 250,
+   "ok": true,
+   "seconds": 1.3
   }
  ],
  "Groww": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 9,
@@ -3110,15 +3097,15 @@
    "count": 9,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 9,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "HCLTech": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 1.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 600,
@@ -3196,16 +3183,15 @@
    "count": 600,
    "ok": true,
    "seconds": 40.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 44.3
   }
  ],
  "HP": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:hp request failed after 3 attempts: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs -- 521 Server Error: <none> for url: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs",
-   "ok": false,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -3285,16 +3271,15 @@
    "count": 97,
    "ok": true,
    "seconds": 18.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 98,
+   "ok": true,
+   "seconds": 19.4
   }
  ],
  "Hewlett Packard Enterprise": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:hpe request failed after 3 attempts: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs -- 521 Server Error: <none> for url: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs",
-   "ok": false,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -3374,15 +3359,15 @@
    "count": 351,
    "ok": true,
    "seconds": 77.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 355,
+   "ok": true,
+   "seconds": 73.3
   }
  ],
  "Hugging Face": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 6,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 6,
@@ -3460,15 +3445,15 @@
    "count": 6,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "IBM": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 1500,
-   "ok": true,
-   "seconds": 20.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 1500,
@@ -3546,15 +3531,15 @@
    "count": 1500,
    "ok": true,
    "seconds": 10.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 1500,
+   "ok": true,
+   "seconds": 12.0
   }
  ],
  "ISRO": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 118,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 118,
@@ -3632,15 +3617,15 @@
    "count": 118,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 118,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "InMobi": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 74,
-   "ok": true,
-   "seconds": 1.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 74,
@@ -3718,15 +3703,15 @@
    "count": 75,
    "ok": true,
    "seconds": 1.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 75,
+   "ok": true,
+   "seconds": 1.1
   }
  ],
  "Infineon Technologies": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 185,
-   "ok": true,
-   "seconds": 43.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 185,
@@ -3804,15 +3789,15 @@
    "count": 179,
    "ok": true,
    "seconds": 43.7
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 178,
+   "ok": true,
+   "seconds": 43.3
   }
  ],
  "Infosys": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 1609,
-   "ok": true,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 1609,
@@ -3890,15 +3875,15 @@
    "count": 1572,
    "ok": true,
    "seconds": 4.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 1572,
+   "ok": true,
+   "seconds": 4.7
   }
  ],
  "Instacart": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 85,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 85,
@@ -3976,16 +3961,15 @@
    "count": 83,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 83,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Intel": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:intel request failed after 3 attempts: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs -- 521 Server Error: <none> for url: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs",
-   "ok": false,
-   "seconds": 5.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -4065,15 +4049,15 @@
    "count": 105,
    "ok": true,
    "seconds": 16.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 104,
+   "ok": true,
+   "seconds": 19.5
   }
  ],
  "KPMG": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 13.5
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 400,
@@ -4151,15 +4135,15 @@
    "count": 400,
    "ok": true,
    "seconds": 12.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 12.9
   }
  ],
  "Lyft": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 150,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 148,
@@ -4237,15 +4221,15 @@
    "count": 148,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 149,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "MakeMyTrip": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 39,
-   "ok": true,
-   "seconds": 3.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 39,
@@ -4323,16 +4307,15 @@
    "count": 42,
    "ok": true,
    "seconds": 3.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 42,
+   "ok": true,
+   "seconds": 3.3
   }
  ],
  "Marvell": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:marvell request failed after 3 attempts: https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers/jobs -- 521 Server Error: <none> for url: https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers/jobs",
-   "ok": false,
-   "seconds": 4.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -4411,16 +4394,15 @@
    "count": 42,
    "ok": true,
    "seconds": 5.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 42,
+   "ok": true,
+   "seconds": 10.4
   }
  ],
  "Mastercard": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:mastercard request failed after 3 attempts: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs -- 521 Server Error: <none> for url: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs",
-   "ok": false,
-   "seconds": 4.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -4500,15 +4482,15 @@
    "count": 174,
    "ok": true,
    "seconds": 68.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 174,
+   "ok": true,
+   "seconds": 61.8
   }
  ],
  "Meesho": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 49,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 49,
@@ -4586,16 +4568,15 @@
    "count": 47,
    "ok": true,
    "seconds": 17.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 47,
+   "ok": true,
+   "seconds": 0.8
   }
  ],
  "Micron": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:micron request failed after 3 attempts: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs -- 521 Server Error: <none> for url: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -4675,15 +4656,15 @@
    "count": 319,
    "ok": true,
    "seconds": 22.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 314,
+   "ok": true,
+   "seconds": 18.2
   }
  ],
  "Microsoft": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 215,
-   "ok": true,
-   "seconds": 249.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 216,
@@ -4763,15 +4744,15 @@
    "error": "eightfold:microsoft.com request failed after 5 attempts: https://apply.careers.microsoft.com/api/pcsx/search -- 429 Client Error: Too Many Requests for url: https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=India&start=80",
    "ok": false,
    "seconds": 144.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 218,
+   "ok": true,
+   "seconds": 168.5
   }
  ],
  "MongoDB": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 391,
-   "ok": true,
-   "seconds": 3.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 391,
@@ -4849,16 +4830,15 @@
    "count": 396,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 397,
+   "ok": true,
+   "seconds": 2.9
   }
  ],
  "Motorola Solutions": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:motorolasolutions request failed after 3 attempts: https://motorolasolutions.wd5.myworkdayjobs.com/wday/cxs/motorolasolutions/Careers/jobs -- 521 Server Error: <none> for url: https://motorolasolutions.wd5.myworkdayjobs.com/wday/cxs/motorolasolutions/Careers/jobs",
-   "ok": false,
-   "seconds": 5.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -4937,15 +4917,15 @@
    "count": 46,
    "ok": true,
    "seconds": 20.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 46,
+   "ok": true,
+   "seconds": 21.0
   }
  ],
  "NTT DATA": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 500,
-   "ok": true,
-   "seconds": 9.7
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 500,
@@ -5023,16 +5003,15 @@
    "count": 500,
    "ok": true,
    "seconds": 12.5
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 500,
+   "ok": true,
+   "seconds": 10.9
   }
  ],
  "NVIDIA": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:nvidia request failed after 3 attempts: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs -- 521 Server Error: <none> for url: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs",
-   "ok": false,
-   "seconds": 5.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -5112,16 +5091,15 @@
    "count": 239,
    "ok": true,
    "seconds": 66.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 239,
+   "ok": true,
+   "seconds": 67.0
   }
  ],
  "NXP Semiconductors": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
-   "ok": false,
-   "seconds": 5.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -5212,15 +5190,16 @@
    "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
    "ok": false,
    "seconds": 5.8
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 0,
+   "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
+   "ok": false,
+   "seconds": 5.8
   }
  ],
  "Nokia": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 132,
-   "ok": true,
-   "seconds": 24.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 133,
@@ -5298,15 +5277,15 @@
    "count": 143,
    "ok": true,
    "seconds": 26.3
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 147,
+   "ok": true,
+   "seconds": 26.8
   }
  ],
  "OpenAI": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 836,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 838,
@@ -5384,15 +5363,15 @@
    "count": 837,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 839,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Oracle": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 341,
-   "ok": true,
-   "seconds": 100.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 342,
@@ -5470,16 +5449,15 @@
    "count": 322,
    "ok": true,
    "seconds": 103.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 324,
+   "ok": true,
+   "seconds": 105.1
   }
  ],
  "PayPal": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:paypal request failed after 3 attempts: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs -- 521 Server Error: <none> for url: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs",
-   "ok": false,
-   "seconds": 5.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -5559,15 +5537,15 @@
    "count": 22,
    "ok": true,
    "seconds": 13.7
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 23,
+   "ok": true,
+   "seconds": 12.9
   }
  ],
  "Paytm": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 202,
-   "ok": true,
-   "seconds": 1.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 202,
@@ -5645,15 +5623,15 @@
    "count": 194,
    "ok": true,
    "seconds": 1.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 194,
+   "ok": true,
+   "seconds": 1.1
   }
  ],
  "PhonePe": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 99.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 100,
@@ -5731,15 +5709,15 @@
    "count": 100,
    "ok": true,
    "seconds": 95.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 95.9
   }
  ],
  "Pinterest": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 163,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 163,
@@ -5817,15 +5795,15 @@
    "count": 175,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 174,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Postman": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 17,
-   "ok": true,
-   "seconds": 3.3
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 17,
@@ -5903,15 +5881,15 @@
    "count": 17,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 17,
+   "ok": true,
+   "seconds": 3.6
   }
  ],
  "PwC": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 65.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 400,
@@ -5989,15 +5967,15 @@
    "count": 398,
    "ok": true,
    "seconds": 62.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 66.5
   }
  ],
  "Qualcomm": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 164.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 400,
@@ -6075,15 +6053,15 @@
    "count": 400,
    "ok": true,
    "seconds": 132.1
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 295.3
   }
  ],
  "Razorpay": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 26,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 26,
@@ -6161,16 +6139,15 @@
    "count": 27,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 28,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Red Hat": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:redhat request failed after 3 attempts: https://redhat.wd5.myworkdayjobs.com/wday/cxs/redhat/jobs/jobs -- 521 Server Error: <none> for url: https://redhat.wd5.myworkdayjobs.com/wday/cxs/redhat/jobs/jobs",
-   "ok": false,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -6249,15 +6226,15 @@
    "count": 6,
    "ok": true,
    "seconds": 1.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 1.5
   }
  ],
  "Robinhood": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 165,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 165,
@@ -6335,15 +6312,15 @@
    "count": 166,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 167,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Salesforce": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 104,
-   "ok": true,
-   "seconds": 12.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 103,
@@ -6421,15 +6398,15 @@
    "count": 106,
    "ok": true,
    "seconds": 12.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 102,
+   "ok": true,
+   "seconds": 11.1
   }
  ],
  "Samsung": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 31,
-   "ok": true,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 31,
@@ -6507,15 +6484,15 @@
    "count": 30,
    "ok": true,
    "seconds": 4.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 30,
+   "ok": true,
+   "seconds": 4.7
   }
  ],
  "ServiceNow": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 47.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 100,
@@ -6593,15 +6570,15 @@
    "count": 100,
    "ok": true,
    "seconds": 48.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 47.5
   }
  ],
  "ShareChat": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 2.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 9,
@@ -6679,15 +6656,15 @@
    "count": 11,
    "ok": true,
    "seconds": 2.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 11,
+   "ok": true,
+   "seconds": 1.2
   }
  ],
  "Snowflake": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 376,
-   "ok": true,
-   "seconds": 1.8
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 376,
@@ -6765,16 +6742,15 @@
    "count": 378,
    "ok": true,
    "seconds": 2.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 376,
+   "ok": true,
+   "seconds": 2.8
   }
  ],
  "Sony": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:sonyglobal request failed after 3 attempts: https://sonyglobal.wd1.myworkdayjobs.com/wday/cxs/sonyglobal/SonyGlobalCareers/jobs -- 521 Server Error: <none> for url: https://sonyglobal.wd1.myworkdayjobs.com/wday/cxs/sonyglobal/SonyGlobalCareers/jobs",
-   "ok": false,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -6853,15 +6829,15 @@
    "count": 127,
    "ok": true,
    "seconds": 11.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 127,
+   "ok": true,
+   "seconds": 13.6
   }
  ],
  "Stripe": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 786,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 786,
@@ -6939,15 +6915,15 @@
    "count": 786,
    "ok": true,
    "seconds": 0.7
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 793,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Texas Instruments": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 117,
-   "ok": true,
-   "seconds": 29.2
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 117,
@@ -7025,15 +7001,15 @@
    "count": 115,
    "ok": true,
    "seconds": 32.4
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 115,
+   "ok": true,
+   "seconds": 32.0
   }
  ],
  "Unacademy": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 3,
-   "ok": true,
-   "seconds": 1.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 3,
@@ -7111,15 +7087,15 @@
    "count": 3,
    "ok": true,
    "seconds": 1.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 3,
+   "ok": true,
+   "seconds": 1.8
   }
  ],
  "Upstox": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 1,
@@ -7197,15 +7173,15 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 0.9
   }
  ],
  "Urban Company": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 10,
-   "ok": true,
-   "seconds": 1.0
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 10,
@@ -7283,16 +7259,15 @@
    "count": 10,
    "ok": true,
    "seconds": 1.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 0.8
   }
  ],
  "Visa": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "error": "workday:visa request failed after 3 attempts: https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs -- 521 Server Error: <none> for url: https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs",
-   "ok": false,
-   "seconds": 5.1
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 0,
@@ -7371,15 +7346,15 @@
    "count": 93,
    "ok": true,
    "seconds": 40.0
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 93,
+   "ok": true,
+   "seconds": 36.4
   }
  ],
  "Wipro": [
-  {
-   "at": "2026-11-14T01:38+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-11-14T11:00+00:00",
    "count": 600,
@@ -7457,6 +7432,12 @@
    "count": 600,
    "ok": true,
    "seconds": 85.6
+  },
+  {
+   "at": "2026-11-18T18:24+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 82.0
   }
  ]
 }
