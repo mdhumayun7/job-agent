@@ -1,12 +1,6 @@
 {
  "AMD": [
   {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 216,
-   "ok": true,
-   "seconds": 16.1
-  },
-  {
    "at": "2026-11-14T16:03+00:00",
    "count": 216,
    "ok": true,
@@ -83,15 +77,15 @@
    "count": 217,
    "ok": true,
    "seconds": 16.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 215,
+   "ok": true,
+   "seconds": 16.2
   }
  ],
  "Accenture": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 397,
-   "ok": true,
-   "seconds": 255.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 397,
@@ -169,16 +163,15 @@
    "count": 394,
    "ok": true,
    "seconds": 148.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 394,
+   "ok": true,
+   "seconds": 138.1
   }
  ],
  "Adobe": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:adobe request failed after 3 attempts: https://adobe.wd5.myworkdayjobs.com/wday/cxs/adobe/external_experienced/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 35,
@@ -256,15 +249,15 @@
    "count": 36,
    "ok": true,
    "seconds": 3.7
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 36,
+   "ok": true,
+   "seconds": 3.4
   }
  ],
  "Airbnb": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 214,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 214,
@@ -342,15 +335,15 @@
    "count": 202,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 197,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Amazon": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 11.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 600,
@@ -428,16 +421,15 @@
    "count": 600,
    "ok": true,
    "seconds": 11.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 10.6
   }
  ],
  "Analog Devices": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:analogdevices request failed after 3 attempts: https://analogdevices.wd1.myworkdayjobs.com/wday/cxs/analogdevices/External/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 80,
@@ -515,15 +507,15 @@
    "count": 78,
    "ok": true,
    "seconds": 11.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 78,
+   "ok": true,
+   "seconds": 9.4
   }
  ],
  "Anthropic": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 670,
-   "ok": true,
-   "seconds": 3.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 669,
@@ -601,16 +593,15 @@
    "count": 650,
    "ok": true,
    "seconds": 5.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 643,
+   "ok": true,
+   "seconds": 5.8
   }
  ],
  "Applied Materials": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:amat request failed after 3 attempts: https://amat.wd1.myworkdayjobs.com/wday/cxs/amat/External/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -689,15 +680,15 @@
    "count": 169,
    "ok": true,
    "seconds": 23.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 169,
+   "ok": true,
+   "seconds": 25.5
   }
  ],
  "Atlassian": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 260,
-   "ok": true,
-   "seconds": 1.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 288,
@@ -775,15 +766,15 @@
    "count": 262,
    "ok": true,
    "seconds": 1.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 261,
+   "ok": true,
+   "seconds": 1.2
   }
  ],
  "Bosch": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 46.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 100,
@@ -861,16 +852,15 @@
    "count": 100,
    "ok": true,
    "seconds": 43.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 43.0
   }
  ],
  "Broadcom": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:broadcom request failed after 3 attempts: https://broadcom.wd1.myworkdayjobs.com/wday/cxs/broadcom/External_Career/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 62,
@@ -948,15 +938,15 @@
    "count": 68,
    "ok": true,
    "seconds": 5.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 67,
+   "ok": true,
+   "seconds": 5.1
   }
  ],
  "BrowserStack": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 30,
-   "ok": true,
-   "seconds": 2.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 30,
@@ -1034,15 +1024,15 @@
    "count": 29,
    "ok": true,
    "seconds": 2.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 29,
+   "ok": true,
+   "seconds": 2.5
   }
  ],
  "C-DAC": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 2.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 7,
@@ -1120,15 +1110,15 @@
    "count": 7,
    "ok": true,
    "seconds": 2.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 2.2
   }
  ],
  "CRED": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 15,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 15,
@@ -1206,16 +1196,15 @@
    "count": 13,
    "ok": true,
    "seconds": 4.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 13,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Cadence": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:cadence request failed after 3 attempts: https://cadence.wd1.myworkdayjobs.com/wday/cxs/cadence/External_Careers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 200,
@@ -1293,15 +1282,15 @@
    "count": 201,
    "ok": true,
    "seconds": 49.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 201,
+   "ok": true,
+   "seconds": 35.1
   }
  ],
  "Capgemini": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 708,
-   "ok": true,
-   "seconds": 5.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 708,
@@ -1379,15 +1368,15 @@
    "count": 775,
    "ok": true,
    "seconds": 3.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 764,
+   "ok": true,
+   "seconds": 3.7
   }
  ],
  "Cars24": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 1,
@@ -1465,16 +1454,15 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 0.8
   }
  ],
  "Cisco": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:cisco request failed after 3 attempts: https://cisco.wd5.myworkdayjobs.com/wday/cxs/cisco/Cisco_Careers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 322,
@@ -1552,15 +1540,15 @@
    "count": 328,
    "ok": true,
    "seconds": 60.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 326,
+   "ok": true,
+   "seconds": 56.2
   }
  ],
  "Cloudflare": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 479,
-   "ok": true,
-   "seconds": 2.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 479,
@@ -1638,15 +1626,15 @@
    "count": 495,
    "ok": true,
    "seconds": 1.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 497,
+   "ok": true,
+   "seconds": 2.7
   }
  ],
  "Coinbase": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 265,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 265,
@@ -1724,15 +1712,15 @@
    "count": 256,
    "ok": true,
    "seconds": 0.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 255,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Confluent": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -1810,16 +1798,15 @@
    "count": 0,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 0,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "DXC Technology": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:dxctechnology request failed after 3 attempts: https://dxctechnology.wd1.myworkdayjobs.com/wday/cxs/dxctechnology/DXCJobs/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -1898,15 +1885,15 @@
    "count": 220,
    "ok": true,
    "seconds": 53.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 219,
+   "ok": true,
+   "seconds": 48.6
   }
  ],
  "Databricks": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 896,
-   "ok": true,
-   "seconds": 2.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 896,
@@ -1984,15 +1971,15 @@
    "count": 896,
    "ok": true,
    "seconds": 6.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 901,
+   "ok": true,
+   "seconds": 7.1
   }
  ],
  "Datadog": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 384,
-   "ok": true,
-   "seconds": 3.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 384,
@@ -2070,15 +2057,15 @@
    "count": 383,
    "ok": true,
    "seconds": 3.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 380,
+   "ok": true,
+   "seconds": 3.3
   }
  ],
  "Delhivery": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 7,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 7,
@@ -2156,15 +2143,15 @@
    "count": 7,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 7,
+   "ok": true,
+   "seconds": 0.6
   }
  ],
  "Dell Technologies": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 83,
-   "ok": true,
-   "seconds": 20.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 83,
@@ -2242,15 +2229,15 @@
    "count": 84,
    "ok": true,
    "seconds": 21.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 82,
+   "ok": true,
+   "seconds": 22.9
   }
  ],
  "Discord": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 26,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 26,
@@ -2328,15 +2315,15 @@
    "count": 26,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 27,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Docker": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 53,
-   "ok": true,
-   "seconds": 0.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 53,
@@ -2414,15 +2401,15 @@
    "count": 52,
    "ok": true,
    "seconds": 0.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 51,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "EY": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 41.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 600,
@@ -2501,15 +2488,15 @@
    "count": 600,
    "ok": true,
    "seconds": 31.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 26.7
   }
  ],
  "Elastic": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 6.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 400,
@@ -2587,15 +2574,15 @@
    "count": 376,
    "ok": true,
    "seconds": 5.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 375,
+   "ok": true,
+   "seconds": 4.8
   }
  ],
  "Ericsson": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 105,
-   "ok": true,
-   "seconds": 28.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 107,
@@ -2673,15 +2660,15 @@
    "count": 122,
    "ok": true,
    "seconds": 30.4
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 115,
+   "ok": true,
+   "seconds": 27.5
   }
  ],
  "Freshworks": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 46.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 100,
@@ -2759,15 +2746,15 @@
    "count": 100,
    "ok": true,
    "seconds": 47.7
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 47.4
   }
  ],
  "Genpact": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 57.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 400,
@@ -2845,15 +2832,15 @@
    "count": 400,
    "ok": true,
    "seconds": 61.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 49.5
   }
  ],
  "GitHub": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 5.6
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 100,
@@ -2931,15 +2918,15 @@
    "count": 102,
    "ok": true,
    "seconds": 4.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 104,
+   "ok": true,
+   "seconds": 5.1
   }
  ],
  "GitLab": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 251,
-   "ok": true,
-   "seconds": 2.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 251,
@@ -3017,15 +3004,15 @@
    "count": 250,
    "ok": true,
    "seconds": 1.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 249,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Groww": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 9,
@@ -3103,15 +3090,15 @@
    "count": 9,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 9,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "HCLTech": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 48.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 600,
@@ -3189,16 +3176,15 @@
    "count": 600,
    "ok": true,
    "seconds": 44.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 43.5
   }
  ],
  "HP": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:hp request failed after 3 attempts: https://hp.wd5.myworkdayjobs.com/wday/cxs/hp/ExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -3277,16 +3263,15 @@
    "count": 98,
    "ok": true,
    "seconds": 19.4
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 97,
+   "ok": true,
+   "seconds": 18.7
   }
  ],
  "Hewlett Packard Enterprise": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:hpe request failed after 3 attempts: https://hpe.wd5.myworkdayjobs.com/wday/cxs/hpe/Jobsathpe/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -3365,15 +3350,15 @@
    "count": 355,
    "ok": true,
    "seconds": 73.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 357,
+   "ok": true,
+   "seconds": 64.9
   }
  ],
  "Hugging Face": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 6,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 6,
@@ -3451,15 +3436,15 @@
    "count": 6,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "IBM": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 1500,
-   "ok": true,
-   "seconds": 20.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 1500,
@@ -3537,15 +3522,15 @@
    "count": 1500,
    "ok": true,
    "seconds": 12.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 1500,
+   "ok": true,
+   "seconds": 11.8
   }
  ],
  "ISRO": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 118,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 118,
@@ -3623,15 +3608,15 @@
    "count": 118,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 118,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "InMobi": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 74,
-   "ok": true,
-   "seconds": 1.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 74,
@@ -3709,15 +3694,15 @@
    "count": 75,
    "ok": true,
    "seconds": 1.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 75,
+   "ok": true,
+   "seconds": 1.1
   }
  ],
  "Infineon Technologies": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 185,
-   "ok": true,
-   "seconds": 56.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 185,
@@ -3795,15 +3780,15 @@
    "count": 178,
    "ok": true,
    "seconds": 43.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 177,
+   "ok": true,
+   "seconds": 42.5
   }
  ],
  "Infosys": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 1609,
-   "ok": true,
-   "seconds": 5.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 1606,
@@ -3881,15 +3866,15 @@
    "count": 1572,
    "ok": true,
    "seconds": 4.7
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 1554,
+   "ok": true,
+   "seconds": 4.5
   }
  ],
  "Instacart": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 85,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 85,
@@ -3967,16 +3952,15 @@
    "count": 83,
    "ok": true,
    "seconds": 0.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 85,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "Intel": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:intel request failed after 3 attempts: https://intel.wd1.myworkdayjobs.com/wday/cxs/intel/External/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -4055,15 +4039,15 @@
    "count": 104,
    "ok": true,
    "seconds": 19.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 104,
+   "ok": true,
+   "seconds": 16.1
   }
  ],
  "KPMG": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 13.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 400,
@@ -4141,15 +4125,15 @@
    "count": 400,
    "ok": true,
    "seconds": 12.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 11.8
   }
  ],
  "Lyft": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 148,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 148,
@@ -4227,15 +4211,15 @@
    "count": 149,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 149,
+   "ok": true,
+   "seconds": 0.2
   }
  ],
  "MakeMyTrip": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 39,
-   "ok": true,
-   "seconds": 3.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 39,
@@ -4313,16 +4297,15 @@
    "count": 42,
    "ok": true,
    "seconds": 3.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 42,
+   "ok": true,
+   "seconds": 3.4
   }
  ],
  "Marvell": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:marvell request failed after 3 attempts: https://marvell.wd1.myworkdayjobs.com/wday/cxs/marvell/MarvellCareers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 41,
@@ -4400,16 +4383,15 @@
    "count": 42,
    "ok": true,
    "seconds": 10.4
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 42,
+   "ok": true,
+   "seconds": 6.2
   }
  ],
  "Mastercard": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:mastercard request failed after 3 attempts: https://mastercard.wd1.myworkdayjobs.com/wday/cxs/mastercard/CorporateCareers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -4488,15 +4470,15 @@
    "count": 174,
    "ok": true,
    "seconds": 61.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 173,
+   "ok": true,
+   "seconds": 56.6
   }
  ],
  "Meesho": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 49,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 49,
@@ -4574,16 +4556,15 @@
    "count": 47,
    "ok": true,
    "seconds": 0.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 47,
+   "ok": true,
+   "seconds": 0.8
   }
  ],
  "Micron": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:micron request failed after 3 attempts: https://micron.wd1.myworkdayjobs.com/wday/cxs/micron/External/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -4662,15 +4643,15 @@
    "count": 314,
    "ok": true,
    "seconds": 18.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 314,
+   "ok": true,
+   "seconds": 19.8
   }
  ],
  "Microsoft": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 216,
-   "ok": true,
-   "seconds": 175.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 214,
@@ -4750,15 +4731,15 @@
    "count": 218,
    "ok": true,
    "seconds": 168.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 217,
+   "ok": true,
+   "seconds": 406.8
   }
  ],
  "MongoDB": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 391,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 391,
@@ -4836,16 +4817,15 @@
    "count": 397,
    "ok": true,
    "seconds": 2.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 403,
+   "ok": true,
+   "seconds": 3.2
   }
  ],
  "Motorola Solutions": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:motorolasolutions request failed after 3 attempts: https://motorolasolutions.wd5.myworkdayjobs.com/wday/cxs/motorolasolutions/Careers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 40,
@@ -4923,15 +4903,15 @@
    "count": 46,
    "ok": true,
    "seconds": 21.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 47,
+   "ok": true,
+   "seconds": 18.9
   }
  ],
  "NTT DATA": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 500,
-   "ok": true,
-   "seconds": 9.6
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 500,
@@ -5009,16 +4989,15 @@
    "count": 500,
    "ok": true,
    "seconds": 10.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 500,
+   "ok": true,
+   "seconds": 9.1
   }
  ],
  "NVIDIA": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:nvidia request failed after 3 attempts: https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -5097,16 +5076,15 @@
    "count": 239,
    "ok": true,
    "seconds": 67.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 241,
+   "ok": true,
+   "seconds": 65.3
   }
  ],
  "NXP Semiconductors": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
-   "ok": false,
-   "seconds": 6.0
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -5197,15 +5175,16 @@
    "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
    "ok": false,
    "seconds": 5.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 0,
+   "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
+   "ok": false,
+   "seconds": 5.5
   }
  ],
  "Nokia": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 133,
-   "ok": true,
-   "seconds": 22.6
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 133,
@@ -5283,15 +5262,15 @@
    "count": 147,
    "ok": true,
    "seconds": 26.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 146,
+   "ok": true,
+   "seconds": 26.9
   }
  ],
  "OpenAI": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 838,
-   "ok": true,
-   "seconds": 0.6
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 838,
@@ -5369,15 +5348,15 @@
    "count": 839,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 834,
+   "ok": true,
+   "seconds": 0.5
   }
  ],
  "Oracle": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 342,
-   "ok": true,
-   "seconds": 91.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 341,
@@ -5455,16 +5434,15 @@
    "count": 324,
    "ok": true,
    "seconds": 105.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 326,
+   "ok": true,
+   "seconds": 105.1
   }
  ],
  "PayPal": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:paypal request failed after 3 attempts: https://paypal.wd1.myworkdayjobs.com/wday/cxs/paypal/jobs/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 0,
@@ -5543,15 +5521,15 @@
    "count": 23,
    "ok": true,
    "seconds": 12.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 22,
+   "ok": true,
+   "seconds": 10.9
   }
  ],
  "Paytm": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 202,
-   "ok": true,
-   "seconds": 1.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 202,
@@ -5629,15 +5607,15 @@
    "count": 194,
    "ok": true,
    "seconds": 1.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 194,
+   "ok": true,
+   "seconds": 1.0
   }
  ],
  "PhonePe": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 95.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 100,
@@ -5715,15 +5693,15 @@
    "count": 100,
    "ok": true,
    "seconds": 95.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 93.3
   }
  ],
  "Pinterest": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 163,
-   "ok": true,
-   "seconds": 0.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 163,
@@ -5801,15 +5779,15 @@
    "count": 174,
    "ok": true,
    "seconds": 0.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 172,
+   "ok": true,
+   "seconds": 0.4
   }
  ],
  "Postman": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 17,
-   "ok": true,
-   "seconds": 3.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 17,
@@ -5887,15 +5865,15 @@
    "count": 17,
    "ok": true,
    "seconds": 3.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 17,
+   "ok": true,
+   "seconds": 3.2
   }
  ],
  "PwC": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 63.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 400,
@@ -5973,15 +5951,15 @@
    "count": 400,
    "ok": true,
    "seconds": 66.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 57.8
   }
  ],
  "Qualcomm": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 400,
-   "ok": true,
-   "seconds": 124.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 398,
@@ -6059,15 +6037,15 @@
    "count": 400,
    "ok": true,
    "seconds": 295.3
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 400,
+   "ok": true,
+   "seconds": 140.3
   }
  ],
  "Razorpay": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 26,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 25,
@@ -6145,16 +6123,15 @@
    "count": 28,
    "ok": true,
    "seconds": 0.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 28,
+   "ok": true,
+   "seconds": 0.1
   }
  ],
  "Red Hat": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:redhat request failed after 3 attempts: https://redhat.wd5.myworkdayjobs.com/wday/cxs/redhat/jobs/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 7,
@@ -6232,15 +6209,15 @@
    "count": 6,
    "ok": true,
    "seconds": 1.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 6,
+   "ok": true,
+   "seconds": 1.5
   }
  ],
  "Robinhood": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 165,
-   "ok": true,
-   "seconds": 0.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 165,
@@ -6318,15 +6295,15 @@
    "count": 167,
    "ok": true,
    "seconds": 0.4
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 164,
+   "ok": true,
+   "seconds": 0.3
   }
  ],
  "Salesforce": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 103,
-   "ok": true,
-   "seconds": 10.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 103,
@@ -6404,15 +6381,15 @@
    "count": 102,
    "ok": true,
    "seconds": 11.1
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 97,
+   "ok": true,
+   "seconds": 9.2
   }
  ],
  "Samsung": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 31,
-   "ok": true,
-   "seconds": 5.3
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 31,
@@ -6490,15 +6467,15 @@
    "count": 30,
    "ok": true,
    "seconds": 4.7
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 30,
+   "ok": true,
+   "seconds": 4.4
   }
  ],
  "ServiceNow": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 100,
-   "ok": true,
-   "seconds": 46.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 100,
@@ -6576,15 +6553,15 @@
    "count": 100,
    "ok": true,
    "seconds": 47.5
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 100,
+   "ok": true,
+   "seconds": 46.4
   }
  ],
  "ShareChat": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 9,
-   "ok": true,
-   "seconds": 2.1
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 9,
@@ -6662,15 +6639,15 @@
    "count": 11,
    "ok": true,
    "seconds": 1.2
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 11,
+   "ok": true,
+   "seconds": 2.1
   }
  ],
  "Snowflake": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 376,
-   "ok": true,
-   "seconds": 0.5
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 376,
@@ -6748,16 +6725,15 @@
    "count": 376,
    "ok": true,
    "seconds": 2.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 377,
+   "ok": true,
+   "seconds": 3.1
   }
  ],
  "Sony": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:sonyglobal request failed after 3 attempts: https://sonyglobal.wd1.myworkdayjobs.com/wday/cxs/sonyglobal/SonyGlobalCareers/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 6.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 128,
@@ -6835,15 +6811,15 @@
    "count": 127,
    "ok": true,
    "seconds": 13.6
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 130,
+   "ok": true,
+   "seconds": 12.1
   }
  ],
  "Stripe": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 786,
-   "ok": true,
-   "seconds": 0.4
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 786,
@@ -6921,15 +6897,15 @@
    "count": 793,
    "ok": true,
    "seconds": 0.7
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 785,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Texas Instruments": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 117,
-   "ok": true,
-   "seconds": 29.2
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 117,
@@ -7007,15 +6983,15 @@
    "count": 115,
    "ok": true,
    "seconds": 32.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 115,
+   "ok": true,
+   "seconds": 34.0
   }
  ],
  "Unacademy": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 3,
-   "ok": true,
-   "seconds": 1.8
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 3,
@@ -7093,15 +7069,15 @@
    "count": 3,
    "ok": true,
    "seconds": 1.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 3,
+   "ok": true,
+   "seconds": 1.7
   }
  ],
  "Upstox": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 1,
-   "ok": true,
-   "seconds": 0.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 1,
@@ -7179,15 +7155,15 @@
    "count": 1,
    "ok": true,
    "seconds": 0.9
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 1,
+   "ok": true,
+   "seconds": 0.9
   }
  ],
  "Urban Company": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 10,
-   "ok": true,
-   "seconds": 0.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 10,
@@ -7265,16 +7241,15 @@
    "count": 10,
    "ok": true,
    "seconds": 0.8
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 10,
+   "ok": true,
+   "seconds": 0.7
   }
  ],
  "Visa": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 0,
-   "error": "workday:visa request failed after 3 attempts: https://visa.wd5.myworkdayjobs.com/wday/cxs/visa/Visa/jobs -- Expecting value: line 1 column 1 (char 0)",
-   "ok": false,
-   "seconds": 5.9
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 92,
@@ -7352,15 +7327,15 @@
    "count": 93,
    "ok": true,
    "seconds": 36.4
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 92,
+   "ok": true,
+   "seconds": 35.4
   }
  ],
  "Wipro": [
-  {
-   "at": "2026-11-14T11:00+00:00",
-   "count": 600,
-   "ok": true,
-   "seconds": 92.7
-  },
   {
    "at": "2026-11-14T16:03+00:00",
    "count": 600,
@@ -7438,6 +7413,12 @@
    "count": 600,
    "ok": true,
    "seconds": 82.0
+  },
+  {
+   "at": "2026-11-19T02:51+00:00",
+   "count": 600,
+   "ok": true,
+   "seconds": 77.2
   }
  ]
 }
