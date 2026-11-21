@@ -1,0 +1,520 @@
+{
+  "Stripe": {
+    "ok": true,
+    "count": 778,
+    "seconds": 0.6,
+    "platform": "greenhouse"
+  },
+  "Cloudflare": {
+    "ok": true,
+    "count": 503,
+    "seconds": 2.7,
+    "platform": "greenhouse"
+  },
+  "Airbnb": {
+    "ok": true,
+    "count": 202,
+    "seconds": 0.3,
+    "platform": "greenhouse"
+  },
+  "Coinbase": {
+    "ok": true,
+    "count": 252,
+    "seconds": 0.5,
+    "platform": "greenhouse"
+  },
+  "Robinhood": {
+    "ok": true,
+    "count": 163,
+    "seconds": 0.4,
+    "platform": "greenhouse"
+  },
+  "Discord": {
+    "ok": true,
+    "count": 29,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "Pinterest": {
+    "ok": true,
+    "count": 174,
+    "seconds": 0.3,
+    "platform": "greenhouse"
+  },
+  "Lyft": {
+    "ok": true,
+    "count": 148,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "Instacart": {
+    "ok": true,
+    "count": 92,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "GitLab": {
+    "ok": true,
+    "count": 246,
+    "seconds": 2.3,
+    "platform": "greenhouse"
+  },
+  "Anthropic": {
+    "ok": true,
+    "count": 635,
+    "seconds": 4.8,
+    "platform": "greenhouse"
+  },
+  "Postman": {
+    "ok": true,
+    "count": 18,
+    "seconds": 4.2,
+    "platform": "workday"
+  },
+  "Razorpay": {
+    "ok": true,
+    "count": 29,
+    "seconds": 0.5,
+    "platform": "greenhouse"
+  },
+  "BrowserStack": {
+    "ok": true,
+    "count": 30,
+    "seconds": 3.2,
+    "platform": "workday"
+  },
+  "Freshworks": {
+    "ok": true,
+    "count": 100,
+    "seconds": 51.7,
+    "platform": "smartrecruiters"
+  },
+  "CRED": {
+    "ok": true,
+    "count": 11,
+    "seconds": 0.2,
+    "platform": "lever"
+  },
+  "Groww": {
+    "ok": true,
+    "count": 9,
+    "seconds": 0.2,
+    "platform": "greenhouse"
+  },
+  "InMobi": {
+    "ok": true,
+    "count": 75,
+    "seconds": 1.0,
+    "platform": "greenhouse"
+  },
+  "Databricks": {
+    "ok": true,
+    "count": 896,
+    "seconds": 7.0,
+    "platform": "greenhouse"
+  },
+  "Snowflake": {
+    "ok": true,
+    "count": 374,
+    "seconds": 2.6,
+    "platform": "ashby"
+  },
+  "MongoDB": {
+    "ok": true,
+    "count": 417,
+    "seconds": 3.2,
+    "platform": "greenhouse"
+  },
+  "Elastic": {
+    "ok": true,
+    "count": 382,
+    "seconds": 4.5,
+    "platform": "greenhouse"
+  },
+  "Confluent": {
+    "ok": true,
+    "count": 0,
+    "seconds": 0.1,
+    "platform": "ashby"
+  },
+  "Datadog": {
+    "ok": true,
+    "count": 382,
+    "seconds": 3.0,
+    "platform": "greenhouse"
+  },
+  "Atlassian": {
+    "ok": true,
+    "count": 233,
+    "seconds": 1.6,
+    "platform": "custom_api"
+  },
+  "Hugging Face": {
+    "ok": true,
+    "count": 10,
+    "seconds": 0.3,
+    "platform": "workable"
+  },
+  "Microsoft": {
+    "ok": true,
+    "count": 230,
+    "seconds": 124.4,
+    "platform": "eightfold"
+  },
+  "Amazon": {
+    "ok": true,
+    "count": 600,
+    "seconds": 11.0,
+    "platform": "amazon_custom"
+  },
+  "Infosys": {
+    "ok": true,
+    "count": 1562,
+    "seconds": 4.2,
+    "platform": "custom_api"
+  },
+  "Wipro": {
+    "ok": true,
+    "count": 600,
+    "seconds": 105.6,
+    "platform": "successfactors"
+  },
+  "MakeMyTrip": {
+    "ok": true,
+    "count": 42,
+    "seconds": 3.5,
+    "platform": "makemytrip_custom"
+  },
+  "IBM": {
+    "ok": true,
+    "count": 1500,
+    "seconds": 13.7,
+    "platform": "custom_api"
+  },
+  "NVIDIA": {
+    "ok": true,
+    "count": 237,
+    "seconds": 52.7,
+    "platform": "workday"
+  },
+  "Intel": {
+    "ok": true,
+    "count": 108,
+    "seconds": 16.7,
+    "platform": "workday"
+  },
+  "AMD": {
+    "ok": true,
+    "count": 212,
+    "seconds": 19.8,
+    "platform": "jibe"
+  },
+  "Qualcomm": {
+    "ok": true,
+    "count": 400,
+    "seconds": 136.7,
+    "platform": "eightfold"
+  },
+  "Cisco": {
+    "ok": true,
+    "count": 334,
+    "seconds": 50.6,
+    "platform": "workday"
+  },
+  "Oracle": {
+    "ok": true,
+    "count": 338,
+    "seconds": 94.0,
+    "platform": "oracle_hcm"
+  },
+  "Salesforce": {
+    "ok": true,
+    "count": 95,
+    "seconds": 8.8,
+    "platform": "workday"
+  },
+  "Adobe": {
+    "ok": true,
+    "count": 37,
+    "seconds": 3.2,
+    "platform": "workday"
+  },
+  "ServiceNow": {
+    "ok": true,
+    "count": 100,
+    "seconds": 51.0,
+    "platform": "smartrecruiters"
+  },
+  "Broadcom": {
+    "ok": true,
+    "count": 70,
+    "seconds": 6.0,
+    "platform": "workday"
+  },
+  "Red Hat": {
+    "ok": true,
+    "count": 5,
+    "seconds": 1.3,
+    "platform": "workday"
+  },
+  "Dell Technologies": {
+    "ok": true,
+    "count": 77,
+    "seconds": 19.0,
+    "platform": "oracle_hcm"
+  },
+  "Hewlett Packard Enterprise": {
+    "ok": true,
+    "count": 332,
+    "seconds": 60.2,
+    "platform": "workday"
+  },
+  "HP": {
+    "ok": true,
+    "count": 96,
+    "seconds": 14.7,
+    "platform": "workday"
+  },
+  "Samsung": {
+    "ok": true,
+    "count": 30,
+    "seconds": 5.2,
+    "platform": "workday"
+  },
+  "Sony": {
+    "ok": true,
+    "count": 131,
+    "seconds": 12.5,
+    "platform": "workday"
+  },
+  "Bosch": {
+    "ok": true,
+    "count": 100,
+    "seconds": 49.8,
+    "platform": "smartrecruiters"
+  },
+  "Ericsson": {
+    "ok": true,
+    "count": 104,
+    "seconds": 27.7,
+    "platform": "eightfold"
+  },
+  "Nokia": {
+    "ok": true,
+    "count": 138,
+    "seconds": 26.9,
+    "platform": "oracle_hcm"
+  },
+  "Motorola Solutions": {
+    "ok": true,
+    "count": 48,
+    "seconds": 19.5,
+    "platform": "workday"
+  },
+  "PayPal": {
+    "ok": true,
+    "count": 28,
+    "seconds": 16.1,
+    "platform": "workday"
+  },
+  "Visa": {
+    "ok": true,
+    "count": 100,
+    "seconds": 33.1,
+    "platform": "workday"
+  },
+  "Mastercard": {
+    "ok": true,
+    "count": 151,
+    "seconds": 66.3,
+    "platform": "workday"
+  },
+  "GitHub": {
+    "ok": true,
+    "count": 103,
+    "seconds": 8.4,
+    "platform": "jibe"
+  },
+  "OpenAI": {
+    "ok": true,
+    "count": 852,
+    "seconds": 6.7,
+    "platform": "ashby"
+  },
+  "HCLTech": {
+    "ok": true,
+    "count": 600,
+    "seconds": 53.4,
+    "platform": "successfactors"
+  },
+  "Accenture": {
+    "ok": true,
+    "count": 400,
+    "seconds": 158.5,
+    "platform": "workday"
+  },
+  "Capgemini": {
+    "ok": true,
+    "count": 764,
+    "seconds": 8.4,
+    "platform": "custom_api"
+  },
+  "DXC Technology": {
+    "ok": true,
+    "count": 220,
+    "seconds": 51.5,
+    "platform": "workday"
+  },
+  "NTT DATA": {
+    "ok": true,
+    "count": 500,
+    "seconds": 11.8,
+    "platform": "phenom"
+  },
+  "Genpact": {
+    "ok": true,
+    "count": 400,
+    "seconds": 64.2,
+    "platform": "workday"
+  },
+  "EY": {
+    "ok": true,
+    "count": 600,
+    "seconds": 40.9,
+    "platform": "successfactors"
+  },
+  "KPMG": {
+    "ok": true,
+    "count": 400,
+    "seconds": 13.3,
+    "platform": "oracle_hcm"
+  },
+  "PwC": {
+    "ok": true,
+    "count": 400,
+    "seconds": 75.0,
+    "platform": "workday"
+  },
+  "Meesho": {
+    "ok": true,
+    "count": 48,
+    "seconds": 0.2,
+    "platform": "lever"
+  },
+  "PhonePe": {
+    "ok": true,
+    "count": 100,
+    "seconds": 101.6,
+    "platform": "smartrecruiters"
+  },
+  "Paytm": {
+    "ok": true,
+    "count": 199,
+    "seconds": 0.4,
+    "platform": "lever"
+  },
+  "Delhivery": {
+    "ok": false,
+    "count": 0,
+    "seconds": 4.8,
+    "error": "darwinbox:delhivery request failed after 3 attempts: https://delhivery.darwinbox.in/ms/candidateapi/job -- 403 Client Error: Forbidden for url: https://delhivery.darwinbox.in/ms/candidateapi/job?page=1&limit=50",
+    "platform": "darwinbox"
+  },
+  "ShareChat": {
+    "ok": true,
+    "count": 8,
+    "seconds": 1.2,
+    "platform": "custom_api"
+  },
+  "Unacademy": {
+    "ok": true,
+    "count": 3,
+    "seconds": 2.5,
+    "platform": "smartrecruiters"
+  },
+  "Upstox": {
+    "ok": true,
+    "count": 1,
+    "seconds": 1.2,
+    "platform": "smartrecruiters"
+  },
+  "Cars24": {
+    "ok": true,
+    "count": 1,
+    "seconds": 1.2,
+    "platform": "smartrecruiters"
+  },
+  "Urban Company": {
+    "ok": true,
+    "count": 11,
+    "seconds": 0.9,
+    "platform": "custom_api"
+  },
+  "Texas Instruments": {
+    "ok": true,
+    "count": 121,
+    "seconds": 31.2,
+    "platform": "oracle_hcm"
+  },
+  "Micron": {
+    "ok": true,
+    "count": 317,
+    "seconds": 21.2,
+    "platform": "workday"
+  },
+  "NXP Semiconductors": {
+    "ok": false,
+    "count": 0,
+    "seconds": 6.4,
+    "error": "workday:nxp request failed after 3 attempts: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs -- 422 Client Error: Unprocessable Entity for url: https://nxp.wd3.myworkdayjobs.com/wday/cxs/nxp/careers/jobs",
+    "platform": "workday"
+  },
+  "Analog Devices": {
+    "ok": true,
+    "count": 84,
+    "seconds": 10.9,
+    "platform": "workday"
+  },
+  "Infineon Technologies": {
+    "ok": true,
+    "count": 176,
+    "seconds": 44.5,
+    "platform": "eightfold"
+  },
+  "Marvell": {
+    "ok": true,
+    "count": 45,
+    "seconds": 6.7,
+    "platform": "workday"
+  },
+  "Cadence": {
+    "ok": true,
+    "count": 208,
+    "seconds": 47.1,
+    "platform": "workday"
+  },
+  "Applied Materials": {
+    "ok": true,
+    "count": 168,
+    "seconds": 25.0,
+    "platform": "workday"
+  },
+  "Docker": {
+    "ok": true,
+    "count": 50,
+    "seconds": 0.1,
+    "platform": "ashby"
+  },
+  "C-DAC": {
+    "ok": true,
+    "count": 7,
+    "seconds": 2.2,
+    "platform": "govt_notices"
+  },
+  "ISRO": {
+    "ok": true,
+    "count": 118,
+    "seconds": 0.2,
+    "platform": "govt_notices"
+  }
+}

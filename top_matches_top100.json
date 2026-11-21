@@ -1,0 +1,802 @@
+[
+ {
+  "match_score": 91,
+  "company": "Infosys",
+  "job_title": "AI Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254292&sourceId=1"
+ },
+ {
+  "match_score": 89,
+  "company": "Cisco",
+  "job_title": "IT Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/IT-Software-Engineer_2026174"
+ },
+ {
+  "match_score": 87,
+  "company": "Amazon",
+  "job_title": "Applied Scientist I, International Seller Services",
+  "location_raw": "Bengaluru, Karnataka, IND",
+  "status": "UNCHANGED",
+  "apply_url": "https://www.amazon.jobs/en/jobs/10595857/applied-scientist-i-international-seller-services"
+ },
+ {
+  "match_score": 85,
+  "company": "Hewlett Packard Enterprise",
+  "job_title": "AI Data Foundation Research Engineer",
+  "location_raw": "Bengaluru, Karn\u0101taka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bengaluru-Karntaka-India/AI-Data-Foundation-Research-Engineer_1218552-2"
+ },
+ {
+  "match_score": 84,
+  "company": "DXC Technology",
+  "job_title": "Analyst I Software Engineering (Full Stack Java Developer)",
+  "location_raw": "IND - MP - INDORE",
+  "status": "UNCHANGED",
+  "apply_url": "https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/IND---MP---INDORE/Analyst-I-Software-Engineering--Full-Stack-Java-Developer-_51589973"
+ },
+ {
+  "match_score": 84,
+  "company": "Infosys",
+  "job_title": "Python ML_GenAI Engineers",
+  "location_raw": "Chennai, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-256133&sourceId=1"
+ },
+ {
+  "match_score": 84,
+  "company": "Infosys",
+  "job_title": "Python ML_GenAI Engineers",
+  "location_raw": "Chennai, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254305&sourceId=1"
+ },
+ {
+  "match_score": 84,
+  "company": "Infosys",
+  "job_title": "Computer Vision",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-252832&sourceId=1"
+ },
+ {
+  "match_score": 83,
+  "company": "Qualcomm",
+  "job_title": "SDET - Software Development Engineer in Test",
+  "location_raw": "Hyderabad, Telang\u0101na, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.qualcomm.com/careers/job/446722208738"
+ },
+ {
+  "match_score": 82,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2031308"
+ },
+ {
+  "match_score": 82,
+  "company": "Ericsson",
+  "job_title": "DevOps Engineer",
+  "location_raw": "Bangalore,Karnataka,India",
+  "status": "UNCHANGED",
+  "apply_url": "https://jobs.ericsson.com/careers/job/563121777557457"
+ },
+ {
+  "match_score": 81,
+  "company": "Capgemini",
+  "job_title": "Python & GenAI Engineer",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.capgemini.com/job/Bangalore-Python-&-GenAI-Engineer/1422913533/?feedId=388633&utm_source=CareerSite&tcsource=apply"
+ },
+ {
+  "match_score": 81,
+  "company": "Coinbase",
+  "job_title": "Machine Learning Engineer",
+  "location_raw": "Remote - India",
+  "status": "UNCHANGED",
+  "apply_url": "https://www.coinbase.com/careers/positions/7985187?gh_jid=7985187"
+ },
+ {
+  "match_score": 80,
+  "company": "Amazon",
+  "job_title": "Applied Scientist, Alexa Sensitive Content Intelligence (ASCI)",
+  "location_raw": "Bengaluru, Karnataka, IND",
+  "status": "UNCHANGED",
+  "apply_url": "https://www.amazon.jobs/en/jobs/10578603/applied-scientist-alexa-sensitive-content-intelligence-asci"
+ },
+ {
+  "match_score": 80,
+  "company": "Infineon Technologies",
+  "job_title": "Junior Software Developer (Contract)",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://jobs.infineon.com/careers/job/563808971932857"
+ },
+ {
+  "match_score": 80,
+  "company": "Infineon Technologies",
+  "job_title": "Junior Software Developer (Contract)",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://jobs.infineon.com/careers/job/563808971932858"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "RGM - Data Scientist",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-255266&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "AI/ML/GEN AI Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254662&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "AI/ML/GEN AI Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254561&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "MLOps/DevOps/CloudOps",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254171&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "AI/ML Engineer (Generative AI, ML,AWS)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254165&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "AI/ML Engineer (Generative AI, ML,AWS)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254161&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "Infosys",
+  "job_title": "AI ML Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-253531&sourceId=1"
+ },
+ {
+  "match_score": 80,
+  "company": "KPMG",
+  "job_title": "Canada D&A A2 AI Engineer",
+  "location_raw": "Bangalore, Karnataka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://ejgk.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_3/job/30051787"
+ },
+ {
+  "match_score": 80,
+  "company": "PayPal",
+  "job_title": "Machine Learning Engineer, Fraud (Crypto & Debit Card)",
+  "location_raw": "Bangalore, Karnataka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://wd1.myworkdaysite.com/recruiting/paypal/jobs/job/Bangalore-Karnataka-India/Machine-Learning-Engineer--Fraud--Crypto---Debit-Card-_R0139149"
+ },
+ {
+  "match_score": 79,
+  "company": "Ericsson",
+  "job_title": "Data Scientist",
+  "location_raw": "Kolkata,West Bengal,India",
+  "status": "UNCHANGED",
+  "apply_url": "https://jobs.ericsson.com/careers/job/563121776997510"
+ },
+ {
+  "match_score": 78,
+  "company": "Motorola Solutions",
+  "job_title": "AI Engineer / Developer (Cloud & Communications)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Bangalore-India/AI-Engineer---Developer--Cloud---Communications-_R70675"
+ },
+ {
+  "match_score": 77,
+  "company": "Infosys",
+  "job_title": "GEN AI Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-253596&sourceId=1"
+ },
+ {
+  "match_score": 77,
+  "company": "PayPal",
+  "job_title": "Software Engineer, Android",
+  "location_raw": "Bangalore, Karnataka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://wd1.myworkdaysite.com/recruiting/paypal/jobs/job/Bangalore-Karnataka-India/Software-Engineer--Android_R0138414-1"
+ },
+ {
+  "match_score": 76,
+  "company": "Capgemini",
+  "job_title": "Data scientist",
+  "location_raw": "Gurgaon",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.capgemini.com/job/Gurgaon-Data-scientist/1459263633/?feedId=388633&utm_source=CareerSite&tcsource=apply"
+ },
+ {
+  "match_score": 76,
+  "company": "Infosys",
+  "job_title": "AI Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254287&sourceId=1"
+ },
+ {
+  "match_score": 76,
+  "company": "Microsoft",
+  "job_title": "Software Engineering",
+  "location_raw": "India, Multiple Locations, Multiple Locations",
+  "status": "UNCHANGED",
+  "apply_url": "https://apply.careers.microsoft.com/careers/job/1970393557050388"
+ },
+ {
+  "match_score": 76,
+  "company": "Motorola Solutions",
+  "job_title": "Software Engineer I",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Bangalore-India/Software-Engineer-I_R69349"
+ },
+ {
+  "match_score": 76,
+  "company": "Stripe",
+  "job_title": "Software Engineer, Intern",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://stripe.com/jobs/search?gh_jid=8031833"
+ },
+ {
+  "match_score": 76,
+  "company": "Stripe",
+  "job_title": "Software Engineer, New Grad",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://stripe.com/jobs/search?gh_jid=8130876"
+ },
+ {
+  "match_score": 75,
+  "company": "DXC Technology",
+  "job_title": "Analyst I Software Engineering",
+  "location_raw": "IND - HR - NOIDA",
+  "status": "UNCHANGED",
+  "apply_url": "https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/IND---HR---NOIDA/Analyst-I-Software-Engineering_51592356"
+ },
+ {
+  "match_score": 75,
+  "company": "Infosys",
+  "job_title": "Computer Vision Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-253391&sourceId=1"
+ },
+ {
+  "match_score": 74,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2031617"
+ },
+ {
+  "match_score": 74,
+  "company": "Cisco",
+  "job_title": "Cloud Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Cloud-Engineer_2025380-1"
+ },
+ {
+  "match_score": 74,
+  "company": "HP",
+  "job_title": "Agentic AI Engineer",
+  "location_raw": "Bengaluru, Karnataka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://hp.wd5.myworkdayjobs.com/ExternalCareerSite/job/Bengaluru-Karnataka-India/Agentic-AI-Engineer_3164655-1"
+ },
+ {
+  "match_score": 74,
+  "company": "Hewlett Packard Enterprise",
+  "job_title": "Cloud Software Engineer",
+  "location_raw": "Bengaluru, Karn\u0101taka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bengaluru-Karntaka-India/Cloud-Software-Engineer_1216317-2"
+ },
+ {
+  "match_score": 74,
+  "company": "Infosys",
+  "job_title": "Devops Support Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-256648&sourceId=1"
+ },
+ {
+  "match_score": 74,
+  "company": "Infosys",
+  "job_title": "Devops Support Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-256538&sourceId=1"
+ },
+ {
+  "match_score": 74,
+  "company": "Infosys",
+  "job_title": "Devops Support Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-256537&sourceId=1"
+ },
+ {
+  "match_score": 74,
+  "company": "Qualcomm",
+  "job_title": "GPU Architecture & AI/ML Engineer | IIT or NIT Freshers | 0\u20133 Years",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.qualcomm.com/careers/job/446720933788"
+ },
+ {
+  "match_score": 73,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5919512-S2076290-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5919513-S2076298-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5919514-S2076297-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5919515-S2076291-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5919516-S2076293-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2031523"
+ },
+ {
+  "match_score": 73,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2031525"
+ },
+ {
+  "match_score": 73,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2030558-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Cisco",
+  "job_title": "Machine Learning Engineering Technical Leader",
+  "location_raw": "Hyderabad, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Hyderabad-India/Machine-Learning-Engineering-Technical-Leader_2027055-1"
+ },
+ {
+  "match_score": 73,
+  "company": "Infosys",
+  "job_title": "AI/ML Engineer - Snowflake Cloud",
+  "location_raw": "Indore                   , India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254326&sourceId=1"
+ },
+ {
+  "match_score": 73,
+  "company": "Infosys",
+  "job_title": "DevOps+MLOps+PythonML",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-252700&sourceId=1"
+ },
+ {
+  "match_score": 73,
+  "company": "Motorola Solutions",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Bangalore-India/Software-Engineer_R69470"
+ },
+ {
+  "match_score": 73,
+  "company": "NTT DATA",
+  "job_title": "Associate Information Security Analyst",
+  "location_raw": "Mumbai, Mah\u0101r\u0101shtra, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://nttlimited.wd3.myworkdayjobs.com/NTT_Careers/job/Mumbai-India/Associate-Information-Security-Analyst_R-130365/apply"
+ },
+ {
+  "match_score": 72,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Pune",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Pune/AI---ML-Engineer_ATCI-5816056-S2076279"
+ },
+ {
+  "match_score": 72,
+  "company": "Cisco",
+  "job_title": "Embedded Software Engineer - C, Linux, Networking (5+ yrs)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Embedded-Software-Engineer---C--Linux--Networking--5--yrs-_2018344-1"
+ },
+ {
+  "match_score": 72,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2030320"
+ },
+ {
+  "match_score": 72,
+  "company": "Infosys",
+  "job_title": "DAAI - AI/ML Engineer",
+  "location_raw": "Noida, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-255161&sourceId=1"
+ },
+ {
+  "match_score": 72,
+  "company": "Infosys",
+  "job_title": "AI Engineer (Gen AI, Gcp/ snowflake/aws)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254425&sourceId=1"
+ },
+ {
+  "match_score": 71,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Bengaluru/AI---ML-Engineer_ATCI-5816058-S2076286-1"
+ },
+ {
+  "match_score": 71,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Hyderabad",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Hyderabad/AI---ML-Engineer_ATCI-5923527-S2076299-1"
+ },
+ {
+  "match_score": 71,
+  "company": "Accenture",
+  "job_title": "AI / ML Engineer",
+  "location_raw": "Gurugram",
+  "status": "UNCHANGED",
+  "apply_url": "https://accenture.wd103.myworkdayjobs.com/AccentureCareers/job/Gurugram/AI---ML-Engineer_ATCI-5923529-S2076294-1"
+ },
+ {
+  "match_score": 71,
+  "company": "Amazon",
+  "job_title": "Applied Scientist I, Buyer Risk Prevention (BRP)",
+  "location_raw": "Bengaluru, Karnataka, IND",
+  "status": "UNCHANGED",
+  "apply_url": "https://www.amazon.jobs/en/jobs/10596351/applied-scientist-i-buyer-risk-prevention-brp"
+ },
+ {
+  "match_score": 71,
+  "company": "Broadcom",
+  "job_title": "Software Engineer",
+  "location_raw": "IND-Pune-Panchshil",
+  "status": "UNCHANGED",
+  "apply_url": "https://broadcom.wd1.myworkdayjobs.com/External_Career/job/IND-Pune-Panchshil/Software-Engineer_R027892"
+ },
+ {
+  "match_score": 71,
+  "company": "Cisco",
+  "job_title": "IT Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/IT-Software-Engineer_2026343-1"
+ },
+ {
+  "match_score": 71,
+  "company": "Infosys",
+  "job_title": "AI/ML Engineer (with AWS Cloud Skills)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254313&sourceId=1"
+ },
+ {
+  "match_score": 71,
+  "company": "Marvell",
+  "job_title": "Infrastructure and Email Security Engineer",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://marvell.wd1.myworkdayjobs.com/MarvellCareers/job/Bangalore/Infrastructure-and-Email-Security-Engineer_2604311"
+ },
+ {
+  "match_score": 71,
+  "company": "Microsoft",
+  "job_title": "Software Engineering IC2",
+  "location_raw": "India, Telangana, Hyderabad",
+  "status": "UNCHANGED",
+  "apply_url": "https://apply.careers.microsoft.com/careers/job/1970393557069836"
+ },
+ {
+  "match_score": 71,
+  "company": "Motorola Solutions",
+  "job_title": "Software Engineer (Elastic Search or any enterprise observability tools Prometheus/Grafana Cloud/On prem Observability Azure/AWS/GCP advanced concepts Kubernetes, Linux and Docker DevOps advanced Agentic AI fundamentals)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Bangalore-India/Software-Engineer--Elastic-Search-or-any-enterprise-observability-tools-Prometheus-Grafana-Cloud-On-prem-Observability-Azure-AWS-GCP-advanced-concepts-Kubernetes--Linux-and-Docker-DevOps-advanced-Agentic-AI-fundamentals-_R69469-1"
+ },
+ {
+  "match_score": 71,
+  "company": "Motorola Solutions",
+  "job_title": "Software Engineer(Python/Perl, Any database, Linux, Networking concepts knowledge)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://motorolasolutions.wd5.myworkdayjobs.com/Careers/job/Bangalore-India/Software-Engineer-Python-Perl--Any-database--Microsevices--Kubernetes-_R68186"
+ },
+ {
+  "match_score": 71,
+  "company": "Postman",
+  "job_title": "Software Engineer",
+  "location_raw": "Hyderabad, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://postman.wd108.myworkdayjobs.com/careers/job/Hyderabad-India/Software-Engineer_JR1000067"
+ },
+ {
+  "match_score": 71,
+  "company": "Qualcomm",
+  "job_title": "XR Software Engineer (All Levels - Multiple Positions)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.qualcomm.com/careers/job/446721052756"
+ },
+ {
+  "match_score": 70,
+  "company": "Capgemini",
+  "job_title": "Azure DevOps Engineer",
+  "location_raw": "Bangalore",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.capgemini.com/job/Bangalore-Azure-DevOps-Engineer/1441250833/?feedId=388633&utm_source=CareerSite&tcsource=apply"
+ },
+ {
+  "match_score": 70,
+  "company": "Capgemini",
+  "job_title": "Python Gen AI Engineer",
+  "location_raw": "Navi Mumbai",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.capgemini.com/job/Navi-Mumbai-Python-Gen-AI-Engineer/1448465033/?feedId=388633&utm_source=CareerSite&tcsource=apply"
+ },
+ {
+  "match_score": 70,
+  "company": "Cisco",
+  "job_title": "Software Engineer \u2013 Full Stack",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer---Full-Stack_2029300"
+ },
+ {
+  "match_score": 70,
+  "company": "DXC Technology",
+  "job_title": "Analyst I Software Engineering",
+  "location_raw": "IND - KA - BANGALORE",
+  "status": "UNCHANGED",
+  "apply_url": "https://dxctechnology.wd1.myworkdayjobs.com/DXCJobs/job/IND---KA---BANGALORE/Analyst-I-Software-Engineering_51587368"
+ },
+ {
+  "match_score": 70,
+  "company": "Hewlett Packard Enterprise",
+  "job_title": "Storage AI Engineer",
+  "location_raw": "Bengaluru, Karn\u0101taka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bengaluru-Karntaka-India/Storage-AI-Engineer_1215532-2"
+ },
+ {
+  "match_score": 70,
+  "company": "NTT DATA",
+  "job_title": "Security Engineer (L1)",
+  "location_raw": "Mumbai, Mah\u0101r\u0101shtra, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://nttlimited.wd3.myworkdayjobs.com/NTT_Careers/job/Mumbai-India/Security-Engineer--L1-_R-151701/apply"
+ },
+ {
+  "match_score": 70,
+  "company": "NTT DATA",
+  "job_title": "Security Engineer (L1)",
+  "location_raw": "Mumbai, Mah\u0101r\u0101shtra, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://nttlimited.wd3.myworkdayjobs.com/NTT_Careers/job/Mumbai-India/Security-Engineer--L1-_R-139376/apply"
+ },
+ {
+  "match_score": 70,
+  "company": "NTT DATA",
+  "job_title": "Security Engineer WAF & SSLO (L1)",
+  "location_raw": "Pune, Mah\u0101r\u0101shtra, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://nttlimited.wd3.myworkdayjobs.com/NTT_Careers/job/Nagpur-India/Security-Engineer-WAF---SSLO--L1-_R-140183/apply"
+ },
+ {
+  "match_score": 70,
+  "company": "NVIDIA",
+  "job_title": "System Software Engineer - Performance Verification Infrastructure",
+  "location_raw": "India, Bengaluru",
+  "status": "UNCHANGED",
+  "apply_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/System-Software-Engineer---Performance-Verification-Infrastructure_JR2025205"
+ },
+ {
+  "match_score": 70,
+  "company": "Qualcomm",
+  "job_title": "AI and DSP Applications Software Engineer",
+  "location_raw": "Hyderabad, Telang\u0101na, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://careers.qualcomm.com/careers/job/446716241943"
+ },
+ {
+  "match_score": 69,
+  "company": "Cisco",
+  "job_title": "Software Engineer | Java/Golang/Python/C or C++ | 2 to 4 years | Bangalore",
+  "location_raw": "Bangalore, India",
+  "status": "NEW",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer---Java-Golang-Python-C-or-C-----2-to-4-years---Bangalore_2031708"
+ },
+ {
+  "match_score": 69,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2027065"
+ },
+ {
+  "match_score": 69,
+  "company": "Infosys",
+  "job_title": "Gen Ai Engineer",
+  "location_raw": "Kolkata(Wb), India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-256131&sourceId=1"
+ },
+ {
+  "match_score": 69,
+  "company": "Infosys",
+  "job_title": "Gen Ai Engineer",
+  "location_raw": "Kolkata(Wb), India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-253870&sourceId=1"
+ },
+ {
+  "match_score": 69,
+  "company": "Microsoft",
+  "job_title": "Software Engineer",
+  "location_raw": "India, Telangana, Hyderabad; India, Telangana, Hyderabad",
+  "status": "UNCHANGED",
+  "apply_url": "https://apply.careers.microsoft.com/careers/job/1970393556955128"
+ },
+ {
+  "match_score": 68,
+  "company": "Cisco",
+  "job_title": "Software Engineering Technical Leader",
+  "location_raw": "Boulder, Colorado, US",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Boulder-Colorado-US/Software-Engineering-Technical-Leader_2031695"
+ },
+ {
+  "match_score": 68,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2030616-1"
+ },
+ {
+  "match_score": 68,
+  "company": "Cisco",
+  "job_title": "Software Engineer",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Bangalore-India/Software-Engineer_2031310-1"
+ },
+ {
+  "match_score": 68,
+  "company": "Cisco",
+  "job_title": "Machine Learning Engineer",
+  "location_raw": "Hyderabad, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers/job/Hyderabad-India/Machine-Learning-Engineer_2030936"
+ },
+ {
+  "match_score": 68,
+  "company": "Hewlett Packard Enterprise",
+  "job_title": "Network Security Engineer - Security Service Edge",
+  "location_raw": "Bengaluru, Karn\u0101taka, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe/job/Bengaluru-Karntaka-India/Network-Security-Engineer---Security-Service-Edge_1217587-2"
+ },
+ {
+  "match_score": 68,
+  "company": "Infosys",
+  "job_title": "AI/ML engineer with GCP Cloud",
+  "location_raw": "Noida, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254321&sourceId=1"
+ },
+ {
+  "match_score": 68,
+  "company": "Infosys",
+  "job_title": "AI/ML Engineer (with Databricks Cloud Skills)",
+  "location_raw": "Pune                     , India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254318&sourceId=1"
+ },
+ {
+  "match_score": 68,
+  "company": "Infosys",
+  "job_title": "AI Engineer (Gen AI, Databricks)",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254173&sourceId=1"
+ },
+ {
+  "match_score": 68,
+  "company": "Infosys",
+  "job_title": "MLOps/DevOps/CloudOps",
+  "location_raw": "Bangalore, India",
+  "status": "UNCHANGED",
+  "apply_url": "https://career.infosys.com/jobdesc?jobReferenceCode=INFSYS-EXTERNAL-254168&sourceId=1"
+ }
+]
